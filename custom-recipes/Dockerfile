@@ -9,4 +9,3 @@ RUN micromamba install -y \
   openssh
 
 RUN micromamba clean --all --yes
-
