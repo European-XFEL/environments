@@ -1,0 +1,15 @@
+#%Module 1.0
+#
+#
+#
+proc ModulesHelp {} {
+    puts stdout     " "
+    puts stdout     "Module loads Dials version 2.2.4"
+    puts stdout     " "
+}
+
+module-whatis  "Module loads Dials version 2.2.4"
+if { [ module-info mode load ] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'dials/v2-2-4'"
+    puts stdout "source /gpfs/exfel/sw/software/dials/dials-v2-2-4/dials_env.sh;"
+}

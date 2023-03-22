@@ -1,0 +1,29 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2022-03-24 18:10:10.073506
+##
+## vagabond@develop%gcc@9.3.0~gui~strip buildtype=debugoptimized default_library=shared arch=linux-centos7-x86_64/idtqhye
+##
+
+
+module-whatis "Vagabond is a free and open-source implementation of bond-based refinement algorithms for fitting protein models to electron density from structural data. These algorithms seek to faithfully represent the real content of the protein crystal as much as possible. "
+
+proc ModulesHelp { } {
+    puts stderr "Vagabond is a free and open-source implementation of bond-based"
+    puts stderr "refinement algorithms for fitting protein models to electron density"
+    puts stderr "from structural data. These algorithms seek to faithfully represent the"
+    puts stderr "real content of the protein crystal as much as possible."
+}
+
+
+if { [ module-info mode load ] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'vagabond/develop'"
+    prepend-path LD_LIBRARY_PATH "/gpfs/exfel/sw/spack/22.03/opt/spack/linux-centos7-x86_64/gcc-9.3.0/vagabond-develop-idtqhyeyskja7gb7wtkm6ag4wibqcrxa/lib"
+    prepend-path PATH "/gpfs/exfel/sw/spack/22.03/opt/spack/linux-centos7-x86_64/gcc-9.3.0/vagabond-develop-idtqhyeyskja7gb7wtkm6ag4wibqcrxa/bin"
+    prepend-path PKG_CONFIG_PATH "/gpfs/exfel/sw/spack/22.03/opt/spack/linux-centos7-x86_64/gcc-9.3.0/vagabond-develop-idtqhyeyskja7gb7wtkm6ag4wibqcrxa/lib/pkgconfig"
+    prepend-path CMAKE_PREFIX_PATH "/gpfs/exfel/sw/spack/22.03/opt/spack/linux-centos7-x86_64/gcc-9.3.0/vagabond-develop-idtqhyeyskja7gb7wtkm6ag4wibqcrxa/"
+} elseif { [module-info mode remove] && ![module-info mode switch3] } {
+    remove-path LD_LIBRARY_PATH "/gpfs/exfel/sw/spack/22.03/opt/spack/linux-centos7-x86_64/gcc-9.3.0/vagabond-develop-idtqhyeyskja7gb7wtkm6ag4wibqcrxa/lib"
+    remove-path PATH "/gpfs/exfel/sw/spack/22.03/opt/spack/linux-centos7-x86_64/gcc-9.3.0/vagabond-develop-idtqhyeyskja7gb7wtkm6ag4wibqcrxa/bin"
+    remove-path PKG_CONFIG_PATH "/gpfs/exfel/sw/spack/22.03/opt/spack/linux-centos7-x86_64/gcc-9.3.0/vagabond-develop-idtqhyeyskja7gb7wtkm6ag4wibqcrxa/lib/pkgconfig"
+    remove-path CMAKE_PREFIX_PATH "/gpfs/exfel/sw/spack/22.03/opt/spack/linux-centos7-x86_64/gcc-9.3.0/vagabond-develop-idtqhyeyskja7gb7wtkm6ag4wibqcrxa/"
+}

@@ -1,0 +1,17 @@
+#%Module 1.0
+#
+#  karabo-gui
+#
+proc ModulesHelp {} {
+    puts stdout     " "
+    puts stdout     "This module enables the current stable karabo-gui release"
+    puts stdout     " "
+}
+
+module-whatis  "Setup environent for running Karabo-GUI at European XFEL"
+if { [ module-info mode load ] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'karabo-gui/2.14.1'"
+    prepend-path PATH    /gpfs/exfel/sw/software/xfel_anaconda3/karabo-gui-2.14.1/bin/
+    setenv _CONDA_EXE    /gpfs/exfel/sw/software/xfel_anaconda3/karabo-gui-2.14.1/bin/conda
+    setenv _CONDA_ROOT   /gpfs/exfel/sw/software/xfel_anaconda3/karabo-gui-2.14.1/bin/
+}

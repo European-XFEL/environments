@@ -1,0 +1,17 @@
+#%Module 1.0
+#
+#  Python 3.7.2 XFEL Environment - Stable 0.1.0
+#
+module-whatis  "Enables Stable EuXFEL Python Environment"
+
+prepend-path	PATH	"/gpfs/exfel/sw/software/exfel_environments/poetry/stable/.venv/bin"
+
+system	python -m ipykernel install --user --name=exfel_stable
+
+proc ModulesHelp {} {
+    puts stdout     " "
+    puts stdout     "Enables the stable EuXFEL module"
+    puts stdout     " "
+}
+
+

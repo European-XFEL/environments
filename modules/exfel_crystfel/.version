@@ -1,0 +1,6 @@
+#%Module1.0
+##
+##  The desired version of exfel_anaconda3
+##
+set ModulesVersion "0.7.0"
+

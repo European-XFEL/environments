@@ -1,0 +1,20 @@
+#%Module 1.0
+#
+#  dev
+#
+proc ModulesHelp {} {
+    puts    stdout    ""
+    puts    stdout    "Module enabling pyenv, pyenv-virtualenv, and venv-ln alias for use by xsoft"
+    puts    stdout    ""
+}
+
+module-whatis    "Enables pyenv, pyenv-virtualenv, and venv-ln alias, for use by xsoft"
+if { [ module-info mode load ] } {
+    puts    stdout   "echo Warning: this module cannot be unloaded/swapped;"
+    puts    stdout    "export PATH=\"/gpfs/exfel/sw/software/.pyenv/bin:\$PATH\";"
+    puts    stdout    "export PYENV_ROOT=\"/gpfs/exfel/sw/software/.pyenv\";"
+    puts    stdout    "eval \"\$(pyenv init -)\";"
+    puts    stdout    "export PYENV_VIRTUALENV_INIT=1;"
+    puts    stdout    "eval \"\$(pyenv virtualenv-init -)\";"
+    set-alias venv-ln "ln -s \$(pyenv prefix) .venv"
+}

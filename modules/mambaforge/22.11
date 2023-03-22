@@ -1,0 +1,23 @@
+#%Module 1.0
+module-whatis  "Mambaforge 22.11"
+
+proc ModulesHelp {} {
+    puts stdout    "Activate mambaforge 22.11"
+}
+
+set specialuser xsoft
+
+eval set [array get env USER]
+
+if { [ module-info mode load ] } {
+    if {$USER != $specialuser} {
+        # Set for all users except xsoft
+        append-path    CONDA_PKGS_DIRS "~/.conda/pkgs"
+        append-path    CONDA_ENVS_DIRS "~/.conda/envs"
+    } else {
+        append-path    CONDA_PKGS_DIRS "/gpfs/exfel/data/scratch/xsoft/.conda/pkgs"
+    }
+    puts stdout    "source /gpfs/exfel/sw/software/mambaforge/22.11/bin/mamba-init;"
+} elseif { [module-info mode remove] && ![module-info mode switch3] } {
+    puts stderr    "Due to how conda-init works, conda cannot be deactivated through the module system."
+}

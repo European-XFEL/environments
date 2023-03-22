@@ -1,0 +1,20 @@
+#%Module 1.0
+#
+#  Anaconda Python 3.7 version 2018.12 
+#
+module-whatis  "Setup environemt for data analysis tools at EuXFEL "
+
+
+if { [ module-info mode load ] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'exfel_anaconda3/beta'"
+    prepend-path PATH    /gpfs/exfel/sw/software/xfel_anaconda3/beta/bin/
+    setenv _CONDA_EXE    /gpfs/exfel/sw/software/xfel_anaconda3/beta/bin/conda
+    setenv _CONDA_ROOT   /gpfs/exfel/sw/software/xfel_anaconda3/beta/bin/
+    setenv              OPENCL_VENDOR_PATH /etc/OpenCL/vendors
+}
+proc ModulesHelp {} {
+    puts stdout     " "
+    puts stdout     "This module sets the Anaconda Distribution at European XFEL for development purposes. "
+    puts stdout     "This module may change without notice."
+}
+

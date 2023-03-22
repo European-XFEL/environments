@@ -1,0 +1,16 @@
+#%Module 1.0
+#
+#  Moonshot scripts
+#
+proc ModulesHelp {} {
+    puts stdout     " "
+    puts stdout     "This module provides some scripts relevant to the moonshot project"
+    puts stdout     " "
+}
+
+module-whatis  "Setup environemt for data analysis tools at EuXFEL "
+if { [ module-info mode load ] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'moonshot'"
+    module load exfel exfel_anaconda3
+    prepend-path PATH /gpfs/exfel/sw/software/test
+}

@@ -1,0 +1,21 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2020-06-23 12:56:20.255089
+##
+## crystfel@0.9.1%gcc@8.3.0 build_type=RelWithDebInfo arch=linux-centos7-x86_64/ujgzxbx
+##
+## load the spack generated crystfel module, as well as DESY-provided ccp4 for indexers
+
+module-whatis "CrystFEL is a suite of programs for processing (and simulating) Bragg diffraction data from 'serial crystallography' experiments, often (but not always) performed using an X-ray Free-Electron Laser. "
+
+proc ModulesHelp { } {
+    puts stderr "CrystFEL is a suite of programs for processing (and simulating) Bragg"
+    puts stderr "diffraction data from "serial crystallography" experiments, often (but"
+    puts stderr "not always) performed using an X-ray Free-Electron Laser.
+}
+
+if { [ module-info mode load ] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'crystfel/0.9.1'"
+    prepend-path    MODULEPATH    /gpfs/exfel/sw/software/spack/spack_all/share/spack/modules/linux-centos7-x86_64
+    module load ccp4/7.0
+    module load crystfel-0.9.1-gcc-8.3.0-ujgzxbx
+}

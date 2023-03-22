@@ -1,0 +1,16 @@
+#%Module 1.0
+#
+#  dev
+#
+proc ModulesHelp {} {
+    puts    stdout    ""
+    puts    stdout    "Module enabling environment management and dev tools for xsoft"
+    puts    stdout    ""
+}
+
+module-whatis    "Enable environment management tools (swenv, pyenv, poetry, spack)"
+if { [ module-info mode load ] } {
+    module    load    "dev/swenv"
+    module    load    "dev/pyenv"
+    module    load    "dev/poetry"
+}

@@ -1,0 +1,23 @@
+#%Module 1.0
+#
+#  OpenMPI module for use with 'environment-modules' package:
+#
+conflict		mpi
+
+if { [ module-info mode load ] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'openmpi-no-python'"
+    prepend-path 		PATH 		/software/openmpi/4.0.3/bin
+    prepend-path 		LD_LIBRARY_PATH /software/openmpi/4.0.3/lib
+    prepend-path 		PKG_CONFIG_PATH	/software/openmpi/4.0.3/lib/pkgconfig
+    prepend-path		MANPATH		/software/openmpi/4.0.3/share/man
+    setenv 			MPI_BIN		/software/openmpi/4.0.3/bin
+    setenv			MPI_SYSCONFIG	/software/openmpi/4.0.3/etc
+    setenv			MPI_FORTRAN_MOD_DIR	/software/openmpi/4.0.3/lib
+    setenv			MPI_INCLUDE	/software/openmpi/4.0.3/include
+    setenv	 		MPI_LIB		/software/openmpi/4.0.3/lib
+    setenv			MPI_MAN		/software/openmpi/4.0.3/share/man
+    setenv			MPI_COMPILER	openmpi-x86_64
+    setenv			MPI_SUFFIX	_openmpi
+    setenv	 		MPI_HOME	/software/openmpi/4.0.3
+    setenv                  UCX_IB_MLX5_DEVX n
+}

@@ -1,0 +1,16 @@
+#%Module 1.0
+#
+#  cmdxfel
+#
+module-whatis  "Module for cmdxfel 0.2"
+
+if [ module-info mode load ] {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'cmdxfel/0.2'"
+    puts stderr    "Using cmdxfel 0.2"
+    prepend-path PATH /gpfs/exfel/sw/software/cmdxfel/
+}
+
+proc ModulesHelp {} {
+    puts stdout "Convent cli tools to explore EuXFEL proposal and runs"
+}
+

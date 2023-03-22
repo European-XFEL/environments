@@ -1,0 +1,21 @@
+#%Module 1.0
+#
+#  EXtra-xwiz 0.1.0
+#
+
+proc ModulesHelp {} {
+    puts stdout "This module sets the EXtra-xwiz (alpha) distribution"
+}
+
+module-whatis  "Setup environment for EXtra-xwiz/alpha"
+
+
+if { [module-info mode load] || [module-info mode switch2] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'openmpi-python'"
+    module load openmpi-no-python
+    puts stdout "source /gpfs/exfel/sw/software/xfel_anaconda3/python3.8-mpi4py/bin/activate;"
+    prepend-path PATH /gpfs/exfel/sw/software/xfel_anaconda3/python3.8-mpi4py/bin
+} elseif { [module-info mode remove] && ![module-info mode switch3] } {
+    puts stdout "deactivate;"
+}
+

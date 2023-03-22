@@ -1,0 +1,23 @@
+#%Module
+#
+# modulefile for simex_platform
+#
+
+# Help
+proc ModulesHelp { } {
+puts stderr "This modulefile defines library and executable paths"
+puts stderr "for the simex_platform python library and physics modules. Branch develop as installed on maxwell server."
+}
+
+#module-whatis  "Setup environemt for simex conda environment at EuXFEL "
+if { [ module-info mode load ] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'simex'"
+	#module	load	intel/2018
+	#setenv	MKLROOT	/opt/intel/2018/mkl
+	#module	load	mpi/openmpi-x86_64
+	prepend-path	PATH	/data/netapp/s2e/simex-conda/bin/
+	setenv	_CONDA_EXE	/data/netapp/s2e/simex-conda/bin/conda
+	setenv	_CONDA_ROOT	/data/netapp/s2e/simex-conda/bin/
+	setenv CONDA_PREFIX /data/netapp/s2e/simex-conda
+	puts stdout "source /data/netapp/s2e/simex-conda/etc/profile.d/conda.sh;"
+}

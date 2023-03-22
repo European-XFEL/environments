@@ -1,0 +1,37 @@
+#%Module 1.0
+#
+#  xfel_onda 22.11.2-alpha
+#
+
+proc ModulesHelp {} {
+    puts stdout "This module sets the OnDA Distribution at European XFEL"
+}
+
+module-whatis  "Setup environment for OnDA at EuXFEL"
+
+if { [module-info mode load] || [module-info mode switch2] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'exfel_onda/22.11.2-alpha'"
+    puts stdout "source /gpfs/exfel/sw/software/onda_22.11.2-alpha_euxfel_env/bin/activate;"
+    prepend-path PATH /gpfs/exfel/sw/software/onda_22.11.2-alpha_euxfel_env/bin
+    puts stdout "export AGIPD_GEOM=/gpfs/exfel/sw/software/onda_resources/agipd_mar18_v11_edit.geom;"
+    puts stdout "export AGIPD_CONF=/gpfs/exfel/sw/software/onda_resources/monitor_agipd.toml;"
+    puts stdout "export AGIPD_MASK=/gpfs/exfel/sw/software/onda_resources/badpixelmask_double_pixels.h5;"
+    puts stdout "export JNGFR_GEOM=/gpfs/exfel/sw/software/onda_resources/jungfrau4M.geom;"
+    puts stdout "export JNGFR_CONF=/gpfs/exfel/sw/software/onda_resources/monitor_jf.toml;"
+#    puts stdout "cp -n /gpfs/exfel/sw/software/onda_resources/monitor_agipd.toml . ;"
+#    puts stdout "cp -n /gpfs/exfel/sw/software/onda_resources/monitor_jf.toml . ;"
+
+# some issue occured when launching this OnDA version in the SPB hutch
+# (probably due do a configuration issue of the server)
+# libGL error: No matching fbConfigs or visuals found
+# libGL error: failed to load driver: swrast 
+# to fix this the following line is needed, eventually this is not optimal for the graphical performance
+    puts stdout "export LIBGL_ALWAYS_INDIRECT=1;"
+    module load mpi/mpich-3.2-x86_64
+} elseif { [module-info mode remove] && ![module-info mode switch3] } {
+    puts stdout "deactivate;"
+    module unload mpi/mpich-3.2-x86_64
+}
+
+
+

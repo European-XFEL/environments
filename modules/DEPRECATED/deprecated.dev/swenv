@@ -1,0 +1,15 @@
+#%Module 1.0
+#
+#  dev/swenv
+#
+proc ModulesHelp {} {
+    puts    stdout    ""
+    puts    stdout    "Module enabling the swenv git alias for use by xsoft"
+    puts    stdout    ""
+}
+
+module-whatis    "Enable swenv git alias for use by xsoft"
+if { [ module-info mode load ] } {
+    set-alias    swenv    "/usr/bin/git --git-dir=/gpfs/exfel/sw/software/.git-software/ --work-tree=/gpfs/exfel/sw/software/"
+    set-alias    swenv-ls "swenv ls-tree -r master --name-only"
+}

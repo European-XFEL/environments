@@ -1,0 +1,14 @@
+#%Module 1.0
+#
+#  euxfel-202002-py37
+#
+proc ModulesHelp {} {
+    puts    stdout    "Enables the euxfel 202002 python 3.7.9 environment"
+    puts    stdout    ""
+}
+
+module-whatis    "Enables the euxfel 202002 python 3.7.9 environment"
+if { [module-info mode load] || [module-info mode switch2] } {
+    puts stdout "source /gpfs/exfel/sw/spack/202001/share/spack/setup-env.sh"
+    puts stdout "spack env activate /gpfs/exfel/sw/software/xfel_environments/python/python-spack-demo"
+}

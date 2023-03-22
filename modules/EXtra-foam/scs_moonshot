@@ -1,0 +1,19 @@
+#%Module 1.0
+#
+#  EXtra-foam
+#
+proc ModulesHelp {} {
+    puts stdout     " "
+    puts stdout     "This module enables an unstable EXtra-foam version for MID's moonshot project"
+    puts stdout     " "
+}
+
+module-whatis  "Setup environemt for data analysis tools at EuXFEL "
+if { [ module-info mode load ] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'EXtra-foam/scs_moonshot'"
+    prepend-path PATH    /gpfs/exfel/sw/software/xfel_anaconda3/EXtra-foam-scs-moonshot/bin/
+    setenv _CONDA_EXE    /gpfs/exfel/sw/software/xfel_anaconda3/EXtra-foam-scs-moonshot/bin/conda
+    setenv _CONDA_ROOT   /gpfs/exfel/sw/software/xfel_anaconda3/EXtra-foam-scs-moonshot/bin/
+    setenv              OPENCL_VENDOR_PATH /etc/OpenCL/vendors
+}
+

@@ -1,0 +1,21 @@
+#%Module 1.0
+#
+#  calibration-services
+#
+proc ModulesHelp {} {
+    puts stdout     " "
+    puts stdout     "This module enables the latest stable calibration-services version"
+    puts stdout     " "
+}
+
+module-whatis  "Setup environemt for data analysis tools at EuXFEL "
+if { [ module-info mode load ] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'calibration_services/stable'"
+    prepend-path PATH    /gpfs/exfel/sw/software/calibration-fxe/env/bin/
+    setenv _CONDA_EXE    /gpfs/exfel/sw/software/calibration-fxe/env/bin/conda
+    setenv _CONDA_ROOT   /gpfs/exfel/sw/software/calibration-fxe/env/bin/
+    setenv              OPENCL_VENDOR_PATH /etc/OpenCL/vendors
+    set PRINTOUT [ exec /bin/sh -c "python -m ipykernel install --user --name=calibration-services-kernel --display-name='calibration-services-kernel'" ]
+
+}
+

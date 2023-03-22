@@ -1,0 +1,16 @@
+#%Module 1.0
+#
+#  euxfel-202002-py37
+#
+proc ModulesHelp {} {
+    puts    stdout    "Loads pycalibration environment"
+    puts    stdout    ""
+}
+
+module-whatis    "Loads pycalibration environment"
+if { [module-info mode load] || [module-info mode switch2] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'pycalibration/3.5'"
+    puts stdout "source /gpfs/exfel/sw/calsoft/deployments/development/git.xfel.eu/detectors/pycalibration/current/.venv/bin/activate;"
+} elseif { [module-info mode remove] && ![module-info mode switch3] } {
+    puts stdout "deactivate;"
+}

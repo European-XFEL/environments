@@ -1,0 +1,4 @@
+#%Module 1.0
+
+module-alias    default    202002-py37
+module-alias    202002     202002-py37

@@ -1,0 +1,16 @@
+#%Module 1.0
+#
+#  xfel 1.1
+#
+proc ModulesHelp {} {
+    puts stdout     " "
+    puts stdout     "This module provides some utility functions for working with EuXFEL Singularity images"
+    puts stdout     " "
+}
+
+module-whatis  "Setup environemt for data analysis tools at EuXFEL "
+
+if { [ module-info mode load ] } {
+    puts stdout "/gpfs/exfel/sw/software/local/etc/metrics.sh"
+    set-alias	sutils	{/gpfs/exfel/sw/software/exfel_environments/singularity/sutils.py}
+}

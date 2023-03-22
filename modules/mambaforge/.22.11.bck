@@ -1,0 +1,30 @@
+#%Module 1.0
+#
+#  Mamba
+#
+module-whatis  "Activate mambaforge 22.11"
+
+proc ModulesHelp {} {
+    puts stdout     " "
+    puts stdout     "Activate mambaforge 22.11"
+    puts stdout     " "
+}
+
+if { [ module-info mode load ] } {
+    prepend-path    PATH                  /gpfs/exfel/sw/software/mambaforge/22.11/bin
+    setenv          OPENCL_VENDOR_PATH    /etc/OpenCL/vendors
+    puts            stdout                "export CONDA_PKGS_DIRS=/gpfs/exfel/data/scratch/\$USER/.mambapkgs:~/.mambapkgs;"
+    puts            stdout                "source /gpfs/exfel/sw/software/mambaforge/22.11/bin/mamba-init;"
+} elseif { [module-info mode remove] && ![module-info mode switch3] } {
+    remove-path     PATH                  /gpfs/exfel/sw/software/mambaforge/22.11/bin
+    unsetenv        CONDA_DEFAULT_ENV
+    unsetenv        CONDA_EXE
+    unsetenv        CONDA_PKGS_DIRS
+    unsetenv        CONDA_PREFIX
+    unsetenv        CONDA_PROMPT_MODIFFIER
+    unsetenv        CONDA_PYTHON_EXE
+    unsetenv        CONDA_SHLVL
+    unsetenv        OPENCL_VENDOR_PATH
+    unsetenv        _CONDA_EXE
+    unsetenv        _CONDA_ROOT
+}

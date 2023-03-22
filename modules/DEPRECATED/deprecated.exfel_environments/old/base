@@ -1,0 +1,31 @@
+#%Module 1.0
+#
+# Base EuXFEL Module - PyENV
+#
+module-whatis "Module loads the EuXFEL pyenv install on Maxwell"
+
+# Set pyenv root env variable, prepend the pyenv bin to path
+setenv		PYENV_ROOT	/gpfs/exfel/sw/software/pyenv
+prepend-path	PATH		/gpfs/exfel/sw/software/pyenv/bin
+
+set pyenv_start {
+	puts "eval \"\$(pyenv init -)\""
+	puts "echo exit the shell to ensure everything returns to normal"
+}
+
+# Run the pyenv initialization commands
+eval	$script
+#exec	"echo \"exit the shell to ensure everything returns to normal\""
+#exec	"eval \"\$(pyenv init -)\""
+#exec	"eval \"\$(pyenv virtualenv-init -)\""
+#puts	stdout	"echo \"pyenv functions will remain even when you unload the module\""
+#puts	stdout	"echo \"exit the shell to ensure everything returns to normal\""
+#puts	stdout	"eval \"\$(pyenv init -)\""
+#puts	stdout	"eval \"\$(pyenv virtualenv-init -)\""
+
+proc ModulesHelp {} {
+	puts stdout     " "
+	puts stdout     "This module enables the EuXFEL Maxwell pyenv install"
+	puts stdout	"giving access to existing pyenv python versions"
+	puts stdout     " "
+}

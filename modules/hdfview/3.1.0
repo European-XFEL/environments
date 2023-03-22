@@ -1,0 +1,18 @@
+#%Module 1.0
+#
+#  HDF5
+#
+module-whatis  "Module for the 3.1.0 version of HDFView"
+
+
+if [ module-info mode load ] {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'hdfview/3.1.0'"
+    prepend-path PATH /gpfs/exfel/sw/software/hdfview/3.1.0
+    puts stderr    "Using version 3.1.0 of HDFView"
+}
+
+proc ModulesHelp {} {
+    puts stdout     "This module sets the environment for the 3.1.0 version of HDFView"
+}
+
+

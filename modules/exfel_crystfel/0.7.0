@@ -1,0 +1,26 @@
+#%Module 1.0
+#
+#  CrystFEL
+#
+module-whatis  "Module for the 0.7.0 version of CrystFEL (compiled with hdf5 1.10.4)"
+
+
+if [ module-info mode load ] {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'exfel_crystfel/0.7.0'"
+    prepend-path PATH /gpfs/exfel/sw/software/hdf5-1.10.4
+    prepend-path PATH /gpfs/exfel/sw/software/dirax-1.17
+    prepend-path PATH /gpfs/exfel/sw/software/xds-20180126
+    prepend-path PATH /gpfs/exfel/sw/software/crystfel-0.7.0/bin
+    prepend-path LD_LIBRARY_PATH /gpfs/exfel/sw/software/crystfel-0.7.0/lib
+    prepend-path MANPATH /gpfs/exfel/sw/software/crystfel-0.7.0/share/man
+    puts stderr    "Using version 1.10.4 of HDF5"
+    puts stderr    "Using version 1.17 of DirAx"
+    puts stderr    "Using XDS BUILT 20180126"
+}
+
+
+
+proc ModulesHelp {} {
+    puts stdout     "This version of CrystFEL was compiled with hdf5 library version 1.10.4 for compatibility with hdf5-virtualise."
+}
+

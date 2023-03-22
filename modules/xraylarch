@@ -1,0 +1,24 @@
+#%Module 1.0
+#
+#  xfel 1.1.1
+#
+proc ModulesHelp {} {
+    puts stdout     " "
+    puts stdout     "Module providing xraylarch"
+    puts stdout     " "
+}
+
+module-whatis  "Setup environemt for data analysis tools at EuXFEL "
+if { [ module-info mode load ] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'xraylarch'"
+    prepend-path PATH    /gpfs/exfel/sw/software/xraylarch/bin/
+    setenv _CONDA_EXE    /gpfs/exfel/sw/software/xraylarch/bin/conda
+    setenv _CONDA_ROOT   /gpfs/exfel/sw/software/xraylarch/bin/
+    setenv              OPENCL_VENDOR_PATH /etc/OpenCL/vendors
+} elseif { [module-info mode remove] && ![module-info mode switch3] } {
+    remove-path PATH /gpfs/exfel/sw/software/xraylarch/bin
+    unsetenv _CONDA_EXE
+    unsetenv _CONDA_ROOT
+    unsetenv OPENCL_VENDOR_PATH
+}
+

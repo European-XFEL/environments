@@ -1,0 +1,20 @@
+#%Module 1.0
+#
+#  xfel stable 0.1.0
+#
+proc ModulesHelp {} {
+	puts	stdout	" "
+	puts	stdout	"This module sets the Anaconda Distribution at European XFEL"
+	puts	stdout	" "
+}
+
+module-whatis  "Setup environemt for data analysis tools at EuXFEL "
+if { [ module-info mode load ] } {
+    # Enable conda for this module
+	prepend-path	PATH			/gpfs/exfel/sw/software/exfel_environments/miniconda3/stable/envs/v0.1.0/bin/
+	setenv		_CONDA_EXE		/gpfs/exfel/sw/software/exfel_environments/miniconda3/stable/envs/v0.1.0/bin/conda
+	setenv		_CONDA_ROOT		/gpfs/exfel/sw/software/exfel_environments/miniconda3/stable/envs/v0.1.0/bin/
+	setenv		OPENCL_VENDOR_PATH	/etc/OpenCL/vendors
+    # Install the kernel - VERSION
+	system	"python -m ipykernel install --user --name=xfel-stable-0.1.0 --display-name=\'xfel-stable-0.1.0\'"
+}

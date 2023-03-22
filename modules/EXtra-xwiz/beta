@@ -1,0 +1,19 @@
+#%Module 1.0
+#
+#  EXtra-xwiz 0.1.0
+#
+
+proc ModulesHelp {} {
+    puts stdout "This module sets the EXtra-xwiz (beta) distribution"
+}
+
+module-whatis  "Setup environment for EXtra-xwiz"
+
+if { [module-info mode load] || [module-info mode switch2] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'EXtra-xwiz/beta'"
+    puts stdout "source /gpfs/exfel/sw/software/extra-xwiz_env/bin/activate;"
+    prepend-path PATH /gpfs/exfel/sw/software/extra-xwiz_env/bin
+} elseif { [module-info mode remove] && ![module-info mode switch3] } {
+    puts stdout "deactivate;"
+}
+

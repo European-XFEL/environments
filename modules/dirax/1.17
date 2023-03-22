@@ -1,0 +1,17 @@
+#%Module 1.0
+#
+#  DirAx
+#
+module-whatis  "Module for the 1.17 version of DirAx"
+
+
+if [ module-info mode load ] {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'dirax/1.17'"
+    prepend-path PATH /gpfs/exfel/sw/software/dirax-1.17
+    puts stderr    "Using version 1.17 of DirAx"
+}
+
+proc ModulesHelp {} {
+    puts stdout     "This module sets the environment 1.17 version of DirAx"
+}
+

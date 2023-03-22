@@ -1,0 +1,37 @@
+#%Module 1.0
+#
+#  xfel 1.1.1
+#
+proc ModulesHelp {} {
+    puts stdout     " "
+    puts stdout     "This module sets the Anaconda Distribution at European XFEL  "
+    puts stdout     " "
+}
+
+module-whatis  "Setup environemt for data analysis tools at EuXFEL "
+if { [ module-info mode load ] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'exfel_anaconda3/202301'"
+    prepend-path PATH "/gpfs/exfel/sw/software/xfel_anaconda3/mambaforge-22.9/envs/202301/bin:/gpfs/exfel/sw/software/xfel_anaconda3/mambaforge-22.9/envs/202301/condabin"
+    setenv OPENCL_VENDOR_PATH /etc/OpenCL/vendors
+    setenv CONDA_DEFAULT_ENV "base"
+    setenv CONDA_EXE "/gpfs/exfel/sw/software/xfel_anaconda3/mambaforge-22.9/envs/202301/bin/conda"
+    setenv CONDA_PREFIX "/gpfs/exfel/sw/software/xfel_anaconda3/mambaforge-22.9/envs/202301"
+    setenv CONDA_PROMPT_MODIFIER "(xfel 202301)"
+    setenv CONDA_PYTHON_EXE "/gpfs/exfel/sw/software/xfel_anaconda3/mambaforge-22.9/envs/202301/bin/python"
+    setenv CONDA_SHLVL "1"
+    setenv GSETTINGS_SCHEMA_DIR "/gpfs/exfel/sw/software/xfel_anaconda3/mambaforge-22.9/envs/202301/share/glib-2.0/schemas"
+    setenv _CE_CONDA ""
+    setenv _CE_M ""
+} elseif { [module-info mode remove] && ![module-info mode switch3] } {
+    prepend-path PATH "/gpfs/exfel/sw/software/xfel_anaconda3/mambaforge-22.9/envs/202301/bin:/gpfs/exfel/sw/software/xfel_anaconda3/mambaforge-22.9/envs/202301/condabin"
+    unsetenv OPENCL_VENDOR_PATH
+    unsetenv CONDA_DEFAULT_ENV
+    unsetenv CONDA_EXE
+    unsetenv CONDA_PREFIX
+    unsetenv CONDA_PROMPT_MODIFIER
+    unsetenv CONDA_PYTHON_EXE
+    unsetenv CONDA_SHLVL
+    unsetenv GSETTINGS_SCHEMA_DIR
+    unsetenv _CE_CONDA
+    unsetenv _CE_M
+}

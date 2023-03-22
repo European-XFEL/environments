@@ -1,0 +1,14 @@
+#%Module 1.0
+#
+#  dev
+#
+proc ModulesHelp {} {
+    puts    stdout    ""
+    puts    stdout    "Module enabling poetry (python environment management tool)"
+    puts    stdout    ""
+}
+
+module-whatis    "Enables poetry (python environment management tool)"
+if { [ module-info mode load ] } {
+    puts         stdout   "export PATH=\"/gpfs/exfel/sw/software/.poetry/bin:\$PATH\""
+}

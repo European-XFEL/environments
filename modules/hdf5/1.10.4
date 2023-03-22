@@ -1,0 +1,18 @@
+#%Module 1.0
+#
+#  HDF5
+#
+module-whatis  "Module for the 1.10.4 version of HDF5"
+
+
+if [ module-info mode load ] {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'hdf5/1.10.4'"
+    prepend-path PATH /gpfs/exfel/sw/software/hdf5-1.10.4
+    puts stderr    "Using version 1.10.4 of HDF5"
+}
+
+proc ModulesHelp {} {
+    puts stdout     "This module sets the environment for the 1.10.4 version of HDF5"
+}
+
+

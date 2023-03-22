@@ -1,0 +1,25 @@
+#%Module 1.0
+#
+#  xfel 1.1
+#
+proc ModulesHelp {} {
+    puts stdout     " "
+    puts stdout     "This module sets the Anaconda Distribution at European XFEL  "
+    puts stdout     " "
+}
+
+module-whatis  "Setup environemt for data analysis tools at EuXFEL "
+if { [ module-info mode load ] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'exfel_anaconda3/1.1'"
+    prepend-path PATH    /gpfs/exfel/sw/software/xfel_anaconda3/1.1/bin/
+    setenv _CONDA_EXE    /gpfs/exfel/sw/software/xfel_anaconda3/1.1/bin/conda
+    setenv _CONDA_ROOT   /gpfs/exfel/sw/software/xfel_anaconda3/1.1/bin/
+    setenv              OPENCL_VENDOR_PATH /etc/OpenCL/vendors
+    puts stdout     "echo -e '\n\033\[0;31mWarning: this is an old environment kept for reproducibility'"
+    puts stdout     "echo -e '\n\033\[0;31mIf possible use exfel_anaconda3 (without a version) to get the latest environment'"
+} elseif { [module-info mode remove] && ![module-info mode switch3] } {
+    remove-path PATH /gpfs/exfel/sw/software/xfel_anaconda3/1.1/bin/
+    unsetenv _CONDA_EXE
+    unsetenv _CONDA_ROOT
+    unsetenv OPENCL_VENDOR_PATH
+}

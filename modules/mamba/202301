@@ -1,0 +1,13 @@
+#%Module 1.0
+proc ModulesHelp {} {
+    puts stdout    "Mamba environment for cycle 202301"
+}
+
+module-whatis  "Module loads the mamba environment for cycle 202301"
+if { [ module-info mode load ] } {
+    system    "/gpfs/exfel/sw/software/local/etc/metrics.sh 'exfel_anaconda3/202301'"
+    module load mambaforge
+    puts stdout    "mamba activate 202301;"
+} elseif { [module-info mode remove] } {
+    puts stderr    "Due to how conda-init works, conda cannot be deactivated through the module system."
+}

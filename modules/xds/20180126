@@ -1,0 +1,19 @@
+#%Module 1.0
+#
+#  XDS
+#
+module-whatis  "Module for XDS BUILT 20180126"
+
+
+if [ module-info mode load ] {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'xds/20180126'"
+    prepend-path PATH /gpfs/exfel/sw/software/xds-20180126
+    puts stderr    "Using XDS BUILT 20180126"
+}
+
+proc ModulesHelp {} {
+    puts stdout     "This module sets the environment for XDS BUILT 20180126"
+}
+
+
+

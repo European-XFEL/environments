@@ -1,0 +1,36 @@
+#%Module 1.0
+#
+#  Modulefile providing smilei and py-happi
+#
+proc ModulesHelp {} {
+	puts	stdout	"Modulefile providing smilei and py-happi"
+}
+
+module-whatis  'Modulefile providing smilei and py-happi'
+if { [ module-info mode load ] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'hipgisaxs'"
+    setenv MPICC /usr/lib64/mpich-3.2/bin/mpicc
+    setenv MPICXX /usr/lib64/mpich-3.2/bin/mpic++
+    setenv MPIF77 /usr/lib64/mpich-3.2/bin/mpif77
+    setenv MPIF90 /usr/lib64/mpich-3.2/bin/mpif90
+    prepend-path BOOST_ROOT /gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/boost-1.79.0-6cjyqer3ugh3esonq55r2mlh25fhi7yk;
+    prepend-path CMAKE_PREFIX_PATH /usr/lib64/mpich-3.2:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/python-2.7.18-gf6tpipe2sgwau3iusaklku6a5k4leex:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/hdf5-1.12.2-e7eby3midcs764dkri6po5rvjyu7vvkm:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/boost-1.79.0-6cjyqer3ugh3esonq55r2mlh25fhi7yk:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/hipgisaxs-develop-o2gryhwbg6hslj25sl5da7exlfgyfgtz;
+    prepend-path CPATH /gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/python-2.7.18-gf6tpipe2sgwau3iusaklku6a5k4leex/include/python2.7;
+    prepend-path LD_LIBRARY_PATH /usr/lib64/mpich-3.2/lib:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/python-2.7.18-gf6tpipe2sgwau3iusaklku6a5k4leex/lib:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/hdf5-1.12.2-e7eby3midcs764dkri6po5rvjyu7vvkm/lib:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/boost-1.79.0-6cjyqer3ugh3esonq55r2mlh25fhi7yk/lib:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/hipgisaxs-develop-o2gryhwbg6hslj25sl5da7exlfgyfgtz/lib;
+    prepend-path MANPATH /gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/python-2.7.18-gf6tpipe2sgwau3iusaklku6a5k4leex/share/man:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/hipgisaxs-develop-o2gryhwbg6hslj25sl5da7exlfgyfgtz/man:;
+    prepend-path PATH /usr/lib64/mpich-3.2/bin:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/python-2.7.18-gf6tpipe2sgwau3iusaklku6a5k4leex/bin:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/hdf5-1.12.2-e7eby3midcs764dkri6po5rvjyu7vvkm/bin:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/hipgisaxs-develop-o2gryhwbg6hslj25sl5da7exlfgyfgtz/bin;
+    prepend-path PKG_CONFIG_PATH /usr/lib64/mpich-3.2/lib/pkgconfig:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/python-2.7.18-gf6tpipe2sgwau3iusaklku6a5k4leex/lib/pkgconfig:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/hdf5-1.12.2-e7eby3midcs764dkri6po5rvjyu7vvkm/lib/pkgconfig;
+} elseif { [module-info mode remove] && ![module-info mode switch3] } {
+    unsetenv MPICC /usr/lib64/mpich-3.2/bin/mpicc
+    unsetenv MPICXX /usr/lib64/mpich-3.2/bin/mpic++
+    unsetenv MPIF77 /usr/lib64/mpich-3.2/bin/mpif77
+    unsetenv MPIF90 /usr/lib64/mpich-3.2/bin/mpif90
+    remove-path BOOST_ROOT /gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/boost-1.79.0-6cjyqer3ugh3esonq55r2mlh25fhi7yk;
+    remove-path CMAKE_PREFIX_PATH /usr/lib64/mpich-3.2:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/python-2.7.18-gf6tpipe2sgwau3iusaklku6a5k4leex:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/hdf5-1.12.2-e7eby3midcs764dkri6po5rvjyu7vvkm:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/boost-1.79.0-6cjyqer3ugh3esonq55r2mlh25fhi7yk:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/hipgisaxs-develop-o2gryhwbg6hslj25sl5da7exlfgyfgtz;
+    remove-path CPATH /gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/python-2.7.18-gf6tpipe2sgwau3iusaklku6a5k4leex/include/python2.7;
+    remove-path LD_LIBRARY_PATH /usr/lib64/mpich-3.2/lib:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/python-2.7.18-gf6tpipe2sgwau3iusaklku6a5k4leex/lib:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/hdf5-1.12.2-e7eby3midcs764dkri6po5rvjyu7vvkm/lib:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/boost-1.79.0-6cjyqer3ugh3esonq55r2mlh25fhi7yk/lib:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/hipgisaxs-develop-o2gryhwbg6hslj25sl5da7exlfgyfgtz/lib;
+    remove-path MANPATH /gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/python-2.7.18-gf6tpipe2sgwau3iusaklku6a5k4leex/share/man:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/hipgisaxs-develop-o2gryhwbg6hslj25sl5da7exlfgyfgtz/man:;
+    remove-path PATH /usr/lib64/mpich-3.2/bin:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/python-2.7.18-gf6tpipe2sgwau3iusaklku6a5k4leex/bin:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/hdf5-1.12.2-e7eby3midcs764dkri6po5rvjyu7vvkm/bin:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/hipgisaxs-develop-o2gryhwbg6hslj25sl5da7exlfgyfgtz/bin;
+    remove-path PKG_CONFIG_PATH /usr/lib64/mpich-3.2/lib/pkgconfig:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/python-2.7.18-gf6tpipe2sgwau3iusaklku6a5k4leex/lib/pkgconfig:/gpfs/exfel/sw/spack/22.08/opt/spack/linux-centos7-x86_64/gcc-4.8.5/hdf5-1.12.2-e7eby3midcs764dkri6po5rvjyu7vvkm/lib/pkgconfig;
+}
+

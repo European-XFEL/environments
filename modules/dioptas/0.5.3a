@@ -1,0 +1,23 @@
+#%Module 1.0
+#
+#  Dioptas 0.5.3a
+#
+proc ModulesHelp {} {
+    puts stdout     " "
+    puts stdout     " Dioptas: A GUI program for fast analysis of powder X-ray diffraction Images. "
+    puts stdout     " "
+}
+
+module-whatis  "Dioptas: A GUI program for fast analysis of powder X-ray diffraction Images."
+if { [ module-info mode load ] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'dioptas/0.5.3a'"
+    prepend-path PATH    /gpfs/exfel/sw/software/venv/dioptas-0.5.3a/bin/
+#    setenv _CONDA_EXE    /gpfs/exfel/sw/software/xfel_anaconda3/dioptas-0.5.3a/bin/conda
+#    setenv _CONDA_ROOT   /gpfs/exfel/sw/software/xfel_anaconda3/dioptas-0.5.3a/bin/
+    setenv              OPENCL_VENDOR_PATH /etc/OpenCL/vendors
+} elseif { [module-info mode remove] && ![module-info mode switch3] } {
+    remove-path PATH /gpfs/exfel/sw/software/venv/dioptas-0.5.3a/bin/
+#    unsetenv _CONDA_EXE
+#    unsetenv _CONDA_ROOT
+    unsetenv OPENCL_VENDOR_PATH
+}

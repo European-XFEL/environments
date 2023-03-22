@@ -1,0 +1,17 @@
+#%Module 1.0
+#
+#  xfel 1.1
+#
+proc ModulesHelp {} {
+	puts	stdout	" "
+	puts	stdout	"This module enables the euxfel spack installation containing compilers"
+	puts	stdout	" "
+}
+
+module-whatis  "Enable spack compiler installation"
+if { [ module-info mode load ] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'spack/compilers'"
+	puts	stdout	"source /gpfs/exfel/sw/software/spack/spack_compilers/share/spack/setup-env.sh"
+} elseif { [module-info mode remove] && ![module-info mode switch3] } {
+	puts	stdout	"cannot deactivate spack"
+}

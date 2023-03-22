@@ -1,0 +1,16 @@
+#%Module 1.0
+#
+#  AMORE
+#
+proc ModulesHelp {} {
+    puts stdout     " "
+    puts stdout     "This module enables an unstable AMORE version for MID"
+    puts stdout     " "
+}
+
+module-whatis  "Setup environemt for data analysis tools at EuXFEL "
+if { [ module-info mode load ] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'amore/mid'"
+    puts stdout "conda activate /gpfs/exfel/sw/software/xfel_anaconda3/amore-mid/conda_env;"
+    # puts stdout "/gpfs/exfel/sw/software/xfel_anaconda3/amore-mid/env/bin/activate;"
+}

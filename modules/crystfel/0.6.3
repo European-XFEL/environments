@@ -1,0 +1,19 @@
+#%Module 1.0
+#
+#  ccp4 and related. 
+# 
+module-whatis  "Setup for CrystFEL 0.6.3"
+
+
+if { [ module-info mode load ] }
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'crystfel/0.6.3'"
+    puts                  stdout           "source /gpfs/exfel/sw/software/ccp4/ccp4-7.1/bin/ccp4.setup-sh;"
+    prepend-path          PATH             /gpfs/exfel/sw/software/ccp4/ccp4-7.1/bin
+    prepend-path          PATH             /gpfs/exfel/sw/software/crystfel-0.6.3/indexers/bin
+    prepend-path          PATH             /gpfs/exfel/sw/software/crystfel-0.6.3/bin:/gpfs/exfel/sw/software/crystfel-0.6.3/sources/crystfel-0.6.3/scripts
+    prepend-path          MANPATH          /gpfs/exfel/sw/software/crystfel-0.6.3/share/man/
+}
+proc ModulesHelp { } {
+    puts stdout     "This module sets the environment for CrystFEL"
+    puts stdout     "It includes the indexers: dirax, mosflm, and xds"
+}

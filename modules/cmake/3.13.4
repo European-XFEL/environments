@@ -1,0 +1,19 @@
+#%Module 1.0
+#
+#  cmake
+#
+module-whatis  "Module for cmake 3.13.4"
+
+
+if [ module-info mode load ] {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'cmake/3.13.4'"
+    puts stderr    "Using cmake 3.13.4"
+    prepend-path PATH /gpfs/exfel/sw/software/cmake/3.13.4/bin
+}
+
+proc ModulesHelp {} {
+    puts stdout     "CMake is an extensible, open-source system that manages the build 
+process in an operating system and in a compiler-independent manner."
+}
+
+

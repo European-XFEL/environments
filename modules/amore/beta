@@ -1,0 +1,20 @@
+#%Module 1.0
+#
+#  AMORE
+#
+proc ModulesHelp {} {
+    puts stdout     " "
+    puts stdout     "This module enables an unstable beta version of DAMNIT (formerly known as AMORE)"
+    puts stdout     " "
+}
+
+module-whatis  "Setup environment for DAMNIT"
+
+if { [ module-info mode load ] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'amore/beta'"
+    prepend-path PATH            /gpfs/exfel/sw/software/xfel_anaconda3/amore-beta/conda_env/bin/
+    prepend-path LD_LIBRARY_PATH /gpfs/exfel/sw/software/xfel_anaconda3/amore-beta/conda_env/lib
+    setenv _CONDA_ROOT           /gpfs/exfel/sw/software/xfel_anaconda3/amore-beta/conda_env/bin/
+
+    # puts stdout "/gpfs/exfel/sw/software/xfel_anaconda3/amore-mid/env/bin/activate;"
+}

@@ -1,0 +1,18 @@
+#%Module 1.0
+#
+#  karabo-bridge-cpp
+#
+proc ModulesHelp {} {
+    puts stdout     " "
+    puts stdout     "This module enables karabo-bridge-cpp"
+    puts stdout     " "
+}
+
+module-whatis  "Setup environemt for data analysis tools at EuXFEL "
+if { [ module-info mode load ] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'karabo-bridge-cpp/stable'"
+    prepend-path PATH    /gpfs/exfel/sw/software/xfel_anaconda3/karabo-bridge-cpp/bin/
+    setenv _CONDA_EXE    /gpfs/exfel/sw/software/xfel_anaconda3/karabo-bridge-cpp/bin/conda
+    setenv _CONDA_ROOT   /gpfs/exfel/sw/software/xfel_anaconda3/karabo-bridge-cpp/bin/
+    setenv              OPENCL_VENDOR_PATH /etc/OpenCL/vendors
+}

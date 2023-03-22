@@ -1,0 +1,15 @@
+#%Module 1.0
+#
+#  euxfel-202002-py37
+#
+proc ModulesHelp {} {
+    puts    stdout    "Enables the euxfel 202002 python 3.7.9 environment"
+    puts    stdout    ""
+}
+
+module-whatis    "Enables the euxfel 202002 python 3.7.9 environment"
+if { [module-info mode load] || [module-info mode switch2] } {
+    puts stdout "source /gpfs/exfel/sw/software/xfel_environments/python/euxfel-202002-py37/.venv/bin/activate;"
+} elseif { [module-info mode remove] && ![module-info mode switch3] } {
+    puts stdout "deactivate;"
+}

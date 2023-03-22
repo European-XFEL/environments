@@ -1,0 +1,6 @@
+#%Module1.0
+##
+##  The desired version of EXtra-foam
+##
+
+set ModulesVersion "stable"
