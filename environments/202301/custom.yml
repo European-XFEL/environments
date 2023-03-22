@@ -4,8 +4,8 @@ channels:
   - defaults
 dependencies:
   - calibration-client
-  - condat-gridconv
   - cfelpyutils
+  - condat-gridconv
   - envmodules
   - euxfel-bunch-pattern
   - extra-data
@@ -21,3 +21,4 @@ dependencies:
   - metropc
   - pasha
   - princess
+category: custom

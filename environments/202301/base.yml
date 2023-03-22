@@ -20,8 +20,6 @@ dependencies:
   - jupyterlab
   - kafka-python
   - lmfit
-  - lmfit
-  - mamba
   - matplotlib=3.4.2
   - msgpack-numpy
   - msgpack-python
@@ -38,7 +36,7 @@ dependencies:
   - scipy
   - seaborn
   - silx
-  - silx
   - spyder
   - xarray
   - xraylib
+category: base
