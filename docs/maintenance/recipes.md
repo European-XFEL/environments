@@ -22,9 +22,13 @@ creating recipes should be checked.
 
 ## Creating a Recipe
 
+First, you should load a `mambaforge` base environment, which will provide all
+the tools required to build recipes. This can be done with `module load exfel
+mambaforge`.
+
 Recipes can be created via the Grayskull CLI:
 
-```sh
+```bash
 grayskull pypi --recursive ${PYPI_NAME_OR_URL}
 ```
 
@@ -39,16 +43,30 @@ Note that the argument can be either:
   specified it will default to using the `latest` tag, which **must** exist
 - The path to a `sdist` archive
 
+### From PyPI With an `sdist`
+
 If the package has releases on PyPI with `sdists`, then grayskull has a good
-chance of working successfully. However if the package does not have a proper
-release then some additional work has to be done.
+chance of working successfully without any additional work. For example:
+
+```sh
+grayskull pypi extra-data
+```
+
+Will generate a recipe for the `extra-data` package that can be used without any
+modifications.
+
+### From a Git Repository (no `sdist`)
+
+However if the package does not have a release with an `sdist` then some
+additional work has to be done.
 
 In the 'worst case' scenario where a package has no releases or tags, and is not
 on PyPI with an `sdist`, then you must build the `sdist` manually. To do this:
 
 1. Clone the package
-2. Create a gztar sdist - `python3 setup.py sdist --formats=gztar`
-3. Run grayskull on the sdist archive - `grayskull pypi ./${PATH_TO_SDIST}`
+2. Go into the package directory
+3. Create a gztar sdist - `python3 setup.py sdist --formats=gztar`
+4. Run grayskull on the sdist archive - `grayskull pypi ./${PATH_TO_SDIST}`
 
 A full example of this is:
 
@@ -67,8 +85,15 @@ If the Conda installation the package is being built for is new, you will have
 to tell it to use the build target directory as a channel, so that any packages
 you have built will be installable.
 
+!!! note inline end
+
+    `BUILD_DIRECTORY` is the directory where the recipes are being built to,
+    this will be a `conda-bld` directory in the Conda installation directory.
+    For example that is `/gpfs/exfel/sw/software/mambaforge/22.11/conda-bld` for
+    the `mambaforge/22.11` instance.
+
 ```sh
-conda config --add channels ${BUILD_DIRECTORY}
+conda config --env --add channels ${BUILD_DIRECTORY}
 conda index ${BUILD_DIRECTORY}
 ```
 
@@ -93,7 +118,7 @@ If the build was not successful, then the package should be moved out of the
 fixed. If this is not done then future builds will fail as they the Conda build
 process builds **all** recipes in the directory, not just a single package.
 
-!!! warning
+!!! warning "Multiple builds may be required"
 
     If this is the first time you are building a package which has multiple
     unbuilt dependencies (e.g. if all packages are being re-built for a new
@@ -164,9 +189,9 @@ index b6739660..197afdd9 100644
      qtpy
 ```
 
-Patches can easily be created by cloning the repository, fixing the file, and
-then running  `git diff > ${PATCH_NAME}.patch`. This will output a patch file
-which can be added to the recipe directory for the package.
+Patches can be created by cloning the repository, fixing the file, and then
+running  `git diff > ${PATCH_NAME}.patch`. This will output a patch file which
+can be added to the recipe directory for the package.
 
 Then you need to add a `patches` section to the `meta.yaml` file:
 
@@ -177,3 +202,6 @@ source:
   patches:
     - pyqt-requirement.patch  # Add this line
 ```
+
+Now when the package is built, the patch will be applied, changing the package
+name to the expected one, and the `pip check` will pass.

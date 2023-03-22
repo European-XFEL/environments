@@ -33,11 +33,16 @@ extra_css:
 
 nav:
   - index.md
-  - Environments:
-    - 'environments.md'
+  - Using Environments: 'environments.md'
+  - What's Available:
     - Environment List:
       - "environments/*.md"
-  - Application: 'applications.md'
+    - Application List:
+      - "applications/*.md"
+    - Module List:
+      - "modules/*.md"
+    - Recipe List:
+      - "recipes/*.md"
   - Maintenance:
     - Environment Management: 'maintenance/environments.md'
     - Recipe Creation: 'maintenance/recipes.md'

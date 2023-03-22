@@ -19,32 +19,29 @@ def generate_table(packages, lock_dict):
 
 
 for environment in environments:
-    print("Generating", environment.name)
-    lock_file = environment / "conda-lock.yml"
-    base_file = environment / "base.yml"
-    custom_file = environment / "custom.yml"
-
     name = environment.name
-    filename = f"environments/{name}.md"
+    print("Generating", name)
 
-    lock = yaml.safe_load(lock_file.read_text())
-    base = yaml.safe_load(base_file.read_text()) if base_file.exists() else None
-    custom = yaml.safe_load(custom_file.read_text()) if custom_file.exists() else None
+    files = {f: environment / f for f in ("base.yml", "custom.yml", "conda-lock.yml")}
+    files = {k: v for k, v in files.items() if v.exists()}
 
-    lock_dict = {dep["name"]: dep["version"] for dep in lock["package"]}
+    page = f"environments/{name}.md"
 
-    with mkdocs_gen_files.open(filename, "w") as f:
+    yamls = {k: yaml.safe_load(v.read_text()) for k, v in files.items() if v.exists()}
+
+    lock_dict = {
+        dep["name"]: dep["version"] for dep in yamls["conda-lock.yml"]["package"]
+    }
+
+    with mkdocs_gen_files.open(page, "w") as f:
         text = f"# {name}\n"
 
-        if base:
-            text += "## Base Packages\n"
-            text += generate_table(base["dependencies"], lock_dict)
+        for category in ["base.yml", "custom.yml"]:
+            if category in yamls:
+                text += f"\n## {category}\n"
+                text += generate_table(yamls[category]["dependencies"], lock_dict)
 
-        if custom:
-            text += "## Custom Packages\n"
-            text += generate_table(custom["dependencies"], lock_dict)
-
-        text += "## All Package\n"
+        text += "## conda-lock.yml\n"
         text += "| Package | Version |\n"
         text += "| --- | --- |\n"
         for package, version in lock_dict.items():
@@ -52,9 +49,9 @@ for environment in environments:
 
         f.write(text)
 
-    mkdocs_gen_files.set_edit_path(filename, "gen_pages.py")
+    mkdocs_gen_files.set_edit_path(page, "gen_pages.py")
 
-    ENVIRONMENTS_DICT[name] = filename
+    ENVIRONMENTS_DICT[name] = page
 
 mkdocs_gen_files.set_edit_path("environments.md", "gen_pages.py")
 
@@ -63,8 +60,7 @@ index = index_file.read_text()
 
 with mkdocs_gen_files.open("environments.md", "w") as f:
     text = "".join(
-        f"- [{name}]({filename})\n"
-        for name, filename in ENVIRONMENTS_DICT.items()
+        f"- [{name}]({filename})\n" for name, filename in ENVIRONMENTS_DICT.items()
     )
 
     f.write(index.replace("{{ ENVIRONMENT_LIST }}", text))
