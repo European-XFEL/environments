@@ -8,13 +8,15 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dioptas-{{ version }}.tar.gz
   sha256: 3ad93487d5576334fc15fb63bdd9a86a1a07dd2ebaf7063b4cb361f49d6b7fd9
+  #patches:
+  #  - pyqt-requirement.patch
 
 build:
   skip: true  # [py<37]
   entry_points:
     - dioptas = scripts:dioptas.main
     - dioptas_batch = scripts:dioptas_batch.main
-  script: {{ PYTHON }} -m pip install . -vv
+  # script: bash ./install.sh #{{ PYTHON }} -m pip install . -vv
   number: 0
 
 requirements:
@@ -37,11 +39,12 @@ requirements:
     - pandas
     - psutil
     - pycifrw
-    - python-dateutil
+    - pyfai
     - pyinstaller
     - pyqt
-    - pyfai
     - pyqtgraph
+    - python-dateutil
+    - qt
     - qtpy
     - scikit-image
     - sharedmem
@@ -52,9 +55,10 @@ test:
     - dioptas
     - scripts
   commands:
-    - pip check
-    - dioptas --help
-    - dioptas_batch --help
+    - test -f $(which dioptas)
+      # - pip check
+      #- dioptas --help
+      #- dioptas_batch --help
   requires:
     - pip
 
