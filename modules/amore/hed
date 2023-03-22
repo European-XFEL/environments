@@ -12,9 +12,9 @@ module-whatis  "Setup environment for DAMNIT"
 
 if { [ module-info mode load ] } {
     system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'amore/beta'"
-    prepend-path PATH            /gpfs/exfel/sw/software/xfel_anaconda3/amore-hed/conda_env/bin/
-    prepend-path LD_LIBRARY_PATH /gpfs/exfel/sw/software/xfel_anaconda3/amore-hed/conda_env/lib
-    setenv _CONDA_ROOT           /gpfs/exfel/sw/software/xfel_anaconda3/amore-hed/conda_env/bin/
+    prepend-path PATH            /gpfs/exfel/sw/software/mambaforge/22.11/envs/amore_hed/bin/
+    prepend-path LD_LIBRARY_PATH /gpfs/exfel/sw/software/mambaforge/22.11/envs/amore_hed/lib
+    setenv _CONDA_ROOT           /gpfs/exfel/sw/software/mambaforge/22.11/envs/amore_hed/bin/
 
     # puts stdout "/gpfs/exfel/sw/software/xfel_anaconda3/amore-mid/env/bin/activate;"
 }
