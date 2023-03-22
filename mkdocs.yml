@@ -33,7 +33,10 @@ extra_css:
 
 nav:
   - index.md
-  - Environments: 'environments.md'
+  - Environments:
+    - 'environments.md'
+    - Environment List:
+      - "environments/*.md"
   - Application: 'applications.md'
   - Maintenance:
     - Environment Management: 'maintenance/environments.md'
@@ -42,7 +45,11 @@ nav:
 
 plugins:
   - search
+  # - git-revision-date-localized
   - literate-nav
+  - gen-files:
+      scripts:
+        - ./docs/gen_environments.py
 
 markdown_extensions:
   - abbr
