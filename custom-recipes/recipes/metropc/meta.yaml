@@ -1,0 +1,47 @@
+{% set name = "metropc" %}
+{% set version = "1.4.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  # path: /gpfs/exfel/sw/software/xfel_anaconda3/mambaforge-22.9/conda-recipes/src/metropc
+  git_url: git+ssh://git.xfel.eu/karaboDevices/metropc.git
+  git_depth: 1
+
+build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
+
+requirements:
+  host:
+    - python
+    - pip
+    - cython
+    - gcc
+    - numpy
+  run:
+    - python
+    - msgpack-python
+    - numpy
+    - scipy
+    - xarray
+
+test:
+  imports:
+    - metropc
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  summary: Programmable event processing framework
+  license: MIT & Apache-2.0
+  dev_url: https://git.xfel.eu/karaboDevices/metropc.git
+
+extra:
+  recipe-maintainers:
+    - RobertRosca

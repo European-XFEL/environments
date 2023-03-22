@@ -1,0 +1,44 @@
+{% set name = "h5glance" %}
+{% set version = "0.8" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/h5glance-{{ version }}.tar.gz
+  sha256: 179b768d8961b26b06c902e550ffd152da29261d85ee7a6b873dd297932c7092
+
+build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
+
+requirements:
+  host:
+    - python >=3.6
+    - pip
+    - flit-core
+  run:
+    - python >=3.6
+    - h5py >=2.10
+    - htmlgen
+
+test:
+  imports:
+    - h5glance
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  home: https://pypi.org/project/h5glance/
+  summary: Explore HDF5 files in an HTML view
+  dev_url: https://github.com/European-XFEL/h5glance
+  license: BSD-3-Clause
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - RobertRosca

@@ -1,0 +1,70 @@
+{% set name = "dioptas" %}
+{% set version = "0.5.6" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dioptas-{{ version }}.tar.gz
+  sha256: 3ad93487d5576334fc15fb63bdd9a86a1a07dd2ebaf7063b4cb361f49d6b7fd9
+
+build:
+  skip: true  # [py<37]
+  entry_points:
+    - dioptas = scripts:dioptas.main
+    - dioptas_batch = scripts:dioptas_batch.main
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+  host:
+    - python
+    - setuptools >=45
+    - setuptools-scm >=6.2
+    - cython
+    - pip
+  run:
+    - python
+    - cython
+    - extra-data
+    - future
+    - h5py
+    - hdf5plugin
+    - lmfit
+    - pandas
+    - psutil
+    - pycifrw
+    - python-dateutil
+    - pyinstaller
+    - pyqt
+    - pyfai
+    - pyqtgraph
+    - qtpy
+    - scikit-image
+    - sharedmem
+    - watchdog
+
+test:
+  imports:
+    - dioptas
+    - scripts
+  commands:
+    - pip check
+    - dioptas --help
+    - dioptas_batch --help
+  requires:
+    - pip
+
+about:
+  home: https://github.com/Dioptas/Dioptas
+  summary: GUI program for reduction and exploration of 2D X-ray diffraction data
+  dev_url: https://github.com/dioptas/dioptas
+  license: GPL-3.0
+  license_file: license.txt
+
+extra:
+  recipe-maintainers:
+    - AddYourGitHubIdHere

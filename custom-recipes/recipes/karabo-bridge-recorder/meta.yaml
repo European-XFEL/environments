@@ -1,0 +1,47 @@
+{% set name = "karabo_bridge_recorder" %}
+{% set version = "0.2" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  # path: /gpfs/exfel/sw/software/xfel_anaconda3/mambaforge-22.9/conda-recipes/src/karabo-bridge-recorder
+  git_url: git+ssh://git.xfel.eu/dataAnalysis/karabo-bridge-recorder
+  git_depth: 1
+
+build:
+  entry_points:
+    - karabo-bridge-record = karabo_bridge_recorder.record:main
+    - karabo-bridge-replay = karabo_bridge_recorder.replay:main
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
+
+requirements:
+  host:
+    - pip
+    - python
+    - flit-core
+  run:
+    - python
+    - pyzmq
+
+test:
+  imports:
+    - karabo_bridge_recorder
+  commands:
+    - pip check
+    - karabo-bridge-record --help
+    - karabo-bridge-replay --help
+  requires:
+    - pip
+
+about:
+  summary: Record and play back data streams from Karabo bridge
+  license: Other
+  dev_url: https://git.xfel.eu:10022/tmichela/EXtra-HED.git
+
+extra:
+  recipe-maintainers:
+    - RobertRosca

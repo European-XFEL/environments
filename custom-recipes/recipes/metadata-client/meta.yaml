@@ -1,0 +1,45 @@
+{% set name = "metadata-client" %}
+{% set version = "3.9.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/metadata_client-{{ version }}.tar.gz
+  sha256: bfbcfb40c5c335e6e2025da897e0ee74ff25032c6c0dc8ed1b097d60b5b3505e
+
+build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
+
+requirements:
+  host:
+    - python >=3.7
+    - pip
+  run:
+    - python >=3.7
+    - oauthlib
+    - requests
+    - requests-oauthlib
+    - oauth2-xfel-client >=6.1
+    - pytz
+
+test:
+  imports:
+    - metadata_client
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  home: https://git.xfel.eu/gitlab/ITDM/metadata_client
+  summary: Python Client for European XFEL Metadata Catalogue Web App available at https://in.xfel.eu/metadata
+  license: MIT
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - RobertRosca

@@ -1,0 +1,46 @@
+{% set name = "findxfel" %}
+{% set version = "0.1.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  path: /gpfs/exfel/sw/software/xfel_anaconda3/mambaforge-22.9/conda-recipes/src/findxfel
+  #git_url: git+ssh://git.xfel.eu/dataAnalysis/findxfel
+  #depth: 1
+
+build:
+  entry_points:
+    - findxfel = findxfel:main
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
+
+requirements:
+  host:
+    - python
+    - pip
+    - flit-core
+  run:
+    - python
+
+test:
+  imports:
+    - findxfel
+  commands:
+    - pip check
+    - findxfel --help
+  requires:
+    - pip
+
+about:
+  home: https://git.xfel.eu/gitlab/dataAnalysis/findxfel
+  summary: Find an EuXFEL proposal/run directory on Maxwell
+  license: BSD-3-Clause
+  license_file:
+    - LICENSE
+
+extra:
+  recipe-maintainers:
+    - RobertRosca

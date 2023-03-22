@@ -1,0 +1,46 @@
+{% set name = "princess" %}
+{% set version = "0.6" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/princess-{{ version }}.tar.gz
+  sha256: 23d076b9d5a17ba61c38cf46da26fe6fa6805ab2c36957ceaf89526e2aaf4cbe
+
+build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
+
+requirements:
+  host:
+    - python >=3.7
+    - pip
+    - flit-core
+  run:
+    - python >=3.7
+    - nbclient
+    - nbformat
+    - jupyter_client >=6.1.0
+    - ipykernel
+
+test:
+  imports:
+    - princess
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  home: https://pypi.org/project/princess/
+  summary: Please Run IPython Notebook in the Current Environment with Stdout & Stderr
+  dev_url: https://github.com/European-XFEL/princess
+  license: BSD-3-Clause
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - RobertRosca

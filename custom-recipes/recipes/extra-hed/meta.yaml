@@ -1,0 +1,46 @@
+{% set name = "EXtra-HED" %}
+{% set version = "0.1.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  # path: /gpfs/exfel/sw/software/xfel_anaconda3/mambaforge-22.9/conda-recipes/src/EXtra-HED
+  git_url: git+ssh://git@git.xfel.eu:10022/tmichela/EXtra-HED.git
+  git_depth: 1
+
+build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
+
+requirements:
+  build:
+    - git
+  host:
+    - python
+    - pip
+  run:
+    - extra-data
+    - h5py
+    - numpy
+    - python
+    - scipy
+
+test:
+  imports:
+    - extra_hed
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  summary: Analysis toolbox for the HED instrument at EuXFEL.
+  license: BSD-3-Clause
+  dev_url: https://git.xfel.eu:10022/tmichela/EXtra-HED.git
+
+extra:
+  recipe-maintainers:
+    - RobertRosca

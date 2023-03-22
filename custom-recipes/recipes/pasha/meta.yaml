@@ -1,0 +1,41 @@
+{% set name = "pasha" %}
+{% set version = "0.1.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pasha-{{ version }}.tar.gz
+  sha256: a032687bb11a9609057602daa93ff59878153cc67473ed45923634cd35332592
+
+build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
+
+requirements:
+  host:
+    - python >=3.6
+    - pip
+  run:
+    - python >=3.6
+    - numpy
+
+test:
+  imports:
+    - pasha
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  home: https://github.com/European-XFEL/pasha
+  summary: Tools to parallelize operations on large data sets using shared memory with zero copies.
+  license: BSD-3-Clause
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - RobertRosca

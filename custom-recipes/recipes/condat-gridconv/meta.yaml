@@ -1,0 +1,43 @@
+{% set name = "condat-gridconv" %}
+{% set version = "latest" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/European-XFEL/condat-gridconv/archive/{{ version }}.tar.gz
+  sha256: 2cbdf516bde34b80f7be0a56cb3dee580cfc990d07ce9a46ca0eb6bd9cf18277
+
+build:
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+  host:
+    - python
+    - setuptools
+    - wheel
+    - cython
+    - pip
+  run:
+    - python
+    - numpy
+
+test:
+  imports:
+    - condat_gridconv
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  license: ''
+  dev_url: https://github.com/European-XFEL/condat-gridconv
+
+extra:
+  recipe-maintainers:
+    - RobertRosca

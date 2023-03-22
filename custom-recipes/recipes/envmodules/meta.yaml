@@ -1,0 +1,41 @@
+{% set name = "envmodules" %}
+{% set version = "0.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/envmodules-{{ version }}.tar.gz
+  sha256: e6c41c75d28837d70d886028178077fa80026a8ceeb9a64eb4c7346e838fb76a
+
+build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
+
+requirements:
+  host:
+    - python
+    - pip
+    - flit-core
+  run:
+    - python
+
+test:
+  imports:
+    - envmodules
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  home: https://github.com/European-XFEL/envmodules
+  summary: Python wrapper around environment modules ("module load")
+  license: BSD-3-Clause
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - RobertRosca
