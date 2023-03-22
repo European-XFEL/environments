@@ -15,7 +15,7 @@ Each environment directory will have two or three files:
 
 Environments exist in an installation of Conda, setting up a new Conda
 installation is very rarely required and is covered in the
-[Installation](./installation.md) section.
+[Instances](./instances.md) section.
 
 ## Creating a New Environment
 

@@ -5,7 +5,7 @@ or via a repository URL, then a recipe should be made for it to allow for
 installation into the Conda environments.
 
 Creation of the recipes can be automated via
-[Grayskull](https://github.com/conda-incubator/grayskull), which attempt to
+[Grayskull](https://github.com/conda-incubator/grayskull), which will attempt to
 convert the package setup to a Conda recipe, and implement some basic testing as
 part of the build phase (check that importing the package works, tests that
 entry points work), and also run
@@ -136,4 +136,44 @@ requirements:
     - flit-core  # Add this line
   run:
     - python
+```
+
+### Different Package Names on PyPI and Conda
+
+Sometimes you'll run into a package that has a different name on PyPI than on
+Conda. For example, `pyqt5` is `pyqt` on Conda. Grayskull can deal with these
+differences, however the `pip check` will fail as the package will require
+`pyqt5` but only `pyqt` will be installed.
+
+The easiest way to deal with this is to create a patch for the package, changing
+the name just so that the check can run correctly. For example:
+
+```diff
+diff --git a/setup.cfg b/setup.cfg
+index b6739660..197afdd9 100644
+--- a/setup.cfg
++++ b/setup.cfg
+@@ -46,7 +46,7 @@ install_requires =
+     pycifrw
+     python-dateutil
+     pyinstaller
+-    pyqt5
++    pyqt
+     pyfai
+     pyqtgraph
+     qtpy
+```
+
+Patches can easily be created by cloning the repository, fixing the file, and
+then running  `git diff > ${PATCH_NAME}.patch`. This will output a patch file
+which can be added to the recipe directory for the package.
+
+Then you need to add a `patches` section to the `meta.yaml` file:
+
+```yaml
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dioptas-{{ version }}.tar.gz
+  sha256: 3ad93487d5576334fc15fb63bdd9a86a1a07dd2ebaf7063b4cb361f49d6b7fd9
+  patches:
+    - pyqt-requirement.patch  # Add this line
 ```

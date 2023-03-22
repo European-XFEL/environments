@@ -25,6 +25,9 @@ dependencies = [
     "mkdocs-material~=8.5.10",
     "mkdocs-section-index~=0.3.4",
     "mkdocs-literate-nav~=0.5.0",
+    "mkdocs-git-revision-date-localized-plugin",
+    "mkdocs-gen-files",
+    "PyYAML",
 ]
 
 [tool.hatch.envs.default.scripts]
