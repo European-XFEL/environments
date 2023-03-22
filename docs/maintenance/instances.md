@@ -48,7 +48,6 @@ Now that the installation has been created and the init file is present, create 
 
 ```tcl
 #%Module 1.0
-
 module-whatis  "Mambaforge 22.11"
 
 proc ModulesHelp {} {
@@ -72,6 +71,8 @@ if { [ module-info mode load ] } {
     puts stderr    "Due to how conda-init works, conda cannot be deactivated through the module system."
 }
 ```
+
+The `xsoft` account is a special case in the activation script, as it is the account performing changes to the environments, so it should not have the `CONDA_PKGS_DIRS` and `CONDA_ENVS_DIRS` environment variables set to its home directory.
 
 Now running `module load mambaforge/22.11` will activate the installation.
 
