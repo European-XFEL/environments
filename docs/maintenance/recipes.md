@@ -1,30 +1,16 @@
 # Custom Recipes
 
-If a package does not already have a Conda recipe and is only available on PyPI
-or via a repository URL, then a recipe should be made for it to allow for
-installation into the Conda environments.
+If a package does not already have a Conda recipe and is only available on PyPI or via a repository URL, then a recipe should be made for it to allow for installation into the Conda environments.
 
-Creation of the recipes can be automated via
-[Grayskull](https://github.com/conda-incubator/grayskull), which will attempt to
-convert the package setup to a Conda recipe, and implement some basic testing as
-part of the build phase (check that importing the package works, tests that
-entry points work), and also run
-[conda-verify](https://github.com/conda/conda-verify) to check package
-correctness.
+Creation of the recipes can be automated via [Grayskull](https://github.com/conda-incubator/grayskull), which will attempt to convert the package setup to a Conda recipe, and implement some basic testing as part of the build phase (check that importing the package works, tests that entry points work), and also run [conda-verify](https://github.com/conda/conda-verify) to check package correctness.
 
-Once a recipe has been created, the package must be built and added to a
-directory that the relevant environment indexes. This can be done with `conda
-mambabuild ...` (more info in next section), which will attempt to build the
-package and execute any tests that are included in the recipe.
+Once a recipe has been created, the package must be built and added to a directory that the relevant environment indexes. This can be done with `conda mambabuild ...` (more info in next section), which will attempt to build the package and execute any tests that are included in the recipe.
 
-If Grayskull fails to create a valid recipe, then the Conda documentation on
-creating recipes should be checked.
+If Grayskull fails to create a valid recipe, then the Conda documentation on creating recipes should be checked.
 
 ## Creating a Recipe
 
-First, you should load a `mambaforge` base environment, which will provide all
-the tools required to build recipes. This can be done with `module load exfel
-mambaforge`.
+First, you should load a `mambaforge` base environment, which will provide all the tools required to build recipes. This can be done with `module load exfel mambaforge`.
 
 Recipes can be created via the Grayskull CLI:
 
@@ -32,36 +18,29 @@ Recipes can be created via the Grayskull CLI:
 grayskull pypi --recursive ${PYPI_NAME_OR_URL}
 ```
 
-The `--recursive` flag is used to tell Grayskull to generate recipes for any
-dependencies of the package which are also not in a Conda channel.
+The `--recursive` flag is used to tell Grayskull to generate recipes for any dependencies of the package which are also not in a Conda channel.
 
 Note that the argument can be either:
 
-- The name of the package on PyPI, which **must** contain an `sdist` as those
-  are used to generate the recipes
-- The URL to a hosted git repository, with a tag or release. If none is
-  specified it will default to using the `latest` tag, which **must** exist
+- The name of the package on PyPI, which **must** contain an `sdist` as those are used to generate the recipes
+- The URL to a hosted git repository, with a tag or release. If none is specified it will default to using the `latest` tag, which **must** exist
 - The path to a `sdist` archive
 
 ### From PyPI With an `sdist`
 
-If the package has releases on PyPI with `sdists`, then grayskull has a good
-chance of working successfully without any additional work. For example:
+If the package has releases on PyPI with `sdists`, then grayskull has a good chance of working successfully without any additional work. For example:
 
 ```sh
 grayskull pypi extra-data
 ```
 
-Will generate a recipe for the `extra-data` package that can be used without any
-modifications.
+Will generate a recipe for the `extra-data` package that can be used without any modifications.
 
 ### From a Git Repository (no `sdist`)
 
-However if the package does not have a release with an `sdist` then some
-additional work has to be done.
+However if the package does not have a release with an `sdist` then some additional work has to be done.
 
-In the 'worst case' scenario where a package has no releases or tags, and is not
-on PyPI with an `sdist`, then you must build the `sdist` manually. To do this:
+In the 'worst case' scenario where a package has no releases or tags, and is not on PyPI with an `sdist`, then you must build the `sdist` manually. To do this:
 
 1. Clone the package
 2. Go into the package directory
@@ -81,16 +60,11 @@ grayskull pypi ./h5writer-0.8.0
 
 Once a new recipe is created, it must be built to create an installable package.
 
-If the Conda installation the package is being built for is new, you will have
-to tell it to use the build target directory as a channel, so that any packages
-you have built will be installable.
+If the Conda installation the package is being built for is new, you will have to tell it to use the build target directory as a channel, so that any packages you have built will be installable.
 
 !!! note inline end
 
-    `BUILD_DIRECTORY` is the directory where the recipes are being built to,
-    this will be a `conda-bld` directory in the Conda installation directory.
-    For example that is `/gpfs/exfel/sw/software/mambaforge/22.11/conda-bld` for
-    the `mambaforge/22.11` instance.
+    `BUILD_DIRECTORY` is the directory where the recipes are being built to, this will be a `conda-bld` directory in the Conda installation directory. For example that is `/gpfs/exfel/sw/software/mambaforge/22.11/conda-bld` for the `mambaforge/22.11` instance.
 
 ```sh
 conda config --env --add channels ${BUILD_DIRECTORY}
@@ -109,34 +83,21 @@ conda mambabuild \
   ${RECIPE_DIRECTORY}  # Directory containing recipes
 ```
 
-If the build runs successfully, then the package will be placed into the build
-directory, and it will be installable by the Conda instance as the directory is
-an indexed channel.
+If the build runs successfully, then the package will be placed into the build directory, and it will be installable by the Conda instance as the directory is an indexed channel.
 
-If the build was not successful, then the package should be moved out of the
-`recipes` directory, and can be added to a `broken` directory while it is being
-fixed. If this is not done then future builds will fail as they the Conda build
-process builds **all** recipes in the directory, not just a single package.
+If the build was not successful, then the package should be moved out of the `recipes` directory, and can be added to a `broken` directory while it is being fixed. If this is not done then future builds will fail as they the Conda build process builds **all** recipes in the directory, not just a single package.
 
 !!! warning "Multiple builds may be required"
 
-    If this is the first time you are building a package which has multiple
-    unbuilt dependencies (e.g. if all packages are being re-built for a new
-    installation) then you can expect the build to fail, as the package may
-    attempt to be build before its dependencies are built.
+    If this is the first time you are building a package which has multiple unbuilt dependencies (e.g. if all packages are being re-built for a new installation) then you can expect the build to fail, as the package may attempt to be build before its dependencies are built.
 
-    The easiest way around this is to attempt the build again, as the build
-    process will skip any packages which have already been built. This may need
-    to be done multiple times until all dependencies are built.
+    The easiest way around this is to attempt the build again, as the build process will skip any packages which have already been built. This may need to be done multiple times until all dependencies are built.
 
 ## Common Issues
 
 ### License Missing Errors
 
-If a license could not automatically be determined the license file will be set
-to `PLEASE_ADD_LICENSE_FILE` and the build will fail. To fix this, you need to
-add the license file to the recipe directory and add the following to the
-`meta.yaml` file:
+If a license could not automatically be determined the license file will be set to `PLEASE_ADD_LICENSE_FILE` and the build will fail. To fix this, you need to add the license file to the recipe directory and add the following to the `meta.yaml` file:
 
 ```yaml
 about:
@@ -147,9 +108,7 @@ Alternatively, delete the `license_file` line from the `meta.yaml` file.
 
 ### Flit Packages
 
-There can be issues with the generation of recipes for packages that use `flit`
-as the build system. For these you need to edit the `meta.yaml` file and add
-`flit-core` as a requirement manually.
+There can be issues with the generation of recipes for packages that use `flit` as the build system. For these you need to edit the `meta.yaml` file and add `flit-core` as a requirement manually.
 
 For example:
 
@@ -165,13 +124,9 @@ requirements:
 
 ### Different Package Names on PyPI and Conda
 
-Sometimes you'll run into a package that has a different name on PyPI than on
-Conda. For example, `pyqt5` is `pyqt` on Conda. Grayskull can deal with these
-differences, however the `pip check` will fail as the package will require
-`pyqt5` but only `pyqt` will be installed.
+Sometimes you'll run into a package that has a different name on PyPI than on Conda. For example, `pyqt5` is `pyqt` on Conda. Grayskull can deal with these differences, however the `pip check` will fail as the package will require `pyqt5` but only `pyqt` will be installed.
 
-The easiest way to deal with this is to create a patch for the package, changing
-the name just so that the check can run correctly. For example:
+The easiest way to deal with this is to create a patch for the package, changing the name just so that the check can run correctly. For example:
 
 ```diff
 diff --git a/setup.cfg b/setup.cfg
@@ -189,9 +144,7 @@ index b6739660..197afdd9 100644
      qtpy
 ```
 
-Patches can be created by cloning the repository, fixing the file, and then
-running  `git diff > ${PATCH_NAME}.patch`. This will output a patch file which
-can be added to the recipe directory for the package.
+Patches can be created by cloning the repository, fixing the file, and then running  `git diff > ${PATCH_NAME}.patch`. This will output a patch file which can be added to the recipe directory for the package.
 
 Then you need to add a `patches` section to the `meta.yaml` file:
 
@@ -203,5 +156,4 @@ source:
     - pyqt-requirement.patch  # Add this line
 ```
 
-Now when the package is built, the patch will be applied, changing the package
-name to the expected one, and the `pip check` will pass.
+Now when the package is built, the patch will be applied, changing the package name to the expected one, and the `pip check` will pass.
