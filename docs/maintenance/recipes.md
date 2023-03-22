@@ -93,7 +93,7 @@ If the build was not successful, then the package should be moved out of the `re
 
     The easiest way around this is to attempt the build again, as the build process will skip any packages which have already been built. This may need to be done multiple times until all dependencies are built.
 
-## Common Issues
+## FAQ
 
 ### License Missing Errors
 

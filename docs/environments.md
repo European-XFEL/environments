@@ -26,9 +26,15 @@ EuXFEL maintained modules are in their own scope, which can be activated by runn
 
 The main module of interest for Python users will be `mamba`, which will load a python environment with many commonly used packages that we expect will be required for data analysis, as well as our own packages. A full list of software available within an environment is available on the documentation pages for that environment:
 
-{{ ENVIRONMENT_LIST }}
+To facilitate reproducibility we create a new environment for every cycle. This way, if you want to use the same software as a previous cycle, or if the current cycle causes issues with your code, you can easily switch to a previous environment.
 
-## Working with Mamba (Conda)
+The current cycle is always available as `mamba`, and previous cycles are available as `mamba/$CYCLE`, where `$CYCLE` is the cycle number. For example, to load the environment for cycle 202301, you can run:
+
+```bash
+module load exfel mamba/202301
+```
+
+## Using our Mamba (Conda) Environments
 
 !!! warning "Do **not** allow `conda init` to modify shell rc files!"
 
@@ -36,46 +42,46 @@ The main module of interest for Python users will be `mamba`, which will load a 
 
 Instead of having `conda init` commands in your `.bashrc`, you should use the more flexible approach of loading a specific module which runs conda init at load time.
 
-For example, to load the 202301 environment, you can run:
+For example, to load the our most current environment, you can run:
 
 ```bash
-module load exfel mamba/202301
+module load exfel mamba
 ```
 
 Which will execute the code that `conda init` would execute, and then load that specific environment for you in one command.
 
 !!! info "More Information"
 
-    - [Maxwell Conda Documentation](https://confluence.desy.de/pages/viewpage.action?pageId=242328861#Conda/MambaPython-Workingwithconda/mambaonMaxwell)
+    - [Maxwell Conda Documentation](https://confluence.desy.de/pages/viewpage.action?pageId=2423.9861#Conda/MambaPython-Workingwithconda/mambaonMaxwell)
     - [Conda Documentation](https://docs.conda.io/en/latest/)
 
-### Creating Your Own Environments
+## Environment List
+
+The "What's Available" section contains a list of our environments, modules, and recipes (conda packages not available on conda or conda forge). This list is automatically generated based on the contents of the [environments](TODO) and [modules](TODO) directories in this repository.
+
+Currently available mamba environments are:
+
+{{ ENVIRONMENT_LIST }}
+
+## Creating Your Own Environments
+
+Our environments are not writeable by users, so you cannot add packages to them. Instead you can create your own environment from scratch, or use one of our environments as a base to start from.
+
+### Creating a New Conda Environment
 
 To create a new environment, you can use the `mamba create` command. For example:
 
 ```bash
-mamba create -n myenv python=3.8
+mamba create -n myenv python=3.9
 ```
 
-This will create a new environment called `myenv` with Python 3.8 installed, which can then be activated with `mamba activate myenv`. From here you can install whatever packages you need.
+This will create a new environment called `myenv` with Python 3.9 installed, which can then be activated with `mamba activate myenv`. From here you can install whatever packages you need.
 
 !!! warning "Do not mix conda and pip"
 
     Conda and pip **do not** play nicely together. If you install a package with pip, then conda will not be able to manage that package, and the environment will likely become inconsistent and broken. It is recommended to stick to either `mamba` **or** `pip` for installing packages, not both.
 
     If you need to use both, then make sure to install the pip packages **after all conda packages**.
-
-### Creating Jupyter Kernels for Environments
-
-If you want to use Jupyter with a specific environment, you can create a kernel for it, `ipykernel` is required for this. For example, to create a kernel for `myenv`:
-
-```bash
-mamba activate myenv
-mamba install ipykernel
-python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
-```
-
-This will create a kernel called `Python (myenv)` which can be selected in the Jupyter notebook interface.
 
 ### Layering Environments - Cloning
 
@@ -84,9 +90,11 @@ If you want to create an environment that is based on another environment, you c
 ```bash
 module load exfel mamba/202301
 mamba create --clone 202301 --name my-202301
+mamba activate my-202301
+mamba install ...
 ```
 
-This will create a new environment called `myenv2` which is identical to `myenv`, but is saved in your own directory. This is useful if you want to have an existing environment as a base, but add/change some of the installed packages.
+This will create a new environment called `my-202301` which is identical to `202301`, but is saved in your own directory. This is useful if you want to have an existing environment as a base, but add/change some of the installed packages.
 
 ### Layering Environments - `--system-site-packages`
 
@@ -101,12 +109,52 @@ If you want to create an environment that is based on another environment, but y
 
 ```bash
 mamba activate myenv
-python3 -m venv --system-site-packages my-light-202301
+python3 -m venv --system-site-packages my-202301
+source my-202301/bin/activate
+pip install ...
 ```
 
-This will create a new environment called `myenv2` which is able to load packages from `myenv`, but can still be changed. Note that this is not a conda environment, it is a python virtual environment, so only `pip` packages can be installed.
+This will create a new environment called `my-202301` which is able to load packages from `202301`, but can still be changed. Note that this is not a conda environment, it is a python virtual environment, so only `pip` packages can be installed.
 
-## Common Issues
+### Adding Individual Packages to an Environment
+
+!!! warning "Not recommended, may cause inconsistent environments!"
+
+    This approach is not recommended, as it is possible to get an inconsistent environment where your local packages are not compatible with the loaded environment.
+
+If you want to add a package to an existing environment, it's possible to load the environment via `module load exfel mamba`, and then run `pip install ...` commands.
+
+This will install the package into your local `~/.local/lib/python3.X/site-packages` directory, any packages in this directory will be importable when you activate the environment.
+
+However, this is not a recommended approach, as it is possible to get an inconsistent environment - if you install a package with `pip` you may end up locally installing incompatible packages with the ones in the environment, leading to issues.
+
+If you have done this and are experiencing issues then you can temporarily move the `.../site-packages` directory and see if that solves the issue. If it does then it was caused by some incompatible packages.
+
+## Creating Jupyter Kernels for Environments
+
+If you want to use Jupyter with a specific environment, you can create a kernel for it, `ipykernel` is required for this. For example, to create a kernel for `myenv`:
+
+```bash
+mamba activate myenv
+mamba install ipykernel
+python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
+```
+
+This will create a kernel called `Python (myenv)` which can be selected in the Jupyter notebook interface.
+
+## FAQ
+
+### Interactive Plotting Issues in Jupyter Notebooks
+
+If you have issues with interactive plotting in Jupyter notebooks it is likely that your environment has has some packages installed which are not compatible with the environment that is serving Jupyter.
+
+It is recommended to pin the following packages to these versions:
+
+```text
+- ipympl=0.7.0
+- ipywidgets=7.6.3
+- matplotlib=3.4.2
+```
 
 ### Conda Packages and Environments Filling Home Directory
 
@@ -129,3 +177,27 @@ This will place the packages in the GPFS scratch directory. Note that scratch me
 !!! warning "Scratch may be cleared periodically"
 
     Scratch may be cleared periodically, this in itself isn't an issue as the packages can easily be re-installed **if you keep a record of the environment files**. However, if you don't keep a record of the environment files, then you will have to attempt to re-create your environments from memory.
+
+Another thing to note is that the environment variables `CONDA_PKGS_DIRS` and `CONDA_ENVS_DIRS` take precedence over values set in `.condarc`.
+
+### Using Conda Environments with SLURM
+
+One way to use the environment in a SLURM batch script is to activate the relevant module and run whatever commands you would normally run interactively:
+
+```bash
+#!/bin/bash
+#SBATCH --partition=upex
+#SBATCH --time=00:10:00
+#SBATCH --nodes=1
+
+unset LD_PRELOAD
+source /etc/profile.d/modules.sh
+
+module load exfel mamba/202301
+
+# Commands here
+```
+
+!!! warning "Load the module instead of depending on paths"
+
+    Instead of activating the module you could call the python executable for that environment directly, however this is not recommended as it depends on the paths of the environment, which may change in the future.
