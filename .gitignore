@@ -1,1 +1,5 @@
 custom-recipes/src
+site/
+
+# Local Netlify folder
+.netlify
