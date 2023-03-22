@@ -43,5 +43,6 @@ about:
   dev_url: https://git.xfel.eu/karaboDevices/metropc.git
 
 extra:
+  notes: Invalid license file removed manually
   recipe-maintainers:
     - RobertRosca

@@ -42,5 +42,6 @@ about:
     - LICENSE
 
 extra:
+  notes: `flit-core` added manually
   recipe-maintainers:
     - RobertRosca

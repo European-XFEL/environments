@@ -42,5 +42,6 @@ about:
   dev_url: https://git.xfel.eu:10022/tmichela/EXtra-HED.git
 
 extra:
+  notes: Invalid license removed manually
   recipe-maintainers:
     - RobertRosca
