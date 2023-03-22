@@ -1,0 +1,66 @@
+---
+site_name: EuXFEL Software Environment Management
+site_description: European XFEL Software Environment Definitions
+site_url: https://rtd.xfel.eu/docs/data-analysis-user-documentation/en/latest/
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  logo: assets/logo.jpeg
+  palette:
+    scheme: preference
+    language: en
+  features:
+    - announce.dismiss
+    - content.tabs.link
+    - navigation.indexes  # section index pages
+    - navigation.top  # back to top button
+    - navigation.tracking
+    - navigation.instant
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - toc.integrate
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+repo_url: https://git.xfel.eu/dataAnalysis/user-documentation
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - index.md
+  - Environments: 'environments.md'
+  - Application: 'applications.md'
+  - Maintenance:
+    - Environment Management: 'maintenance/environments.md'
+    - Recipe Creation: 'maintenance/recipes.md'
+    - Conda Installations: 'maintenance/instances.md'
+
+plugins:
+  - search
+  - literate-nav
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - codehilite
+  - def_list
+  - footnotes
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.emoji
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist
+  - tables
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/European-XFEL

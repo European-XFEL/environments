@@ -1,0 +1,139 @@
+# Custom Recipes
+
+If a package does not already have a Conda recipe and is only available on PyPI
+or via a repository URL, then a recipe should be made for it to allow for
+installation into the Conda environments.
+
+Creation of the recipes can be automated via
+[Grayskull](https://github.com/conda-incubator/grayskull), which attempt to
+convert the package setup to a Conda recipe, and implement some basic testing as
+part of the build phase (check that importing the package works, tests that
+entry points work), and also run
+[conda-verify](https://github.com/conda/conda-verify) to check package
+correctness.
+
+Once a recipe has been created, the package must be built and added to a
+directory that the relevant environment indexes. This can be done with `conda
+mambabuild ...` (more info in next section), which will attempt to build the
+package and execute any tests that are included in the recipe.
+
+If Grayskull fails to create a valid recipe, then the Conda documentation on
+creating recipes should be checked.
+
+## Creating a Recipe
+
+Recipes can be created via the Grayskull CLI:
+
+```sh
+grayskull pypi --recursive ${PYPI_NAME_OR_URL}
+```
+
+The `--recursive` flag is used to tell Grayskull to generate recipes for any
+dependencies of the package which are also not in a Conda channel.
+
+Note that the argument can be either:
+
+- The name of the package on PyPI, which **must** contain an `sdist` as those
+  are used to generate the recipes
+- The URL to a hosted git repository, with a tag or release. If none is
+  specified it will default to using the `latest` tag, which **must** exist
+- The path to a `sdist` archive
+
+If the package has releases on PyPI with `sdists`, then grayskull has a good
+chance of working successfully. However if the package does not have a proper
+release then some additional work has to be done.
+
+In the 'worst case' scenario where a package has no releases or tags, and is not
+on PyPI with an `sdist`, then you must build the `sdist` manually. To do this:
+
+1. Clone the package
+2. Create a gztar sdist - `python3 setup.py sdist --formats=gztar`
+3. Run grayskull on the sdist archive - `grayskull pypi ./${PATH_TO_SDIST}`
+
+A full example of this is:
+
+```sh
+git clone https://github.com/mhantke/h5writer/
+cd h5writer
+python3 setup.py sdist --formats=gztar
+grayskull pypi ./h5writer-0.8.0
+```
+
+## Building the Recipes
+
+Once a new recipe is created, it must be built to create an installable package.
+
+If the Conda installation the package is being built for is new, you will have
+to tell it to use the build target directory as a channel, so that any packages
+you have built will be installable.
+
+```sh
+conda config --add channels ${BUILD_DIRECTORY}
+conda index ${BUILD_DIRECTORY}
+```
+
+As it has better performance, Boa (`mambabuild`) is used for the build process:
+
+```sh
+conda mambabuild \
+  --skip-existing \  # Do not re-build already built packages
+  --python 3.9 \  # Set python version for build
+  --numpy 1.23 \  # Set numpy version for build
+  --no-anaconda-upload \  # Do not attempt to upload package
+  --use-local \  # Use local packages for dependencies
+  ${RECIPE_DIRECTORY}  # Directory containing recipes
+```
+
+If the build runs successfully, then the package will be placed into the build
+directory, and it will be installable by the Conda instance as the directory is
+an indexed channel.
+
+If the build was not successful, then the package should be moved out of the
+`recipes` directory, and can be added to a `broken` directory while it is being
+fixed. If this is not done then future builds will fail as they the Conda build
+process builds **all** recipes in the directory, not just a single package.
+
+!!! warning
+
+    If this is the first time you are building a package which has multiple
+    unbuilt dependencies (e.g. if all packages are being re-built for a new
+    installation) then you can expect the build to fail, as the package may
+    attempt to be build before its dependencies are built.
+
+    The easiest way around this is to attempt the build again, as the build
+    process will skip any packages which have already been built. This may need
+    to be done multiple times until all dependencies are built.
+
+## Common Issues
+
+### License Missing Errors
+
+If a license could not automatically be determined the license file will be set
+to `PLEASE_ADD_LICENSE_FILE` and the build will fail. To fix this, you need to
+add the license file to the recipe directory and add the following to the
+`meta.yaml` file:
+
+```yaml
+about:
+  license_file: LICENSE  # Change or delete this line
+```
+
+Alternatively, delete the `license_file` line from the `meta.yaml` file.
+
+### Flit Packages
+
+There can be issues with the generation of recipes for packages that use `flit`
+as the build system. For these you need to edit the `meta.yaml` file and add
+`flit-core` as a requirement manually.
+
+For example:
+
+```yaml
+requirements:
+  host:
+    - python
+    - pip
+    - flit-core  # Add this line
+  run:
+    - python
+```
