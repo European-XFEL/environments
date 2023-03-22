@@ -35,14 +35,9 @@ nav:
   - index.md
   - Using Environments: 'environments.md'
   - What's Available:
-    - Environment List:
-      - "environments/*.md"
-    - Application List:
-      - "applications/*.md"
-    - Module List:
-      - "modules/*.md"
-    - Recipe List:
-      - "recipes/*.md"
+    - Environment List: 'environments/'
+    - Module List: 'modules/'
+    - Recipe List: 'recipes/'
   - Maintenance:
     - Environment Management: 'maintenance/environments.md'
     - Recipe Creation: 'maintenance/recipes.md'
@@ -50,11 +45,12 @@ nav:
 
 plugins:
   - search
-  # - git-revision-date-localized
   - literate-nav
   - gen-files:
       scripts:
         - ./docs/gen_environments.py
+        - ./docs/gen_modules.py
+        - ./docs/gen_recipes.py
 
 markdown_extensions:
   - abbr

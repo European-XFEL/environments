@@ -3,6 +3,8 @@ from pathlib import Path
 import mkdocs_gen_files
 import yaml
 
+nav = mkdocs_gen_files.Nav()  # type: ignore
+
 environments = (Path(__file__).parent.parent / "environments").glob("*")
 
 ENVIRONMENTS_DICT = {}
@@ -20,8 +22,6 @@ def generate_table(packages, lock_dict):
 
 for environment in environments:
     name = environment.name
-    print("Generating", name)
-
     files = {f: environment / f for f in ("base.yml", "custom.yml", "conda-lock.yml")}
     files = {k: v for k, v in files.items() if v.exists()}
 
@@ -32,6 +32,9 @@ for environment in environments:
     lock_dict = {
         dep["name"]: dep["version"] for dep in yamls["conda-lock.yml"]["package"]
     }
+
+    page_rel = Path(page).relative_to("environments")
+    nav[page_rel.with_suffix("").parts] = page_rel  # type: ignore
 
     with mkdocs_gen_files.open(page, "w") as f:
         text = f"# {name}\n"
@@ -62,5 +65,7 @@ with mkdocs_gen_files.open("environments.md", "w") as f:
     text = "".join(
         f"- [{name}]({filename})\n" for name, filename in ENVIRONMENTS_DICT.items()
     )
-
     f.write(index.replace("{{ ENVIRONMENT_LIST }}", text))
+
+with mkdocs_gen_files.open("environments/SUMMARY.md", "w") as nav_file:
+    nav_file.writelines(nav.build_literate_nav())
