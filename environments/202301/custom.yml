@@ -1,0 +1,23 @@
+channels:
+  - file://gpfs/exfel/sw/software/xfel_anaconda3/mambaforge-22.9/conda-bld
+  - conda-forge
+  - defaults
+dependencies:
+  - calibration-client
+  - condat-gridconv
+  - cfelpyutils
+  - envmodules
+  - euxfel-bunch-pattern
+  - extra-data
+  - extra-geom
+  - extra-hed
+  - findxfel
+  - h5glance
+  - hdf5-vds-check
+  - karabo-bridge
+  - karabo_bridge_recorder
+  - matplotlib-scalebar
+  - metadata-client
+  - metropc
+  - pasha
+  - princess
