@@ -1,7 +1,7 @@
 ---
-site_name: EuXFEL Software Environment Management
-site_description: European XFEL Software Environment Definitions
-site_url: https://rtd.xfel.eu/docs/data-analysis-user-documentation/en/latest/
+site_name: EuXFEL Software Environments
+site_description: European XFEL Software Environments
+site_url: https://european-xfel.github.io/environments
 
 theme:
   name: material
@@ -26,7 +26,7 @@ theme:
     text: Roboto
     code: Roboto Mono
 
-repo_url: https://git.xfel.eu/dataAnalysis/user-documentation
+repo_url: https://github.com/European-XFEL/environments
 
 extra_css:
   - stylesheets/extra.css

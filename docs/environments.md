@@ -57,7 +57,7 @@ Which will execute the code that `conda init` would execute, and then load that 
 
 ## Environment List
 
-The "What's Available" section contains a list of our environments, modules, and recipes (conda packages not available on conda or conda forge). This list is automatically generated based on the contents of the [environments](TODO) and [modules](TODO) directories in this repository.
+The "What's Available" section contains a list of our environments, modules, and recipes (conda packages not available on conda or conda forge). This list is automatically generated based on the contents of the [environments](https://github.com/European-XFEL/environments/tree/main/environments) and [modules](https://github.com/European-XFEL/environments/tree/main/modules) directories in this repository.
 
 Currently available mamba environments are:
 
