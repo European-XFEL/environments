@@ -45,7 +45,7 @@ Instead of having `conda init` commands in your `.bashrc`, you should use the mo
 For example, to load the our most current environment, you can run:
 
 ```bash
-module load exfel exfel_mamba
+module load exfel mambaforge
 ```
 
 Which will perform the same steps as `conda init` but in a way that is compatible with the module system, and then load that specific environment for you in one command.
