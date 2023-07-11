@@ -1,0 +1,47 @@
+{% set name = "EXtra" %}
+# {% set version = load_file_regex(load_file='__version__.py', regex_pattern="=\s*'([^']+)'") %}
+{% set version = "2023.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  git_url: https://github.com/European-XFEL/Extra
+  git_rev: master
+  git_depth: 1
+
+build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
+
+requirements:
+  host:
+    - python >=3.9
+    - pip
+  build:
+    - setuptools_scm
+  run:
+    - python >=3.9
+    - extra-data
+    - extra-geom
+    - karabo-bridge
+    - euxfel-bunch-pattern
+
+test:
+  imports:
+    - extra
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  home: https://github.com/European-XFEL/EXtra
+  summary: "European XFEL toolkit for research and analysis"
+  license: BSD-3-Clause
+
+extra:
+  recipe-maintainers:
+    - Robert Rosca

@@ -1,4 +1,5 @@
 custom-recipes/src
+custom-recipes/conda-bld
 site/
 
 # Local Netlify folder
