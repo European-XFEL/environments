@@ -4,7 +4,7 @@ docker-build:
 define DOCKER_RUN
 docker run --rm -it --workdir=/io \
 	-v $(HOME)/.ssh:/home/mambauser/.ssh \
-	-v $(CURDIR)/mnt/conda-bld:/opt/conda/conda-bld \
+	-v $(CURDIR)/conda-bld:/opt/conda/conda-bld \
 	-v $(CURDIR):/io \
 	mamba-grayskull
 endef
