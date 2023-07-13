@@ -24,7 +24,7 @@ requirements:
     - setuptools_scm
   run:
     - python >=3.9
-    - extra-data
+    - extra-data >=1.13
     - extra-geom
     - karabo-bridge
     - euxfel-bunch-pattern
