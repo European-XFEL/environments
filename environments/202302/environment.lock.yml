@@ -1,7 +1,7 @@
 name: '202302'
 channels:
-  - file://gpfs/exfel/sw/software/euxfel-environment-management/custom-recipes/conda-bld
   - nodefaults
+  - file://gpfs/exfel/sw/software/euxfel-environment-management/custom-recipes/conda-bld
   - conda-forge
 dependencies:
   - _libgcc_mutex=0.1
@@ -80,6 +80,7 @@ dependencies:
   - contourpy=1.1.0
   - cookiecutter=2.2.3
   - cryptography=41.0.2
+  - curl=8.1.2
   - cycler=0.11.0
   - cython=0.29.36
   - cytoolz=0.12.0
@@ -106,6 +107,7 @@ dependencies:
   - extra-hed=0.1.0
   - fabio=2023.4.1
   - ffmpeg=6.0.0
+  - fftw=3.3.10
   - findxfel=0.1.1
   - flake8=4.0.1
   - flit-core=3.9.0
@@ -288,7 +290,7 @@ dependencies:
   - libzlib=1.2.13
   - libzopfli=1.0.3
   - llvmlite=0.40.1
-  - lmfit=1.2.1
+  - lmfit=1.2.2
   - locket=1.0.0
   - lxml=4.9.3
   - lz4=4.3.2
