@@ -1,15 +1,17 @@
 channels:
-  - conda-forge
   - nodefaults
+  - conda-forge
 dependencies:
   - python=3.9
   - astropy
   - bokeh
+  - curl
   - cython
   - dask
   - dask-jobqueue
   - dask-labextension
   - fabio
+  - fftw
   - h5py
   - imageio
   - iminuit
