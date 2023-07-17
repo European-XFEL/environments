@@ -1,0 +1,25 @@
+channels:
+  - file://gpfs/exfel/sw/software/mambaforge/22.11/conda-bld
+  - conda-forge
+  - nodefaults
+dependencies:
+  - calibration-client
+  - cfelpyutils
+  - condat-gridconv
+  - envmodules
+  - euxfel-bunch-pattern
+  - extra
+  - extra-data >= 1.13
+  - extra-geom
+  - extra-hed
+  - findxfel
+  - h5glance
+  - hdf5-vds-check
+  - karabo-bridge
+  - karabo_bridge_recorder
+  - matplotlib-scalebar
+  - metadata-client
+  - metropc
+  - pasha
+  - princess
+category: custom
