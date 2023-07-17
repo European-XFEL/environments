@@ -1,14 +1,13 @@
 channels:
-  - file://gpfs/exfel/sw/software/mambaforge/22.11/conda-bld
-  - conda-forge
   - nodefaults
+  - file://gpfs/exfel/sw/software/euxfel-environment-management/custom-recipes/conda-bld
+  - conda-forge
 dependencies:
   - calibration-client
   - cfelpyutils
   - condat-gridconv
   - envmodules
   - euxfel-bunch-pattern
-  - extra
   - extra-data >= 1.13
   - extra-geom
   - extra-hed
