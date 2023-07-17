@@ -7,9 +7,6 @@ module-whatis  "Module loads the mamba environment for cycle 202301"
 
 if { [ module-info mode load ] } {
     system    "/gpfs/exfel/sw/software/local/etc/metrics.sh 'mamba/202301'"
-    puts stderr "Default module version changed from 1.1.2 to 202301"
-    puts stderr "Use `module load exfel_anaconda3/1.1.2` to revert to previous version if required"
-    puts stderr "For more information on the new approach to environment management see the documentation here: https://european-xfel.github.io/environments/"
 }
 
 module load mambaforge
