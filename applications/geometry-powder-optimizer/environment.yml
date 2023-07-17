@@ -1,0 +1,29 @@
+name: geometry-powder-optimizer
+channels:
+  - conda-forge
+  - file://gpfs/exfel/sw/software/mambaforge/22.11/conda-bld
+  - pytorch
+  - nodefaults
+dependencies:
+  - python=3.9
+  - botorch
+  - cpuonly
+  - dask-jobqueue
+  - dask[array]
+  - extra-data >= 0.13.0
+  - extra-geom
+  - h5py
+  - ipykernel
+  - ipywidgets
+  - lmfit
+  - matplotlib
+  - numba
+  - numpy
+  - pandas
+  - pytorch
+  - scikit-image
+  - scikit-learn
+  - scikit-learn-extra
+  - scipy
+  - seaborn
+  - xarray
