@@ -1,4 +1,4 @@
-name: '202301'
+name: "202301"
 channels:
   - file://gpfs/exfel/sw/software/mambaforge/22.11/conda-bld
   - nodefaults

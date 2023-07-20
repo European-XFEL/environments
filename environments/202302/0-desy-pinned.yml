@@ -1,4 +1,4 @@
-name: desy-pinned
+name: "desy-pinned"
 channels:
   - nodefaults
   - conda-forge
