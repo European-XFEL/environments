@@ -1,9 +1,10 @@
-{% set name = "sharedmem" %}
-{% set version = "0.3.8" %}
+context:
+  name: sharedmem
+  version: 0.3.8
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/sharedmem-{{ version }}.tar.gz
@@ -11,7 +12,7 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: '{{ PYTHON }} -m pip install . -vv'
   number: 0
 
 requirements:
@@ -32,10 +33,11 @@ test:
 
 about:
   home: http://github.com/rainwoodman/sharedmem
-  summary: "Dispatch your trivially parallizable jobs with sharedmem."
+  summary: Dispatch your trivially parallizable jobs with sharedmem.
   license: GPL-3.0
   license_file: LICENSE
 
 extra:
   recipe-maintainers:
     - RobertRosca
+

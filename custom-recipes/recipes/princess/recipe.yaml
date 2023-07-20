@@ -1,9 +1,10 @@
-{% set name = "princess" %}
-{% set version = "0.6" %}
+context:
+  name: princess
+  version: '0.6'
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/princess-{{ version }}.tar.gz
@@ -11,7 +12,7 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: '{{ PYTHON }} -m pip install . -vv'
   number: 0
 
 requirements:
@@ -36,7 +37,7 @@ test:
 
 about:
   home: https://pypi.org/project/princess/
-  summary: "Please Run IPython Notebook in the Current Environment with Stdout & Stderr"
+  summary: Please Run IPython Notebook in the Current Environment with Stdout & Stderr
   dev_url: https://github.com/European-XFEL/princess
   license: BSD-3-Clause
   license_file: LICENSE
@@ -45,3 +46,4 @@ extra:
   notes: "'flit-core' added manually"
   recipe-maintainers:
     - RobertRosca
+

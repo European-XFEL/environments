@@ -1,9 +1,10 @@
-{% set name = "euxfel-bunch-pattern" %}
-{% set version = "0.6" %}
+context:
+  name: euxfel-bunch-pattern
+  version: '0.6'
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/euxfel_bunch_pattern-{{ version }}.tar.gz
@@ -11,7 +12,7 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: '{{ PYTHON }} -m pip install . -vv'
   number: 0
 
 requirements:
@@ -32,10 +33,11 @@ test:
 
 about:
   home: https://git.xfel.eu/gitlab/karaboDevices/euxfel_bunch_pattern
-  summary: "Decoding EuXFEL bunch pattern tables"
+  summary: Decoding EuXFEL bunch pattern tables
   license: ''
     # license_file: TODO: PLEASE_ADD_LICENSE_FILE
 
 extra:
   recipe-maintainers:
     - RobertRosca
+

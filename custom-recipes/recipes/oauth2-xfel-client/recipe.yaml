@@ -1,9 +1,10 @@
-{% set name = "oauth2-xfel-client" %}
-{% set version = "6.1.0" %}
+context:
+  name: oauth2-xfel-client
+  version: 6.1.0
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/oauth2_xfel_client-{{ version }}.tar.gz
@@ -11,7 +12,7 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: '{{ PYTHON }} -m pip install . -vv'
   number: 0
 
 requirements:
@@ -35,10 +36,11 @@ test:
 
 about:
   home: https://git.xfel.eu/gitlab/ITDM/oauth2_xfel_client
-  summary: "Python OAUTH 2.0 generic Client used for Backend Application strategy authentication on European XFEL Web Applications"
+  summary: Python OAUTH 2.0 generic Client used for Backend Application strategy authentication on European XFEL Web Applications
   license: MIT
   license_file: LICENSE
 
 extra:
   recipe-maintainers:
     - RobertRosca
+

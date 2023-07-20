@@ -1,9 +1,10 @@
-{% set name = "EXtra-HED" %}
-{% set version = "0.1.0" %}
+context:
+  name: EXtra-HED
+  version: 0.1.0
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
 
 source:
   # path: /gpfs/exfel/sw/software/xfel_anaconda3/mambaforge-22.9/conda-recipes/src/EXtra-HED
@@ -12,7 +13,7 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: '{{ PYTHON }} -m pip install . -vv'
   number: 0
 
 requirements:
@@ -37,11 +38,12 @@ test:
     - pip
 
 about:
-  summary: "Analysis toolbox for the HED instrument at EuXFEL."
+  summary: Analysis toolbox for the HED instrument at EuXFEL.
   license: BSD-3-Clause
   dev_url: https://git.xfel.eu:10022/tmichela/EXtra-HED.git
 
 extra:
-  notes: "Invalid license removed manually"
+  notes: Invalid license removed manually
   recipe-maintainers:
     - RobertRosca
+

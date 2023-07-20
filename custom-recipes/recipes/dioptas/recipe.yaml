@@ -1,9 +1,10 @@
-{% set name = "dioptas" %}
-{% set version = "0.5.6" %}
+context:
+  name: dioptas
+  version: 0.5.6
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dioptas-{{ version }}.tar.gz
@@ -12,16 +13,17 @@ source:
   #  - pyqt-requirement.patch
 
 build:
-  skip: true  # [py<37]
   entry_points:
     - dioptas = scripts:dioptas.main
     - dioptas_batch = scripts:dioptas_batch.main
-  # script: bash ./install.sh #{{ PYTHON }} -m pip install . -vv
+  # script: 'bash ./install.sh #{{ PYTHON }} -m pip install . -vv'
   number: 0
 
+  skip:
+    - py<37
 requirements:
   build:
-    - {{ compiler('c') }}
+    - '{{ compiler("c") }}'
   host:
     - python
     - setuptools >=45
@@ -64,7 +66,7 @@ test:
 
 about:
   home: https://github.com/Dioptas/Dioptas
-  summary: "GUI program for reduction and exploration of 2D X-ray diffraction data"
+  summary: GUI program for reduction and exploration of 2D X-ray diffraction data
   dev_url: https://github.com/dioptas/dioptas
   license: GPL-3.0
   license_file: license.txt
@@ -72,3 +74,4 @@ about:
 extra:
   recipe-maintainers:
     - RobertRosca
+

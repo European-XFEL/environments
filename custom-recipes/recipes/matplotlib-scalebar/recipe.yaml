@@ -1,9 +1,10 @@
-{% set name = "matplotlib-scalebar" %}
-{% set version = "0.8.1" %}
+context:
+  name: matplotlib-scalebar
+  version: 0.8.1
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/matplotlib-scalebar-{{ version }}.tar.gz
@@ -11,7 +12,7 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: '{{ PYTHON }} -m pip install . -vv'
   number: 0
 
 requirements:
@@ -32,11 +33,11 @@ test:
 
 about:
   home: https://github.com/ppinard/matplotlib-scalebar
-  summary: "Artist for matplotlib to display a scale bar"
+  summary: Artist for matplotlib to display a scale bar
   license: BSD-2-Clause
-  license_file:
-    - LICENSE
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:
     - RobertRosca
+

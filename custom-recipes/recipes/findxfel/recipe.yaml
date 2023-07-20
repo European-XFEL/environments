@@ -1,20 +1,20 @@
-{% set name = "findxfel" %}
-{% set version = "0.1.1" %}
+context:
+  name: findxfel
+  version: 0.1.1
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
 
 source:
-  # path: /gpfs/exfel/sw/software/xfel_anaconda3/mambaforge-22.9/conda-recipes/src/findxfel
-  git_url: git+ssh://git.xfel.eu/dataAnalysis/findxfel
-  depth: 1
+  git_url: ssh://git.xfel.eu:10022/dataAnalysis/findxfel.git
+  git_depth: 1
 
 build:
   entry_points:
     - findxfel = findxfel:main
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: '{{ PYTHON }} -m pip install . -vv'
   number: 0
 
 requirements:
@@ -36,12 +36,12 @@ test:
 
 about:
   home: https://git.xfel.eu/gitlab/dataAnalysis/findxfel
-  summary: "Find an EuXFEL proposal/run directory on Maxwell"
+  summary: Find an EuXFEL proposal/run directory on Maxwell
   license: BSD-3-Clause
-  license_file:
-    - LICENSE
+  license_file: LICENSE
 
 extra:
   notes: "'flit-core' added manually"
   recipe-maintainers:
     - RobertRosca
+

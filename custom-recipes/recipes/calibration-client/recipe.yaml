@@ -1,9 +1,10 @@
-{% set name = "calibration-client" %}
-{% set version = "11.0.0" %}
+context:
+  name: calibration-client
+  version: 11.0.0
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/calibration_client-{{ version }}.tar.gz
@@ -11,7 +12,7 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: '{{ PYTHON }} -m pip install . -vv'
   number: 0
 
 requirements:
@@ -36,10 +37,11 @@ test:
 
 about:
   home: https://git.xfel.eu/gitlab/ITDM/calibration_client
-  summary: "Python Client for European XFEL Calibration Catalogue Web App available at https://in.xfel.eu/calibration"
+  summary: Python Client for European XFEL Calibration Catalogue Web App available at https://in.xfel.eu/calibration
   license: MIT
   license_file: LICENSE
 
 extra:
   recipe-maintainers:
     - RobertRosca
+

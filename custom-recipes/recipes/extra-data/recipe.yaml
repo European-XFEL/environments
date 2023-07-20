@@ -1,9 +1,10 @@
-{% set name = "extra-data" %}
-{% set version = "1.13.0" %}
+context:
+  name: extra-data
+  version: 1.13.0
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/EXtra-data-{{ version }}.tar.gz
@@ -17,7 +18,7 @@ build:
     - extra-data-make-virtual-cxi = extra_data.cli.make_virtual_cxi:main
     - extra-data-locality = extra_data.locality:main
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: '{{ PYTHON }} -m pip install . -vv'
   number: 1
 
 requirements:
@@ -31,7 +32,7 @@ requirements:
     - pandas
     - xarray
     - matplotlib
-    - dask[array]
+    - sel(array): dask[array]
 
 test:
   imports:
@@ -48,7 +49,7 @@ test:
 
 about:
   home: https://pypi.org/project/EXtra-data/
-  summary: "Tools to read and analyse data from European XFEL"
+  summary: Tools to read and analyse data from European XFEL
   dev_url: https://github.com/European-XFEL/EXtra-data
   license: BSD-3-Clause
   license_file: LICENSE
@@ -56,3 +57,4 @@ about:
 extra:
   recipe-maintainers:
     - RobertRosca
+

@@ -1,9 +1,10 @@
-{% set name = "hdf5-vds-check" %}
-{% set version = "1.0" %}
+context:
+  name: hdf5-vds-check
+  version: '1.0'
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hdf5_vds_check-{{ version }}.tar.gz
@@ -13,7 +14,7 @@ build:
   entry_points:
     - hdf5-vds-check = hdf5_vds_check:main
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: '{{ PYTHON }} -m pip install . -vv'
   number: 0
 
 requirements:
@@ -36,7 +37,7 @@ test:
 
 about:
   home: https://github.com/European-XFEL/hdf5-vds-check
-  summary: "Check access to the source files of virtual datasets"
+  summary: Check access to the source files of virtual datasets
   license: BSD-3-Clause
   license_file: LICENSE
 
@@ -44,3 +45,4 @@ extra:
   notes: "'flit' added manually"
   recipe-maintainers:
     - RobertRosca
+

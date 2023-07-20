@@ -1,9 +1,10 @@
-{% set name = "pasha" %}
-{% set version = "0.1.1" %}
+context:
+  name: pasha
+  version: 0.1.1
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pasha-{{ version }}.tar.gz
@@ -11,7 +12,7 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: '{{ PYTHON }} -m pip install . -vv'
   number: 0
 
 requirements:
@@ -32,10 +33,11 @@ test:
 
 about:
   home: https://github.com/European-XFEL/pasha
-  summary: "Tools to parallelize operations on large data sets using shared memory with zero copies."
+  summary: Tools to parallelize operations on large data sets using shared memory with zero copies.
   license: BSD-3-Clause
   license_file: LICENSE
 
 extra:
   recipe-maintainers:
     - RobertRosca
+

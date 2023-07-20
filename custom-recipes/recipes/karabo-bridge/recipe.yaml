@@ -1,9 +1,10 @@
-{% set name = "karabo-bridge" %}
-{% set version = "0.6.2" %}
+context:
+  name: karabo-bridge
+  version: 0.6.2
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/karabo_bridge-{{ version }}.tar.gz
@@ -15,7 +16,7 @@ build:
     - karabo-bridge-monitor=karabo_bridge.cli.monitor:main
     - karabo-bridge-server-sim=karabo_bridge.cli.simulation:main
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: '{{ PYTHON }} -m pip install . -vv'
   number: 0
 
 requirements:
@@ -43,10 +44,11 @@ test:
 
 about:
   home: https://github.com/European-XFEL/karabo-bridge-py
-  summary: "Python 3 tools to request data from the Karabo controlsystem."
+  summary: Python 3 tools to request data from the Karabo controlsystem.
   license: BSD-3-Clause
   license_file: LICENSE
 
 extra:
   recipe-maintainers:
     - RobertRosca
+

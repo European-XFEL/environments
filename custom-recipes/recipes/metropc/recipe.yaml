@@ -1,9 +1,10 @@
-{% set name = "metropc" %}
-{% set version = "1.4.1" %}
+context:
+  name: metropc
+  version: 1.4.1
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
 
 source:
   # path: /gpfs/exfel/sw/software/xfel_anaconda3/mambaforge-22.9/conda-recipes/src/metropc
@@ -12,7 +13,7 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: '{{ PYTHON }} -m pip install . -vv'
   number: 0
 
 requirements:
@@ -39,10 +40,11 @@ test:
 
 about:
   summary: Programmable event processing framework
-  license: "MIT & Apache-2.0"
+  license: MIT & Apache-2.0
   dev_url: https://git.xfel.eu/karaboDevices/metropc.git
 
 extra:
-  notes: "Invalid license file removed manually"
+  notes: Invalid license file removed manually
   recipe-maintainers:
     - RobertRosca
+

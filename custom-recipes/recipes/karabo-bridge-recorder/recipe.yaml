@@ -1,9 +1,10 @@
-{% set name = "karabo_bridge_recorder" %}
-{% set version = "0.2" %}
+context:
+  name: karabo_bridge_recorder
+  version: '0.2'
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
 
 source:
   # path: /gpfs/exfel/sw/software/xfel_anaconda3/mambaforge-22.9/conda-recipes/src/karabo-bridge-recorder
@@ -15,7 +16,7 @@ build:
     - karabo-bridge-record = karabo_bridge_recorder.record:main
     - karabo-bridge-replay = karabo_bridge_recorder.replay:main
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: '{{ PYTHON }} -m pip install . -vv'
   number: 0
 
 requirements:
@@ -38,7 +39,7 @@ test:
     - pip
 
 about:
-  summary: "Record and play back data streams from Karabo bridge"
+  summary: Record and play back data streams from Karabo bridge
   license: Other
   dev_url: https://git.xfel.eu:10022/tmichela/EXtra-HED.git
 
@@ -46,3 +47,4 @@ extra:
   notes: "'flit-core' added manually"
   recipe-maintainers:
     - RobertRosca
+

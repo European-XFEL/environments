@@ -1,9 +1,10 @@
-{% set name = "envmodules" %}
-{% set version = "0.1" %}
+context:
+  name: envmodules
+  version: '0.1'
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/envmodules-{{ version }}.tar.gz
@@ -11,7 +12,7 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: '{{ PYTHON }} -m pip install . -vv'
   number: 0
 
 requirements:
@@ -32,7 +33,7 @@ test:
 
 about:
   home: https://github.com/European-XFEL/envmodules
-  summary: "Python wrapper around environment modules ('module load')"
+  summary: Python wrapper around environment modules ('module load')
   license: BSD-3-Clause
   license_file: LICENSE
 
@@ -40,3 +41,4 @@ extra:
   notes: "'flit-core' added manually"
   recipe-maintainers:
     - RobertRosca
+

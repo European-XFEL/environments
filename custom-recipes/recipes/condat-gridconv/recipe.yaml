@@ -1,21 +1,22 @@
-{% set name = "condat-gridconv" %}
-{% set version = "latest" %}
+context:
+  name: condat-gridconv
+  version: latest
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
 
 source:
   url: https://github.com/European-XFEL/condat-gridconv/archive/{{ version }}.tar.gz
   sha256: 2cbdf516bde34b80f7be0a56cb3dee580cfc990d07ce9a46ca0eb6bd9cf18277
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv
+  script: '{{ PYTHON }} -m pip install . -vv'
   number: 0
 
 requirements:
   build:
-    - {{ compiler('c') }}
+    - '{{ compiler("c") }}'
   host:
     - python
     - setuptools
@@ -41,3 +42,4 @@ about:
 extra:
   recipe-maintainers:
     - RobertRosca
+
