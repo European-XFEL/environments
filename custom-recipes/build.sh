@@ -30,6 +30,7 @@ boa build \
   --skip-existing \
   --croot $tmp_shm \
   --output-folder ./conda-bld \
+  --target-platform linux-64 \
   $p
 
 conda index ./conda-bld
