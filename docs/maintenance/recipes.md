@@ -58,40 +58,35 @@ grayskull pypi ./h5writer-0.8.0
 
 ## Building the Recipes
 
-Once a new recipe is created, it must be built to create an installable package.
+Once a new recipe is created, it must be built to create an installable package. A Makefile is provided for ease of use, the Makefile will run the build commands in a container, and builds are done in a temporary shared memory directory to improve performance. Build outputs are stored in the `conda-bld` directory.
 
-If the Conda installation the package is being built for is new, you will have to tell it to use the build target directory as a channel, so that any packages you have built will be installable.
-
-!!! note inline end
-
-    `BUILD_DIRECTORY` is the directory where the recipes are being built to, this will be a `conda-bld` directory in the Conda installation directory. For example that is `/gpfs/exfel/sw/software/mambaforge/22.11/conda-bld` for the `mambaforge/22.11` instance.
+You can use the Makefile to build all recipes, or a single recipe:
 
 ```sh
-conda config --env --add channels ${BUILD_DIRECTORY}
-conda index ${BUILD_DIRECTORY}
+make build  # Build all recipes
+make build PKG=extra-data  # Build a single recipe
 ```
 
-As it has better performance, Boa (`mambabuild`) is used for the build process:
+!!! note
+
+    The Makefile has a bit of logic to figure out if it is running on a shared node on Maxwell. If it is then it will run the docker command via `srun` (as docker only works on dedicated nodes, not shared nodes). If it is not then it will just use `docker` directly.
+
+If there are issues during the build then you can troubleshoot the process by running the commands manually:
 
 ```sh
-conda mambabuild \
-  --skip-existing \  # Do not re-build already built packages
-  --python 3.9 \  # Set python version for build
-  --numpy 1.23 \  # Set numpy version for build
-  --no-anaconda-upload \  # Do not attempt to upload package
-  --use-local \  # Use local packages for dependencies
-  ${RECIPE_DIRECTORY}  # Directory containing recipes
+# Activate the correct environment when on xsoft@maxwell
+module load exfel mambaforge
+mamba activate base
+
+# Run the build command
+boa build \
+  --skip-existing \
+  --target-platform linux-64 \
+  ./recipes$(/$PACKAGE)  # Optional package name
+
+# Once the build is complete, index the build directory
+conda index ./conda-bld
 ```
-
-If the build runs successfully, then the package will be placed into the build directory, and it will be installable by the Conda instance as the directory is an indexed channel.
-
-If the build was not successful, then the package should be moved out of the `recipes` directory, and can be added to a `broken` directory while it is being fixed. If this is not done then future builds will fail as they the Conda build process builds **all** recipes in the directory, not just a single package.
-
-!!! warning "Multiple builds may be required"
-
-    If this is the first time you are building a package which has multiple unbuilt dependencies (e.g. if all packages are being re-built for a new installation) then you can expect the build to fail, as the package may attempt to be build before its dependencies are built.
-
-    The easiest way around this is to attempt the build again, as the build process will skip any packages which have already been built. This may need to be done multiple times until all dependencies are built.
 
 ## FAQ
 
