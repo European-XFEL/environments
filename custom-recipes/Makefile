@@ -20,10 +20,10 @@ build:
 	fi
 
 build-docker:
-	$(DOCKER_RUN) $(ARGS) ./build.sh
+	$(DOCKER_RUN) $(ARGS) ./build.sh $(PKG)
 
 build-srun:
-	$(SRUN) $(DOCKER_RUN_MAXWELL) $(ARGS) ./build.sh
+	$(SRUN) $(DOCKER_RUN_MAXWELL) $(ARGS) ./build.sh $(PKG)
 
 build-max:
-	$(DOCKER_RUN_MAXWELL) $(ARGS) ./build.sh
+	$(DOCKER_RUN_MAXWELL) $(ARGS) ./build.sh $(PKG)
