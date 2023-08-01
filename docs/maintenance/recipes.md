@@ -63,6 +63,7 @@ Once a new recipe is created, it must be built to create an installable package.
 You can use the Makefile to build all recipes, or a single recipe:
 
 ```sh
+# Inside the `custom-recipes` directory
 make build  # Build all recipes
 make build PKG=extra-data  # Build a single recipe
 ```
