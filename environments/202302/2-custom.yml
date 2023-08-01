@@ -8,7 +8,7 @@ dependencies:
   - condat-gridconv
   - envmodules
   - euxfel-bunch-pattern
-  - extra-data >= 1.13
+  - extra-data >= 1.14
   - extra-geom
   - extra-hed
   - findxfel
