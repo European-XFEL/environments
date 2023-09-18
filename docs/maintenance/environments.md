@@ -14,9 +14,7 @@ Each environment directory will have a few files:
 
 Environments exist in an installation of Conda, setting up a new Conda installation is very rarely required and is covered in the [Instances](./instances.md) section.
 
-## Environment Specification Setup
-
-### Creating New Specifications
+## Creating a New Specification
 
 The first step to creating a new environment is activating an installation, this can be done with `module load exfel mambaforge`. Loading this module will initialise the Conda instance into the `base` environment which provides useful tools for environment management.
 
@@ -48,22 +46,16 @@ dependencies:
 
 And place any dependencies under the `dependencies` section. Note that these are **Conda dependencies**, from Conda channels, not from PyPI, so the package names may differ (see <https://anaconda.org/> to search through the official channels).
 
-Once all required dependencies have been added to the dependencies list, carry on with the instructions in [Locking and Installing an Environment](#locking-and-installing-an-environment), as well as [Creating a Modulefile](#creating-a-modulefile).
+Once all required dependencies have been added to the dependencies list, carry on with the instructions in [Locking and Installing an Environment](#locking-and-installing-a-new-environment), as well as [Creating a Modulefile](#creating-a-modulefile).
 
-### Modifying Existing Specifications
-
-To add a new package to an existing environment, the package should be added to the `1-base.yml` if is is an existing package on a Conda channel, or added to `2-custom.yml` if it is a package where the recipe has to be created by us.
-
-Once all required dependencies have been added to the dependencies list, carry on with the instructions in [Locking and Installing an Environment](#locking-and-installing-an-environment).
-
-## Locking and Installing an Environment
+### Locking and Installing a New Environment
 
 First run `module load exfel mambaforge`, this will activate the conda installation that the environment will be created within.
 
-Now, `cd` into the directory of the environment you are working on (e.g. `cd ./environments/202301`), and run the following command:
+Now, `cd` into the directory of the environment you are working on (e.g. `cd ./environments/202302`), and run the following command:
 
 ```bash
-/gpfs/exfel/sw/software/euxfel-environment-management/scripts/utility.py merge
+../../scripts/utility.py merge
 ```
 
 This will merge all of the individual environment files into a single `environment.yml` file which can then be used to create/update an environment.
@@ -72,15 +64,53 @@ The command will print off instructions on what to do next:
 
 > Next steps:
 >
-> 1. Sync environment with new `environment.yml` file:
+> For a new environment, create it via:
 >
->     `mamba env update -n environments -f ./environment.yml`
+>     mamba env update -n 202302 -f ./environment.yml
 >
-> 2. After update is complete create a 'lock file' by running export:
+> For an existing environment, update it via:
 >
->     `mamba env export -n environments --no-builds -f environment.lock.yml`
+>     mamba update --no-update-deps -n 202302 -f ./environment.yml
 >
-> 3. Add and commit any new or modified files, then push.
+> After update/install is complete create a 'lock file' by running export:
+>
+>     mamba env export -n 202302 --no-builds -f environment.lock.yml
+>
+> Add and commit any new or modified files, then push.
+
+So for installing a new environment run:
+
+```bash
+mamba env update -n 202302 -f ./environment.yml
+
+mamba env export -n 202302 --no-builds -f environment.lock.yml
+
+git add .
+
+git commit -m "Add environment for cycle 202302"
+```
+
+### Modifying Existing Specifications
+
+To add a new package to an existing environment, the package should be added to the `1-base.yml` if is is an existing package on a Conda channel, or added to `2-custom.yml` if it is a package where the recipe has to be created by us.
+
+Once all required dependencies have been added to the dependency files run the merge script:
+
+```bash
+../../scripts/utility.py merge
+```
+
+The command will print off instructions on what to do next. For updating an existing environment run:
+
+```bash
+mamba update --no-update-deps -n 202302 -f ./environment.yml
+
+mamba env export -n 202302 --no-builds -f environment.lock.yml
+
+git add .
+
+git commit -m "Add package X to environment for cycle 202302"
+```
 
 ## Creating a Modulefile
 

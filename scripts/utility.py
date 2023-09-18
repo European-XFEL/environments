@@ -88,11 +88,16 @@ def merge_environment_files(files: List[str], name: str):
         python_version = final_package_versions.pop("python")
         final_package_versions = {"python": python_version, **final_package_versions}
 
+    conda_bld_path = Path(__file__).parent.parent / "custom-recipes" / "conda-bld"
+
     with open("environment.yml", "w") as f:
-        f.write(f"name: {name}\n")
-        f.write(
-            "channels:\n  - conda-forge\n  - file://gpfs/exfel/sw/software/mambaforge/22.11/conda-bld\n"
-        )
+        f.write(f'name: "{name}"\n')
+
+        f.write("channels:\n")
+
+        for channel in ["nodefaults", str(conda_bld_path.resolve()), "conda-forge"]:
+            f.write(f"  - {channel}\n")
+
         f.write("dependencies:\n")
         for package, version in final_package_versions.items():
             if version:
@@ -103,16 +108,19 @@ def merge_environment_files(files: List[str], name: str):
     print(
         f"""Next steps:
 
-1. Sync environment with new `environment.yml` file:
+For a new environment, create it via:
 
     mamba env update -n {name} -f ./environment.yml
 
-2. After update is complete create a 'lock file' by running export:
+For an existing environment, update it via:
+
+    mamba update --no-update-deps -n {name} -f ./environment.yml
+
+After update/install is complete create a 'lock file' by running export:
 
     mamba env export -n {name} --no-builds -f environment.lock.yml
 
-3. Add and commit any new or modified files, then push.
-    """
+Add and commit any new or modified files, then push."""
     )
 
 
