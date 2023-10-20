@@ -15,6 +15,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 
+# Conda Forge Pins
 c_compiler:
 - gcc
 c_compiler_version:
@@ -25,16 +26,20 @@ cxx_compiler:
 - gxx
 cxx_compiler_version:
 - '12'
-hdf5:
-- '1.14.1'
 pyqt:
 - '5.15'
-python:
-- 3.9.* *_cpython
 qt_main:
 - '5.15'
+
+# Cycle Environment Pins
+hdf5:
+- '1.14.1'
+python:
+- 3.9.* *_cpython
 numpy:
 - '1.24'
+libtiff:
+- '4.5'
 
 pin_run_as_build:
   python:
