@@ -1,0 +1,49 @@
+# Build pins should be updated per cycle environment:
+#
+# - Based on the current conda forge configuration: https://github.com/conda-forge/conda-forge-pinning-feedstock/blob/main/recipe/conda_build_config.yaml
+# - Adjusted with any restrictions caused by custom package
+#
+# Current config is for 202302
+#
+# TODO: store these per-cycle environment? Would allow for rebuilding of package variants
+
+target_platform:
+- linux-64
+
+channel_sources:
+- conda-forge
+channel_targets:
+- conda-forge main
+
+c_compiler:
+- gcc
+c_compiler_version:
+- '12'
+cdt_name:
+- cos7
+cxx_compiler:
+- gxx
+cxx_compiler_version:
+- '12'
+hdf5:
+- '1.14.1'
+pyqt:
+- '5.15'
+python:
+- 3.9.* *_cpython
+qt_main:
+- '5.15'
+numpy:
+- '1.24'
+
+pin_run_as_build:
+  python:
+    min_pin: x.x
+    max_pin: x.x
+
+zip_keys:
+- - c_compiler_version
+  - cxx_compiler_version
+- - python
+  - channel_sources
+
