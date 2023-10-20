@@ -12,16 +12,20 @@ source:
 
 build:
   script:
-    - export LDFLAGS="$LDFLAGS,-rpath,$BUILD_PREFIX/lib -Wl,-rpath-link,$BUILD_PREFIX/lib -L$BUILD_PREFIX/lib"
-    - ./configure --prefix=$PREFIX --with-fftw3-libdir=$BUILD_PREFIX/lib --with-fftw3-includedir=$BUILD_PREFIX/include
+    - ./configure --enable-all --prefix=$PREFIX
     - make
     - make check
     - make install
+  run_exports:
+    - "{{ pin_subpackage('nfft', max_pin='x.x') }}"
+
 
 requirements:
   build:
     - "{{ compiler('c') }}"
     - make
+  host:
+    #- fftw-static >=3
     - fftw >=3
 
 test:

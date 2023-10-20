@@ -16,6 +16,7 @@ build:
     - cd build
     - >
       cmake \
+        $CMAKE_ARGS \
         -DCMAKE_VERBOSE_MAKEFILE=ON \
         -DUSE_CUDA=OFF \
         -DPYTHON_WRAPPERS=ON \
@@ -25,15 +26,17 @@ build:
         ..
     - make
     - make install
+  run_exports:
+    - "{{ pin_subpackage('libspimage', max_pin='x.x.x') }}"
 
 requirements:
   build:
-    - "{{ compiler('gxx') }}"
-    - python
-    - make
+    - "{{ compiler('c') }}"
+    - "{{ compiler('cxx') }}"
     - cmake
+    - make
     - swig
-  host: 
+  host:
     - python
     - fftw >=3
     - gsl
@@ -43,8 +46,10 @@ requirements:
     - numpy
     - zlib
   run:
-    - "{{ pin_compatible('numpy') }}"
+    - python
     - h5py
+    - "{{ pin_compatible('hdf5') }}"
+    - "{{ pin_compatible('numpy') }}"
     - scipy
 
 test:

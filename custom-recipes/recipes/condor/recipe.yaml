@@ -9,35 +9,30 @@ package:
 source:
   git_url: https://github.com/FXIhub/condor.git
   git_depth: 1
-  patches:
-    - fix-manifest.patch
 
 build:
-  script: 
+  script:
     - export NFFT_INCLUDE_DIR="$BUILD_PREFIX/include"
     - export NFFT_LIBRARY_DIR="$BUILD_PREFIX/lib"
     - '{{ PYTHON }} setup.py install'
-    # - '{{ PYTHON }} -m pip install --no-deps --ignore-installed -vv .'
   number: 0
   entry_points:
     - condor=condor.scripts.condor_script:main
 
 requirements:
   build:
-    - python
-    - "{{ compiler('gxx') }}"
-    - nfft
+    - "{{ compiler('c') }}"
   host:
     - python
-    - libspimage
-    # - spsim
-    # - nfft
+    - nfft
+    - spsim
+    - numpy
   run:
+    - python
     - "{{ pin_compatible('numpy') }}"
     - h5py
     - scipy
     - spsim
-    - nfft
 
 test:
   source_files:

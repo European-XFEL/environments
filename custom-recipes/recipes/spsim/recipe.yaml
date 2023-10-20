@@ -16,41 +16,39 @@ build:
     - cd build
     - >
       cmake \
+        $CMAKE_ARGS \
         -DUSE_CUDA=OFF \
-        -USE_NFFT=ON \
+        -DUSE_NFFT=ON \
+        -DBUILD_LIBRARY=ON \
         -DPYTHON_WRAPPERS=ON \
-        -DCMAKE_INSTALL_PREFIX=$PREFIX \
-        -DPYTHON_INSTDIR=$SP_DIR \
+        -DCMAKE_INSTALL_PREFIX=${PREFIX} \
+        -DPYTHON_INSTDIR=${SP_DIR} \
         ..
     - make
     - make install
 
 requirements:
   build:
-    - "{{ compiler('gxx') }}"
-    - python
-    - make
+    - "{{ compiler('c') }}"
     - cmake
-    - gsl
+    - "{{ compiler('cxx') }}"
+    - make
     - swig
-
-    # - libpng
-    # - libtiff
-    # - zlib
-    # - fftw >=3
   host:
+    - python
+    - fftw >=3
+    - gsl
     - hdf5
+    - libblas
     - libspimage
     - nfft
     - numpy
-    - openblas
   run:
     - python
+    - h5py
+    - "{{ pin_compatible('hdf5') }}"
     - "{{ pin_compatible('numpy') }}"
-    - hdf5
-    - fftw >=3
-    - libspimage
-    - openblas
+    - scipy
 
 test:
   imports:
