@@ -9,7 +9,6 @@ ARGS := --rm -it --workdir=/io \
 	--tmpfs /dev/shm:rw,nosuid,nodev,exec,size=16g \
 	ghcr.io/european-xfel/environments:main
 
-
 build:
 	mkdir -p conda-bld
 	@if command -v dockerrun >/dev/null 2>&1; then \
@@ -28,3 +27,6 @@ build-srun:
 
 build-max:
 	$(DOCKER_RUN_MAXWELL) $(ARGS) ./build.sh $(PKG)
+
+shell:
+	$(DOCKER_RUN) $(ARGS) /bin/bash
