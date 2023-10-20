@@ -34,11 +34,10 @@ conda index ./conda-bld
 rm -f ./conda-bld/*/$p-*.tar.bz2
 
 boa build \
-  --python=3.9 \
-  --numpy=1.24 \
   --target-platform=linux-64 \
   --croot=$tmp_shm \
   --output-folder=./conda-bld \
+  -m ./conda_build_config.yaml \
   $p
 
 conda index ./conda-bld
