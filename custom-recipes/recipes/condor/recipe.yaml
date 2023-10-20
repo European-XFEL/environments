@@ -24,9 +24,9 @@ requirements:
     - "{{ compiler('c') }}"
   host:
     - python
-    - nfft
-    - spsim
+    - libnfft
     - numpy
+    - spsim
   run:
     - python
     - "{{ pin_compatible('numpy') }}"

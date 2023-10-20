@@ -1,5 +1,5 @@
 context:
-  name: nfft
+  name: libnfft
   version: 3.5.3
 
 package:
@@ -17,7 +17,7 @@ build:
     - make check
     - make install
   run_exports:
-    - "{{ pin_subpackage('nfft', max_pin='x.x') }}"
+    - "{{ pin_subpackage('libnfft', max_pin='x.x') }}"
 
 
 requirements:

@@ -40,8 +40,8 @@ requirements:
     - gsl
     - hdf5
     - libblas
+    - libnfft
     - libspimage
-    - nfft
     - numpy
   run:
     - python
