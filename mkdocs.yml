@@ -12,7 +12,6 @@ theme:
     language: en
   features:
     - announce.dismiss
-    - content.tabs.link
     - navigation.indexes # section index pages
     - navigation.top # back to top button
     - navigation.tracking
@@ -67,6 +66,8 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist
+  - toc:
+      permalink: true
   - tables
 
 extra:
