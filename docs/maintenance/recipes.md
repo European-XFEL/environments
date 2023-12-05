@@ -110,43 +110,10 @@ If the package source is from a release bundle (e.g. PyPI, GitHub release, the u
 -  sha256: 352279e76060a39097064725ac3a46bd825475da18b9c74207ff159b2c1eaf4b
 +  sha256: 9d94df40a60eeaf3363848e6a2ed15c07059828a0e5e4b44afa2151fa1847b85
 
- build:
-   noarch: python
-   script: '{{ PYTHON }} -m pip install --no-deps --ignore-installed -vv .'
-   number: 0
-
- requirements:
-   host:
-     - python >=3.7
-     - pip
-   run:
-     - python >=3.7
-     - oauthlib
-     - requests
-     - requests-oauthlib
-     - oauth2-xfel-client >=6.1
-     - pytz
-
- test:
-   imports:
-     - calibration_client
-   commands:
-     - pip check
-   requires:
-     - pip
-
- about:
-   home: https://git.xfel.eu/gitlab/ITDM/calibration_client
-   summary: Python Client for European XFEL Calibration Catalogue Web App available at https://in.xfel.eu/calibration
-   license: MIT
-   license_file: LICENSE
-
- extra:
-   recipe-maintainers:
-     - RobertRosca
+...
 ```
 
-Where the new hash can be found by checking the source (PyPI shows the hashes on the [Download files](https://pypi.org/project/calibration-client/11.3.0/#files) tab), or by downloading the source and running `sha256sum` on the file.
+Where the new hash can be found by checking the source (PyPI shows the hashes on the '[Download Files](https://pypi.org/project/calibration-client/11.3.0/#files)' tab), or by downloading the source and running `sha256sum` on the file.
 
 ### License Missing Errors
 
