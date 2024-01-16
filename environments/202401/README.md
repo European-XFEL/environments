@@ -1,11 +1,11 @@
-# 202302 Environment
+# 202401 Environment
 
 ## Major Version Changes
 
 | package            | old      | new      |
-|:-------------------|:---------|:---------|
+| :----------------- | :------- | :------- |
 | argon2-cffi        | 21.3.0   | 23.1.0   |
-| astroid            | 2.15.6   | 3.0.2    |
+| asteroid           | 2.15.6   | 3.0.2    |
 | astropy            | 5.3.1    | 6.0.0    |
 | cloudpickle        | 2.2.1    | 3.0.0    |
 | dask               | 2023.7.1 | 2024.1.0 |
@@ -30,7 +30,7 @@
 
 ## Added
 
--  tabulate
+- tabulate
 - mdurl
 - pyarrow-hotfix
 - astropy-iers-data
@@ -42,7 +42,7 @@
 
 ## Removed
 
--  flit-core
+- flit-core
 - lazy-object-proxy
 - cfitsio
 - libavif

@@ -41,8 +41,12 @@ for environment in environments:
     page_rel = Path(page).relative_to("environments")
     nav[page_rel.with_suffix("").parts] = page_rel
 
-    with mkdocs_gen_files.open(PAGE_PREFIX.joinpath(page), "w") as f:
+    if (readme := (environment / "README.md")).exists():
+        text = readme.read_text()
+    else:
         text = f"# `{name}`\n"
+
+    with mkdocs_gen_files.open(PAGE_PREFIX.joinpath(page), "w") as f:
         for category in FILES_SOURCE:
             if category in yamls:
                 text += f"\n## `{category}`\n"
