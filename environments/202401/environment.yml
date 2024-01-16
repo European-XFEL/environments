@@ -1,10 +1,10 @@
-name: "202302"
+name: "202401"
 channels:
   - nodefaults
   - /gpfs/exfel/sw/software/euxfel-environment-management/custom-recipes/conda-bld
   - conda-forge
 dependencies:
-  - python=3.9
+  - python=3.10
   - brotlipy=0.7.0
   - certipy=0.1.3
   - ipykernel=6.13.1
@@ -68,6 +68,7 @@ dependencies:
   - opencv
   - papermill
   - plotly
+  - polars
   - pybaselines
   - pyfai
   - pyopengl
@@ -97,6 +98,7 @@ dependencies:
   - matplotlib-scalebar
   - metadata-client
   - metropc
+  - nbclick
   - pasha
   - princess
   - condor
