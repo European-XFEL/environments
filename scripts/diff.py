@@ -24,7 +24,7 @@ args = parser.parse_args()
 def load_env(file: Path):
     data = yaml.safe_load(file.open("r"))
 
-    dependencies_versioned = dict([d.split("=") for d in data["dependencies"]])
+    dependencies_versioned = dict([d.split("=") for d in data["dependencies"] if isinstance(d, str)])
 
     data["dependencies"] = dependencies_versioned
 
