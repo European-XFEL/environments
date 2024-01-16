@@ -1,0 +1,25 @@
+channels:
+  - nodefaults
+  - file://gpfs/exfel/sw/software/euxfel-environment-management/custom-recipes/conda-bld
+  - conda-forge
+dependencies:
+  - calibration-client >=11.3.0
+  - cfelpyutils
+  - condat-gridconv
+  - envmodules
+  - euxfel-bunch-pattern
+  - extra-data >= 1.14
+  - extra-geom
+  - extra-hed
+  - findxfel
+  - hdf5-vds-check
+  - karabo-bridge
+  - karabo_bridge_recorder
+  - matplotlib-scalebar
+  - metadata-client
+  - metropc
+  - nbclick
+  - pasha
+  - princess
+  - condor
+category: custom
