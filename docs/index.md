@@ -1,4 +1,4 @@
-# European XFEL Environments
+# European XFEL Environments [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10548701.svg)](https://doi.org/10.5281/zenodo.10548701)
 
 This documentation covers the use, contents, and management of the software environments provided for users at European XFEL.
 
