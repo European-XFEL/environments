@@ -30,15 +30,27 @@
 
 ## Added
 
-- tabulate
 - mdurl
-- pyarrow-hotfix
-- astropy-iers-data
-- types-python-dateutil
+- libavif16
+- linkify-it-py
+- panel
+- pyct
+- markdown
+- markdown-it-py
+- colorcet
 - rich
 - rav1e
-- libavif16
-- markdown-it-py
+- param
+- uc-micro-py
+- hvplot
+- types-python-dateutil
+- astropy-iers-data
+- pyarrow-hotfix
+- mdit-py-plugins
+- pyviz_comms
+- tabulate
+- holoviews
+
 
 ## Removed
 

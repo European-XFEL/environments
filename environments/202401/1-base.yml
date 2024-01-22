@@ -20,6 +20,7 @@ dependencies:
   - h5glance>=0.8.1
   - h5netcdf
   - h5py
+  - hvplot
   - imageio
   - iminuit
   - ipympl
