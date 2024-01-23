@@ -47,6 +47,7 @@ dependencies:
   - dask
   - dask-jobqueue
   - dask-labextension
+  - datashader
   - fabio
   - fast-histogram
   - fftw

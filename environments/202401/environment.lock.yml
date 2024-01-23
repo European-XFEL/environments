@@ -91,6 +91,7 @@ dependencies:
   - dask-core=2024.1.0
   - dask-jobqueue=0.8.2
   - dask-labextension=6.2.0
+  - datashader=0.16.0
   - dav1d=1.2.1
   - dbus=1.13.6
   - debugpy=1.8.0
@@ -342,6 +343,7 @@ dependencies:
   - msgpack-numpy=0.4.8
   - msgpack-python=1.0.7
   - multidict=6.0.4
+  - multipledispatch=0.6.0
   - munkres=1.1.4
   - mypy_extensions=1.0.0
   - mysql-common=8.0.33
