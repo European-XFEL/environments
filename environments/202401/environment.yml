@@ -69,6 +69,7 @@ dependencies:
   - numpy
   - opencv
   - papermill
+  - pint
   - plotly
   - polars
   - pybaselines
