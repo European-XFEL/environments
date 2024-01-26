@@ -34,18 +34,18 @@ extra_css:
 
 nav:
   - index.md
-  - Quick Start: "quick-start.md"
-  - Using Environments: "environments.md"
+  - Quick Start: quick-start.md
+  - Using Environments: environments.md
   - What's Available:
-      - Environment List: "environments/"
-      - Module List: "modules/"
-      - Recipe List: "recipes/"
+      - Environment List: environments/
+      - Module List: modules/
+      - Recipe List: recipes/
   - Maintenance:
-      - Environment Management: "maintenance/environments.md"
-      - Recipe Creation: "maintenance/recipes.md"
-      - Conda Installations: "maintenance/instances.md"
-      - CI/CD: "maintenance/ci-cd.md"
-  - Citing: "citing.md"
+      - Environment Management: maintenance/environments.md
+      - Recipe Creation: maintenance/recipes.md
+      - Conda Installations: maintenance/instances.md
+      - CI/CD: maintenance/ci-cd.md
+  - Citing: citing.md
 
 plugins:
   - search
