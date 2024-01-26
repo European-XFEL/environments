@@ -60,6 +60,49 @@ python3 setup.py sdist --formats=gztar
 grayskull pypi ./h5writer-0.8.0
 ```
 
+## Finalising the Recipe
+
+Once the recipe has been generated, there are a few more steps that need to be done.
+
+### Convert to Boa `recipe.yaml`
+
+Grayskull generates recipes in the old `conda-build` format (`meta.yaml`), however boa recipes (`recipe.yaml`) are used instead. Boa provides a tool to convert the recipe, you can run:
+
+```sh
+# To convert use `boa convert ${PATH_TO_META_YAML}`, this outputs the recipe to
+# stdout, so pipe it to a file:
+boa convert ./recipes/$PACKAGE/meta.yaml > ./recipes/$PACKAGE/recipe.yaml
+```
+
+### Set Git URL and Tag for Non-PyPI Packages
+
+If the package is not on PyPI, then you probably created it from an `sdist` archive file made from a clone of the repository as described in [From a Git Repository](#from-a-git-repository-no-sdist). In this case the auto-generated recipe will have the sdist file as the source.
+
+You should change the source to be the git repository URL, and add information for the branch, tag, or commit that should be used to the file, and optionally include it in the `version`. For example:
+
+```diff
+@@ -1,14 +1,16 @@
+ context:
+   name: findxfel
+   version: 0.1.2
++  tag: "5e528b91"
+
+ package:
+   name: '{{ name|lower }}'
+-  version: '{{ version }}'
++  version: "{{ version }}+{{ tag }}"
+
+ source:
+-  url: file:///home/roscar/work/github.com/European-XFEL/environments/custom-recipes/recipes/findxfel/src/dist/findxfel-0.1.2.tar.gz
+-  sha256: da3dd6f688202f7daa725cd079b185cf7284030ba5c10c44829c19388b5147fd
++  git_url: https://git.xfel.eu/dataAnalysis/findxfel.git
++  git_tag: "{{ tag }}"
++  git_depth: 1
+
+ build:
+   entry_points:
+```
+
 ## Building the Recipes
 
 Once a new recipe is created, it must be built to create an installable package. A Makefile is provided for ease of use, the Makefile will run the build commands in a container, and builds are done in a temporary shared memory directory to improve performance. Build outputs are stored in the `conda-bld` directory.
