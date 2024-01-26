@@ -119,9 +119,10 @@ Where the new hash can be found by checking the source (PyPI shows the hashes on
 
 If a license could not automatically be determined the license file will be set to `PLEASE_ADD_LICENSE_FILE` and the build will fail. To fix this, you need to add the license file to the recipe directory and add the following to the `meta.yaml` file:
 
-```yaml
+```diff
 about:
-  license_file: LICENSE  # Change or delete this line
+- license_file: PLEASE_ADD_LICENSE_FILE
++ license_file: LICENSE
 ```
 
 Alternatively, delete the `license_file` line from the `meta.yaml` file.
@@ -132,12 +133,12 @@ There can be issues with the generation of recipes for packages that use `flit` 
 
 For example:
 
-```yaml
+```diff
 requirements:
   host:
     - python
     - pip
-    - flit-core  # Add this line
++   - flit-core
   run:
     - python
 ```
