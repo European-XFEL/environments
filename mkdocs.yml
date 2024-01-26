@@ -8,6 +8,8 @@ theme:
   custom_dir: docs/overrides
   logo: assets/logo.jpeg
   palette:
+    primary: custom
+    accent: custom
     scheme: preference
     language: en
   features:
