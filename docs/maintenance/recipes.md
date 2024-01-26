@@ -2,7 +2,7 @@
 
 If a package does not already have a Conda recipe and is only available on PyPI or via a repository URL, then a recipe should be made for it to allow for installation into the Conda environments.
 
-Creation of the recipes can be automated via [Grayskull](https://github.com/conda-incubator/grayskull), which will attempt to convert the package setup to a Conda recipe, and implement some basic testing as part of the build phase (check that importing the package works, tests that entry points work), and also run [conda-verify](https://github.com/conda/conda-verify) to check package correctness.
+Creation of the recipes can be automated via [Grayskull](https://github.com/conda-incubator/grayskull), which will attempt to convert the package setup to a Conda recipe, and implement some basic testing as part of the build phase (check that importing the package works, tests that entry points work), and also run [`conda-verify`](https://github.com/conda/conda-verify) to check package correctness.
 
 Once a recipe has been created, the package must be built and added to a directory that the relevant environment indexes. This can be done with `conda mambabuild ...` (more info in next section), which will attempt to build the package and execute any tests that are included in the recipe.
 
@@ -83,7 +83,7 @@ mamba activate base
 boa build \
   --skip-existing \
   --target-platform linux-64 \
-  ./recipes$(/$PACKAGE)  # Optional package name
+  ./recipes/$PACKAGE  # Optional package name
 
 # Once the build is complete, index the build directory
 conda index ./conda-bld
