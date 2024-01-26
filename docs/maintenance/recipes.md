@@ -8,9 +8,13 @@ Once a recipe has been created, the package must be built and added to a directo
 
 If Grayskull fails to create a valid recipe, then the Conda documentation on creating recipes should be checked.
 
-## Creating a Recipe
+## Bootstrapping a Recipe
 
 First, you should load a `mambaforge` base environment, which will provide all the tools required to build recipes. This can be done with `module load exfel mambaforge`.
+
+!!! info
+
+    If running locally, install the `boa` and `grayskull` packages into your mamba environment with `mamba install -c conda-forge boa grayskull`, or install the environments defined in [`./environments/mambaforge`](https://github.com/European-XFEL/environments/tree/main/environments/mambaforge).
 
 Recipes can be created via the Grayskull CLI:
 
@@ -44,8 +48,8 @@ In the 'worst case' scenario where a package has no releases or tags, and is not
 
 1. Clone the package
 2. Go into the package directory
-3. Create a gztar sdist - `python3 setup.py sdist --formats=gztar`
-4. Run grayskull on the sdist archive - `grayskull pypi ./${PATH_TO_SDIST}`
+3. Create an sdist, varies depending on the package tool used (e.g. `python3 setup.py sdist`, `flit/poetry build`, etc...)
+4. Run grayskull on the sdist archive - `grayskull pypi $PATH_TO_SDIST`
 
 A full example of this is:
 
