@@ -1,4 +1,5 @@
-name: docs
+name: Build and Deploy Documentation
+
 on:
   push:
     branches:
@@ -12,15 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+
+      - uses: ./.github/setup
         with:
-          python-version: 3.x
-      - uses: actions/cache@v2
-        with:
-          key: ${{ github.ref }}
-          path: .cache
-      - run: python3 -m pip install hatch
-      - run: hatch run deploy
+          python-version: 3.8
+
+      - run: poetry run poe docs gh-deploy --force
 
   rtd_webhook:
     runs-on: ubuntu-latest
@@ -28,4 +26,3 @@ jobs:
     steps:
       - name: Trigger RTD User Documentation Webhook
         run: curl -X POST ${{ secrets.RTD_USER_DOCS_WEBHOOK_URL }} -d 'token=${{ secrets.RTD_USER_DOCS_WEBHOOK_SECRET }}'
-
