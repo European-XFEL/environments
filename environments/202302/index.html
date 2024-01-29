@@ -1,0 +1,6249 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="European XFEL Software Environments">
+      
+      
+      
+        <link rel="canonical" href="https://european-xfel.github.io/environments/environments/202302/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>202302 - EuXFEL Software Environments</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#202302-environment" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="EuXFEL Software Environments" class="md-header__button md-logo" aria-label="EuXFEL Software Environments" data-md-component="logo">
+      
+  <img src="../../assets/logo.jpeg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EuXFEL Software Environments
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              202302
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/European-XFEL/environments" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="EuXFEL Software Environments" class="md-nav__button md-logo" aria-label="EuXFEL Software Environments" data-md-component="logo">
+      
+  <img src="../../assets/logo.jpeg" alt="logo">
+
+    </a>
+    EuXFEL Software Environments
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/European-XFEL/environments" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        European XFEL Environments 
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/" class="md-nav__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Using Environments
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          What's Available
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="What's Available" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          What's Available
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          Environment List
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Environment List" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Environment List
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202401/" class="md-nav__link">
+        202401
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          202302
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        202302
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#major-version-changes" class="md-nav__link">
+    Major Version Changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removed" class="md-nav__link">
+    Removed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0-desy-pinnedyml" class="md-nav__link">
+    0-desy-pinned.yml
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-baseyml" class="md-nav__link">
+    1-base.yml
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-customyml" class="md-nav__link">
+    2-custom.yml
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environmentlockyml" class="md-nav__link">
+    environment.lock.yml
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202301/" class="md-nav__link">
+        202301
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Module List
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Module List" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Module List
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/hipgisaxs/" class="md-nav__link">
+        hipgisaxs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/smilei/" class="md-nav__link">
+        smilei
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/moonshot/" class="md-nav__link">
+        moonshot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/xraylarch/" class="md-nav__link">
+        xraylarch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/openmpi-no-python/" class="md-nav__link">
+        openmpi-no-python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/simex/" class="md-nav__link">
+        simex
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/openmpi-python/" class="md-nav__link">
+        openmpi-python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_8" type="checkbox" id="__nav_4_2_8" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_8">
+          dirax
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="dirax" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          dirax
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/dirax/1/" class="md-nav__link">
+        1
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_9" type="checkbox" id="__nav_4_2_9" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_9">
+          EXtra-foam
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="EXtra-foam" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          EXtra-foam
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/EXtra-foam/scs_moonshot/" class="md-nav__link">
+        scs_moonshot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/EXtra-foam/xes/" class="md-nav__link">
+        xes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/EXtra-foam/scs/" class="md-nav__link">
+        scs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/EXtra-foam/stable/" class="md-nav__link">
+        stable
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/EXtra-foam/beta/" class="md-nav__link">
+        beta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/EXtra-foam/spb-moonshot/" class="md-nav__link">
+        spb-moonshot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/EXtra-foam/mid_moonshot/" class="md-nav__link">
+        mid_moonshot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/EXtra-foam/alpha/" class="md-nav__link">
+        alpha
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_10" type="checkbox" id="__nav_4_2_10" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_10">
+          hdf5
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="hdf5" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          hdf5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/hdf5/1.10/" class="md-nav__link">
+        1.10
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_11" type="checkbox" id="__nav_4_2_11" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_11">
+          epoch
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="epoch" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_11">
+          <span class="md-nav__icon md-icon"></span>
+          epoch
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/epoch/4.19/" class="md-nav__link">
+        4.19
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/epoch/4.17/" class="md-nav__link">
+        4.17
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_12" type="checkbox" id="__nav_4_2_12" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_12">
+          dials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="dials" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_12">
+          <span class="md-nav__icon md-icon"></span>
+          dials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/dials/v2-2-4/" class="md-nav__link">
+        v2-2-4
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_13" type="checkbox" id="__nav_4_2_13" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_13">
+          karabo-bridge-cpp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="karabo-bridge-cpp" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_13">
+          <span class="md-nav__icon md-icon"></span>
+          karabo-bridge-cpp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/karabo-bridge-cpp/stable/" class="md-nav__link">
+        stable
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_14" type="checkbox" id="__nav_4_2_14" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_14">
+          EXtra-xwiz
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="EXtra-xwiz" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_14">
+          <span class="md-nav__icon md-icon"></span>
+          EXtra-xwiz
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/EXtra-xwiz/beta/" class="md-nav__link">
+        beta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/EXtra-xwiz/alpha/" class="md-nav__link">
+        alpha
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_15" type="checkbox" id="__nav_4_2_15" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_15">
+          simex-lite
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="simex-lite" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_15">
+          <span class="md-nav__icon md-icon"></span>
+          simex-lite
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/simex-lite/1.0/" class="md-nav__link">
+        1.0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_16" type="checkbox" id="__nav_4_2_16" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_16">
+          EXtra-metro
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="EXtra-metro" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_16">
+          <span class="md-nav__icon md-icon"></span>
+          EXtra-metro
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/EXtra-metro/preview/" class="md-nav__link">
+        preview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/EXtra-metro/beta/" class="md-nav__link">
+        beta
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_17" type="checkbox" id="__nav_4_2_17" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_17">
+          calibration-services
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="calibration-services" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_17">
+          <span class="md-nav__icon md-icon"></span>
+          calibration-services
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/calibration-services/stable/" class="md-nav__link">
+        stable
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_18" type="checkbox" id="__nav_4_2_18" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_18">
+          exfel_crystfel
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="exfel_crystfel" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_18">
+          <span class="md-nav__icon md-icon"></span>
+          exfel_crystfel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel_crystfel/0.7/" class="md-nav__link">
+        0.7
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel_crystfel/0.8/" class="md-nav__link">
+        0.8
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_19" type="checkbox" id="__nav_4_2_19" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_19">
+          vagabond
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="vagabond" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_19">
+          <span class="md-nav__icon md-icon"></span>
+          vagabond
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/vagabond/develop/" class="md-nav__link">
+        develop
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_20" type="checkbox" id="__nav_4_2_20" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_20">
+          dioptas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="dioptas" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_20">
+          <span class="md-nav__icon md-icon"></span>
+          dioptas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/dioptas/0.5/" class="md-nav__link">
+        0.5
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_21" type="checkbox" id="__nav_4_2_21" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_21">
+          spack
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="spack" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_21">
+          <span class="md-nav__icon md-icon"></span>
+          spack
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/spack/all/" class="md-nav__link">
+        all
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/spack/compilers/" class="md-nav__link">
+        compilers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/spack/22/" class="md-nav__link">
+        22
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_22" type="checkbox" id="__nav_4_2_22" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_22">
+          amore
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="amore" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_22">
+          <span class="md-nav__icon md-icon"></span>
+          amore
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/amore/mid/" class="md-nav__link">
+        mid
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/amore/beta/" class="md-nav__link">
+        beta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/amore/hed/" class="md-nav__link">
+        hed
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_23" type="checkbox" id="__nav_4_2_23" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_23">
+          exfel_anaconda3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="exfel_anaconda3" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_23">
+          <span class="md-nav__icon md-icon"></span>
+          exfel_anaconda3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel_anaconda3/1.1/" class="md-nav__link">
+        1.1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel_anaconda3/202301/" class="md-nav__link">
+        202301
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel_anaconda3/1/" class="md-nav__link">
+        1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel_anaconda3/beta/" class="md-nav__link">
+        beta
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_24" type="checkbox" id="__nav_4_2_24" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_24">
+          exfel_onda
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="exfel_onda" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_24">
+          <span class="md-nav__icon md-icon"></span>
+          exfel_onda
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel_onda/22.11/" class="md-nav__link">
+        22.11
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel_onda/19.13/" class="md-nav__link">
+        19.13
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel_onda/19.09.0/" class="md-nav__link">
+        19.09.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel_onda/22.10/" class="md-nav__link">
+        22.10
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel_onda/test_mod/" class="md-nav__link">
+        test_mod
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_25" type="checkbox" id="__nav_4_2_25" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_25">
+          glups
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="glups" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_25">
+          <span class="md-nav__icon md-icon"></span>
+          glups
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/glups/0/" class="md-nav__link">
+        0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_26" type="checkbox" id="__nav_4_2_26" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_26">
+          xds
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="xds" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_26">
+          <span class="md-nav__icon md-icon"></span>
+          xds
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/xds/20180126/" class="md-nav__link">
+        20180126
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_27" type="checkbox" id="__nav_4_2_27" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_27">
+          cmake
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="cmake" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_27">
+          <span class="md-nav__icon md-icon"></span>
+          cmake
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/cmake/3.13/" class="md-nav__link">
+        3.13
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_28" type="checkbox" id="__nav_4_2_28" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_28">
+          mamba
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="mamba" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_28">
+          <span class="md-nav__icon md-icon"></span>
+          mamba
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/mamba/202301/" class="md-nav__link">
+        202301
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_29" type="checkbox" id="__nav_4_2_29" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_29">
+          karabo-gui
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="karabo-gui" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_29">
+          <span class="md-nav__icon md-icon"></span>
+          karabo-gui
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/karabo-gui/2.14/" class="md-nav__link">
+        2.14
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/karabo-gui/stable/" class="md-nav__link">
+        stable
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_30" type="checkbox" id="__nav_4_2_30" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_30">
+          exdf-tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="exdf-tools" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_30">
+          <span class="md-nav__icon md-icon"></span>
+          exdf-tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exdf-tools/main/" class="md-nav__link">
+        main
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_31" type="checkbox" id="__nav_4_2_31" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_31">
+          hdfview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="hdfview" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_31">
+          <span class="md-nav__icon md-icon"></span>
+          hdfview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/hdfview/3.1/" class="md-nav__link">
+        3.1
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_32" type="checkbox" id="__nav_4_2_32" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_32">
+          exfel-python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="exfel-python" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_32">
+          <span class="md-nav__icon md-icon"></span>
+          exfel-python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel-python/202301/" class="md-nav__link">
+        202301
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel-python/202401/" class="md-nav__link">
+        202401
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel-python/202302/" class="md-nav__link">
+        202302
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_33" type="checkbox" id="__nav_4_2_33" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_33">
+          cmdxfel
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="cmdxfel" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_33">
+          <span class="md-nav__icon md-icon"></span>
+          cmdxfel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/cmdxfel/0/" class="md-nav__link">
+        0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_34" type="checkbox" id="__nav_4_2_34" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_34">
+          pycalibration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="pycalibration" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_34">
+          <span class="md-nav__icon md-icon"></span>
+          pycalibration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/pycalibration/3/" class="md-nav__link">
+        3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/pycalibration/3.7/" class="md-nav__link">
+        3.7
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_35" type="checkbox" id="__nav_4_2_35" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_35">
+          mambaforge
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="mambaforge" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_35">
+          <span class="md-nav__icon md-icon"></span>
+          mambaforge
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/mambaforge/22/" class="md-nav__link">
+        22
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_36" type="checkbox" id="__nav_4_2_36" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_36">
+          crystfel
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="crystfel" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_36">
+          <span class="md-nav__icon md-icon"></span>
+          crystfel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/crystfel/0.6/" class="md-nav__link">
+        0.6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/crystfel/0.9/" class="md-nav__link">
+        0.9
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          Recipe List
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Recipe List" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Recipe List
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/libspimage/" class="md-nav__link">
+        libspimage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/hdf5-vds-check/" class="md-nav__link">
+        hdf5-vds-check
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/spsim/" class="md-nav__link">
+        spsim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/princess/" class="md-nav__link">
+        princess
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/condat-gridconv/" class="md-nav__link">
+        condat-gridconv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/sharedmem/" class="md-nav__link">
+        sharedmem
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/extra-hed/" class="md-nav__link">
+        extra-hed
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/pasha/" class="md-nav__link">
+        pasha
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/htmlgen/" class="md-nav__link">
+        htmlgen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/euxfel-bunch-pattern/" class="md-nav__link">
+        euxfel-bunch-pattern
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/matplotlib-scalebar/" class="md-nav__link">
+        matplotlib-scalebar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/nbclick/" class="md-nav__link">
+        nbclick
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/libnfft/" class="md-nav__link">
+        libnfft
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/dioptas/" class="md-nav__link">
+        dioptas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/metadata-client/" class="md-nav__link">
+        metadata-client
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/extra-geom/" class="md-nav__link">
+        extra-geom
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/envmodules/" class="md-nav__link">
+        envmodules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/condor/" class="md-nav__link">
+        condor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/cfelpyutils/" class="md-nav__link">
+        cfelpyutils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/karabo-bridge-recorder/" class="md-nav__link">
+        karabo-bridge-recorder
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/metropc/" class="md-nav__link">
+        metropc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/extra-data/" class="md-nav__link">
+        extra-data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/oauth2-xfel-client/" class="md-nav__link">
+        oauth2-xfel-client
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/karabo-bridge/" class="md-nav__link">
+        karabo-bridge
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/findxfel/" class="md-nav__link">
+        findxfel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/calibration-client/" class="md-nav__link">
+        calibration-client
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Maintenance
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Maintenance" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Maintenance
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maintenance/environments/" class="md-nav__link">
+        Environment Management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maintenance/recipes/" class="md-nav__link">
+        Recipe Creation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maintenance/instances/" class="md-nav__link">
+        Conda Installations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../citing/" class="md-nav__link">
+        Citing
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/European-XFEL/environments/edit/master/docs/gen_pages.py" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+<h1 id="202302-environment">202302 Environment<a class="headerlink" href="#202302-environment" title="Permanent link">&para;</a></h1>
+<h2 id="major-version-changes">Major Version Changes<a class="headerlink" href="#major-version-changes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">package</th>
+<th style="text-align: left;">old</th>
+<th style="text-align: left;">new</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">attrs</td>
+<td style="text-align: left;">22.2.0</td>
+<td style="text-align: left;">23.1.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">ca-certificates</td>
+<td style="text-align: left;">2022.12.7</td>
+<td style="text-align: left;">2023.5.7</td>
+</tr>
+<tr>
+<td style="text-align: left;">certifi</td>
+<td style="text-align: left;">2022.12.7</td>
+<td style="text-align: left;">2023.5.7</td>
+</tr>
+<tr>
+<td style="text-align: left;">charset-normalizer</td>
+<td style="text-align: left;">2.1.1</td>
+<td style="text-align: left;">3.2.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">cryptography</td>
+<td style="text-align: left;">40.0.2</td>
+<td style="text-align: left;">41.0.2</td>
+</tr>
+<tr>
+<td style="text-align: left;">diff-match-patch</td>
+<td style="text-align: left;">20200713</td>
+<td style="text-align: left;">20230430</td>
+</tr>
+<tr>
+<td style="text-align: left;">ffmpeg</td>
+<td style="text-align: left;">5.1.2</td>
+<td style="text-align: left;">6.0.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">importlib_resources</td>
+<td style="text-align: left;">5.12.0</td>
+<td style="text-align: left;">6.0.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">jellyfish</td>
+<td style="text-align: left;">0.9.0</td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">jupyter-server-proxy</td>
+<td style="text-align: left;">3.2.1</td>
+<td style="text-align: left;">4.0.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">keyring</td>
+<td style="text-align: left;">23.13.1</td>
+<td style="text-align: left;">24.2.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">libclang</td>
+<td style="text-align: left;">16.0.3</td>
+<td style="text-align: left;">15.0.7</td>
+</tr>
+<tr>
+<td style="text-align: left;">libclang13</td>
+<td style="text-align: left;">16.0.3</td>
+<td style="text-align: left;">15.0.7</td>
+</tr>
+<tr>
+<td style="text-align: left;">libgcc-ng</td>
+<td style="text-align: left;">12.2.0</td>
+<td style="text-align: left;">13.1.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">libgfortran-ng</td>
+<td style="text-align: left;">12.2.0</td>
+<td style="text-align: left;">13.1.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">libgfortran5</td>
+<td style="text-align: left;">12.2.0</td>
+<td style="text-align: left;">13.1.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">libgomp</td>
+<td style="text-align: left;">12.2.0</td>
+<td style="text-align: left;">13.1.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">libprotobuf</td>
+<td style="text-align: left;">3.21.12</td>
+<td style="text-align: left;">4.23.3</td>
+</tr>
+<tr>
+<td style="text-align: left;">libstdcxx-ng</td>
+<td style="text-align: left;">12.2.0</td>
+<td style="text-align: left;">13.1.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">mistune</td>
+<td style="text-align: left;">2.0.5</td>
+<td style="text-align: left;">3.0.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">nodejs</td>
+<td style="text-align: left;">16.19.0</td>
+<td style="text-align: left;">18.16.1</td>
+</tr>
+<tr>
+<td style="text-align: left;">pandoc</td>
+<td style="text-align: left;">2.19.2</td>
+<td style="text-align: left;">3.1.3</td>
+</tr>
+<tr>
+<td style="text-align: left;">pillow</td>
+<td style="text-align: left;">9.5.0</td>
+<td style="text-align: left;">10.0.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">setuptools</td>
+<td style="text-align: left;">67.7.2</td>
+<td style="text-align: left;">68.0.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">simpervisor</td>
+<td style="text-align: left;">0.4</td>
+<td style="text-align: left;">1.0.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">sphinx</td>
+<td style="text-align: left;">6.2.0</td>
+<td style="text-align: left;">7.0.1</td>
+</tr>
+<tr>
+<td style="text-align: left;">urllib3</td>
+<td style="text-align: left;">1.26.15</td>
+<td style="text-align: left;">2.0.3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="added">Added<a class="headerlink" href="#added" title="Permanent link">&para;</a></h2>
+<ul>
+<li>libass</li>
+<li>jsonschema-specifications</li>
+<li>referencing</li>
+<li>brotli-python</li>
+<li>rpds-py</li>
+<li>rdma-core</li>
+<li>fribidi</li>
+</ul>
+<h2 id="removed">Removed<a class="headerlink" href="#removed" title="Permanent link">&para;</a></h2>
+<ul>
+<li>jinja2-time</li>
+<li>parquet-cpp</li>
+<li>libudev1</li>
+<li>typing</li>
+<li>libtool</li>
+<li>jack</li>
+<li>libllvm16</li>
+<li>pyrsistent</li>
+<li>arrow-cpp</li>
+<li>gstreamer-orc</li>
+<li>libdb</li>
+<li>pulseaudio</li>
+<li>pulseaudio-daemon</li>
+<li>libllvm11</li>
+</ul>
+<h2 id="0-desy-pinnedyml"><code>0-desy-pinned.yml</code><a class="headerlink" href="#0-desy-pinnedyml" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>brotlipy</td>
+<td>0.7.0</td>
+</tr>
+<tr>
+<td>certipy</td>
+<td>0.1.3</td>
+</tr>
+<tr>
+<td>ipykernel</td>
+<td>6.13.1</td>
+</tr>
+<tr>
+<td>ipympl</td>
+<td>0.9.3</td>
+</tr>
+<tr>
+<td>ipython</td>
+<td>7.33.0</td>
+</tr>
+<tr>
+<td>ipython_genutils</td>
+<td>0.2.0</td>
+</tr>
+<tr>
+<td>ipywidgets</td>
+<td>7.7.0</td>
+</tr>
+<tr>
+<td>jupyter</td>
+<td>1.0.0</td>
+</tr>
+<tr>
+<td>jupyter-server-mathjax</td>
+<td>0.2.6</td>
+</tr>
+<tr>
+<td>jupyter-server-proxy</td>
+<td>4.0.0</td>
+</tr>
+<tr>
+<td>jupyter_client</td>
+<td>7.3.4</td>
+</tr>
+<tr>
+<td>jupyter_console</td>
+<td>6.4.3</td>
+</tr>
+<tr>
+<td>jupyter_core</td>
+<td>4.10.0</td>
+</tr>
+<tr>
+<td>jupyter_server</td>
+<td>1.17.1</td>
+</tr>
+<tr>
+<td>jupyter_telemetry</td>
+<td>0.1.0</td>
+</tr>
+<tr>
+<td>jupyterhub</td>
+<td>2.3.1</td>
+</tr>
+<tr>
+<td>jupyterhub-base</td>
+<td>2.3.1</td>
+</tr>
+<tr>
+<td>jupyterlab</td>
+<td>3.4.3</td>
+</tr>
+<tr>
+<td>jupyterlab-git</td>
+<td>0.41.0</td>
+</tr>
+<tr>
+<td>jupyterlab-h5web</td>
+<td>7.0.0</td>
+</tr>
+<tr>
+<td>jupyterlab_code_formatter</td>
+<td>1.6.0</td>
+</tr>
+<tr>
+<td>jupyterlab_pygments</td>
+<td>0.2.2</td>
+</tr>
+<tr>
+<td>jupyterlab_server</td>
+<td>2.14.0</td>
+</tr>
+<tr>
+<td>jupyterlab_widgets</td>
+<td>1.1.0</td>
+</tr>
+<tr>
+<td>matplotlib</td>
+<td>3.5.2</td>
+</tr>
+<tr>
+<td>matplotlib-base</td>
+<td>3.5.2</td>
+</tr>
+<tr>
+<td>matplotlib-inline</td>
+<td>0.1.3</td>
+</tr>
+<tr>
+<td>pyls-spyder</td>
+<td>0.4.0</td>
+</tr>
+<tr>
+<td>scipy</td>
+<td>1.8.1</td>
+</tr>
+<tr>
+<td>spyder</td>
+<td>5.3.1</td>
+</tr>
+<tr>
+<td>spyder-kernels</td>
+<td>2.3.1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-baseyml"><code>1-base.yml</code><a class="headerlink" href="#1-baseyml" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>python</td>
+<td>3.9.16</td>
+</tr>
+<tr>
+<td>cpuonly::pytorch</td>
+<td>cpuonly::pytorch</td>
+</tr>
+<tr>
+<td>pytorch::pytorch</td>
+<td>pytorch::pytorch</td>
+</tr>
+<tr>
+<td>torchaudio::pytorch</td>
+<td>torchaudio::pytorch</td>
+</tr>
+<tr>
+<td>torchvision::pytorch</td>
+<td>torchvision::pytorch</td>
+</tr>
+<tr>
+<td>astropy</td>
+<td>5.3.1</td>
+</tr>
+<tr>
+<td>bokeh</td>
+<td>3.2.1</td>
+</tr>
+<tr>
+<td>curl</td>
+<td>8.2.1</td>
+</tr>
+<tr>
+<td>cython</td>
+<td>3.0.0</td>
+</tr>
+<tr>
+<td>dask</td>
+<td>2023.7.1</td>
+</tr>
+<tr>
+<td>dask-jobqueue</td>
+<td>0.8.2</td>
+</tr>
+<tr>
+<td>dask-labextension</td>
+<td>6.1.0</td>
+</tr>
+<tr>
+<td>fabio</td>
+<td>2023.4.1</td>
+</tr>
+<tr>
+<td>fast-histogram</td>
+<td>0.11</td>
+</tr>
+<tr>
+<td>fftw</td>
+<td>3.3.10</td>
+</tr>
+<tr>
+<td>h5glance&gt;</td>
+<td>h5glance&gt;</td>
+</tr>
+<tr>
+<td>h5netcdf</td>
+<td>1.2.0</td>
+</tr>
+<tr>
+<td>h5py</td>
+<td>3.9.0</td>
+</tr>
+<tr>
+<td>imageio</td>
+<td>2.31.1</td>
+</tr>
+<tr>
+<td>iminuit</td>
+<td>2.22.0</td>
+</tr>
+<tr>
+<td>ipympl</td>
+<td>0.9.3</td>
+</tr>
+<tr>
+<td>ipython</td>
+<td>7.33.0</td>
+</tr>
+<tr>
+<td>ipywidgets</td>
+<td>7.7.0</td>
+</tr>
+<tr>
+<td>jupyter</td>
+<td>1.0.0</td>
+</tr>
+<tr>
+<td>jupyterlab</td>
+<td>3.4.3</td>
+</tr>
+<tr>
+<td>jupyterlab-lsp</td>
+<td>3.10.2</td>
+</tr>
+<tr>
+<td>kafka-python</td>
+<td>2.0.2</td>
+</tr>
+<tr>
+<td>lmfit</td>
+<td>1.2.2</td>
+</tr>
+<tr>
+<td>matplotlib</td>
+<td>3.5.2</td>
+</tr>
+<tr>
+<td>mpl-interactions</td>
+<td>0.23.2</td>
+</tr>
+<tr>
+<td>msgpack-numpy</td>
+<td>0.4.8</td>
+</tr>
+<tr>
+<td>msgpack-python</td>
+<td>1.0.5</td>
+</tr>
+<tr>
+<td>natsort</td>
+<td>8.4.0</td>
+</tr>
+<tr>
+<td>netcdf4</td>
+<td>1.6.4</td>
+</tr>
+<tr>
+<td>numba</td>
+<td>0.57.1</td>
+</tr>
+<tr>
+<td>numpy</td>
+<td>1.24.4</td>
+</tr>
+<tr>
+<td>opencv</td>
+<td>4.8.0</td>
+</tr>
+<tr>
+<td>papermill</td>
+<td>2.3.4</td>
+</tr>
+<tr>
+<td>plotly</td>
+<td>5.15.0</td>
+</tr>
+<tr>
+<td>polars</td>
+<td>0.19.13</td>
+</tr>
+<tr>
+<td>pybaselines</td>
+<td>1.0.0</td>
+</tr>
+<tr>
+<td>pyfai</td>
+<td>2023.5.0</td>
+</tr>
+<tr>
+<td>pyopengl</td>
+<td>3.1.6</td>
+</tr>
+<tr>
+<td>pyqtgraph</td>
+<td>0.13.3</td>
+</tr>
+<tr>
+<td>pytest</td>
+<td>7.4.0</td>
+</tr>
+<tr>
+<td>pywavelets</td>
+<td>1.4.1</td>
+</tr>
+<tr>
+<td>pyzmq&lt;25</td>
+<td>pyzmq&lt;25</td>
+</tr>
+<tr>
+<td>scikit-beam</td>
+<td>0.0.26</td>
+</tr>
+<tr>
+<td>scikit-image</td>
+<td>0.21.0</td>
+</tr>
+<tr>
+<td>scikit-learn</td>
+<td>1.3.0</td>
+</tr>
+<tr>
+<td>scipy</td>
+<td>1.8.1</td>
+</tr>
+<tr>
+<td>seaborn</td>
+<td>0.12.2</td>
+</tr>
+<tr>
+<td>silx</td>
+<td>1.1.2</td>
+</tr>
+<tr>
+<td>spyder</td>
+<td>5.3.1</td>
+</tr>
+<tr>
+<td>xarray</td>
+<td>2023.7.0</td>
+</tr>
+<tr>
+<td>xraylib</td>
+<td>4.1.3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-customyml"><code>2-custom.yml</code><a class="headerlink" href="#2-customyml" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>calibration-client &gt;</td>
+<td>calibration-client &gt;</td>
+</tr>
+<tr>
+<td>cfelpyutils</td>
+<td>2.0.6</td>
+</tr>
+<tr>
+<td>condat-gridconv</td>
+<td>latest</td>
+</tr>
+<tr>
+<td>envmodules</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>euxfel-bunch-pattern</td>
+<td>0.6</td>
+</tr>
+<tr>
+<td>extra-data &gt;</td>
+<td>extra-data &gt;</td>
+</tr>
+<tr>
+<td>extra-geom</td>
+<td>1.11.0</td>
+</tr>
+<tr>
+<td>extra-hed</td>
+<td>0.1.0</td>
+</tr>
+<tr>
+<td>findxfel</td>
+<td>0.1.1</td>
+</tr>
+<tr>
+<td>hdf5-vds-check</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>karabo-bridge</td>
+<td>0.7.0</td>
+</tr>
+<tr>
+<td>karabo_bridge_recorder</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td>matplotlib-scalebar</td>
+<td>0.8.1</td>
+</tr>
+<tr>
+<td>metadata-client</td>
+<td>3.9.0</td>
+</tr>
+<tr>
+<td>metropc</td>
+<td>1.4.1</td>
+</tr>
+<tr>
+<td>nbclick</td>
+<td>0.4.1</td>
+</tr>
+<tr>
+<td>pasha</td>
+<td>0.1.1</td>
+</tr>
+<tr>
+<td>princess</td>
+<td>0.6</td>
+</tr>
+<tr>
+<td>condor</td>
+<td>1.0.7</td>
+</tr>
+</tbody>
+</table>
+<h2 id="environmentlockyml">environment.lock.yml<a class="headerlink" href="#environmentlockyml" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_libgcc_mutex</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>_openmp_mutex</td>
+<td>4.5</td>
+</tr>
+<tr>
+<td>aiohttp</td>
+<td>3.8.4</td>
+</tr>
+<tr>
+<td>aiosignal</td>
+<td>1.3.1</td>
+</tr>
+<tr>
+<td>alabaster</td>
+<td>0.7.13</td>
+</tr>
+<tr>
+<td>alembic</td>
+<td>1.11.1</td>
+</tr>
+<tr>
+<td>alsa-lib</td>
+<td>1.2.9</td>
+</tr>
+<tr>
+<td>ansiwrap</td>
+<td>0.8.4</td>
+</tr>
+<tr>
+<td>anyio</td>
+<td>3.7.1</td>
+</tr>
+<tr>
+<td>aom</td>
+<td>3.5.0</td>
+</tr>
+<tr>
+<td>argon2-cffi</td>
+<td>21.3.0</td>
+</tr>
+<tr>
+<td>argon2-cffi-bindings</td>
+<td>21.2.0</td>
+</tr>
+<tr>
+<td>arrow</td>
+<td>1.2.3</td>
+</tr>
+<tr>
+<td>astcheck</td>
+<td>0.3.0</td>
+</tr>
+<tr>
+<td>asteval</td>
+<td>0.9.30</td>
+</tr>
+<tr>
+<td>astroid</td>
+<td>2.15.6</td>
+</tr>
+<tr>
+<td>astropy</td>
+<td>5.3.1</td>
+</tr>
+<tr>
+<td>async-timeout</td>
+<td>4.0.2</td>
+</tr>
+<tr>
+<td>async_generator</td>
+<td>1.10</td>
+</tr>
+<tr>
+<td>atomicwrites</td>
+<td>1.4.1</td>
+</tr>
+<tr>
+<td>attr</td>
+<td>2.5.1</td>
+</tr>
+<tr>
+<td>attrs</td>
+<td>23.1.0</td>
+</tr>
+<tr>
+<td>autopep8</td>
+<td>1.6.0</td>
+</tr>
+<tr>
+<td>aws-c-auth</td>
+<td>0.7.0</td>
+</tr>
+<tr>
+<td>aws-c-cal</td>
+<td>0.6.0</td>
+</tr>
+<tr>
+<td>aws-c-common</td>
+<td>0.8.23</td>
+</tr>
+<tr>
+<td>aws-c-compression</td>
+<td>0.2.17</td>
+</tr>
+<tr>
+<td>aws-c-event-stream</td>
+<td>0.3.1</td>
+</tr>
+<tr>
+<td>aws-c-http</td>
+<td>0.7.11</td>
+</tr>
+<tr>
+<td>aws-c-io</td>
+<td>0.13.28</td>
+</tr>
+<tr>
+<td>aws-c-mqtt</td>
+<td>0.8.14</td>
+</tr>
+<tr>
+<td>aws-c-s3</td>
+<td>0.3.13</td>
+</tr>
+<tr>
+<td>aws-c-sdkutils</td>
+<td>0.1.11</td>
+</tr>
+<tr>
+<td>aws-checksums</td>
+<td>0.1.16</td>
+</tr>
+<tr>
+<td>aws-crt-cpp</td>
+<td>0.20.3</td>
+</tr>
+<tr>
+<td>aws-sdk-cpp</td>
+<td>1.10.57</td>
+</tr>
+<tr>
+<td>babel</td>
+<td>2.12.1</td>
+</tr>
+<tr>
+<td>backcall</td>
+<td>0.2.0</td>
+</tr>
+<tr>
+<td>backports</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>backports.functools_lru_cache</td>
+<td>1.6.5</td>
+</tr>
+<tr>
+<td>beautifulsoup4</td>
+<td>4.12.2</td>
+</tr>
+<tr>
+<td>binaryornot</td>
+<td>0.4.4</td>
+</tr>
+<tr>
+<td>black</td>
+<td>23.7.0</td>
+</tr>
+<tr>
+<td>bleach</td>
+<td>6.0.0</td>
+</tr>
+<tr>
+<td>blinker</td>
+<td>1.6.2</td>
+</tr>
+<tr>
+<td>blosc</td>
+<td>1.21.4</td>
+</tr>
+<tr>
+<td>bokeh</td>
+<td>3.2.1</td>
+</tr>
+<tr>
+<td>brotli</td>
+<td>1.0.9</td>
+</tr>
+<tr>
+<td>brotli-bin</td>
+<td>1.0.9</td>
+</tr>
+<tr>
+<td>brotli-python</td>
+<td>1.0.9</td>
+</tr>
+<tr>
+<td>brotlipy</td>
+<td>0.7.0</td>
+</tr>
+<tr>
+<td>brunsli</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>bzip2</td>
+<td>1.0.8</td>
+</tr>
+<tr>
+<td>c-ares</td>
+<td>1.19.1</td>
+</tr>
+<tr>
+<td>c-blosc2</td>
+<td>2.10.0</td>
+</tr>
+<tr>
+<td>ca-certificates</td>
+<td>2023.7.22</td>
+</tr>
+<tr>
+<td>cached-property</td>
+<td>1.5.2</td>
+</tr>
+<tr>
+<td>cached_property</td>
+<td>1.5.2</td>
+</tr>
+<tr>
+<td>cairo</td>
+<td>1.16.0</td>
+</tr>
+<tr>
+<td>calibration-client</td>
+<td>11.3.0</td>
+</tr>
+<tr>
+<td>certifi</td>
+<td>2023.7.22</td>
+</tr>
+<tr>
+<td>certipy</td>
+<td>0.1.3</td>
+</tr>
+<tr>
+<td>cfelpyutils</td>
+<td>2.0.6</td>
+</tr>
+<tr>
+<td>cffi</td>
+<td>1.15.1</td>
+</tr>
+<tr>
+<td>cfitsio</td>
+<td>4.2.0</td>
+</tr>
+<tr>
+<td>cftime</td>
+<td>1.6.2</td>
+</tr>
+<tr>
+<td>chardet</td>
+<td>5.1.0</td>
+</tr>
+<tr>
+<td>charls</td>
+<td>2.4.2</td>
+</tr>
+<tr>
+<td>charset-normalizer</td>
+<td>3.2.0</td>
+</tr>
+<tr>
+<td>click</td>
+<td>8.1.4</td>
+</tr>
+<tr>
+<td>cloudpickle</td>
+<td>2.2.1</td>
+</tr>
+<tr>
+<td>colorama</td>
+<td>0.4.6</td>
+</tr>
+<tr>
+<td>condat-gridconv</td>
+<td>latest</td>
+</tr>
+<tr>
+<td>condor</td>
+<td>1.0.7</td>
+</tr>
+<tr>
+<td>configurable-http-proxy</td>
+<td>4.5.4</td>
+</tr>
+<tr>
+<td>contourpy</td>
+<td>1.1.0</td>
+</tr>
+<tr>
+<td>cookiecutter</td>
+<td>2.2.3</td>
+</tr>
+<tr>
+<td>cpuonly</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>cryptography</td>
+<td>41.0.2</td>
+</tr>
+<tr>
+<td>curl</td>
+<td>8.2.1</td>
+</tr>
+<tr>
+<td>cycler</td>
+<td>0.11.0</td>
+</tr>
+<tr>
+<td>cython</td>
+<td>3.0.0</td>
+</tr>
+<tr>
+<td>cytoolz</td>
+<td>0.12.0</td>
+</tr>
+<tr>
+<td>dask</td>
+<td>2023.7.1</td>
+</tr>
+<tr>
+<td>dask-core</td>
+<td>2023.7.1</td>
+</tr>
+<tr>
+<td>dask-jobqueue</td>
+<td>0.8.2</td>
+</tr>
+<tr>
+<td>dask-labextension</td>
+<td>6.1.0</td>
+</tr>
+<tr>
+<td>dav1d</td>
+<td>1.2.1</td>
+</tr>
+<tr>
+<td>dbus</td>
+<td>1.13.6</td>
+</tr>
+<tr>
+<td>debugpy</td>
+<td>1.6.7</td>
+</tr>
+<tr>
+<td>decorator</td>
+<td>5.1.1</td>
+</tr>
+<tr>
+<td>defusedxml</td>
+<td>0.7.1</td>
+</tr>
+<tr>
+<td>diff-match-patch</td>
+<td>20230430</td>
+</tr>
+<tr>
+<td>dill</td>
+<td>0.3.6</td>
+</tr>
+<tr>
+<td>distributed</td>
+<td>2023.7.1</td>
+</tr>
+<tr>
+<td>docutils</td>
+<td>0.20.1</td>
+</tr>
+<tr>
+<td>entrypoints</td>
+<td>0.4</td>
+</tr>
+<tr>
+<td>envmodules</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>euxfel-bunch-pattern</td>
+<td>0.6</td>
+</tr>
+<tr>
+<td>exceptiongroup</td>
+<td>1.1.2</td>
+</tr>
+<tr>
+<td>expat</td>
+<td>2.5.0</td>
+</tr>
+<tr>
+<td>extra-data</td>
+<td>1.15.0</td>
+</tr>
+<tr>
+<td>extra-geom</td>
+<td>1.11.0</td>
+</tr>
+<tr>
+<td>extra-hed</td>
+<td>0.1.0</td>
+</tr>
+<tr>
+<td>fabio</td>
+<td>2023.4.1</td>
+</tr>
+<tr>
+<td>fast-histogram</td>
+<td>0.11</td>
+</tr>
+<tr>
+<td>ffmpeg</td>
+<td>6.0.0</td>
+</tr>
+<tr>
+<td>fftw</td>
+<td>3.3.10</td>
+</tr>
+<tr>
+<td>filelock</td>
+<td>3.12.4</td>
+</tr>
+<tr>
+<td>findxfel</td>
+<td>0.1.1</td>
+</tr>
+<tr>
+<td>flake8</td>
+<td>4.0.1</td>
+</tr>
+<tr>
+<td>flit-core</td>
+<td>3.9.0</td>
+</tr>
+<tr>
+<td>font-ttf-dejavu-sans-mono</td>
+<td>2.37</td>
+</tr>
+<tr>
+<td>font-ttf-inconsolata</td>
+<td>3.000</td>
+</tr>
+<tr>
+<td>font-ttf-source-code-pro</td>
+<td>2.038</td>
+</tr>
+<tr>
+<td>font-ttf-ubuntu</td>
+<td>0.83</td>
+</tr>
+<tr>
+<td>fontconfig</td>
+<td>2.14.2</td>
+</tr>
+<tr>
+<td>fonts-conda-ecosystem</td>
+<td>1</td>
+</tr>
+<tr>
+<td>fonts-conda-forge</td>
+<td>1</td>
+</tr>
+<tr>
+<td>fonttools</td>
+<td>4.41.0</td>
+</tr>
+<tr>
+<td>freeglut</td>
+<td>3.2.2</td>
+</tr>
+<tr>
+<td>freetype</td>
+<td>2.12.1</td>
+</tr>
+<tr>
+<td>fribidi</td>
+<td>1.0.10</td>
+</tr>
+<tr>
+<td>frozenlist</td>
+<td>1.3.3</td>
+</tr>
+<tr>
+<td>fsspec</td>
+<td>2023.6.0</td>
+</tr>
+<tr>
+<td>future</td>
+<td>0.18.3</td>
+</tr>
+<tr>
+<td>gettext</td>
+<td>0.21.1</td>
+</tr>
+<tr>
+<td>gflags</td>
+<td>2.2.2</td>
+</tr>
+<tr>
+<td>giflib</td>
+<td>5.2.1</td>
+</tr>
+<tr>
+<td>gitdb</td>
+<td>4.0.10</td>
+</tr>
+<tr>
+<td>gitpython</td>
+<td>3.1.32</td>
+</tr>
+<tr>
+<td>glib</td>
+<td>2.76.4</td>
+</tr>
+<tr>
+<td>glib-tools</td>
+<td>2.76.4</td>
+</tr>
+<tr>
+<td>glog</td>
+<td>0.6.0</td>
+</tr>
+<tr>
+<td>glymur</td>
+<td>0.12.8</td>
+</tr>
+<tr>
+<td>gmp</td>
+<td>6.2.1</td>
+</tr>
+<tr>
+<td>gmpy2</td>
+<td>2.1.2</td>
+</tr>
+<tr>
+<td>gnutls</td>
+<td>3.7.8</td>
+</tr>
+<tr>
+<td>graphite2</td>
+<td>1.3.13</td>
+</tr>
+<tr>
+<td>greenlet</td>
+<td>2.0.2</td>
+</tr>
+<tr>
+<td>gsl</td>
+<td>2.7</td>
+</tr>
+<tr>
+<td>gst-plugins-base</td>
+<td>1.22.5</td>
+</tr>
+<tr>
+<td>gstreamer</td>
+<td>1.22.5</td>
+</tr>
+<tr>
+<td>h5glance</td>
+<td>0.8.1</td>
+</tr>
+<tr>
+<td>h5grove</td>
+<td>1.2.0</td>
+</tr>
+<tr>
+<td>h5netcdf</td>
+<td>1.2.0</td>
+</tr>
+<tr>
+<td>h5py</td>
+<td>3.9.0</td>
+</tr>
+<tr>
+<td>harfbuzz</td>
+<td>7.3.0</td>
+</tr>
+<tr>
+<td>hdf4</td>
+<td>4.2.15</td>
+</tr>
+<tr>
+<td>hdf5</td>
+<td>1.14.1</td>
+</tr>
+<tr>
+<td>hdf5-vds-check</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>hdf5plugin</td>
+<td>4.1.3</td>
+</tr>
+<tr>
+<td>htmlgen</td>
+<td>2.0.0</td>
+</tr>
+<tr>
+<td>icu</td>
+<td>72.1</td>
+</tr>
+<tr>
+<td>idna</td>
+<td>3.4</td>
+</tr>
+<tr>
+<td>imagecodecs</td>
+<td>2023.1.23</td>
+</tr>
+<tr>
+<td>imageio</td>
+<td>2.31.1</td>
+</tr>
+<tr>
+<td>imagesize</td>
+<td>1.4.1</td>
+</tr>
+<tr>
+<td>iminuit</td>
+<td>2.22.0</td>
+</tr>
+<tr>
+<td>importlib-metadata</td>
+<td>6.8.0</td>
+</tr>
+<tr>
+<td>importlib_metadata</td>
+<td>6.8.0</td>
+</tr>
+<tr>
+<td>importlib_resources</td>
+<td>6.0.0</td>
+</tr>
+<tr>
+<td>inflection</td>
+<td>0.5.1</td>
+</tr>
+<tr>
+<td>iniconfig</td>
+<td>2.0.0</td>
+</tr>
+<tr>
+<td>intervaltree</td>
+<td>3.1.0</td>
+</tr>
+<tr>
+<td>ipykernel</td>
+<td>6.13.1</td>
+</tr>
+<tr>
+<td>ipympl</td>
+<td>0.9.3</td>
+</tr>
+<tr>
+<td>ipython</td>
+<td>7.33.0</td>
+</tr>
+<tr>
+<td>ipython_genutils</td>
+<td>0.2.0</td>
+</tr>
+<tr>
+<td>ipywidgets</td>
+<td>7.7.0</td>
+</tr>
+<tr>
+<td>isort</td>
+<td>5.12.0</td>
+</tr>
+<tr>
+<td>jaraco.classes</td>
+<td>3.3.0</td>
+</tr>
+<tr>
+<td>jasper</td>
+<td>4.0.0</td>
+</tr>
+<tr>
+<td>jedi</td>
+<td>0.18.2</td>
+</tr>
+<tr>
+<td>jeepney</td>
+<td>0.8.0</td>
+</tr>
+<tr>
+<td>jellyfish</td>
+<td>1.0.0</td>
+</tr>
+<tr>
+<td>jinja2</td>
+<td>3.1.2</td>
+</tr>
+<tr>
+<td>joblib</td>
+<td>1.3.0</td>
+</tr>
+<tr>
+<td>json5</td>
+<td>0.9.14</td>
+</tr>
+<tr>
+<td>jsonschema</td>
+<td>4.18.2</td>
+</tr>
+<tr>
+<td>jsonschema-specifications</td>
+<td>2023.6.1</td>
+</tr>
+<tr>
+<td>jupyter</td>
+<td>1.0.0</td>
+</tr>
+<tr>
+<td>jupyter-lsp</td>
+<td>2.2.0</td>
+</tr>
+<tr>
+<td>jupyter-server-mathjax</td>
+<td>0.2.6</td>
+</tr>
+<tr>
+<td>jupyter-server-proxy</td>
+<td>4.0.0</td>
+</tr>
+<tr>
+<td>jupyter_client</td>
+<td>7.3.4</td>
+</tr>
+<tr>
+<td>jupyter_console</td>
+<td>6.4.3</td>
+</tr>
+<tr>
+<td>jupyter_core</td>
+<td>4.10.0</td>
+</tr>
+<tr>
+<td>jupyter_server</td>
+<td>1.17.1</td>
+</tr>
+<tr>
+<td>jupyter_telemetry</td>
+<td>0.1.0</td>
+</tr>
+<tr>
+<td>jupyterhub</td>
+<td>2.3.1</td>
+</tr>
+<tr>
+<td>jupyterhub-base</td>
+<td>2.3.1</td>
+</tr>
+<tr>
+<td>jupyterlab</td>
+<td>3.4.3</td>
+</tr>
+<tr>
+<td>jupyterlab-git</td>
+<td>0.41.0</td>
+</tr>
+<tr>
+<td>jupyterlab-h5web</td>
+<td>7.0.0</td>
+</tr>
+<tr>
+<td>jupyterlab-lsp</td>
+<td>3.10.2</td>
+</tr>
+<tr>
+<td>jupyterlab_code_formatter</td>
+<td>1.6.0</td>
+</tr>
+<tr>
+<td>jupyterlab_pygments</td>
+<td>0.2.2</td>
+</tr>
+<tr>
+<td>jupyterlab_server</td>
+<td>2.14.0</td>
+</tr>
+<tr>
+<td>jupyterlab_widgets</td>
+<td>1.1.0</td>
+</tr>
+<tr>
+<td>jxrlib</td>
+<td>1.1</td>
+</tr>
+<tr>
+<td>kafka-python</td>
+<td>2.0.2</td>
+</tr>
+<tr>
+<td>karabo-bridge</td>
+<td>0.7.0</td>
+</tr>
+<tr>
+<td>karabo_bridge_recorder</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td>keyring</td>
+<td>24.2.0</td>
+</tr>
+<tr>
+<td>keyutils</td>
+<td>1.6.1</td>
+</tr>
+<tr>
+<td>kiwisolver</td>
+<td>1.4.4</td>
+</tr>
+<tr>
+<td>krb5</td>
+<td>1.21.1</td>
+</tr>
+<tr>
+<td>lame</td>
+<td>3.100</td>
+</tr>
+<tr>
+<td>lazy-object-proxy</td>
+<td>1.9.0</td>
+</tr>
+<tr>
+<td>lazy_loader</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td>lcms2</td>
+<td>2.15</td>
+</tr>
+<tr>
+<td>ld_impl_linux-64</td>
+<td>2.40</td>
+</tr>
+<tr>
+<td>lerc</td>
+<td>4.0.0</td>
+</tr>
+<tr>
+<td>libabseil</td>
+<td>20230125.3</td>
+</tr>
+<tr>
+<td>libaec</td>
+<td>1.0.6</td>
+</tr>
+<tr>
+<td>libarrow</td>
+<td>12.0.1</td>
+</tr>
+<tr>
+<td>libass</td>
+<td>0.17.1</td>
+</tr>
+<tr>
+<td>libavif</td>
+<td>0.11.1</td>
+</tr>
+<tr>
+<td>libblas</td>
+<td>3.9.0</td>
+</tr>
+<tr>
+<td>libbrotlicommon</td>
+<td>1.0.9</td>
+</tr>
+<tr>
+<td>libbrotlidec</td>
+<td>1.0.9</td>
+</tr>
+<tr>
+<td>libbrotlienc</td>
+<td>1.0.9</td>
+</tr>
+<tr>
+<td>libcap</td>
+<td>2.67</td>
+</tr>
+<tr>
+<td>libcblas</td>
+<td>3.9.0</td>
+</tr>
+<tr>
+<td>libclang</td>
+<td>15.0.7</td>
+</tr>
+<tr>
+<td>libclang13</td>
+<td>15.0.7</td>
+</tr>
+<tr>
+<td>libcrc32c</td>
+<td>1.1.2</td>
+</tr>
+<tr>
+<td>libcups</td>
+<td>2.3.3</td>
+</tr>
+<tr>
+<td>libcurl</td>
+<td>8.2.1</td>
+</tr>
+<tr>
+<td>libdeflate</td>
+<td>1.18</td>
+</tr>
+<tr>
+<td>libdrm</td>
+<td>2.4.114</td>
+</tr>
+<tr>
+<td>libedit</td>
+<td>3.1.20191231</td>
+</tr>
+<tr>
+<td>libev</td>
+<td>4.33</td>
+</tr>
+<tr>
+<td>libevent</td>
+<td>2.1.12</td>
+</tr>
+<tr>
+<td>libexpat</td>
+<td>2.5.0</td>
+</tr>
+<tr>
+<td>libffi</td>
+<td>3.4.2</td>
+</tr>
+<tr>
+<td>libflac</td>
+<td>1.4.3</td>
+</tr>
+<tr>
+<td>libgcc-ng</td>
+<td>13.1.0</td>
+</tr>
+<tr>
+<td>libgcrypt</td>
+<td>1.10.1</td>
+</tr>
+<tr>
+<td>libgfortran-ng</td>
+<td>13.1.0</td>
+</tr>
+<tr>
+<td>libgfortran5</td>
+<td>13.1.0</td>
+</tr>
+<tr>
+<td>libglib</td>
+<td>2.76.4</td>
+</tr>
+<tr>
+<td>libglu</td>
+<td>9.0.0</td>
+</tr>
+<tr>
+<td>libgomp</td>
+<td>13.1.0</td>
+</tr>
+<tr>
+<td>libgoogle-cloud</td>
+<td>2.12.0</td>
+</tr>
+<tr>
+<td>libgpg-error</td>
+<td>1.47</td>
+</tr>
+<tr>
+<td>libgrpc</td>
+<td>1.54.2</td>
+</tr>
+<tr>
+<td>libhwloc</td>
+<td>2.9.1</td>
+</tr>
+<tr>
+<td>libiconv</td>
+<td>1.17</td>
+</tr>
+<tr>
+<td>libidn2</td>
+<td>2.3.4</td>
+</tr>
+<tr>
+<td>libjpeg-turbo</td>
+<td>2.1.5.1</td>
+</tr>
+<tr>
+<td>liblapack</td>
+<td>3.9.0</td>
+</tr>
+<tr>
+<td>liblapacke</td>
+<td>3.9.0</td>
+</tr>
+<tr>
+<td>libllvm14</td>
+<td>14.0.6</td>
+</tr>
+<tr>
+<td>libllvm15</td>
+<td>15.0.7</td>
+</tr>
+<tr>
+<td>libnetcdf</td>
+<td>4.9.2</td>
+</tr>
+<tr>
+<td>libnfft</td>
+<td>3.5.3</td>
+</tr>
+<tr>
+<td>libnghttp2</td>
+<td>1.52.0</td>
+</tr>
+<tr>
+<td>libnsl</td>
+<td>2.0.0</td>
+</tr>
+<tr>
+<td>libnuma</td>
+<td>2.0.16</td>
+</tr>
+<tr>
+<td>libogg</td>
+<td>1.3.4</td>
+</tr>
+<tr>
+<td>libopenblas</td>
+<td>0.3.23</td>
+</tr>
+<tr>
+<td>libopencv</td>
+<td>4.8.0</td>
+</tr>
+<tr>
+<td>libopenvino</td>
+<td>2023.0.1</td>
+</tr>
+<tr>
+<td>libopenvino-auto-batch-plugin</td>
+<td>2023.0.1</td>
+</tr>
+<tr>
+<td>libopenvino-auto-plugin</td>
+<td>2023.0.1</td>
+</tr>
+<tr>
+<td>libopenvino-hetero-plugin</td>
+<td>2023.0.1</td>
+</tr>
+<tr>
+<td>libopenvino-intel-cpu-plugin</td>
+<td>2023.0.1</td>
+</tr>
+<tr>
+<td>libopenvino-intel-gpu-plugin</td>
+<td>2023.0.1</td>
+</tr>
+<tr>
+<td>libopenvino-ir-frontend</td>
+<td>2023.0.1</td>
+</tr>
+<tr>
+<td>libopenvino-onnx-frontend</td>
+<td>2023.0.1</td>
+</tr>
+<tr>
+<td>libopenvino-paddle-frontend</td>
+<td>2023.0.1</td>
+</tr>
+<tr>
+<td>libopenvino-pytorch-frontend</td>
+<td>2023.0.1</td>
+</tr>
+<tr>
+<td>libopenvino-tensorflow-frontend</td>
+<td>2023.0.1</td>
+</tr>
+<tr>
+<td>libopenvino-tensorflow-lite-frontend</td>
+<td>2023.0.1</td>
+</tr>
+<tr>
+<td>libopus</td>
+<td>1.3.1</td>
+</tr>
+<tr>
+<td>libpciaccess</td>
+<td>0.17</td>
+</tr>
+<tr>
+<td>libpng</td>
+<td>1.6.39</td>
+</tr>
+<tr>
+<td>libpq</td>
+<td>15.3</td>
+</tr>
+<tr>
+<td>libprotobuf</td>
+<td>3.21.12</td>
+</tr>
+<tr>
+<td>libsndfile</td>
+<td>1.2.0</td>
+</tr>
+<tr>
+<td>libsodium</td>
+<td>1.0.18</td>
+</tr>
+<tr>
+<td>libspatialindex</td>
+<td>1.9.3</td>
+</tr>
+<tr>
+<td>libspimage</td>
+<td>1.0.0</td>
+</tr>
+<tr>
+<td>libsqlite</td>
+<td>3.42.0</td>
+</tr>
+<tr>
+<td>libssh2</td>
+<td>1.11.0</td>
+</tr>
+<tr>
+<td>libstdcxx-ng</td>
+<td>13.1.0</td>
+</tr>
+<tr>
+<td>libsystemd0</td>
+<td>253</td>
+</tr>
+<tr>
+<td>libtasn1</td>
+<td>4.19.0</td>
+</tr>
+<tr>
+<td>libthrift</td>
+<td>0.18.1</td>
+</tr>
+<tr>
+<td>libtiff</td>
+<td>4.5.1</td>
+</tr>
+<tr>
+<td>libunistring</td>
+<td>0.9.10</td>
+</tr>
+<tr>
+<td>libutf8proc</td>
+<td>2.8.0</td>
+</tr>
+<tr>
+<td>libuuid</td>
+<td>2.38.1</td>
+</tr>
+<tr>
+<td>libuv</td>
+<td>1.44.2</td>
+</tr>
+<tr>
+<td>libva</td>
+<td>2.19.0</td>
+</tr>
+<tr>
+<td>libvorbis</td>
+<td>1.3.7</td>
+</tr>
+<tr>
+<td>libvpx</td>
+<td>1.13.0</td>
+</tr>
+<tr>
+<td>libwebp</td>
+<td>1.3.1</td>
+</tr>
+<tr>
+<td>libwebp-base</td>
+<td>1.3.1</td>
+</tr>
+<tr>
+<td>libxcb</td>
+<td>1.15</td>
+</tr>
+<tr>
+<td>libxkbcommon</td>
+<td>1.5.0</td>
+</tr>
+<tr>
+<td>libxml2</td>
+<td>2.11.4</td>
+</tr>
+<tr>
+<td>libxslt</td>
+<td>1.1.37</td>
+</tr>
+<tr>
+<td>libzip</td>
+<td>1.9.2</td>
+</tr>
+<tr>
+<td>libzlib</td>
+<td>1.2.13</td>
+</tr>
+<tr>
+<td>libzopfli</td>
+<td>1.0.3</td>
+</tr>
+<tr>
+<td>llvmlite</td>
+<td>0.40.1</td>
+</tr>
+<tr>
+<td>lmfit</td>
+<td>1.2.2</td>
+</tr>
+<tr>
+<td>locket</td>
+<td>1.0.0</td>
+</tr>
+<tr>
+<td>lxml</td>
+<td>4.9.3</td>
+</tr>
+<tr>
+<td>lz4</td>
+<td>4.3.2</td>
+</tr>
+<tr>
+<td>lz4-c</td>
+<td>1.9.4</td>
+</tr>
+<tr>
+<td>mako</td>
+<td>1.2.4</td>
+</tr>
+<tr>
+<td>markupsafe</td>
+<td>2.1.3</td>
+</tr>
+<tr>
+<td>matplotlib</td>
+<td>3.5.2</td>
+</tr>
+<tr>
+<td>matplotlib-base</td>
+<td>3.5.2</td>
+</tr>
+<tr>
+<td>matplotlib-inline</td>
+<td>0.1.3</td>
+</tr>
+<tr>
+<td>matplotlib-scalebar</td>
+<td>0.8.1</td>
+</tr>
+<tr>
+<td>mccabe</td>
+<td>0.6.1</td>
+</tr>
+<tr>
+<td>metadata-client</td>
+<td>3.9.0</td>
+</tr>
+<tr>
+<td>metropc</td>
+<td>1.4.1</td>
+</tr>
+<tr>
+<td>mistune</td>
+<td>3.0.0</td>
+</tr>
+<tr>
+<td>more-itertools</td>
+<td>9.1.0</td>
+</tr>
+<tr>
+<td>mpc</td>
+<td>1.3.1</td>
+</tr>
+<tr>
+<td>mpfr</td>
+<td>4.2.0</td>
+</tr>
+<tr>
+<td>mpg123</td>
+<td>1.31.3</td>
+</tr>
+<tr>
+<td>mpl-interactions</td>
+<td>0.23.2</td>
+</tr>
+<tr>
+<td>mpmath</td>
+<td>1.3.0</td>
+</tr>
+<tr>
+<td>msgpack-numpy</td>
+<td>0.4.8</td>
+</tr>
+<tr>
+<td>msgpack-python</td>
+<td>1.0.5</td>
+</tr>
+<tr>
+<td>multidict</td>
+<td>6.0.4</td>
+</tr>
+<tr>
+<td>munkres</td>
+<td>1.1.4</td>
+</tr>
+<tr>
+<td>mypy_extensions</td>
+<td>1.0.0</td>
+</tr>
+<tr>
+<td>mysql-common</td>
+<td>8.0.33</td>
+</tr>
+<tr>
+<td>mysql-libs</td>
+<td>8.0.33</td>
+</tr>
+<tr>
+<td>natsort</td>
+<td>8.4.0</td>
+</tr>
+<tr>
+<td>nbclassic</td>
+<td>0.5.6</td>
+</tr>
+<tr>
+<td>nbclick</td>
+<td>0.4.1</td>
+</tr>
+<tr>
+<td>nbclient</td>
+<td>0.7.0</td>
+</tr>
+<tr>
+<td>nbconvert</td>
+<td>7.6.0</td>
+</tr>
+<tr>
+<td>nbconvert-core</td>
+<td>7.6.0</td>
+</tr>
+<tr>
+<td>nbconvert-pandoc</td>
+<td>7.6.0</td>
+</tr>
+<tr>
+<td>nbdime</td>
+<td>3.2.1</td>
+</tr>
+<tr>
+<td>nbformat</td>
+<td>5.9.1</td>
+</tr>
+<tr>
+<td>nbparameterise</td>
+<td>0.6</td>
+</tr>
+<tr>
+<td>ncurses</td>
+<td>6.4</td>
+</tr>
+<tr>
+<td>nest-asyncio</td>
+<td>1.5.6</td>
+</tr>
+<tr>
+<td>netcdf4</td>
+<td>1.6.4</td>
+</tr>
+<tr>
+<td>nettle</td>
+<td>3.8.1</td>
+</tr>
+<tr>
+<td>networkx</td>
+<td>3.1</td>
+</tr>
+<tr>
+<td>nodejs</td>
+<td>18.16.1</td>
+</tr>
+<tr>
+<td>nomkl</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>notebook</td>
+<td>6.5.4</td>
+</tr>
+<tr>
+<td>notebook-shim</td>
+<td>0.2.3</td>
+</tr>
+<tr>
+<td>nspr</td>
+<td>4.35</td>
+</tr>
+<tr>
+<td>nss</td>
+<td>3.89</td>
+</tr>
+<tr>
+<td>numba</td>
+<td>0.57.1</td>
+</tr>
+<tr>
+<td>numexpr</td>
+<td>2.8.4</td>
+</tr>
+<tr>
+<td>numpy</td>
+<td>1.24.4</td>
+</tr>
+<tr>
+<td>numpydoc</td>
+<td>1.5.0</td>
+</tr>
+<tr>
+<td>oauth2-xfel-client</td>
+<td>6.1.0</td>
+</tr>
+<tr>
+<td>oauthlib</td>
+<td>3.2.2</td>
+</tr>
+<tr>
+<td>ocl-icd</td>
+<td>2.3.1</td>
+</tr>
+<tr>
+<td>ocl-icd-system</td>
+<td>1.0.0</td>
+</tr>
+<tr>
+<td>opencv</td>
+<td>4.8.0</td>
+</tr>
+<tr>
+<td>openh264</td>
+<td>2.3.1</td>
+</tr>
+<tr>
+<td>openjpeg</td>
+<td>2.5.0</td>
+</tr>
+<tr>
+<td>openssl</td>
+<td>3.1.4</td>
+</tr>
+<tr>
+<td>orc</td>
+<td>1.9.0</td>
+</tr>
+<tr>
+<td>orjson</td>
+<td>3.9.2</td>
+</tr>
+<tr>
+<td>p11-kit</td>
+<td>0.24.1</td>
+</tr>
+<tr>
+<td>packaging</td>
+<td>23.1</td>
+</tr>
+<tr>
+<td>pamela</td>
+<td>1.0.0</td>
+</tr>
+<tr>
+<td>pandas</td>
+<td>2.0.3</td>
+</tr>
+<tr>
+<td>pandoc</td>
+<td>3.1.3</td>
+</tr>
+<tr>
+<td>pandocfilters</td>
+<td>1.5.0</td>
+</tr>
+<tr>
+<td>papermill</td>
+<td>2.3.4</td>
+</tr>
+<tr>
+<td>parso</td>
+<td>0.8.3</td>
+</tr>
+<tr>
+<td>partd</td>
+<td>1.4.0</td>
+</tr>
+<tr>
+<td>pasha</td>
+<td>0.1.1</td>
+</tr>
+<tr>
+<td>pathspec</td>
+<td>0.11.1</td>
+</tr>
+<tr>
+<td>patsy</td>
+<td>0.5.3</td>
+</tr>
+<tr>
+<td>pcre2</td>
+<td>10.40</td>
+</tr>
+<tr>
+<td>pexpect</td>
+<td>4.8.0</td>
+</tr>
+<tr>
+<td>pickleshare</td>
+<td>0.7.5</td>
+</tr>
+<tr>
+<td>pillow</td>
+<td>10.0.0</td>
+</tr>
+<tr>
+<td>pip</td>
+<td>23.1.2</td>
+</tr>
+<tr>
+<td>pixman</td>
+<td>0.40.0</td>
+</tr>
+<tr>
+<td>pkgutil-resolve-name</td>
+<td>1.3.10</td>
+</tr>
+<tr>
+<td>platformdirs</td>
+<td>3.8.1</td>
+</tr>
+<tr>
+<td>plotly</td>
+<td>5.15.0</td>
+</tr>
+<tr>
+<td>pluggy</td>
+<td>1.2.0</td>
+</tr>
+<tr>
+<td>ply</td>
+<td>3.11</td>
+</tr>
+<tr>
+<td>polars</td>
+<td>0.19.13</td>
+</tr>
+<tr>
+<td>princess</td>
+<td>0.6</td>
+</tr>
+<tr>
+<td>prometheus_client</td>
+<td>0.17.1</td>
+</tr>
+<tr>
+<td>prompt-toolkit</td>
+<td>3.0.39</td>
+</tr>
+<tr>
+<td>prompt_toolkit</td>
+<td>3.0.39</td>
+</tr>
+<tr>
+<td>psutil</td>
+<td>5.9.5</td>
+</tr>
+<tr>
+<td>pthread-stubs</td>
+<td>0.4</td>
+</tr>
+<tr>
+<td>ptyprocess</td>
+<td>0.7.0</td>
+</tr>
+<tr>
+<td>pugixml</td>
+<td>1.13</td>
+</tr>
+<tr>
+<td>pulseaudio-client</td>
+<td>16.1</td>
+</tr>
+<tr>
+<td>py-opencv</td>
+<td>4.8.0</td>
+</tr>
+<tr>
+<td>pyarrow</td>
+<td>12.0.1</td>
+</tr>
+<tr>
+<td>pybaselines</td>
+<td>1.0.0</td>
+</tr>
+<tr>
+<td>pycodestyle</td>
+<td>2.8.0</td>
+</tr>
+<tr>
+<td>pycparser</td>
+<td>2.21</td>
+</tr>
+<tr>
+<td>pycurl</td>
+<td>7.45.1</td>
+</tr>
+<tr>
+<td>pydocstyle</td>
+<td>6.3.0</td>
+</tr>
+<tr>
+<td>pyerfa</td>
+<td>2.0.0.3</td>
+</tr>
+<tr>
+<td>pyfai</td>
+<td>2023.5.0</td>
+</tr>
+<tr>
+<td>pyfai-base</td>
+<td>2023.5.0</td>
+</tr>
+<tr>
+<td>pyflakes</td>
+<td>2.4.0</td>
+</tr>
+<tr>
+<td>pygments</td>
+<td>2.15.1</td>
+</tr>
+<tr>
+<td>pyjwt</td>
+<td>2.7.0</td>
+</tr>
+<tr>
+<td>pylint</td>
+<td>2.17.4</td>
+</tr>
+<tr>
+<td>pyls-spyder</td>
+<td>0.4.0</td>
+</tr>
+<tr>
+<td>pyopengl</td>
+<td>3.1.6</td>
+</tr>
+<tr>
+<td>pyopenssl</td>
+<td>23.2.0</td>
+</tr>
+<tr>
+<td>pyparsing</td>
+<td>3.1.0</td>
+</tr>
+<tr>
+<td>pyqt</td>
+<td>5.15.7</td>
+</tr>
+<tr>
+<td>pyqt5-sip</td>
+<td>12.11.0</td>
+</tr>
+<tr>
+<td>pyqtgraph</td>
+<td>0.13.3</td>
+</tr>
+<tr>
+<td>pyqtwebengine</td>
+<td>5.15.7</td>
+</tr>
+<tr>
+<td>pysocks</td>
+<td>1.7.1</td>
+</tr>
+<tr>
+<td>pytest</td>
+<td>7.4.0</td>
+</tr>
+<tr>
+<td>python</td>
+<td>3.9.16</td>
+</tr>
+<tr>
+<td>python-dateutil</td>
+<td>2.8.2</td>
+</tr>
+<tr>
+<td>python-fastjsonschema</td>
+<td>2.17.1</td>
+</tr>
+<tr>
+<td>python-json-logger</td>
+<td>2.0.7</td>
+</tr>
+<tr>
+<td>python-lsp-black</td>
+<td>1.3.0</td>
+</tr>
+<tr>
+<td>python-lsp-jsonrpc</td>
+<td>1.0.0</td>
+</tr>
+<tr>
+<td>python-lsp-server</td>
+<td>1.4.1</td>
+</tr>
+<tr>
+<td>python-slugify</td>
+<td>8.0.1</td>
+</tr>
+<tr>
+<td>python-tzdata</td>
+<td>2023.3</td>
+</tr>
+<tr>
+<td>python_abi</td>
+<td>3.9</td>
+</tr>
+<tr>
+<td>pytoolconfig</td>
+<td>1.2.5</td>
+</tr>
+<tr>
+<td>pytorch</td>
+<td>2.0.0</td>
+</tr>
+<tr>
+<td>pytorch-mutex</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>pytz</td>
+<td>2023.3</td>
+</tr>
+<tr>
+<td>pywavelets</td>
+<td>1.4.1</td>
+</tr>
+<tr>
+<td>pyxdg</td>
+<td>0.28</td>
+</tr>
+<tr>
+<td>pyyaml</td>
+<td>6.0</td>
+</tr>
+<tr>
+<td>pyzmq</td>
+<td>24.0.1</td>
+</tr>
+<tr>
+<td>qdarkstyle</td>
+<td>3.0.3</td>
+</tr>
+<tr>
+<td>qstylizer</td>
+<td>0.2.2</td>
+</tr>
+<tr>
+<td>qt-main</td>
+<td>5.15.8</td>
+</tr>
+<tr>
+<td>qt-webengine</td>
+<td>5.15.8</td>
+</tr>
+<tr>
+<td>qtawesome</td>
+<td>1.2.3</td>
+</tr>
+<tr>
+<td>qtconsole</td>
+<td>5.3.2</td>
+</tr>
+<tr>
+<td>qtconsole-base</td>
+<td>5.3.2</td>
+</tr>
+<tr>
+<td>qtpy</td>
+<td>2.3.1</td>
+</tr>
+<tr>
+<td>rdma-core</td>
+<td>28.9</td>
+</tr>
+<tr>
+<td>re2</td>
+<td>2023.03.02</td>
+</tr>
+<tr>
+<td>readline</td>
+<td>8.2</td>
+</tr>
+<tr>
+<td>referencing</td>
+<td>0.29.1</td>
+</tr>
+<tr>
+<td>requests</td>
+<td>2.31.0</td>
+</tr>
+<tr>
+<td>requests-oauthlib</td>
+<td>1.3.1</td>
+</tr>
+<tr>
+<td>rope</td>
+<td>1.9.0</td>
+</tr>
+<tr>
+<td>rpds-py</td>
+<td>0.8.10</td>
+</tr>
+<tr>
+<td>rtree</td>
+<td>1.0.1</td>
+</tr>
+<tr>
+<td>ruamel.yaml</td>
+<td>0.17.32</td>
+</tr>
+<tr>
+<td>ruamel.yaml.clib</td>
+<td>0.2.7</td>
+</tr>
+<tr>
+<td>s2n</td>
+<td>1.3.46</td>
+</tr>
+<tr>
+<td>scikit-beam</td>
+<td>0.0.26</td>
+</tr>
+<tr>
+<td>scikit-image</td>
+<td>0.21.0</td>
+</tr>
+<tr>
+<td>scikit-learn</td>
+<td>1.3.0</td>
+</tr>
+<tr>
+<td>scipy</td>
+<td>1.8.1</td>
+</tr>
+<tr>
+<td>seaborn</td>
+<td>0.12.2</td>
+</tr>
+<tr>
+<td>seaborn-base</td>
+<td>0.12.2</td>
+</tr>
+<tr>
+<td>secretstorage</td>
+<td>3.3.3</td>
+</tr>
+<tr>
+<td>send2trash</td>
+<td>1.8.2</td>
+</tr>
+<tr>
+<td>setuptools</td>
+<td>68.0.0</td>
+</tr>
+<tr>
+<td>setuptools-scm</td>
+<td>7.1.0</td>
+</tr>
+<tr>
+<td>silx</td>
+<td>1.1.2</td>
+</tr>
+<tr>
+<td>silx-base</td>
+<td>1.1.2</td>
+</tr>
+<tr>
+<td>simpervisor</td>
+<td>1.0.0</td>
+</tr>
+<tr>
+<td>sip</td>
+<td>6.7.9</td>
+</tr>
+<tr>
+<td>six</td>
+<td>1.16.0</td>
+</tr>
+<tr>
+<td>sleef</td>
+<td>3.5.1</td>
+</tr>
+<tr>
+<td>smmap</td>
+<td>3.0.5</td>
+</tr>
+<tr>
+<td>snappy</td>
+<td>1.1.10</td>
+</tr>
+<tr>
+<td>sniffio</td>
+<td>1.3.0</td>
+</tr>
+<tr>
+<td>snowballstemmer</td>
+<td>2.2.0</td>
+</tr>
+<tr>
+<td>sortedcontainers</td>
+<td>2.4.0</td>
+</tr>
+<tr>
+<td>soupsieve</td>
+<td>2.3.2.post1</td>
+</tr>
+<tr>
+<td>sphinx</td>
+<td>7.0.1</td>
+</tr>
+<tr>
+<td>sphinxcontrib-applehelp</td>
+<td>1.0.4</td>
+</tr>
+<tr>
+<td>sphinxcontrib-devhelp</td>
+<td>1.0.2</td>
+</tr>
+<tr>
+<td>sphinxcontrib-htmlhelp</td>
+<td>2.0.1</td>
+</tr>
+<tr>
+<td>sphinxcontrib-jsmath</td>
+<td>1.0.1</td>
+</tr>
+<tr>
+<td>sphinxcontrib-qthelp</td>
+<td>1.0.3</td>
+</tr>
+<tr>
+<td>sphinxcontrib-serializinghtml</td>
+<td>1.1.5</td>
+</tr>
+<tr>
+<td>spsim</td>
+<td>1.0.0</td>
+</tr>
+<tr>
+<td>spyder</td>
+<td>5.3.1</td>
+</tr>
+<tr>
+<td>spyder-kernels</td>
+<td>2.3.1</td>
+</tr>
+<tr>
+<td>sqlalchemy</td>
+<td>2.0.18</td>
+</tr>
+<tr>
+<td>statsmodels</td>
+<td>0.14.0</td>
+</tr>
+<tr>
+<td>svt-av1</td>
+<td>1.6.0</td>
+</tr>
+<tr>
+<td>sympy</td>
+<td>1.12</td>
+</tr>
+<tr>
+<td>tbb</td>
+<td>2021.9.0</td>
+</tr>
+<tr>
+<td>tblib</td>
+<td>1.7.0</td>
+</tr>
+<tr>
+<td>tenacity</td>
+<td>8.2.2</td>
+</tr>
+<tr>
+<td>terminado</td>
+<td>0.17.1</td>
+</tr>
+<tr>
+<td>text-unidecode</td>
+<td>1.3</td>
+</tr>
+<tr>
+<td>textdistance</td>
+<td>4.5.0</td>
+</tr>
+<tr>
+<td>textwrap3</td>
+<td>0.9.2</td>
+</tr>
+<tr>
+<td>threadpoolctl</td>
+<td>3.1.0</td>
+</tr>
+<tr>
+<td>three-merge</td>
+<td>0.1.1</td>
+</tr>
+<tr>
+<td>tifffile</td>
+<td>2023.7.10</td>
+</tr>
+<tr>
+<td>tinycss2</td>
+<td>1.2.1</td>
+</tr>
+<tr>
+<td>tk</td>
+<td>8.6.12</td>
+</tr>
+<tr>
+<td>toml</td>
+<td>0.10.2</td>
+</tr>
+<tr>
+<td>tomli</td>
+<td>2.0.1</td>
+</tr>
+<tr>
+<td>tomlkit</td>
+<td>0.11.8</td>
+</tr>
+<tr>
+<td>toolz</td>
+<td>0.12.0</td>
+</tr>
+<tr>
+<td>torchaudio</td>
+<td>2.0.0</td>
+</tr>
+<tr>
+<td>torchvision</td>
+<td>0.15.2</td>
+</tr>
+<tr>
+<td>tornado</td>
+<td>6.3.2</td>
+</tr>
+<tr>
+<td>tqdm</td>
+<td>4.65.0</td>
+</tr>
+<tr>
+<td>traitlets</td>
+<td>5.9.0</td>
+</tr>
+<tr>
+<td>typing-extensions</td>
+<td>4.7.1</td>
+</tr>
+<tr>
+<td>typing_extensions</td>
+<td>4.7.1</td>
+</tr>
+<tr>
+<td>tzdata</td>
+<td>2023c</td>
+</tr>
+<tr>
+<td>ucx</td>
+<td>1.14.1</td>
+</tr>
+<tr>
+<td>ujson</td>
+<td>5.7.0</td>
+</tr>
+<tr>
+<td>uncertainties</td>
+<td>3.1.7</td>
+</tr>
+<tr>
+<td>unicodedata2</td>
+<td>15.0.0</td>
+</tr>
+<tr>
+<td>unidecode</td>
+<td>1.3.6</td>
+</tr>
+<tr>
+<td>urllib3</td>
+<td>2.0.3</td>
+</tr>
+<tr>
+<td>watchdog</td>
+<td>3.0.0</td>
+</tr>
+<tr>
+<td>wcwidth</td>
+<td>0.2.6</td>
+</tr>
+<tr>
+<td>webencodings</td>
+<td>0.5.1</td>
+</tr>
+<tr>
+<td>websocket-client</td>
+<td>1.6.1</td>
+</tr>
+<tr>
+<td>wheel</td>
+<td>0.40.0</td>
+</tr>
+<tr>
+<td>widgetsnbextension</td>
+<td>3.6.4</td>
+</tr>
+<tr>
+<td>wrapt</td>
+<td>1.15.0</td>
+</tr>
+<tr>
+<td>wurlitzer</td>
+<td>3.0.3</td>
+</tr>
+<tr>
+<td>x264</td>
+<td>1!164.3095</td>
+</tr>
+<tr>
+<td>x265</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>xarray</td>
+<td>2023.7.0</td>
+</tr>
+<tr>
+<td>xcb-util</td>
+<td>0.4.0</td>
+</tr>
+<tr>
+<td>xcb-util-image</td>
+<td>0.4.0</td>
+</tr>
+<tr>
+<td>xcb-util-keysyms</td>
+<td>0.4.0</td>
+</tr>
+<tr>
+<td>xcb-util-renderutil</td>
+<td>0.3.9</td>
+</tr>
+<tr>
+<td>xcb-util-wm</td>
+<td>0.4.1</td>
+</tr>
+<tr>
+<td>xkeyboard-config</td>
+<td>2.39</td>
+</tr>
+<tr>
+<td>xorg-compositeproto</td>
+<td>0.4.2</td>
+</tr>
+<tr>
+<td>xorg-damageproto</td>
+<td>1.2.1</td>
+</tr>
+<tr>
+<td>xorg-fixesproto</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td>xorg-inputproto</td>
+<td>2.3.2</td>
+</tr>
+<tr>
+<td>xorg-kbproto</td>
+<td>1.0.7</td>
+</tr>
+<tr>
+<td>xorg-libice</td>
+<td>1.1.1</td>
+</tr>
+<tr>
+<td>xorg-libsm</td>
+<td>1.2.4</td>
+</tr>
+<tr>
+<td>xorg-libx11</td>
+<td>1.8.6</td>
+</tr>
+<tr>
+<td>xorg-libxau</td>
+<td>1.0.11</td>
+</tr>
+<tr>
+<td>xorg-libxcomposite</td>
+<td>0.4.6</td>
+</tr>
+<tr>
+<td>xorg-libxdamage</td>
+<td>1.1.5</td>
+</tr>
+<tr>
+<td>xorg-libxdmcp</td>
+<td>1.1.3</td>
+</tr>
+<tr>
+<td>xorg-libxext</td>
+<td>1.3.4</td>
+</tr>
+<tr>
+<td>xorg-libxfixes</td>
+<td>5.0.3</td>
+</tr>
+<tr>
+<td>xorg-libxi</td>
+<td>1.7.10</td>
+</tr>
+<tr>
+<td>xorg-libxrandr</td>
+<td>1.5.2</td>
+</tr>
+<tr>
+<td>xorg-libxrender</td>
+<td>0.9.11</td>
+</tr>
+<tr>
+<td>xorg-libxtst</td>
+<td>1.2.3</td>
+</tr>
+<tr>
+<td>xorg-randrproto</td>
+<td>1.5.0</td>
+</tr>
+<tr>
+<td>xorg-recordproto</td>
+<td>1.14.2</td>
+</tr>
+<tr>
+<td>xorg-renderproto</td>
+<td>0.11.1</td>
+</tr>
+<tr>
+<td>xorg-util-macros</td>
+<td>1.19.3</td>
+</tr>
+<tr>
+<td>xorg-xextproto</td>
+<td>7.3.0</td>
+</tr>
+<tr>
+<td>xorg-xf86vidmodeproto</td>
+<td>2.3.1</td>
+</tr>
+<tr>
+<td>xorg-xproto</td>
+<td>7.0.31</td>
+</tr>
+<tr>
+<td>xraylib</td>
+<td>4.1.3</td>
+</tr>
+<tr>
+<td>xyzservices</td>
+<td>2023.5.0</td>
+</tr>
+<tr>
+<td>xz</td>
+<td>5.2.6</td>
+</tr>
+<tr>
+<td>yaml</td>
+<td>0.2.5</td>
+</tr>
+<tr>
+<td>yapf</td>
+<td>0.33.0</td>
+</tr>
+<tr>
+<td>yarl</td>
+<td>1.9.2</td>
+</tr>
+<tr>
+<td>zeromq</td>
+<td>4.3.4</td>
+</tr>
+<tr>
+<td>zfp</td>
+<td>1.0.0</td>
+</tr>
+<tr>
+<td>zict</td>
+<td>3.0.0</td>
+</tr>
+<tr>
+<td>zipp</td>
+<td>3.16.0</td>
+</tr>
+<tr>
+<td>zlib</td>
+<td>1.2.13</td>
+</tr>
+<tr>
+<td>zlib-ng</td>
+<td>2.0.7</td>
+</tr>
+<tr>
+<td>zstd</td>
+<td>1.5.2</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../202401/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 202401" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              202401
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../202301/" class="md-footer__link md-footer__link--next" aria-label="Next: 202301" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              202301
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/European-XFEL" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.instant", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+    
+    
+  </body>
+</html>
