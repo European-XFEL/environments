@@ -7,7 +7,11 @@ nav = mkdocs_gen_files.Nav()
 ROOT = Path(__file__).parent.parent
 modules = list((ROOT / "modules").rglob("*"))
 modules = [m for m in modules if m.is_file()]
-modules = [m for m in modules if not (m.name.startswith(".") or "DEPRECATED" in str(m))]
+modules = [
+    m
+    for m in modules
+    if not (m.name.startswith(".") or "DEPRECATED" in str(m) or m.name.endswith("~"))
+]
 
 MODULES_DICT = {}
 
