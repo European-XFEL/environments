@@ -1,0 +1,55 @@
+name: Docs - PR
+
+on:
+  pull_request:
+
+permissions:
+  contents: write
+
+env:
+  GIT_COMMITTER_NAME: github-actions[bot]
+  GIT_COMMITTER_EMAIL: github-actions[bot]@users.noreply.github.com
+
+jobs:
+  build-and-upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ./.github/setup
+        with:
+          python-version: 3.8
+
+      - run: poetry run poe docs build
+
+      - uses: actions/upload-artifact@v4
+        with:
+          path: ./site
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build-and-upload
+    environment:
+      name: github-pages/#${{ github.event.number }}
+      url: https://${{ github.repository_owner }}.github.io/${{github.event.repository.name}}/pr/${{ github.event.number }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+
+      - uses: actions/download-artifact@v4
+
+      - name: Add/Update Preview
+        run: |
+          mkdir -p pr
+          rm -rf pr/${{ github.event.number }}
+          mv artifact pr/${{ github.event.number }}
+
+      - name: Commit and Push
+        run: |
+          git add --all pr/${{ github.event.number }}
+          git clean -fdx
+          git commit \
+            -m "Preview for PR#${{ github.event.number }}" \
+            -m "${{ github.event.pull_request.head.sha }}"
+          git push

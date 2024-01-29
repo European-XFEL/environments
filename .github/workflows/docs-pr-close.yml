@@ -1,0 +1,40 @@
+name: Docs - PR Closed
+
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  contents: write
+
+env:
+  GIT_COMMITTER_NAME: github-actions[bot]
+  GIT_COMMITTER_EMAIL: github-actions[bot]@users.noreply.github.com
+
+jobs:
+  remove-preview-files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+
+      - name: Remove Preview
+        run: |
+          git rm -rf pr/${{ github.event.number }}
+
+      - name: Commit and Push
+        run: |
+          git commit \
+            -m "Remove Preview for PR#${{ github.event.number }}" \
+            -m "${{ github.event.pull_request.head.sha }}"
+          git push
+
+  remove-preview-environment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete Environment
+        run: |
+          curl -X DELETE \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/environments/github-pages/#${{ github.event.number }}"
