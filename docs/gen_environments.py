@@ -27,6 +27,14 @@ def generate_table(packages, lock_dict):
 
 environments = (ROOT / "environments").glob("*")
 
+# Initial reversed sort
+environments = sorted(environments, reverse=True)
+
+# Sort by reverse numerical order for environments with numerical names, else put at end
+environments = sorted(
+    environments, key=lambda x: int(x.name) if x.name.isdigit() else -10, reverse=True
+)
+
 for environment in environments:
     name = environment.name
     files = {f: environment / f for f in FILES}
