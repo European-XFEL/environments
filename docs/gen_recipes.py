@@ -3,7 +3,7 @@ from pathlib import Path
 import mkdocs_gen_files
 
 ROOT = Path(__file__).parent.parent
-recipes = list((ROOT / "custom-recipes" / "recipes").rglob("meta.yaml"))
+recipes = list((ROOT / "custom-recipes" / "recipes").rglob("recipe.yaml"))
 
 nav = mkdocs_gen_files.Nav()
 
