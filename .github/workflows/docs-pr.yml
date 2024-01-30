@@ -60,36 +60,10 @@ jobs:
       url: https://${{ github.repository_owner }}.github.io/${{github.event.repository.name}}/pr/${{ github.event.number }}
     needs: deploy
     steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: gh-pages
-          path: gh-pages
-
-      - name: Summarise Changes
-        run: |
-          mv gh-pages/pr . || mkdir -p pr/${{ github.event.number }}
-          rm -rf */.nojekyll */.git */sitemap.xml */sitemap.xml.gz || true
-          rm -rf **.css **.css.map **.js **.js.map || true
-          {
-            echo "View preview here - ${{ env.URL }} (build for ${{ github.event.pull_request.head.sha }})"
-            echo ""
-            echo "<details>"
-            echo "<summary>Page Changes</summary>"
-            echo ""
-            echo "```diff"
-            diff -bur ./gh-pages ./pr/${{ github.event.number }}
-            echo "```"
-            echo "</details>"
-          } > COMMENT.md
-
-          ls -la
-          which diff
-          type diff
-          diff -bur ./gh-pages ./pr/${{ github.event.number }}
-
       - uses: marocchino/sticky-pull-request-comment@v2
         with:
-          path: COMMENT.md
+          message: |
+            View preview here - ${{ env.URL }} (build for ${{ github.event.pull_request.head.sha }})
 
   remove-preview-files:
     runs-on: ubuntu-latest
