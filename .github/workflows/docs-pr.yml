@@ -70,4 +70,4 @@ jobs:
       - uses: marocchino/sticky-pull-request-comment@v2
         with:
           message: |
-            View preview here - ${{ env.URL }} (build for ${{ github.event.pull_request.head.sha }})
+            View preview here - ${{ env.url }} (build for ${{ github.event.pull_request.head.sha }})
