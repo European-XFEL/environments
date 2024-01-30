@@ -54,7 +54,7 @@ jobs:
 
       - name: Update
         run: |
-          mv artifcat/* .
+          mv artifact/* .
           git status -sb
 
       - name: Commit and Push
