@@ -1,4 +1,4 @@
-name: Docs - PR Closed
+name: Docs - PR
 
 on:
   pull_request:
