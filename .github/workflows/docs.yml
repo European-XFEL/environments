@@ -60,6 +60,7 @@ jobs:
   rtd_webhook:
     runs-on: ubuntu-latest
     needs: deploy
+    if: github.repository_owner == 'European-XFEL'
     steps:
       - name: Trigger RTD User Documentation Webhook
         run: curl -X POST ${{ secrets.RTD_USER_DOCS_WEBHOOK_URL }} -d 'token=${{ secrets.RTD_USER_DOCS_WEBHOOK_SECRET }}'
