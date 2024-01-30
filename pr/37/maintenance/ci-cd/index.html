@@ -3144,6 +3144,7 @@
 <ol>
 <li><code>.github/workflows/docs.yml</code> - triggered on pushes to <code>main</code>, this will build the static site and push it to the <code>gh-pages</code> branch.</li>
 <li><code>.github/workflows/docs-pr.yml</code> - triggered on pull requests, this will build the static site, add it to a subdirectory <code>pr/&lt;PR_NUMBER&gt;</code>, and comment on the PR with a link to the preview. When the PR is closed, the directory is deleted.</li>
+<li><code>.github/workflows/docs-pr-cleanup.yml</code> - triggered on pull request close or merge, this will delete the preview directory.</li>
 </ol>
 <h3 id="euxfel-user-documentation-integration">EuXFEL User Documentation Integration<a class="headerlink" href="#euxfel-user-documentation-integration" title="Permanent link">&para;</a></h3>
 <p>The user documentation is hosted on EuXFEL RTD, it is 'integrated' with the environments documentation by including this repository as a submodule, which is then built as part of the user documentation build process.</p>
