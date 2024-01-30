@@ -42,6 +42,7 @@ nav:
       - Environment Management: "maintenance/environments.md"
       - Recipe Creation: "maintenance/recipes.md"
       - Conda Installations: "maintenance/instances.md"
+      - CI/CD: "maintenance/ci-cd.md"
   - Citing: "citing.md"
 
 plugins:
