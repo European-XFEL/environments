@@ -1,0 +1,3536 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="European XFEL Software Environments">
+      
+      
+      
+        <link rel="canonical" href="https://european-xfel.github.io/environments/maintenance/environments/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Environment Management - EuXFEL Software Environments</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#environments" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="EuXFEL Software Environments" class="md-header__button md-logo" aria-label="EuXFEL Software Environments" data-md-component="logo">
+      
+  <img src="../../assets/logo.jpeg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EuXFEL Software Environments
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Environment Management
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/European-XFEL/environments" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="EuXFEL Software Environments" class="md-nav__button md-logo" aria-label="EuXFEL Software Environments" data-md-component="logo">
+      
+  <img src="../../assets/logo.jpeg" alt="logo">
+
+    </a>
+    EuXFEL Software Environments
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/European-XFEL/environments" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        European XFEL Environments 
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/" class="md-nav__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environments/" class="md-nav__link">
+        Using Environments
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          What's Available
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="What's Available" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          What's Available
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          Environment List
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Environment List" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Environment List
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environments/202401/" class="md-nav__link">
+        202401
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environments/202302/" class="md-nav__link">
+        202302
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environments/202301/" class="md-nav__link">
+        202301
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Module List
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Module List" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Module List
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/hipgisaxs/" class="md-nav__link">
+        hipgisaxs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/smilei/" class="md-nav__link">
+        smilei
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/moonshot/" class="md-nav__link">
+        moonshot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/xraylarch/" class="md-nav__link">
+        xraylarch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/openmpi-no-python/" class="md-nav__link">
+        openmpi-no-python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/simex/" class="md-nav__link">
+        simex
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/openmpi-python/" class="md-nav__link">
+        openmpi-python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_8" type="checkbox" id="__nav_4_2_8" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_8">
+          dirax
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="dirax" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          dirax
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/dirax/1/" class="md-nav__link">
+        1
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_9" type="checkbox" id="__nav_4_2_9" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_9">
+          EXtra-foam
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="EXtra-foam" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          EXtra-foam
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/EXtra-foam/scs_moonshot/" class="md-nav__link">
+        scs_moonshot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/EXtra-foam/xes/" class="md-nav__link">
+        xes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/EXtra-foam/scs/" class="md-nav__link">
+        scs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/EXtra-foam/stable/" class="md-nav__link">
+        stable
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/EXtra-foam/beta/" class="md-nav__link">
+        beta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/EXtra-foam/spb-moonshot/" class="md-nav__link">
+        spb-moonshot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/EXtra-foam/mid_moonshot/" class="md-nav__link">
+        mid_moonshot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/EXtra-foam/alpha/" class="md-nav__link">
+        alpha
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_10" type="checkbox" id="__nav_4_2_10" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_10">
+          hdf5
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="hdf5" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          hdf5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/hdf5/1.10/" class="md-nav__link">
+        1.10
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_11" type="checkbox" id="__nav_4_2_11" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_11">
+          epoch
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="epoch" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_11">
+          <span class="md-nav__icon md-icon"></span>
+          epoch
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/epoch/4.19/" class="md-nav__link">
+        4.19
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/epoch/4.17/" class="md-nav__link">
+        4.17
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_12" type="checkbox" id="__nav_4_2_12" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_12">
+          dials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="dials" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_12">
+          <span class="md-nav__icon md-icon"></span>
+          dials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/dials/v2-2-4/" class="md-nav__link">
+        v2-2-4
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_13" type="checkbox" id="__nav_4_2_13" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_13">
+          karabo-bridge-cpp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="karabo-bridge-cpp" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_13">
+          <span class="md-nav__icon md-icon"></span>
+          karabo-bridge-cpp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/karabo-bridge-cpp/stable/" class="md-nav__link">
+        stable
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_14" type="checkbox" id="__nav_4_2_14" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_14">
+          EXtra-xwiz
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="EXtra-xwiz" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_14">
+          <span class="md-nav__icon md-icon"></span>
+          EXtra-xwiz
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/EXtra-xwiz/beta/" class="md-nav__link">
+        beta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/EXtra-xwiz/alpha/" class="md-nav__link">
+        alpha
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_15" type="checkbox" id="__nav_4_2_15" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_15">
+          simex-lite
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="simex-lite" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_15">
+          <span class="md-nav__icon md-icon"></span>
+          simex-lite
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/simex-lite/1.0/" class="md-nav__link">
+        1.0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_16" type="checkbox" id="__nav_4_2_16" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_16">
+          EXtra-metro
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="EXtra-metro" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_16">
+          <span class="md-nav__icon md-icon"></span>
+          EXtra-metro
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/EXtra-metro/preview/" class="md-nav__link">
+        preview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/EXtra-metro/beta/" class="md-nav__link">
+        beta
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_17" type="checkbox" id="__nav_4_2_17" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_17">
+          calibration-services
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="calibration-services" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_17">
+          <span class="md-nav__icon md-icon"></span>
+          calibration-services
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/calibration-services/stable/" class="md-nav__link">
+        stable
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_18" type="checkbox" id="__nav_4_2_18" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_18">
+          exfel_crystfel
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="exfel_crystfel" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_18">
+          <span class="md-nav__icon md-icon"></span>
+          exfel_crystfel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel_crystfel/0.7/" class="md-nav__link">
+        0.7
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel_crystfel/0.8/" class="md-nav__link">
+        0.8
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_19" type="checkbox" id="__nav_4_2_19" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_19">
+          vagabond
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="vagabond" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_19">
+          <span class="md-nav__icon md-icon"></span>
+          vagabond
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/vagabond/develop/" class="md-nav__link">
+        develop
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_20" type="checkbox" id="__nav_4_2_20" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_20">
+          dioptas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="dioptas" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_20">
+          <span class="md-nav__icon md-icon"></span>
+          dioptas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/dioptas/0.5/" class="md-nav__link">
+        0.5
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_21" type="checkbox" id="__nav_4_2_21" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_21">
+          spack
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="spack" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_21">
+          <span class="md-nav__icon md-icon"></span>
+          spack
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/spack/all/" class="md-nav__link">
+        all
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/spack/compilers/" class="md-nav__link">
+        compilers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/spack/22/" class="md-nav__link">
+        22
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_22" type="checkbox" id="__nav_4_2_22" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_22">
+          amore
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="amore" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_22">
+          <span class="md-nav__icon md-icon"></span>
+          amore
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/amore/mid/" class="md-nav__link">
+        mid
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/amore/beta/" class="md-nav__link">
+        beta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/amore/hed/" class="md-nav__link">
+        hed
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_23" type="checkbox" id="__nav_4_2_23" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_23">
+          exfel_anaconda3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="exfel_anaconda3" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_23">
+          <span class="md-nav__icon md-icon"></span>
+          exfel_anaconda3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel_anaconda3/1.1/" class="md-nav__link">
+        1.1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel_anaconda3/202301/" class="md-nav__link">
+        202301
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel_anaconda3/1/" class="md-nav__link">
+        1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel_anaconda3/beta/" class="md-nav__link">
+        beta
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_24" type="checkbox" id="__nav_4_2_24" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_24">
+          exfel_onda
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="exfel_onda" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_24">
+          <span class="md-nav__icon md-icon"></span>
+          exfel_onda
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel_onda/22.11/" class="md-nav__link">
+        22.11
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel_onda/19.13/" class="md-nav__link">
+        19.13
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel_onda/19.09.0/" class="md-nav__link">
+        19.09.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel_onda/22.10/" class="md-nav__link">
+        22.10
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel_onda/test_mod/" class="md-nav__link">
+        test_mod
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_25" type="checkbox" id="__nav_4_2_25" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_25">
+          glups
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="glups" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_25">
+          <span class="md-nav__icon md-icon"></span>
+          glups
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/glups/0/" class="md-nav__link">
+        0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_26" type="checkbox" id="__nav_4_2_26" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_26">
+          xds
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="xds" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_26">
+          <span class="md-nav__icon md-icon"></span>
+          xds
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/xds/20180126/" class="md-nav__link">
+        20180126
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_27" type="checkbox" id="__nav_4_2_27" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_27">
+          cmake
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="cmake" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_27">
+          <span class="md-nav__icon md-icon"></span>
+          cmake
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/cmake/3.13/" class="md-nav__link">
+        3.13
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_28" type="checkbox" id="__nav_4_2_28" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_28">
+          mamba
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="mamba" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_28">
+          <span class="md-nav__icon md-icon"></span>
+          mamba
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/mamba/202301/" class="md-nav__link">
+        202301
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_29" type="checkbox" id="__nav_4_2_29" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_29">
+          karabo-gui
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="karabo-gui" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_29">
+          <span class="md-nav__icon md-icon"></span>
+          karabo-gui
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/karabo-gui/2.14/" class="md-nav__link">
+        2.14
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/karabo-gui/stable/" class="md-nav__link">
+        stable
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_30" type="checkbox" id="__nav_4_2_30" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_30">
+          exdf-tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="exdf-tools" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_30">
+          <span class="md-nav__icon md-icon"></span>
+          exdf-tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exdf-tools/main/" class="md-nav__link">
+        main
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_31" type="checkbox" id="__nav_4_2_31" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_31">
+          hdfview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="hdfview" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_31">
+          <span class="md-nav__icon md-icon"></span>
+          hdfview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/hdfview/3.1/" class="md-nav__link">
+        3.1
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_32" type="checkbox" id="__nav_4_2_32" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_32">
+          exfel-python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="exfel-python" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_32">
+          <span class="md-nav__icon md-icon"></span>
+          exfel-python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel-python/202301/" class="md-nav__link">
+        202301
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel-python/202401/" class="md-nav__link">
+        202401
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exfel-python/202302/" class="md-nav__link">
+        202302
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_33" type="checkbox" id="__nav_4_2_33" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_33">
+          cmdxfel
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="cmdxfel" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_33">
+          <span class="md-nav__icon md-icon"></span>
+          cmdxfel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/cmdxfel/0/" class="md-nav__link">
+        0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_34" type="checkbox" id="__nav_4_2_34" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_34">
+          pycalibration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="pycalibration" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_34">
+          <span class="md-nav__icon md-icon"></span>
+          pycalibration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/pycalibration/3/" class="md-nav__link">
+        3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/pycalibration/3.7/" class="md-nav__link">
+        3.7
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_35" type="checkbox" id="__nav_4_2_35" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_35">
+          mambaforge
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="mambaforge" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_35">
+          <span class="md-nav__icon md-icon"></span>
+          mambaforge
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/mambaforge/22/" class="md-nav__link">
+        22
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_36" type="checkbox" id="__nav_4_2_36" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_36">
+          crystfel
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="crystfel" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_36">
+          <span class="md-nav__icon md-icon"></span>
+          crystfel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/crystfel/0.6/" class="md-nav__link">
+        0.6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/crystfel/0.9/" class="md-nav__link">
+        0.9
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          Recipe List
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Recipe List" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Recipe List
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/libspimage/" class="md-nav__link">
+        libspimage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/hdf5-vds-check/" class="md-nav__link">
+        hdf5-vds-check
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/spsim/" class="md-nav__link">
+        spsim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/princess/" class="md-nav__link">
+        princess
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/condat-gridconv/" class="md-nav__link">
+        condat-gridconv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/sharedmem/" class="md-nav__link">
+        sharedmem
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/extra-hed/" class="md-nav__link">
+        extra-hed
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/pasha/" class="md-nav__link">
+        pasha
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/htmlgen/" class="md-nav__link">
+        htmlgen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/euxfel-bunch-pattern/" class="md-nav__link">
+        euxfel-bunch-pattern
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/matplotlib-scalebar/" class="md-nav__link">
+        matplotlib-scalebar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/nbclick/" class="md-nav__link">
+        nbclick
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/libnfft/" class="md-nav__link">
+        libnfft
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/dioptas/" class="md-nav__link">
+        dioptas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/metadata-client/" class="md-nav__link">
+        metadata-client
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/extra-geom/" class="md-nav__link">
+        extra-geom
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/envmodules/" class="md-nav__link">
+        envmodules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/condor/" class="md-nav__link">
+        condor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/cfelpyutils/" class="md-nav__link">
+        cfelpyutils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/karabo-bridge-recorder/" class="md-nav__link">
+        karabo-bridge-recorder
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/metropc/" class="md-nav__link">
+        metropc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/extra-data/" class="md-nav__link">
+        extra-data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/oauth2-xfel-client/" class="md-nav__link">
+        oauth2-xfel-client
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/karabo-bridge/" class="md-nav__link">
+        karabo-bridge
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/findxfel/" class="md-nav__link">
+        findxfel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/calibration-client/" class="md-nav__link">
+        calibration-client
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Maintenance
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Maintenance" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Maintenance
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Environment Management
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Environment Management
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-new-specification" class="md-nav__link">
+    Creating a New Specification
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating a New Specification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#locking-and-installing-a-new-environment" class="md-nav__link">
+    Locking and Installing a New Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifying-existing-specifications" class="md-nav__link">
+    Modifying Existing Specifications
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-modulefile" class="md-nav__link">
+    Creating a Modulefile
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating a Modulefile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-adapt-existing-modulefile" class="md-nav__link">
+    1. Adapt Existing Modulefile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-create-via-sh-to-mod" class="md-nav__link">
+    2. Create Via sh-to-mod
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-direct-system-calls" class="md-nav__link">
+    3. Direct system Calls
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-a-default-modulefile" class="md-nav__link">
+    Setting a Default Modulefile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-kernel-for-max-jhub" class="md-nav__link">
+    Creating a Kernel for Max-JHub
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    FAQ
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interactive-plotting-issues-in-jupyter-notebooks" class="md-nav__link">
+    Interactive Plotting Issues in Jupyter Notebooks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/" class="md-nav__link">
+        Recipe Creation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instances/" class="md-nav__link">
+        Conda Installations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ci-cd/" class="md-nav__link">
+        CI/CD
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../citing/" class="md-nav__link">
+        Citing
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/European-XFEL/environments/edit/master/docs/maintenance/environments.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+<h1 id="environments">Environments<a class="headerlink" href="#environments" title="Permanent link">&para;</a></h1>
+<p>This repository is stored in the directory <code>/gpfs/exfel/sw/software/euxfel-environment-management</code> on Maxwell.</p>
+<p>An environment is created per European XFEL experiment cycle, this is done so that previous environments are preserved for reproducibility. The files defining the environments are stored <code>./environments/${CYCLE}</code> (note: <code>./</code> refers to <strong>this git repository</strong>, not the GPFS software directory).</p>
+<p>Each environment directory will have a few files:</p>
+<ul>
+<li><code>0-desy-pinned.yml</code> - environment file with a few packages that we should keep in sync with DESY, e.g. if we have a different version of <code>ipympl</code> (interactive plotting backend for matplotlib) to the one in the DESY Conda environment that is running Max-JHub then there may be problems with interactive plotting due to incompatibilities.</li>
+<li><code>1-base.yml</code> - Conda environment file containing packages which are available on a Conda channel</li>
+<li><code>2-custom.yml</code> - optional Conda environment file containing packages built from custom recipes (see <a href="../recipes/">Recipes</a>)</li>
+<li><code>environment.yml</code> - file generated by merging the three files from above into one</li>
+<li><code>environment.lock.yml</code> - the output of <code>conda env export</code>, contains the versions of all packages installed in the environment</li>
+</ul>
+<p>Environments exist in an installation of Conda, setting up a new Conda installation is very rarely required and is covered in the <a href="../instances/">Instances</a> section.</p>
+<h2 id="creating-a-new-specification">Creating a New Specification<a class="headerlink" href="#creating-a-new-specification" title="Permanent link">&para;</a></h2>
+<p>The first step to creating a new environment is activating an installation, this can be done with <code>module load exfel mambaforge</code>. Loading this module will initialise the Conda instance into the <code>base</code> environment which provides useful tools for environment management.</p>
+<p>Once a Conda instance has been activated, you can create a new directory under either <code>./environments/${CYCLE}</code> or <code>./applications/${APPLICATION_NAME}/{APPLICATION_VERSION}</code> depending on whether the environment is intended to be a generic environment users will activate to write and execute their own code, or if the environment exists only to provide a specific application.</p>
+<p>If a new <strong>cycle environment</strong> is being created, copy the <code>0-desy-pinned.yml</code>, <code>1-base.yml</code>, and <code>2-custom.yml</code> files from the previous cycle and use those as a starting point. At this stage some pinned versions can be shifted, e.g. updating python to the latest release.</p>
+<details class="info">
+<summary>Generating <code>0-desy-pinned.yml</code></summary>
+<p>To update/generate a new <code>0-desy-pinned.yml</code> file run:</p>
+<div class="highlight"><pre><span></span><code>/gpfs/exfel/sw/software/euxfel-environment-management/scripts/utility.py<span class="w"> </span>dump
+</code></pre></div>
+</details>
+<p>Otherwise create a standard Conda environment file defining the channels and the dependencies you require:</p>
+<div class="admonition info inline end">
+<p class="admonition-title">Info</p>
+<p>If the environment is likely to be used as a Jupyter kernel on Max-JHub then you need to take care to have the same versions of a few packages, see <a href="#interactive-plotting-issues-in-jupyter-notebooks">Interactive Plotting Issues in Jupyter Notebooks</a>. The <code>0-desy-lock.yml</code> file is intended to help prevent these issues.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="nt">channels</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda-forge</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nodefaults</span>
+<span class="nt">dependencies</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">numpy</span><span class="w">  </span><span class="c1"># for example</span>
+</code></pre></div>
+<p>And place any dependencies under the <code>dependencies</code> section. Note that these are <strong>Conda dependencies</strong>, from Conda channels, not from PyPI, so the package names may differ (see <a href="https://anaconda.org/">https://anaconda.org/</a> to search through the official channels).</p>
+<p>Once all required dependencies have been added to the dependencies list, carry on with the instructions in <a href="#locking-and-installing-a-new-environment">Locking and Installing an Environment</a>, as well as <a href="#creating-a-modulefile">Creating a Modulefile</a>.</p>
+<h3 id="locking-and-installing-a-new-environment">Locking and Installing a New Environment<a class="headerlink" href="#locking-and-installing-a-new-environment" title="Permanent link">&para;</a></h3>
+<p>First run <code>module load exfel mambaforge</code>, this will activate the conda installation that the environment will be created within.</p>
+<p>Now, <code>cd</code> into the directory of the environment you are working on (e.g. <code>cd ./environments/202302</code>), and run the following command:</p>
+<div class="highlight"><pre><span></span><code>../../scripts/utility.py<span class="w"> </span>merge
+</code></pre></div>
+<p>This will merge all of the individual environment files into a single <code>environment.yml</code> file which can then be used to create/update an environment.</p>
+<p>The command will print off instructions on what to do next:</p>
+<blockquote>
+<p>Next steps:</p>
+<p>For a new environment, create it via:</p>
+<div class="codehilite"><pre><span></span><code>mamba env update -n 202302 -f ./environment.yml
+</code></pre></div>
+
+<p>For an existing environment, update it via:</p>
+<div class="codehilite"><pre><span></span><code>mamba update --no-update-deps -n 202302 -f ./environment.yml
+</code></pre></div>
+
+<p>After update/install is complete create a 'lock file' by running export:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">mamba</span><span class="w"> </span><span class="n">env</span><span class="w"> </span><span class="k">export</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="mi">202302</span><span class="w"> </span><span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">builds</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="n">environment</span><span class="o">.</span><span class="n">lock</span><span class="o">.</span><span class="n">yml</span>
+</code></pre></div>
+
+<p>Add and commit any new or modified files, then push.</p>
+</blockquote>
+<p>So for installing a new environment run:</p>
+<div class="highlight"><pre><span></span><code>mamba<span class="w"> </span>env<span class="w"> </span>update<span class="w"> </span>-n<span class="w"> </span><span class="m">202302</span><span class="w"> </span>-f<span class="w"> </span>./environment.yml
+
+mamba<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>-n<span class="w"> </span><span class="m">202302</span><span class="w"> </span>--no-builds<span class="w"> </span>-f<span class="w"> </span>environment.lock.yml
+
+git<span class="w"> </span>add<span class="w"> </span>.
+
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add environment for cycle 202302&quot;</span>
+</code></pre></div>
+<h3 id="modifying-existing-specifications">Modifying Existing Specifications<a class="headerlink" href="#modifying-existing-specifications" title="Permanent link">&para;</a></h3>
+<p>To add a new package to an existing environment, the package should be added to the <code>1-base.yml</code> if is is an existing package on a Conda channel, or added to <code>2-custom.yml</code> if it is a package where the recipe has to be created by us.</p>
+<p>Once all required dependencies have been added to the dependency files run the merge script:</p>
+<div class="highlight"><pre><span></span><code>../../scripts/utility.py<span class="w"> </span>merge
+</code></pre></div>
+<p>The command will print off instructions on what to do next. For updating an existing environment run:</p>
+<div class="highlight"><pre><span></span><code>mamba<span class="w"> </span>update<span class="w"> </span>--no-update-deps<span class="w"> </span>-n<span class="w"> </span><span class="m">202302</span><span class="w"> </span>-f<span class="w"> </span>./environment.yml
+
+mamba<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>-n<span class="w"> </span><span class="m">202302</span><span class="w"> </span>--no-builds<span class="w"> </span>-f<span class="w"> </span>environment.lock.yml
+
+git<span class="w"> </span>add<span class="w"> </span>.
+
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add package X to environment for cycle 202302&quot;</span>
+</code></pre></div>
+<h2 id="creating-a-modulefile">Creating a Modulefile<a class="headerlink" href="#creating-a-modulefile" title="Permanent link">&para;</a></h2>
+<p>If you are updating an environment, the modulefile does not require changes. If you've created a new environment, you need to create a module file for it so that users can easily activate it.</p>
+<p>There are a few ways to create a module file which enables a conda environment:</p>
+<h3 id="1-adapt-existing-modulefile">1. Adapt Existing Modulefile<a class="headerlink" href="#1-adapt-existing-modulefile" title="Permanent link">&para;</a></h3>
+<p>If this is a new cycle environment (or any environment based on <code>mambaforge</code>) then you can copy an existing modulefile and adjust the paths. For example, the current <code>exfel-python/202301</code> modulefile does:</p>
+<div class="highlight"><pre><span></span><code><span class="c">#%Module 1.0</span>
+<span class="k">proc</span><span class="w"> </span>ModulesHelp<span class="w"> </span><span class="k">{}</span><span class="w"> </span><span class="k">{</span>
+<span class="w">    </span><span class="nb">puts</span><span class="w"> </span>stdout<span class="w">    </span><span class="s2">&quot;Mamba environment for cycle 202301&quot;</span>
+<span class="k">}</span>
+
+<span class="nv">module-whatis</span><span class="w">  </span><span class="s2">&quot;Module loads the mamba environment for cycle 202301&quot;</span>
+
+<span class="nv">module</span><span class="w"> </span>load<span class="w"> </span>mambaforge
+
+<span class="nv">prepend-path</span><span class="w">    </span>PATH<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>mambaforge<span class="o">/</span><span class="mf">22.11</span><span class="o">/</span>envs<span class="o">/</span><span class="mi">202301</span><span class="o">/</span>bin
+<span class="nv">prepend-path</span><span class="w">    </span>XML_CATALOG_FILES<span class="w"> </span>file<span class="w"> </span><span class="k">{</span><span class="o">///</span><span class="nv">gpfs</span><span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>mambaforge<span class="o">/</span><span class="mf">22.11</span><span class="o">/</span>envs<span class="o">/</span><span class="mi">202301</span><span class="o">/</span>etc<span class="o">/</span>xml<span class="o">/</span>catalog<span class="w"> </span>file<span class="k">}</span><span class="w"> </span><span class="o">///</span>etc<span class="o">/</span>xml<span class="o">/</span>catalog
+<span class="nv">setenv</span><span class="w">          </span>CONDA_DEFAULT_ENV<span class="w"> </span><span class="mi">202301</span>
+<span class="nv">setenv</span><span class="w">          </span>CONDA_PREFIX<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>mambaforge<span class="o">/</span><span class="mf">22.11</span><span class="o">/</span>envs<span class="o">/</span><span class="mi">202301</span>
+<span class="nv">setenv</span><span class="w">          </span>CONDA_PROMPT_MODIFIER<span class="w"> </span><span class="k">{(</span><span class="nv">202301</span><span class="k">)</span><span class="w"> </span><span class="k">}</span>
+<span class="nv">setenv</span><span class="w">          </span>CONDA_SHLVL<span class="w"> </span><span class="mi">1</span>
+<span class="nv">setenv</span><span class="w">          </span>GSETTINGS_SCHEMA_DIR<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>mambaforge<span class="o">/</span><span class="mf">22.11</span><span class="o">/</span>envs<span class="o">/</span><span class="mi">202301</span><span class="o">/</span>share<span class="o">/</span>glib-2.0<span class="o">/</span>schemas
+<span class="nv">setenv</span><span class="w">          </span>GSETTINGS_SCHEMA_DIR_CONDA_BACKUP<span class="w"> </span><span class="k">{}</span>
+</code></pre></div>
+<p>Copying this file and adjusting any relevant paths/names is typically enough to get a working modulefile.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some module files may contain an additional guard case:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="k">{[</span><span class="nb">info</span><span class="w"> </span>commands<span class="w"> </span>set-function<span class="k">]</span><span class="w"> </span><span class="nv">eq</span><span class="w"> </span><span class="k">{set</span><span class="o">-</span>function<span class="k">}}</span><span class="w"> </span><span class="k">{</span>
+<span class="w">  </span><span class="nv">...</span>
+<span class="k">}</span>
+</code></pre></div>
+<p>This checks if a command (in this case <code>set-function</code>) exists, it was required as the default module version on Maxwell was very old and did not support some functions like setting shell functions.</p>
+<p>Now that environment modules was updated this is no longer required, but may still be present in some files.</p>
+</div>
+<h3 id="2-create-via-sh-to-mod">2. Create Via <code>sh-to-mod</code><a class="headerlink" href="#2-create-via-sh-to-mod" title="Permanent link">&para;</a></h3>
+<p>Once the <code>mambaforge</code> module is loaded, <code>conda activate</code> commands can be used as normal as the module sets the required shell functions. This means that we can start up a shell, load <code>mambaforge</code>, create a basic activation script which does <code>conda activate ...</code>, and then use <code>sh-to-mod</code> to convert that script into a module file:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>exfel<span class="w"> </span>mambaforge
+
+$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">TERM</span><span class="o">=</span>xterm-256color<span class="w">  </span><span class="c1"># some of the changes made by activation depend on an interactive coloured terminal so make sure TERM is set</span>
+
+$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;conda activate 202301&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;activate&quot;</span>
+
+$<span class="w"> </span>module<span class="w"> </span>sh-to-mod<span class="w"> </span>bash<span class="w"> </span>./activate
+
+<span class="c1">#%Module</span>
+prepend-path<span class="w">    </span>PATH<span class="w"> </span>/gpfs/exfel/sw/software/mambaforge/22.11/envs/202301/bin
+prepend-path<span class="w">    </span>XML_CATALOG_FILES<span class="w"> </span>file<span class="w"> </span><span class="o">{</span>///gpfs/exfel/sw/software/mambaforge/22.11/envs/202301/etc/xml/catalog<span class="w"> </span>file<span class="o">}</span><span class="w"> </span>///etc/xml/catalog
+setenv<span class="w">          </span>CONDA_DEFAULT_ENV<span class="w"> </span><span class="m">202301</span>
+setenv<span class="w">          </span>CONDA_PREFIX<span class="w"> </span>/gpfs/exfel/sw/software/mambaforge/22.11/envs/202301
+setenv<span class="w">          </span>CONDA_PROMPT_MODIFIER<span class="w"> </span><span class="o">{(</span><span class="m">202301</span><span class="o">)</span><span class="w"> </span><span class="o">}</span>
+setenv<span class="w">          </span>CONDA_SHLVL<span class="w"> </span><span class="m">1</span>
+setenv<span class="w">          </span>GSETTINGS_SCHEMA_DIR_CONDA_BACKUP<span class="w"> </span>/gpfs/exfel/sw/software/mambaforge/22.11/envs/202301/share/glib-2.0/schemas
+</code></pre></div>
+<p>This module file is enough to activate a conda environment assuming that <code>mambaforge</code> is already loaded. Given that's not necessarily the case there are a few modifications that should be made to this file:</p>
+<ol>
+<li>
+<p>Add help and description:</p>
+<div class="highlight"><pre><span></span><code><span class="k">proc</span><span class="w"> </span>ModulesHelp<span class="w"> </span><span class="k">{}</span><span class="w"> </span><span class="k">{</span>
+<span class="w">    </span><span class="nb">puts</span><span class="w"> </span>stdout<span class="w">    </span><span class="s2">&quot;Mamba environment for cycle 202301&quot;</span>
+<span class="k">}</span>
+
+<span class="nv">module-whatis</span><span class="w">  </span><span class="s2">&quot;Module loads the mamba environment for cycle 202301&quot;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Add a call to the <code>metrics.sh</code> script which tracks module activations:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="k">{</span><span class="w"> </span><span class="k">[</span><span class="w"> </span><span class="nv">module-info</span><span class="w"> </span>mode<span class="w"> </span>load<span class="w"> </span><span class="k">]</span><span class="w"> </span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
+<span class="w">    </span><span class="nv">system</span><span class="w">    </span><span class="s2">&quot;/gpfs/exfel/sw/software/local/etc/metrics.sh &#39;mamba/202301&#39;&quot;</span>
+<span class="k">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Optionally, create scripts for other shells (<code>konsh</code>, <code>fish</code>) and use a switch case to support them:</p>
+<div class="highlight"><pre><span></span><code><span class="k">switch</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="k">[</span><span class="nv">module-info</span><span class="w"> </span>shelltype<span class="k">]</span><span class="w"> </span><span class="k">{</span>
+<span class="w">        </span><span class="nv">sh</span><span class="w"> </span><span class="k">{</span>
+<span class="w">          </span><span class="nv">...</span>
+<span class="w">        </span><span class="k">}</span>
+<span class="w">        </span><span class="nv">fish</span><span class="w"> </span><span class="k">{</span>
+<span class="w">          </span><span class="nv">...</span>
+<span class="w">        </span><span class="k">}</span>
+</code></pre></div>
+</li>
+</ol>
+<p>Note that this will <em>semi</em> work even without <code>module load mambaforge</code>. Python will work correctly as will its dependencies however <code>conda</code>/<code>mamba</code> commands will not work.</p>
+<h3 id="3-direct-system-calls">3. Direct <code>system</code> Calls<a class="headerlink" href="#3-direct-system-calls" title="Permanent link">&para;</a></h3>
+<p>Use <code>system</code> calls to directly call <code>conda activate ...;</code> in the user shell. This works as well as normally calling the activate commands, but can cause <strong>large amounts of latency</strong> due to the activate command accessing a lot of files.</p>
+<details class="note">
+<summary>Example module file</summary>
+<div class="highlight"><pre><span></span><code><span class="c">#%Module 1.0</span>
+<span class="k">proc</span><span class="w"> </span>ModulesHelp<span class="w"> </span><span class="k">{}</span><span class="w"> </span><span class="k">{</span>
+<span class="w">    </span><span class="nb">puts</span><span class="w"> </span>stdout<span class="w">    </span><span class="s2">&quot;Mamba environment for cycle 202301&quot;</span>
+<span class="k">}</span>
+
+<span class="nv">module-whatis</span><span class="w">  </span><span class="s2">&quot;Module loads the mamba environment for cycle 202301&quot;</span>
+
+<span class="nv">module</span><span class="w"> </span>load<span class="w"> </span>mambaforge
+
+<span class="c"># NOTE: the final semicolon is required</span>
+<span class="nb">puts</span><span class="w"> </span>stdout<span class="w"> </span><span class="s2">&quot;mamba activate 202301;&quot;</span>
+</code></pre></div>
+</details>
+<h3 id="setting-a-default-modulefile">Setting a Default Modulefile<a class="headerlink" href="#setting-a-default-modulefile" title="Permanent link">&para;</a></h3>
+<p>To set a default modulefile, go to the directory the modulefile is in (for cycle environments that would be <code>/gpfs/exfel/sw/software/xfel_modules/mamba</code>) and create a file called <code>.version</code> containing:</p>
+<div class="highlight"><pre><span></span><code><span class="c">#%Module1.0</span>
+<span class="k">set</span><span class="w"> </span>ModulesVersion<span class="w"> </span><span class="s2">&quot;{NEW_CYCLE_NUMBER}&quot;</span>
+</code></pre></div>
+<p>This will set the default for that directory to the new cycle number.</p>
+<h2 id="creating-a-kernel-for-max-jhub">Creating a Kernel for Max-JHub<a class="headerlink" href="#creating-a-kernel-for-max-jhub" title="Permanent link">&para;</a></h2>
+<p>The following directory contains kernels which are automatically on the kernel list on Max-JHub:</p>
+<div class="highlight"><pre><span></span><code>/gpfs/exfel/sw/software/local/share/jupyter/kernels
+</code></pre></div>
+<p>To add a new kernel, create a new directory in this location with the name of the kernel, and then create a <code>kernel.json</code> file in that directory with the following contents:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;argv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;${PYTHON_PATH}&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;-m&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;ipykernel_launcher&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;-f&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;{connection_file}&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;display_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xfel (202301)&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The <code>display_name</code> is what will be displayed in the Max-JHub kernel list, this should be descriptive and (if for a cycle environment) include the cycle number.</p>
+<p>Replace <code>${PYTHON_PATH}</code> with the path to the python executable for the environment, this can be easily found by loading/activating the environment and running <code>which python</code>.</p>
+<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
+<h3 id="interactive-plotting-issues-in-jupyter-notebooks">Interactive Plotting Issues in Jupyter Notebooks<a class="headerlink" href="#interactive-plotting-issues-in-jupyter-notebooks" title="Permanent link">&para;</a></h3>
+<p>If an environment has issues with interactive plotting in Jupyter notebooks it is likely that the packages in it are out of sync with those in the environment running Jupyter/JupyterLab on Max-JHub.</p>
+<p>The module used for Max-JHub is mentioned on the DESY documentation page here: <a href="https://confluence.desy.de/display/MXW/JupyterHub+on+Maxwell">https://confluence.desy.de/display/MXW/JupyterHub+on+Maxwell</a>. Currently this is <code>conda/3.8</code>.</p>
+<p>You should load that environment and then check the versions of the following packages:</p>
+<ul>
+<li>ipympl</li>
+<li>ipywidgets</li>
+<li>matplotlib</li>
+</ul>
+<p>And pin them to be the same as the versions currently used by Max-JHub. Currently (August 2023) this means:</p>
+<div class="highlight"><pre><span></span><code>- ipympl=0.9.3
+- ipywidgets=7.7.0
+- matplotlib=3.5.2
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../../recipes/calibration-client/" class="md-footer__link md-footer__link--prev" aria-label="Previous: calibration-client" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              calibration-client
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../recipes/" class="md-footer__link md-footer__link--next" aria-label="Next: Recipe Creation" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Recipe Creation
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/European-XFEL" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.instant", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+    
+    
+  </body>
+</html>
