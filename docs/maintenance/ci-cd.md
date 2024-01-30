@@ -20,3 +20,16 @@ For more information see:
 
 - <https://github.com/European-XFEL/environments/pull/24>
 - <https://git.xfel.eu/dataAnalysis/user-documentation/-/merge_requests/107>
+
+## Package Builds
+
+!!! warning "Work in Progress"
+
+    Some work done in:
+
+    - https://github.com/European-XFEL/environments/pull/30
+    - https://github.com/European-XFEL/environments/tree/feat/build-pkg-ci
+
+## Environment Builds
+
+!!! warning "Work in Progress"
