@@ -59,12 +59,12 @@ dependencies:
   - bzip2=1.0.8
   - c-ares=1.25.0
   - c-blosc2=2.12.0
-  - ca-certificates=2023.11.17
+  - ca-certificates=2024.2.2
   - cached-property=1.5.2
   - cached_property=1.5.2
   - cairo=1.16.0
   - calibration-client=11.3.0
-  - certifi=2023.11.17
+  - certifi=2024.2.2
   - certipy=0.1.3
   - cfelpyutils=2.0.6
   - cffi=1.16.0
@@ -106,7 +106,7 @@ dependencies:
   - euxfel-bunch-pattern=0.6
   - exceptiongroup=1.2.0
   - expat=2.5.0
-  - extra-data=1.15.0
+  - extra-data=1.16.0
   - extra-geom=1.11.0
   - extra-hed=0.1.0
   - fabio=2023.4.1
@@ -380,7 +380,7 @@ dependencies:
   - opencv=4.8.0
   - openh264=2.3.1
   - openjpeg=2.5.0
-  - openssl=3.1.4
+  - openssl=3.1.5
   - orc=1.9.0
   - orjson=3.9.10
   - p11-kit=0.24.1
@@ -610,5 +610,5 @@ dependencies:
   - zstd=1.5.5
   - pip:
       - da-utils==0.1.0
-      - euxfel-extra==2023.2.148+7c63606
+      - euxfel-extra==2024.1.43+3e020b3
 prefix: /gpfs/exfel/sw/software/mambaforge/22.11/envs/202401
