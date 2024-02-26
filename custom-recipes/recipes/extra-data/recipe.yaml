@@ -1,6 +1,6 @@
 context:
   name: extra-data
-  version: 1.15.0
+  version: 1.16.0
 
 package:
   name: '{{ name|lower }}'
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/EXtra-data-{{ version }}.tar.gz
-  sha256: bad5fc01f821929118a650db4bb9b429ddf3e197e4b14857c54055a9451ad842
+  sha256: 67c0994e619169d50eb784eeb617ab8bba349e8a9f2ebb1052369fa0fcb28ddb
 
 build:
   entry_points:
