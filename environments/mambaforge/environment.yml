@@ -1,0 +1,11 @@
+name: "base"
+channels:
+  - nodefaults
+  - conda-forge
+dependencies:
+  - python
+  - anaconda-client
+  - boa
+  - conda-build<3.28.0
+  - grayskull
+  - ruamel.yaml<0.18

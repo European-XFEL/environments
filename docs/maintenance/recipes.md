@@ -2,15 +2,19 @@
 
 If a package does not already have a Conda recipe and is only available on PyPI or via a repository URL, then a recipe should be made for it to allow for installation into the Conda environments.
 
-Creation of the recipes can be automated via [Grayskull](https://github.com/conda-incubator/grayskull), which will attempt to convert the package setup to a Conda recipe, and implement some basic testing as part of the build phase (check that importing the package works, tests that entry points work), and also run [conda-verify](https://github.com/conda/conda-verify) to check package correctness.
+Creation of the recipes can be automated via [Grayskull](https://github.com/conda-incubator/grayskull), which will attempt to convert the package setup to a Conda recipe, and implement some basic testing as part of the build phase (check that importing the package works, tests that entry points work), and also run [`conda-verify`](https://github.com/conda/conda-verify) to check package correctness.
 
 Once a recipe has been created, the package must be built and added to a directory that the relevant environment indexes. This can be done with `conda mambabuild ...` (more info in next section), which will attempt to build the package and execute any tests that are included in the recipe.
 
 If Grayskull fails to create a valid recipe, then the Conda documentation on creating recipes should be checked.
 
-## Creating a Recipe
+## Bootstrapping a Recipe
 
 First, you should load a `mambaforge` base environment, which will provide all the tools required to build recipes. This can be done with `module load exfel mambaforge`.
+
+!!! info
+
+    If running locally, install the `boa` and `grayskull` packages into your mamba environment with `mamba install -c conda-forge boa grayskull`, or install the environments defined in [`./environments/mambaforge`](https://github.com/European-XFEL/environments/tree/main/environments/mambaforge).
 
 Recipes can be created via the Grayskull CLI:
 
@@ -44,8 +48,8 @@ In the 'worst case' scenario where a package has no releases or tags, and is not
 
 1. Clone the package
 2. Go into the package directory
-3. Create a gztar sdist - `python3 setup.py sdist --formats=gztar`
-4. Run grayskull on the sdist archive - `grayskull pypi ./${PATH_TO_SDIST}`
+3. Create an sdist, varies depending on the package tool used (e.g. `python3 setup.py sdist`, `flit/poetry build`, etc...)
+4. Run grayskull on the sdist archive - `grayskull pypi $PATH_TO_SDIST`
 
 A full example of this is:
 
@@ -54,6 +58,49 @@ git clone https://github.com/mhantke/h5writer/
 cd h5writer
 python3 setup.py sdist --formats=gztar
 grayskull pypi ./h5writer-0.8.0
+```
+
+## Finalising the Recipe
+
+Once the recipe has been generated, there are a few more steps that need to be done.
+
+### Convert to Boa `recipe.yaml`
+
+Grayskull generates recipes in the old `conda-build` format (`meta.yaml`), however boa recipes (`recipe.yaml`) are used instead. Boa provides a tool to convert the recipe, you can run:
+
+```sh
+# To convert use `boa convert ${PATH_TO_META_YAML}`, this outputs the recipe to
+# stdout, so pipe it to a file:
+boa convert ./recipes/$PACKAGE/meta.yaml > ./recipes/$PACKAGE/recipe.yaml
+```
+
+### Set Git URL and Tag for Non-PyPI Packages
+
+If the package is not on PyPI, then you probably created it from an `sdist` archive file made from a clone of the repository as described in [From a Git Repository](#from-a-git-repository-no-sdist). In this case the auto-generated recipe will have the sdist file as the source.
+
+You should change the source to be the git repository URL, and add information for the branch, tag, or commit that should be used to the file, and optionally include it in the `version`. For example:
+
+```diff
+@@ -1,14 +1,16 @@
+ context:
+   name: findxfel
+   version: 0.1.2
++  tag: "5e528b91"
+
+ package:
+   name: '{{ name|lower }}'
+-  version: '{{ version }}'
++  version: "{{ version }}+{{ tag }}"
+
+ source:
+-  url: file:///home/roscar/work/github.com/European-XFEL/environments/custom-recipes/recipes/findxfel/src/dist/findxfel-0.1.2.tar.gz
+-  sha256: da3dd6f688202f7daa725cd079b185cf7284030ba5c10c44829c19388b5147fd
++  git_url: https://git.xfel.eu/dataAnalysis/findxfel.git
++  git_tag: "{{ tag }}"
++  git_depth: 1
+
+ build:
+   entry_points:
 ```
 
 ## Building the Recipes
@@ -83,7 +130,7 @@ mamba activate base
 boa build \
   --skip-existing \
   --target-platform linux-64 \
-  ./recipes$(/$PACKAGE)  # Optional package name
+  ./recipes/$PACKAGE  # Optional package name
 
 # Once the build is complete, index the build directory
 conda index ./conda-bld
@@ -119,9 +166,10 @@ Where the new hash can be found by checking the source (PyPI shows the hashes on
 
 If a license could not automatically be determined the license file will be set to `PLEASE_ADD_LICENSE_FILE` and the build will fail. To fix this, you need to add the license file to the recipe directory and add the following to the `meta.yaml` file:
 
-```yaml
+```diff
 about:
-  license_file: LICENSE  # Change or delete this line
+- license_file: PLEASE_ADD_LICENSE_FILE
++ license_file: LICENSE
 ```
 
 Alternatively, delete the `license_file` line from the `meta.yaml` file.
@@ -132,12 +180,12 @@ There can be issues with the generation of recipes for packages that use `flit` 
 
 For example:
 
-```yaml
+```diff
 requirements:
   host:
     - python
     - pip
-    - flit-core  # Add this line
++   - flit-core
   run:
     - python
 ```
