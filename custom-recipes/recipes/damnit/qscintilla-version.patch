@@ -1,0 +1,13 @@
+diff --git a/pyproject.toml b/pyproject.toml
+index a4d321c..b4eefc0 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -25,7 +25,7 @@ dependencies = [
+     "PyQt5",
+     "PyYAML",
+     "pyflakes",
+-    "QScintilla==2.13",
++    "QScintilla==2.13.*",
+     "xarray",
+     "scipy",
+     "supervisor",

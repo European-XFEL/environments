@@ -1,14 +1,13 @@
 context:
   name: karabo_bridge_recorder
-  version: '0.2'
+  version: "0.2"
 
 package:
-  name: '{{ name|lower }}'
-  version: '{{ version }}'
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
 
 source:
-  path: ./src
-  #git_url: ssh://git@git.xfel.eu:10022/dataAnalysis/karabo-bridge-recorder.git
+  git_url: https://git.xfel.eu/dataAnalysis/karabo-bridge-recorder.git
   git_depth: 1
 
 build:
@@ -16,7 +15,7 @@ build:
     - karabo-bridge-record = karabo_bridge_recorder.record:main
     - karabo-bridge-replay = karabo_bridge_recorder.replay:main
   noarch: python
-  script: '{{ PYTHON }} -m pip install --no-deps --ignore-installed -vv .'
+  script: "{{ PYTHON }} -m pip install --no-deps --ignore-installed -vv ."
   number: 0
 
 requirements:
@@ -47,4 +46,3 @@ extra:
   notes: "'flit-core' added manually"
   recipe-maintainers:
     - RobertRosca
-

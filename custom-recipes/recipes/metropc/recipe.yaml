@@ -3,17 +3,16 @@ context:
   version: 1.4.1
 
 package:
-  name: '{{ name|lower }}'
-  version: '{{ version }}'
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
 
 source:
-  path: ./src
-  # git_url: ssh://git@git.xfel.eu:10022/karaboDevices/metropc.git
+  git_url: https://git.xfel.eu/karaboDevices/metropc.git
   git_depth: 1
 
 build:
   noarch: python
-  script: '{{ PYTHON }} -m pip install --no-deps --ignore-installed -vv .'
+  script: "{{ PYTHON }} -m pip install --no-deps --ignore-installed -vv ."
   number: 0
 
 requirements:
@@ -47,4 +46,3 @@ extra:
   notes: Invalid license file removed manually
   recipe-maintainers:
     - RobertRosca
-

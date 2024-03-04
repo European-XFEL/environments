@@ -3,19 +3,18 @@ context:
   version: 0.1.1
 
 package:
-  name: '{{ name|lower }}'
-  version: '{{ version }}'
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
 
 source:
-  path: ./src
-  # git_url: ssh://git@git.xfel.eu:10022/dataAnalysis/findxfel.git
+  git_url: https://git.xfel.eu/dataAnalysis/findxfel.git
   git_depth: 1
 
 build:
   entry_points:
     - findxfel = findxfel:main
   noarch: python
-  script: '{{ PYTHON }} -m pip install --no-deps --ignore-installed -vv .'
+  script: "{{ PYTHON }} -m pip install --no-deps --ignore-installed -vv ."
   number: 0
 
 requirements:
@@ -45,4 +44,3 @@ extra:
   notes: "'flit-core' added manually"
   recipe-maintainers:
     - RobertRosca
-

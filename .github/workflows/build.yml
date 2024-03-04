@@ -1,0 +1,51 @@
+---
+name: Build Packages
+
+on: pull_request
+
+jobs:
+  find-recipes:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Get Changed Files
+        id: changed
+        uses: jitterbit/get-changed-files@v1
+        with:
+          format: "json"
+
+      - name: Find recipe.yaml files
+        id: set-matrix
+        run: |
+          changed='${{steps.changed.outputs.added_modified}}'
+          changed=$(echo $changed | jq -c '{include: [.[] | match("custom-recipes/recipes/([^/]*)/recipe.yaml") | .captures | .[].string | {package: .}]}')
+          echo "matrix=$changed"
+          echo "matrix=$changed" >> $GITHUB_OUTPUT
+
+  build:
+    needs: find-recipes
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/european-xfel/environments:main
+      options: --tmpfs /dev/shm:rw,nosuid,nodev,exec,size=1g
+    strategy:
+      matrix: ${{ fromJson(needs.find-recipes.outputs.matrix) }}
+    name: Build "${{ matrix.package }}"
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Build
+        run: |
+          cd custom-recipes
+          mkdir conda-bld
+          source /opt/conda/etc/profile.d/conda.sh
+          conda activate base
+          ./build.sh ${{ matrix.package }}
+        shell: bash
