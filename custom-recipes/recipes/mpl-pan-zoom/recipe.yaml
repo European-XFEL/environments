@@ -1,0 +1,47 @@
+context:
+  name: mpl-pan-zoom
+  version: 1.0.0
+
+package:
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mpl_pan_zoom-{{ version }}.tar.gz
+  sha256: d3d88592ad8d421040c865b7fc87e7878122d4fa8b8cce72dc09c0decc946764
+
+build:
+  noarch: python
+  script: '{{ PYTHON }} -m pip install . -vv'
+  number: 0
+
+requirements:
+  host:
+    - python >=3.7
+    - setuptools >=45
+    - wheel
+    - setuptools-scm >=6.2
+    - pip
+  run:
+    - python >=3.7
+    - matplotlib-base
+    - numpy
+
+test:
+  imports:
+    - mpl_pan_zoom
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  home: https://github.com/ianhi/mpl-pan-zoom
+  summary: Panning and zooming with the mouse for matplotlib
+  license: BSD-3-Clause
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - RobertRosca
+

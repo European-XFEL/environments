@@ -1,0 +1,72 @@
+context:
+  name: damnit
+  version: '0.1'
+  branch: 'master'
+
+package:
+  name: '{{ name|lower }}'
+  version: '{{ version }}+{{ branch }}'
+
+source:
+  git_url: https://github.com/European-XFEL/damnit
+  git_tag: '{{ branch }}'
+  patches:
+    - qscintilla-version.patch
+
+build:
+  entry_points:
+    - amore-proto = damnit.cli:main
+  noarch: python
+  script: '{{ PYTHON }} -m pip install . -vv'
+  number: 0
+
+requirements:
+  host:
+    - python >=3.6
+    - flit-core >=3.2,<4
+    - pip
+  run:
+    - python >=3.6
+    - extra-data
+    - euxfel-bunch-pattern
+    - h5netcdf
+    - ipython
+    - kafka-python
+    - matplotlib-base
+    - mplcursors
+    - mpl-pan-zoom
+    - numpy
+    - openpyxl
+    - pandas <2
+    - pyqt
+    - pyyaml
+    - pyflakes
+    - qscintilla2 =2.13
+    - xarray
+    - scipy
+    - supervisor
+    - termcolor
+    - tomli
+    - pasha
+    - extra-geom
+    - zulip
+    - tabulate
+
+test:
+  imports:
+    - damnit
+  commands:
+    - pip check
+    - amore-proto --help
+  requires:
+    - pip
+
+about:
+  summary: Prototype for extracting and showing metadata (AMORE project)
+  license: BSD-3-Clause
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - RobertRosca
+
