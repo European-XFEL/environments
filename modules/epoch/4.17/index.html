@@ -26,6 +26,10 @@
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
         
+          
+          
+          <meta name="theme-color" content="">
+        
       
       
 
@@ -58,7 +62,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="custom" data-md-color-accent="custom">
   
     
     
@@ -312,6 +316,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_1">
@@ -362,6 +368,20 @@
     <li class="md-nav__item">
       <a href="../../../environments/202301/" class="md-nav__link">
         202301
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environments/mambaforge/" class="md-nav__link">
+        mambaforge
       </a>
     </li>
   
@@ -3098,19 +3118,19 @@
 
 
 <h1 id="epoch41715-12-gef18cf9-hybrid"><code>epoch/4.17.15-12-gef18cf9-hybrid</code><a class="headerlink" href="#epoch41715-12-gef18cf9-hybrid" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code><span class="c">#%Module 1.0</span>
-<span class="k">proc</span><span class="w"> </span>ModulesHelp<span class="w"> </span><span class="k">{}</span><span class="w"> </span><span class="k">{</span>
-<span class="w">    </span><span class="nb">puts</span><span class="w"> </span>stdout<span class="w">    </span><span class="s2">&quot;EPOCH hybrid particle-in-cell code for plasma physics simulations&quot;</span>
-<span class="k">}</span>
-
-<span class="nv">module-whatis</span><span class="w">  </span><span class="s2">&quot;EPOCH hybrid particle-in-cell code for plasma phyics simulations&quot;</span>
-
-<span class="k">if</span><span class="w"> </span><span class="k">{</span><span class="w"> </span><span class="k">[</span><span class="w"> </span><span class="nv">module-info</span><span class="w"> </span>mode<span class="w"> </span>load<span class="w"> </span><span class="k">]</span><span class="w"> </span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
-<span class="w">    </span><span class="nv">system</span><span class="w">    </span><span class="s2">&quot;/gpfs/exfel/sw/software/local/etc/metrics.sh &#39;epoch/4.17.15-12-gef18cf9&#39;&quot;</span>
-<span class="k">}</span>
-
-<span class="nv">prepend-path</span><span class="w">    </span>PATH<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>simulations<span class="o">/</span>epoch-hybrid<span class="o">/</span>bin
-</code></pre></div>
+<div class="language-tcl highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c">#%Module 1.0</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">proc</span><span class="w"> </span>ModulesHelp<span class="w"> </span><span class="k">{}</span><span class="w"> </span><span class="k">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nb">puts</span><span class="w"> </span>stdout<span class="w">    </span><span class="s2">&quot;EPOCH hybrid particle-in-cell code for plasma physics simulations&quot;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">}</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nv">module-whatis</span><span class="w">  </span><span class="s2">&quot;EPOCH hybrid particle-in-cell code for plasma phyics simulations&quot;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">if</span><span class="w"> </span><span class="k">{</span><span class="w"> </span><span class="k">[</span><span class="w"> </span><span class="nv">module-info</span><span class="w"> </span>mode<span class="w"> </span>load<span class="w"> </span><span class="k">]</span><span class="w"> </span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nv">system</span><span class="w">    </span><span class="s2">&quot;/gpfs/exfel/sw/software/local/etc/metrics.sh &#39;epoch/4.17.15-12-gef18cf9&#39;&quot;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">}</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nv">prepend-path</span><span class="w">    </span>PATH<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>simulations<span class="o">/</span>epoch-hybrid<span class="o">/</span>bin
+</span></code></pre></div>
 
 
 

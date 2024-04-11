@@ -26,6 +26,10 @@
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
         
+          
+          
+          <meta name="theme-color" content="">
+        
       
       
 
@@ -58,7 +62,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="custom" data-md-color-accent="custom">
   
     
     
@@ -312,6 +316,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_1">
@@ -362,6 +368,20 @@
     <li class="md-nav__item">
       <a href="../../../environments/202301/" class="md-nav__link">
         202301
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environments/mambaforge/" class="md-nav__link">
+        mambaforge
       </a>
     </li>
   
@@ -3098,32 +3118,32 @@
 
 
 <h1 id="exfel_crystfel070"><code>exfel_crystfel/0.7.0</code><a class="headerlink" href="#exfel_crystfel070" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code><span class="c">#%Module 1.0</span>
-<span class="c">#</span>
-<span class="c">#  CrystFEL</span>
-<span class="c">#</span>
-<span class="nv">module-whatis</span><span class="w">  </span><span class="s2">&quot;Module for the 0.7.0 version of CrystFEL (compiled with hdf5 1.10.4)&quot;</span>
-
-
-<span class="k">if</span><span class="w"> </span><span class="k">[</span><span class="w"> </span><span class="nv">module-info</span><span class="w"> </span>mode<span class="w"> </span>load<span class="w"> </span><span class="k">]</span><span class="w"> </span><span class="k">{</span>
-<span class="w">    </span><span class="nv">system</span><span class="w"> </span><span class="s2">&quot;/gpfs/exfel/sw/software/local/etc/metrics.sh &#39;exfel_crystfel/0.7.0&#39;&quot;</span>
-<span class="w">    </span><span class="nv">prepend-path</span><span class="w"> </span>PATH<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>hdf5-1.10.4
-<span class="w">    </span><span class="nv">prepend-path</span><span class="w"> </span>PATH<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>dirax-1.17
-<span class="w">    </span><span class="nv">prepend-path</span><span class="w"> </span>PATH<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>xds-20180126
-<span class="w">    </span><span class="nv">prepend-path</span><span class="w"> </span>PATH<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>crystfel-0.7.0<span class="o">/</span>bin
-<span class="w">    </span><span class="nv">prepend-path</span><span class="w"> </span>LD_LIBRARY_PATH<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>crystfel-0.7.0<span class="o">/</span>lib
-<span class="w">    </span><span class="nv">prepend-path</span><span class="w"> </span>MANPATH<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>crystfel-0.7.0<span class="o">/</span>share<span class="o">/</span>man
-<span class="w">    </span><span class="nb">puts</span><span class="w"> </span>stderr<span class="w">    </span><span class="s2">&quot;Using version 1.10.4 of HDF5&quot;</span>
-<span class="w">    </span><span class="nb">puts</span><span class="w"> </span>stderr<span class="w">    </span><span class="s2">&quot;Using version 1.17 of DirAx&quot;</span>
-<span class="w">    </span><span class="nb">puts</span><span class="w"> </span>stderr<span class="w">    </span><span class="s2">&quot;Using XDS BUILT 20180126&quot;</span>
-<span class="k">}</span>
-
-
-
-<span class="k">proc</span><span class="w"> </span>ModulesHelp<span class="w"> </span><span class="k">{}</span><span class="w"> </span><span class="k">{</span>
-<span class="w">    </span><span class="nb">puts</span><span class="w"> </span>stdout<span class="w">     </span><span class="s2">&quot;This version of CrystFEL was compiled with hdf5 library version 1.10.4 for compatibility with hdf5-virtualise.&quot;</span>
-<span class="k">}</span>
-</code></pre></div>
+<div class="language-tcl highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c">#%Module 1.0</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c">#</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c">#  CrystFEL</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c">#</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nv">module-whatis</span><span class="w">  </span><span class="s2">&quot;Module for the 0.7.0 version of CrystFEL (compiled with hdf5 1.10.4)&quot;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">if</span><span class="w"> </span><span class="k">[</span><span class="w"> </span><span class="nv">module-info</span><span class="w"> </span>mode<span class="w"> </span>load<span class="w"> </span><span class="k">]</span><span class="w"> </span><span class="k">{</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nv">system</span><span class="w"> </span><span class="s2">&quot;/gpfs/exfel/sw/software/local/etc/metrics.sh &#39;exfel_crystfel/0.7.0&#39;&quot;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nv">prepend-path</span><span class="w"> </span>PATH<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>hdf5-1.10.4
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nv">prepend-path</span><span class="w"> </span>PATH<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>dirax-1.17
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nv">prepend-path</span><span class="w"> </span>PATH<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>xds-20180126
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nv">prepend-path</span><span class="w"> </span>PATH<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>crystfel-0.7.0<span class="o">/</span>bin
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nv">prepend-path</span><span class="w"> </span>LD_LIBRARY_PATH<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>crystfel-0.7.0<span class="o">/</span>lib
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nv">prepend-path</span><span class="w"> </span>MANPATH<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>crystfel-0.7.0<span class="o">/</span>share<span class="o">/</span>man
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nb">puts</span><span class="w"> </span>stderr<span class="w">    </span><span class="s2">&quot;Using version 1.10.4 of HDF5&quot;</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="nb">puts</span><span class="w"> </span>stderr<span class="w">    </span><span class="s2">&quot;Using version 1.17 of DirAx&quot;</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="nb">puts</span><span class="w"> </span>stderr<span class="w">    </span><span class="s2">&quot;Using XDS BUILT 20180126&quot;</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="k">}</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="k">proc</span><span class="w"> </span>ModulesHelp<span class="w"> </span><span class="k">{}</span><span class="w"> </span><span class="k">{</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="nb">puts</span><span class="w"> </span>stdout<span class="w">     </span><span class="s2">&quot;This version of CrystFEL was compiled with hdf5 library version 1.10.4 for compatibility with hdf5-virtualise.&quot;</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="k">}</span>
+</span></code></pre></div>
 
 
 

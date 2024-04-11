@@ -26,6 +26,10 @@
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
         
+          
+          
+          <meta name="theme-color" content="">
+        
       
       
 
@@ -58,7 +62,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="custom" data-md-color-accent="custom">
   
     
     
@@ -447,6 +451,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_1">
@@ -497,6 +503,20 @@
     <li class="md-nav__item">
       <a href="202301/" class="md-nav__link">
         202301
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mambaforge/" class="md-nav__link">
+        mambaforge
       </a>
     </li>
   
@@ -3261,8 +3281,8 @@
 <p>The main module of interest for Python users will be <code>exfel-python</code>, which will load a python environment with many commonly used packages that we expect will be required for data analysis, as well as our own packages. A full list of software available within an environment is available on the documentation pages for that environment (see a list in the <a href="#environment-list">Environment List</a> section).</p>
 <p>To facilitate reproducibility we create a new environment for every cycle. This way, if you want to use the same software as a previous cycle, or if the current cycle causes issues with your code, you can easily switch to a previous environment.</p>
 <p>The current cycle is always available as <code>exfel-python</code>, and previous cycles are available as <code>exfel-python/$CYCLE</code>, where <code>$CYCLE</code> is the cycle number. For example, to load the environment for cycle 202301, you can run:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>exfel<span class="w"> </span>exfel-python/202301
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>module<span class="w"> </span>load<span class="w"> </span>exfel<span class="w"> </span>exfel-python/202301
+</span></code></pre></div>
 <h2 id="using-our-python-environments">Using our Python Environments<a class="headerlink" href="#using-our-python-environments" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Do <strong>not</strong> allow <code>conda init</code> to modify shell rc files!</p>
@@ -3270,8 +3290,8 @@
 </div>
 <p>Instead of having <code>conda init</code> commands in your <code>.bashrc</code>, you should use the more flexible approach of loading a specific module which runs conda init at load time.</p>
 <p>For example, to load the our most current environment, you can run:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>exfel<span class="w"> </span>exfel-python
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>module<span class="w"> </span>load<span class="w"> </span>exfel<span class="w"> </span>exfel-python
+</span></code></pre></div>
 <p>Which will perform the same steps as <code>conda init</code> but in a way that is compatible with the module system, and then load that specific environment for you in one command.</p>
 <div class="admonition info">
 <p class="admonition-title">More Information</p>
@@ -3287,13 +3307,14 @@
 <li><a href="202401/">202401</a></li>
 <li><a href="202302/">202302</a></li>
 <li><a href="202301/">202301</a></li>
+<li><a href="mambaforge/">mambaforge</a></li>
 </ul>
 <h2 id="creating-your-own-environments">Creating Your Own Environments<a class="headerlink" href="#creating-your-own-environments" title="Permanent link">&para;</a></h2>
 <p>Our environments are not writeable by users, so you cannot add packages to them. Instead you can create your own environment from scratch, or use one of our environments as a base to start from.</p>
 <h3 id="creating-a-new-conda-environment">Creating a New Conda Environment<a class="headerlink" href="#creating-a-new-conda-environment" title="Permanent link">&para;</a></h3>
 <p>To create a new environment, you can use the <code>mamba create</code> command. For example:</p>
-<div class="highlight"><pre><span></span><code>mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>myenv<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>myenv<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
+</span></code></pre></div>
 <p>This will create a new environment called <code>myenv</code> with Python 3.9 installed, which can then be activated with <code>mamba activate myenv</code>. From here you can install whatever packages you need.</p>
 <div class="admonition warning">
 <p class="admonition-title">Do not mix conda and pip</p>
@@ -3306,11 +3327,11 @@
 <p>As this clones the entire environment it can be a slow operation which consumes a large amount of space. See the following section on "Layering Environments" for an alternative.</p>
 </div>
 <p>If you want to create an environment that is based on another environment, you can use the <code>--clone</code> option. For example, if you want to use the environment provided by the DA team at European XFEL, but with a few additional packages or with different versions of packages, then you can do the following:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>exfel<span class="w"> </span>exfel-python/202301
-mamba<span class="w"> </span>create<span class="w"> </span>--clone<span class="w"> </span><span class="m">202301</span><span class="w"> </span>--name<span class="w"> </span>my-202301
-mamba<span class="w"> </span>activate<span class="w"> </span>my-202301
-mamba<span class="w"> </span>install<span class="w"> </span>...
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>module<span class="w"> </span>load<span class="w"> </span>exfel<span class="w"> </span>exfel-python/202301
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>mamba<span class="w"> </span>create<span class="w"> </span>--clone<span class="w"> </span><span class="m">202301</span><span class="w"> </span>--name<span class="w"> </span>my-202301
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>mamba<span class="w"> </span>activate<span class="w"> </span>my-202301
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>mamba<span class="w"> </span>install<span class="w"> </span>...
+</span></code></pre></div>
 <p>This will create a new environment called <code>my-202301</code> which is identical to <code>202301</code>, but is saved in your own directory. This is useful if you want to have an existing environment as a base, but add/change some of the installed packages.</p>
 <h3 id="layering-environments-system-site-packages">Layering Environments - <code>--system-site-packages</code><a class="headerlink" href="#layering-environments-system-site-packages" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
@@ -3322,11 +3343,11 @@ mamba<span class="w"> </span>install<span class="w"> </span>...
 </ul>
 </div>
 <p>If you want to create an environment that is based on another environment, but you do not want to clone the entire environment, you can use the <code>--system-site-packages</code> option with python's <code>venv</code>. For example, to create a new environment called <code>myenv2</code> that is based on <code>exfel-python</code>:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>exfel<span class="w"> </span>exfel-python/202301
-python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>--system-site-packages<span class="w"> </span>./my-202301
-<span class="nb">source</span><span class="w"> </span>./my-202301/bin/activate
-pip<span class="w"> </span>install<span class="w"> </span>...
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>module<span class="w"> </span>load<span class="w"> </span>exfel<span class="w"> </span>exfel-python/202301
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>--system-site-packages<span class="w"> </span>./my-202301
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">source</span><span class="w"> </span>./my-202301/bin/activate
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>pip<span class="w"> </span>install<span class="w"> </span>...
+</span></code></pre></div>
 <p>This will create a new environment called <code>my-202301</code> which is able to load packages from <code>202301</code>, but can still be changed. Note that this is not a conda environment, it is a python virtual environment, so only <code>pip</code> packages can be installed.</p>
 <h3 id="adding-individual-packages-to-an-environment">Adding Individual Packages to an Environment<a class="headerlink" href="#adding-individual-packages-to-an-environment" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
@@ -3342,16 +3363,16 @@ pip<span class="w"> </span>install<span class="w"> </span>...
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">pip+venv</label><label for="__tabbed_1_2">conda</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>some-env/bin/activate
-$<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>ipykernel
-$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="w"> </span>myenv<span class="w"> </span>--display-name<span class="w"> </span><span class="s2">&quot;Python (some-env)&quot;</span>
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>some-env/bin/activate
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>$<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>ipykernel
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="w"> </span>myenv<span class="w"> </span>--display-name<span class="w"> </span><span class="s2">&quot;Python (some-env)&quot;</span>
+</span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mamba<span class="w"> </span>activate<span class="w"> </span>some-env
-$<span class="w"> </span>mamba<span class="w"> </span>install<span class="w"> </span>ipykernel
-$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="w"> </span>some-env<span class="w"> </span>--display-name<span class="w"> </span><span class="s2">&quot;Python (some-env)&quot;</span>
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>mamba<span class="w"> </span>activate<span class="w"> </span>some-env
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$<span class="w"> </span>mamba<span class="w"> </span>install<span class="w"> </span>ipykernel
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="w"> </span>some-env<span class="w"> </span>--display-name<span class="w"> </span><span class="s2">&quot;Python (some-env)&quot;</span>
+</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -3360,10 +3381,10 @@ $<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span
 <h3 id="interactive-plotting-issues-in-jupyter-notebooks">Interactive Plotting Issues in Jupyter Notebooks<a class="headerlink" href="#interactive-plotting-issues-in-jupyter-notebooks" title="Permanent link">&para;</a></h3>
 <p>If you have issues with interactive plotting in Jupyter notebooks it is likely that your environment has has some packages installed which are not compatible with the environment that is serving Jupyter.</p>
 <p>As of June 2023 it is recommended to pin the following packages to these versions:</p>
-<div class="highlight"><pre><span></span><code>- ipympl=0.7.0
-- ipywidgets=7.6.3
-- matplotlib=3.4.2
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>- ipympl=0.7.0
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>- ipywidgets=7.6.3
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>- matplotlib=3.4.2
+</span></code></pre></div>
 <h3 id="conda-packages-and-environments-filling-home-directory">Conda Packages and Environments Filling Home Directory<a class="headerlink" href="#conda-packages-and-environments-filling-home-directory" title="Permanent link">&para;</a></h3>
 <p>By default, the package cache and environments are placed in your home directory under <code>~/.mambaforge/pkgs</code> and <code>~/.mambaforge/envs</code> respectively. If you create a lot of environments then these directories can grow quite large and fill up your home directory quota.</p>
 <div class="admonition note inline end">
@@ -3371,10 +3392,10 @@ $<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span
 <p>This assumes you have a scratch directory, if you do not then first create it by running <code>mkdir /gpfs/exfel/data/scratch/$USER</code>.</p>
 </div>
 <p>To change the location of the package cache and/or the environments, you can prepend some paths to the relevant environment variables for example:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Add these to your .bashrc or .zshrc</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">CONDA_PKGS_DIRS</span><span class="o">=</span>/gpfs/exfel/data/scratch/<span class="nv">$USER</span>/.conda/pkgs:<span class="nv">$CONDA_PKGS_DIRS</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">CONDA_ENVS_DIRS</span><span class="o">=</span>/gpfs/exfel/data/scratch/<span class="nv">$USER</span>/.conda/envs:<span class="nv">$CONDA_ENVS_DIRS</span>
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Add these to your .bashrc or .zshrc</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">CONDA_PKGS_DIRS</span><span class="o">=</span>/gpfs/exfel/data/scratch/<span class="nv">$USER</span>/.conda/pkgs:<span class="nv">$CONDA_PKGS_DIRS</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">CONDA_ENVS_DIRS</span><span class="o">=</span>/gpfs/exfel/data/scratch/<span class="nv">$USER</span>/.conda/envs:<span class="nv">$CONDA_ENVS_DIRS</span>
+</span></code></pre></div>
 <p>This will place the packages in the GPFS scratch directory. Note that scratch means that this is non-permanent storage, so doing this for just the <code>CONDA_PKGS_DIRS</code> variable is safe as that is only a cache of package files and deleting it has no impact, but if you do this for <code>CONDA_ENVS_DIRS</code> then you risk the environments being deleted if the scratch directory is cleared.</p>
 <div class="admonition warning">
 <p class="admonition-title">Scratch may be cleared periodically</p>
@@ -3383,18 +3404,18 @@ $<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span
 <p>Another thing to note is that the environment variables <code>CONDA_PKGS_DIRS</code> and <code>CONDA_ENVS_DIRS</code> take precedence over values set in <code>.condarc</code>.</p>
 <h3 id="using-module-systemenvironments-with-slurm">Using Module System/Environments with SLURM<a class="headerlink" href="#using-module-systemenvironments-with-slurm" title="Permanent link">&para;</a></h3>
 <p>One way to use the environment in a SLURM batch script is to activate the relevant module and run whatever commands you would normally run interactively:</p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="c1">#SBATCH --partition=upex</span>
-<span class="c1">#SBATCH --time=00:10:00</span>
-<span class="c1">#SBATCH --nodes=1</span>
-
-<span class="nb">unset</span><span class="w"> </span>LD_PRELOAD
-<span class="nb">source</span><span class="w"> </span>/etc/profile.d/modules.sh<span class="w">  </span><span class="c1"># Enable module commands</span>
-
-module<span class="w"> </span>load<span class="w"> </span>exfel<span class="w"> </span>exfel-python/202301
-
-<span class="c1"># Commands here</span>
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="ch">#!/bin/bash</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1">#SBATCH --partition=upex</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1">#SBATCH --time=00:10:00</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1">#SBATCH --nodes=1</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="nb">unset</span><span class="w"> </span>LD_PRELOAD
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="nb">source</span><span class="w"> </span>/etc/profile.d/modules.sh<span class="w">  </span><span class="c1"># Enable module commands</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>module<span class="w"> </span>load<span class="w"> </span>exfel<span class="w"> </span>exfel-python/202301
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="c1"># Commands here</span>
+</span></code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Load the module instead of depending on paths</p>
 <p>Instead of activating the module you could call the python executable for that environment directly, however this is not recommended as it depends on the paths of the environment, which may change in the future.</p>

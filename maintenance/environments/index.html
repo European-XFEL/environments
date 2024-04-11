@@ -26,6 +26,10 @@
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
         
+          
+          
+          <meta name="theme-color" content="">
+        
       
       
 
@@ -58,7 +62,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="custom" data-md-color-accent="custom">
   
     
     
@@ -310,6 +314,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_1">
@@ -360,6 +366,20 @@
     <li class="md-nav__item">
       <a href="../../environments/202301/" class="md-nav__link">
         202301
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environments/mambaforge/" class="md-nav__link">
+        mambaforge
       </a>
     </li>
   
@@ -3231,27 +3251,27 @@
 <details class="info">
 <summary>Generating <code>0-desy-pinned.yml</code></summary>
 <p>To update/generate a new <code>0-desy-pinned.yml</code> file run:</p>
-<div class="highlight"><pre><span></span><code>/gpfs/exfel/sw/software/euxfel-environment-management/scripts/utility.py<span class="w"> </span>dump
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/gpfs/exfel/sw/software/euxfel-environment-management/scripts/utility.py<span class="w"> </span>dump
+</span></code></pre></div>
 </details>
 <p>Otherwise create a standard Conda environment file defining the channels and the dependencies you require:</p>
 <div class="admonition info inline end">
 <p class="admonition-title">Info</p>
 <p>If the environment is likely to be used as a Jupyter kernel on Max-JHub then you need to take care to have the same versions of a few packages, see <a href="#interactive-plotting-issues-in-jupyter-notebooks">Interactive Plotting Issues in Jupyter Notebooks</a>. The <code>0-desy-lock.yml</code> file is intended to help prevent these issues.</p>
 </div>
-<div class="highlight"><pre><span></span><code><span class="nt">channels</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda-forge</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nodefaults</span>
-<span class="nt">dependencies</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">numpy</span><span class="w">  </span><span class="c1"># for example</span>
-</code></pre></div>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">channels</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda-forge</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nodefaults</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nt">dependencies</span><span class="p">:</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">numpy</span><span class="w">  </span><span class="c1"># for example</span>
+</span></code></pre></div>
 <p>And place any dependencies under the <code>dependencies</code> section. Note that these are <strong>Conda dependencies</strong>, from Conda channels, not from PyPI, so the package names may differ (see <a href="https://anaconda.org/">https://anaconda.org/</a> to search through the official channels).</p>
 <p>Once all required dependencies have been added to the dependencies list, carry on with the instructions in <a href="#locking-and-installing-a-new-environment">Locking and Installing an Environment</a>, as well as <a href="#creating-a-modulefile">Creating a Modulefile</a>.</p>
 <h3 id="locking-and-installing-a-new-environment">Locking and Installing a New Environment<a class="headerlink" href="#locking-and-installing-a-new-environment" title="Permanent link">&para;</a></h3>
 <p>First run <code>module load exfel mambaforge</code>, this will activate the conda installation that the environment will be created within.</p>
 <p>Now, <code>cd</code> into the directory of the environment you are working on (e.g. <code>cd ./environments/202302</code>), and run the following command:</p>
-<div class="highlight"><pre><span></span><code>../../scripts/utility.py<span class="w"> </span>merge
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>../../scripts/utility.py<span class="w"> </span>merge
+</span></code></pre></div>
 <p>This will merge all of the individual environment files into a single <code>environment.yml</code> file which can then be used to create/update an environment.</p>
 <p>The command will print off instructions on what to do next:</p>
 <blockquote>
@@ -3271,109 +3291,109 @@
 <p>Add and commit any new or modified files, then push.</p>
 </blockquote>
 <p>So for installing a new environment run:</p>
-<div class="highlight"><pre><span></span><code>mamba<span class="w"> </span>env<span class="w"> </span>update<span class="w"> </span>-n<span class="w"> </span><span class="m">202302</span><span class="w"> </span>-f<span class="w"> </span>./environment.yml
-
-mamba<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>-n<span class="w"> </span><span class="m">202302</span><span class="w"> </span>--no-builds<span class="w"> </span>-f<span class="w"> </span>environment.lock.yml
-
-git<span class="w"> </span>add<span class="w"> </span>.
-
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add environment for cycle 202302&quot;</span>
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mamba<span class="w"> </span>env<span class="w"> </span>update<span class="w"> </span>-n<span class="w"> </span><span class="m">202302</span><span class="w"> </span>-f<span class="w"> </span>./environment.yml
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>mamba<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>-n<span class="w"> </span><span class="m">202302</span><span class="w"> </span>--no-builds<span class="w"> </span>-f<span class="w"> </span>environment.lock.yml
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>git<span class="w"> </span>add<span class="w"> </span>.
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add environment for cycle 202302&quot;</span>
+</span></code></pre></div>
 <h3 id="modifying-existing-specifications">Modifying Existing Specifications<a class="headerlink" href="#modifying-existing-specifications" title="Permanent link">&para;</a></h3>
 <p>To add a new package to an existing environment, the package should be added to the <code>1-base.yml</code> if is is an existing package on a Conda channel, or added to <code>2-custom.yml</code> if it is a package where the recipe has to be created by us.</p>
 <p>Once all required dependencies have been added to the dependency files run the merge script:</p>
-<div class="highlight"><pre><span></span><code>../../scripts/utility.py<span class="w"> </span>merge
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>../../scripts/utility.py<span class="w"> </span>merge
+</span></code></pre></div>
 <p>The command will print off instructions on what to do next. For updating an existing environment run:</p>
-<div class="highlight"><pre><span></span><code>mamba<span class="w"> </span>update<span class="w"> </span>--no-update-deps<span class="w"> </span>-n<span class="w"> </span><span class="m">202302</span><span class="w"> </span>-f<span class="w"> </span>./environment.yml
-
-mamba<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>-n<span class="w"> </span><span class="m">202302</span><span class="w"> </span>--no-builds<span class="w"> </span>-f<span class="w"> </span>environment.lock.yml
-
-git<span class="w"> </span>add<span class="w"> </span>.
-
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add package X to environment for cycle 202302&quot;</span>
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mamba<span class="w"> </span>update<span class="w"> </span>--no-update-deps<span class="w"> </span>-n<span class="w"> </span><span class="m">202302</span><span class="w"> </span>-f<span class="w"> </span>./environment.yml
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>mamba<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>-n<span class="w"> </span><span class="m">202302</span><span class="w"> </span>--no-builds<span class="w"> </span>-f<span class="w"> </span>environment.lock.yml
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>git<span class="w"> </span>add<span class="w"> </span>.
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add package X to environment for cycle 202302&quot;</span>
+</span></code></pre></div>
 <h2 id="creating-a-modulefile">Creating a Modulefile<a class="headerlink" href="#creating-a-modulefile" title="Permanent link">&para;</a></h2>
 <p>If you are updating an environment, the modulefile does not require changes. If you've created a new environment, you need to create a module file for it so that users can easily activate it.</p>
 <p>There are a few ways to create a module file which enables a conda environment:</p>
 <h3 id="1-adapt-existing-modulefile">1. Adapt Existing Modulefile<a class="headerlink" href="#1-adapt-existing-modulefile" title="Permanent link">&para;</a></h3>
 <p>If this is a new cycle environment (or any environment based on <code>mambaforge</code>) then you can copy an existing modulefile and adjust the paths. For example, the current <code>exfel-python/202301</code> modulefile does:</p>
-<div class="highlight"><pre><span></span><code><span class="c">#%Module 1.0</span>
-<span class="k">proc</span><span class="w"> </span>ModulesHelp<span class="w"> </span><span class="k">{}</span><span class="w"> </span><span class="k">{</span>
-<span class="w">    </span><span class="nb">puts</span><span class="w"> </span>stdout<span class="w">    </span><span class="s2">&quot;Mamba environment for cycle 202301&quot;</span>
-<span class="k">}</span>
-
-<span class="nv">module-whatis</span><span class="w">  </span><span class="s2">&quot;Module loads the mamba environment for cycle 202301&quot;</span>
-
-<span class="nv">module</span><span class="w"> </span>load<span class="w"> </span>mambaforge
-
-<span class="nv">prepend-path</span><span class="w">    </span>PATH<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>mambaforge<span class="o">/</span><span class="mf">22.11</span><span class="o">/</span>envs<span class="o">/</span><span class="mi">202301</span><span class="o">/</span>bin
-<span class="nv">prepend-path</span><span class="w">    </span>XML_CATALOG_FILES<span class="w"> </span>file<span class="w"> </span><span class="k">{</span><span class="o">///</span><span class="nv">gpfs</span><span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>mambaforge<span class="o">/</span><span class="mf">22.11</span><span class="o">/</span>envs<span class="o">/</span><span class="mi">202301</span><span class="o">/</span>etc<span class="o">/</span>xml<span class="o">/</span>catalog<span class="w"> </span>file<span class="k">}</span><span class="w"> </span><span class="o">///</span>etc<span class="o">/</span>xml<span class="o">/</span>catalog
-<span class="nv">setenv</span><span class="w">          </span>CONDA_DEFAULT_ENV<span class="w"> </span><span class="mi">202301</span>
-<span class="nv">setenv</span><span class="w">          </span>CONDA_PREFIX<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>mambaforge<span class="o">/</span><span class="mf">22.11</span><span class="o">/</span>envs<span class="o">/</span><span class="mi">202301</span>
-<span class="nv">setenv</span><span class="w">          </span>CONDA_PROMPT_MODIFIER<span class="w"> </span><span class="k">{(</span><span class="nv">202301</span><span class="k">)</span><span class="w"> </span><span class="k">}</span>
-<span class="nv">setenv</span><span class="w">          </span>CONDA_SHLVL<span class="w"> </span><span class="mi">1</span>
-<span class="nv">setenv</span><span class="w">          </span>GSETTINGS_SCHEMA_DIR<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>mambaforge<span class="o">/</span><span class="mf">22.11</span><span class="o">/</span>envs<span class="o">/</span><span class="mi">202301</span><span class="o">/</span>share<span class="o">/</span>glib-2.0<span class="o">/</span>schemas
-<span class="nv">setenv</span><span class="w">          </span>GSETTINGS_SCHEMA_DIR_CONDA_BACKUP<span class="w"> </span><span class="k">{}</span>
-</code></pre></div>
+<div class="language-tcl highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c">#%Module 1.0</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">proc</span><span class="w"> </span>ModulesHelp<span class="w"> </span><span class="k">{}</span><span class="w"> </span><span class="k">{</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nb">puts</span><span class="w"> </span>stdout<span class="w">    </span><span class="s2">&quot;Mamba environment for cycle 202301&quot;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="k">}</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nv">module-whatis</span><span class="w">  </span><span class="s2">&quot;Module loads the mamba environment for cycle 202301&quot;</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="nv">module</span><span class="w"> </span>load<span class="w"> </span>mambaforge
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="nv">prepend-path</span><span class="w">    </span>PATH<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>mambaforge<span class="o">/</span><span class="mf">22.11</span><span class="o">/</span>envs<span class="o">/</span><span class="mi">202301</span><span class="o">/</span>bin
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="nv">prepend-path</span><span class="w">    </span>XML_CATALOG_FILES<span class="w"> </span>file<span class="w"> </span><span class="k">{</span><span class="o">///</span><span class="nv">gpfs</span><span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>mambaforge<span class="o">/</span><span class="mf">22.11</span><span class="o">/</span>envs<span class="o">/</span><span class="mi">202301</span><span class="o">/</span>etc<span class="o">/</span>xml<span class="o">/</span>catalog<span class="w"> </span>file<span class="k">}</span><span class="w"> </span><span class="o">///</span>etc<span class="o">/</span>xml<span class="o">/</span>catalog
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="nv">setenv</span><span class="w">          </span>CONDA_DEFAULT_ENV<span class="w"> </span><span class="mi">202301</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="nv">setenv</span><span class="w">          </span>CONDA_PREFIX<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>mambaforge<span class="o">/</span><span class="mf">22.11</span><span class="o">/</span>envs<span class="o">/</span><span class="mi">202301</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="nv">setenv</span><span class="w">          </span>CONDA_PROMPT_MODIFIER<span class="w"> </span><span class="k">{(</span><span class="nv">202301</span><span class="k">)</span><span class="w"> </span><span class="k">}</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="nv">setenv</span><span class="w">          </span>CONDA_SHLVL<span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="nv">setenv</span><span class="w">          </span>GSETTINGS_SCHEMA_DIR<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>mambaforge<span class="o">/</span><span class="mf">22.11</span><span class="o">/</span>envs<span class="o">/</span><span class="mi">202301</span><span class="o">/</span>share<span class="o">/</span>glib-2.0<span class="o">/</span>schemas
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="nv">setenv</span><span class="w">          </span>GSETTINGS_SCHEMA_DIR_CONDA_BACKUP<span class="w"> </span><span class="k">{}</span>
+</span></code></pre></div>
 <p>Copying this file and adjusting any relevant paths/names is typically enough to get a working modulefile.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Some module files may contain an additional guard case:</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="k">{[</span><span class="nb">info</span><span class="w"> </span>commands<span class="w"> </span>set-function<span class="k">]</span><span class="w"> </span><span class="nv">eq</span><span class="w"> </span><span class="k">{set</span><span class="o">-</span>function<span class="k">}}</span><span class="w"> </span><span class="k">{</span>
-<span class="w">  </span><span class="nv">...</span>
-<span class="k">}</span>
-</code></pre></div>
+<div class="language-tcl highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">if</span><span class="w"> </span><span class="k">{[</span><span class="nb">info</span><span class="w"> </span>commands<span class="w"> </span>set-function<span class="k">]</span><span class="w"> </span><span class="nv">eq</span><span class="w"> </span><span class="k">{set</span><span class="o">-</span>function<span class="k">}}</span><span class="w"> </span><span class="k">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nv">...</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">}</span>
+</span></code></pre></div>
 <p>This checks if a command (in this case <code>set-function</code>) exists, it was required as the default module version on Maxwell was very old and did not support some functions like setting shell functions.</p>
 <p>Now that environment modules was updated this is no longer required, but may still be present in some files.</p>
 </div>
 <h3 id="2-create-via-sh-to-mod">2. Create Via <code>sh-to-mod</code><a class="headerlink" href="#2-create-via-sh-to-mod" title="Permanent link">&para;</a></h3>
 <p>Once the <code>mambaforge</code> module is loaded, <code>conda activate</code> commands can be used as normal as the module sets the required shell functions. This means that we can start up a shell, load <code>mambaforge</code>, create a basic activation script which does <code>conda activate ...</code>, and then use <code>sh-to-mod</code> to convert that script into a module file:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>exfel<span class="w"> </span>mambaforge
-
-$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">TERM</span><span class="o">=</span>xterm-256color<span class="w">  </span><span class="c1"># some of the changes made by activation depend on an interactive coloured terminal so make sure TERM is set</span>
-
-$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;conda activate 202301&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;activate&quot;</span>
-
-$<span class="w"> </span>module<span class="w"> </span>sh-to-mod<span class="w"> </span>bash<span class="w"> </span>./activate
-
-<span class="c1">#%Module</span>
-prepend-path<span class="w">    </span>PATH<span class="w"> </span>/gpfs/exfel/sw/software/mambaforge/22.11/envs/202301/bin
-prepend-path<span class="w">    </span>XML_CATALOG_FILES<span class="w"> </span>file<span class="w"> </span><span class="o">{</span>///gpfs/exfel/sw/software/mambaforge/22.11/envs/202301/etc/xml/catalog<span class="w"> </span>file<span class="o">}</span><span class="w"> </span>///etc/xml/catalog
-setenv<span class="w">          </span>CONDA_DEFAULT_ENV<span class="w"> </span><span class="m">202301</span>
-setenv<span class="w">          </span>CONDA_PREFIX<span class="w"> </span>/gpfs/exfel/sw/software/mambaforge/22.11/envs/202301
-setenv<span class="w">          </span>CONDA_PROMPT_MODIFIER<span class="w"> </span><span class="o">{(</span><span class="m">202301</span><span class="o">)</span><span class="w"> </span><span class="o">}</span>
-setenv<span class="w">          </span>CONDA_SHLVL<span class="w"> </span><span class="m">1</span>
-setenv<span class="w">          </span>GSETTINGS_SCHEMA_DIR_CONDA_BACKUP<span class="w"> </span>/gpfs/exfel/sw/software/mambaforge/22.11/envs/202301/share/glib-2.0/schemas
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>exfel<span class="w"> </span>mambaforge
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">TERM</span><span class="o">=</span>xterm-256color<span class="w">  </span><span class="c1"># some of the changes made by activation depend on an interactive coloured terminal so make sure TERM is set</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;conda activate 202301&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;activate&quot;</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>$<span class="w"> </span>module<span class="w"> </span>sh-to-mod<span class="w"> </span>bash<span class="w"> </span>./activate
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="c1">#%Module</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>prepend-path<span class="w">    </span>PATH<span class="w"> </span>/gpfs/exfel/sw/software/mambaforge/22.11/envs/202301/bin
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>prepend-path<span class="w">    </span>XML_CATALOG_FILES<span class="w"> </span>file<span class="w"> </span><span class="o">{</span>///gpfs/exfel/sw/software/mambaforge/22.11/envs/202301/etc/xml/catalog<span class="w"> </span>file<span class="o">}</span><span class="w"> </span>///etc/xml/catalog
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>setenv<span class="w">          </span>CONDA_DEFAULT_ENV<span class="w"> </span><span class="m">202301</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>setenv<span class="w">          </span>CONDA_PREFIX<span class="w"> </span>/gpfs/exfel/sw/software/mambaforge/22.11/envs/202301
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>setenv<span class="w">          </span>CONDA_PROMPT_MODIFIER<span class="w"> </span><span class="o">{(</span><span class="m">202301</span><span class="o">)</span><span class="w"> </span><span class="o">}</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>setenv<span class="w">          </span>CONDA_SHLVL<span class="w"> </span><span class="m">1</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>setenv<span class="w">          </span>GSETTINGS_SCHEMA_DIR_CONDA_BACKUP<span class="w"> </span>/gpfs/exfel/sw/software/mambaforge/22.11/envs/202301/share/glib-2.0/schemas
+</span></code></pre></div>
 <p>This module file is enough to activate a conda environment assuming that <code>mambaforge</code> is already loaded. Given that's not necessarily the case there are a few modifications that should be made to this file:</p>
 <ol>
 <li>
 <p>Add help and description:</p>
-<div class="highlight"><pre><span></span><code><span class="k">proc</span><span class="w"> </span>ModulesHelp<span class="w"> </span><span class="k">{}</span><span class="w"> </span><span class="k">{</span>
-<span class="w">    </span><span class="nb">puts</span><span class="w"> </span>stdout<span class="w">    </span><span class="s2">&quot;Mamba environment for cycle 202301&quot;</span>
-<span class="k">}</span>
-
-<span class="nv">module-whatis</span><span class="w">  </span><span class="s2">&quot;Module loads the mamba environment for cycle 202301&quot;</span>
-</code></pre></div>
+<div class="language-tcl highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">proc</span><span class="w"> </span>ModulesHelp<span class="w"> </span><span class="k">{}</span><span class="w"> </span><span class="k">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nb">puts</span><span class="w"> </span>stdout<span class="w">    </span><span class="s2">&quot;Mamba environment for cycle 202301&quot;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">}</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nv">module-whatis</span><span class="w">  </span><span class="s2">&quot;Module loads the mamba environment for cycle 202301&quot;</span>
+</span></code></pre></div>
 </li>
 <li>
 <p>Add a call to the <code>metrics.sh</code> script which tracks module activations:</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="k">{</span><span class="w"> </span><span class="k">[</span><span class="w"> </span><span class="nv">module-info</span><span class="w"> </span>mode<span class="w"> </span>load<span class="w"> </span><span class="k">]</span><span class="w"> </span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
-<span class="w">    </span><span class="nv">system</span><span class="w">    </span><span class="s2">&quot;/gpfs/exfel/sw/software/local/etc/metrics.sh &#39;mamba/202301&#39;&quot;</span>
-<span class="k">}</span>
-</code></pre></div>
+<div class="language-tcl highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">if</span><span class="w"> </span><span class="k">{</span><span class="w"> </span><span class="k">[</span><span class="w"> </span><span class="nv">module-info</span><span class="w"> </span>mode<span class="w"> </span>load<span class="w"> </span><span class="k">]</span><span class="w"> </span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="nv">system</span><span class="w">    </span><span class="s2">&quot;/gpfs/exfel/sw/software/local/etc/metrics.sh &#39;mamba/202301&#39;&quot;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">}</span>
+</span></code></pre></div>
 </li>
 <li>
 <p>Optionally, create scripts for other shells (<code>konsh</code>, <code>fish</code>) and use a switch case to support them:</p>
-<div class="highlight"><pre><span></span><code><span class="k">switch</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="k">[</span><span class="nv">module-info</span><span class="w"> </span>shelltype<span class="k">]</span><span class="w"> </span><span class="k">{</span>
-<span class="w">        </span><span class="nv">sh</span><span class="w"> </span><span class="k">{</span>
-<span class="w">          </span><span class="nv">...</span>
-<span class="w">        </span><span class="k">}</span>
-<span class="w">        </span><span class="nv">fish</span><span class="w"> </span><span class="k">{</span>
-<span class="w">          </span><span class="nv">...</span>
-<span class="w">        </span><span class="k">}</span>
-</code></pre></div>
+<div class="language-tcl highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">switch</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="k">[</span><span class="nv">module-info</span><span class="w"> </span>shelltype<span class="k">]</span><span class="w"> </span><span class="k">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">        </span><span class="nv">sh</span><span class="w"> </span><span class="k">{</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">          </span><span class="nv">...</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">        </span><span class="k">}</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">        </span><span class="nv">fish</span><span class="w"> </span><span class="k">{</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">          </span><span class="nv">...</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">        </span><span class="k">}</span>
+</span></code></pre></div>
 </li>
 </ol>
 <p>Note that this will <em>semi</em> work even without <code>module load mambaforge</code>. Python will work correctly as will its dependencies however <code>conda</code>/<code>mamba</code> commands will not work.</p>
@@ -3381,42 +3401,42 @@ setenv<span class="w">          </span>GSETTINGS_SCHEMA_DIR_CONDA_BACKUP<span cl
 <p>Use <code>system</code> calls to directly call <code>conda activate ...;</code> in the user shell. This works as well as normally calling the activate commands, but can cause <strong>large amounts of latency</strong> due to the activate command accessing a lot of files.</p>
 <details class="note">
 <summary>Example module file</summary>
-<div class="highlight"><pre><span></span><code><span class="c">#%Module 1.0</span>
-<span class="k">proc</span><span class="w"> </span>ModulesHelp<span class="w"> </span><span class="k">{}</span><span class="w"> </span><span class="k">{</span>
-<span class="w">    </span><span class="nb">puts</span><span class="w"> </span>stdout<span class="w">    </span><span class="s2">&quot;Mamba environment for cycle 202301&quot;</span>
-<span class="k">}</span>
-
-<span class="nv">module-whatis</span><span class="w">  </span><span class="s2">&quot;Module loads the mamba environment for cycle 202301&quot;</span>
-
-<span class="nv">module</span><span class="w"> </span>load<span class="w"> </span>mambaforge
-
-<span class="c"># NOTE: the final semicolon is required</span>
-<span class="nb">puts</span><span class="w"> </span>stdout<span class="w"> </span><span class="s2">&quot;mamba activate 202301;&quot;</span>
-</code></pre></div>
+<div class="language-tcl highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c">#%Module 1.0</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">proc</span><span class="w"> </span>ModulesHelp<span class="w"> </span><span class="k">{}</span><span class="w"> </span><span class="k">{</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="nb">puts</span><span class="w"> </span>stdout<span class="w">    </span><span class="s2">&quot;Mamba environment for cycle 202301&quot;</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="k">}</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="nv">module-whatis</span><span class="w">  </span><span class="s2">&quot;Module loads the mamba environment for cycle 202301&quot;</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="nv">module</span><span class="w"> </span>load<span class="w"> </span>mambaforge
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="c"># NOTE: the final semicolon is required</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="nb">puts</span><span class="w"> </span>stdout<span class="w"> </span><span class="s2">&quot;mamba activate 202301;&quot;</span>
+</span></code></pre></div>
 </details>
 <h3 id="setting-a-default-modulefile">Setting a Default Modulefile<a class="headerlink" href="#setting-a-default-modulefile" title="Permanent link">&para;</a></h3>
 <p>To set a default modulefile, go to the directory the modulefile is in (for cycle environments that would be <code>/gpfs/exfel/sw/software/xfel_modules/mamba</code>) and create a file called <code>.version</code> containing:</p>
-<div class="highlight"><pre><span></span><code><span class="c">#%Module1.0</span>
-<span class="k">set</span><span class="w"> </span>ModulesVersion<span class="w"> </span><span class="s2">&quot;{NEW_CYCLE_NUMBER}&quot;</span>
-</code></pre></div>
+<div class="language-tcl highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c">#%Module1.0</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">set</span><span class="w"> </span>ModulesVersion<span class="w"> </span><span class="s2">&quot;{NEW_CYCLE_NUMBER}&quot;</span>
+</span></code></pre></div>
 <p>This will set the default for that directory to the new cycle number.</p>
 <h2 id="creating-a-kernel-for-max-jhub">Creating a Kernel for Max-JHub<a class="headerlink" href="#creating-a-kernel-for-max-jhub" title="Permanent link">&para;</a></h2>
 <p>The following directory contains kernels which are automatically on the kernel list on Max-JHub:</p>
-<div class="highlight"><pre><span></span><code>/gpfs/exfel/sw/software/local/share/jupyter/kernels
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>/gpfs/exfel/sw/software/local/share/jupyter/kernels
+</span></code></pre></div>
 <p>To add a new kernel, create a new directory in this location with the name of the kernel, and then create a <code>kernel.json</code> file in that directory with the following contents:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;argv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s2">&quot;${PYTHON_PATH}&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;-m&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;ipykernel_launcher&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;-f&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;{connection_file}&quot;</span>
-<span class="w">  </span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;display_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xfel (202301)&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">{</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="nt">&quot;argv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="s2">&quot;${PYTHON_PATH}&quot;</span><span class="p">,</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="s2">&quot;-m&quot;</span><span class="p">,</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="s2">&quot;ipykernel_launcher&quot;</span><span class="p">,</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">    </span><span class="s2">&quot;-f&quot;</span><span class="p">,</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">    </span><span class="s2">&quot;{connection_file}&quot;</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">  </span><span class="p">],</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">  </span><span class="nt">&quot;display_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xfel (202301)&quot;</span><span class="p">,</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">  </span><span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>The <code>display_name</code> is what will be displayed in the Max-JHub kernel list, this should be descriptive and (if for a cycle environment) include the cycle number.</p>
 <p>Replace <code>${PYTHON_PATH}</code> with the path to the python executable for the environment, this can be easily found by loading/activating the environment and running <code>which python</code>.</p>
 <h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
@@ -3430,10 +3450,10 @@ setenv<span class="w">          </span>GSETTINGS_SCHEMA_DIR_CONDA_BACKUP<span cl
 <li>matplotlib</li>
 </ul>
 <p>And pin them to be the same as the versions currently used by Max-JHub. Currently (August 2023) this means:</p>
-<div class="highlight"><pre><span></span><code>- ipympl=0.9.3
-- ipywidgets=7.7.0
-- matplotlib=3.5.2
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>- ipympl=0.9.3
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>- ipywidgets=7.7.0
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>- matplotlib=3.5.2
+</span></code></pre></div>
 
 
 

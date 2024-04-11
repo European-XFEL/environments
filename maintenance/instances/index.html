@@ -26,6 +26,10 @@
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
         
+          
+          
+          <meta name="theme-color" content="">
+        
       
       
 
@@ -58,7 +62,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="custom" data-md-color-accent="custom">
   
     
     
@@ -310,6 +314,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_1">
@@ -360,6 +366,20 @@
     <li class="md-nav__item">
       <a href="../../environments/202301/" class="md-nav__link">
         202301
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environments/mambaforge/" class="md-nav__link">
+        mambaforge
       </a>
     </li>
   
@@ -3160,129 +3180,129 @@
 <h2 id="creating-a-new-conda-installation">Creating a New Conda Installation<a class="headerlink" href="#creating-a-new-conda-installation" title="Permanent link">&para;</a></h2>
 <p>Mambaforge is the recommended installation method, instructions for installation can be found <a href="https://github.com/conda-forge/miniforge">on the Miniforge repository</a>.</p>
 <p>Installations are created in <code>/gpfs/exfel/sw/software/mambaforge/</code>, and are named after the version of Mambaforge that is installed. For example, creating a installation of version <code>22.11</code> would be done as follows:</p>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>https://github.com/conda-forge/miniforge/releases/download/22.11.1-4/Mambaforge-22.11.1-4-Linux-x86_64.sh
-bash<span class="w"> </span>Miniforge3.sh<span class="w"> </span>-b<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;/gpfs/exfel/sw/software/mambaforge/22.11&quot;</span>
-</code></pre></div>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>wget<span class="w"> </span>https://github.com/conda-forge/miniforge/releases/download/22.11.1-4/Mambaforge-22.11.1-4-Linux-x86_64.sh
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>bash<span class="w"> </span>Miniforge3.sh<span class="w"> </span>-b<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;/gpfs/exfel/sw/software/mambaforge/22.11&quot;</span>
+</span></code></pre></div>
 <p>Once the installation has been created, you should add a <code>mamba-init</code> file to the <code>bin</code> directory of the installation. This file should contain the conda init code sourced to activate the installation, for example:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># &gt;&gt;&gt; conda initialize &gt;&gt;&gt;</span>
-<span class="c1"># !! Contents within this block are managed by &#39;conda init&#39; !!</span>
-<span class="nv">__conda_setup</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="s1">&#39;/gpfs/exfel/sw/software/mambaforge/22.11/bin/conda&#39;</span><span class="w"> </span><span class="s1">&#39;shell.bash&#39;</span><span class="w"> </span><span class="s1">&#39;hook&#39;</span><span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null<span class="k">)</span><span class="s2">&quot;</span>
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$__conda_setup</span><span class="s2">&quot;</span>
-<span class="k">else</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;/gpfs/exfel/sw/software/mambaforge/22.11/etc/profile.d/conda.sh&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">        </span>.<span class="w"> </span><span class="s2">&quot;/gpfs/exfel/sw/software/mambaforge/22.11/etc/profile.d/conda.sh&quot;</span>
-<span class="w">    </span><span class="k">else</span>
-<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/gpfs/exfel/sw/software/mambaforge/22.11/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
-<span class="w">    </span><span class="k">fi</span>
-<span class="k">fi</span>
-<span class="nb">unset</span><span class="w"> </span>__conda_setup
-
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;/gpfs/exfel/sw/software/mambaforge/22.11/etc/profile.d/mamba.sh&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span>.<span class="w"> </span><span class="s2">&quot;/gpfs/exfel/sw/software/mambaforge/22.11/etc/profile.d/mamba.sh&quot;</span>
-<span class="k">fi</span>
-<span class="c1"># &lt;&lt;&lt; conda initialize &lt;&lt;&lt;</span>
-</code></pre></div>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># &gt;&gt;&gt; conda initialize &gt;&gt;&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># !! Contents within this block are managed by &#39;conda init&#39; !!</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nv">__conda_setup</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="s1">&#39;/gpfs/exfel/sw/software/mambaforge/22.11/bin/conda&#39;</span><span class="w"> </span><span class="s1">&#39;shell.bash&#39;</span><span class="w"> </span><span class="s1">&#39;hook&#39;</span><span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null<span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$__conda_setup</span><span class="s2">&quot;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">else</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;/gpfs/exfel/sw/software/mambaforge/22.11/etc/profile.d/conda.sh&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span>.<span class="w"> </span><span class="s2">&quot;/gpfs/exfel/sw/software/mambaforge/22.11/etc/profile.d/conda.sh&quot;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="k">else</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/gpfs/exfel/sw/software/mambaforge/22.11/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="k">fi</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="k">fi</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="nb">unset</span><span class="w"> </span>__conda_setup
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;/gpfs/exfel/sw/software/mambaforge/22.11/etc/profile.d/mamba.sh&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span>.<span class="w"> </span><span class="s2">&quot;/gpfs/exfel/sw/software/mambaforge/22.11/etc/profile.d/mamba.sh&quot;</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="k">fi</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="c1"># &lt;&lt;&lt; conda initialize &lt;&lt;&lt;</span>
+</span></code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Do <strong>not</strong> allow Conda to initialise automatically on xsoft</p>
 <p>The initialisation code should <strong>not</strong> be added to <code>xsoft</code>'s shell files, as this will cause the Conda installation to be initialised automatically which is not desirable for the environment management account.</p>
 </div>
 <h2 id="creating-a-modulefile">Creating a Modulefile<a class="headerlink" href="#creating-a-modulefile" title="Permanent link">&para;</a></h2>
 <p>Now that the installation has been created and the init file is present we can create a modulefile by running <code>sh-to-mod</code> on the <code>mamba-init</code> script we just wrote:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>module<span class="w"> </span>sh-to-mod<span class="w"> </span>bash<span class="w"> </span>/gpfs/exfel/sw/software/mambaforge/22.11/bin/mamba-init
-
-<span class="c1">#%Module</span>
-prepend-path<span class="w">    </span>PATH<span class="w"> </span>/gpfs/exfel/sw/software/mambaforge/22.11/condabin
-set-function<span class="w">    </span>__conda_activate<span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">CONDA_PS1_BACKUP</span><span class="p">:+x</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">        </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CONDA_PS1_BACKUP</span><span class="s2">&quot;</span><span class="p">;</span>
-<span class="w">        </span><span class="se">\u</span>nset<span class="w"> </span>CONDA_PS1_BACKUP<span class="p">;</span>
-<span class="w">    </span><span class="k">fi</span><span class="p">;</span>
-<span class="w">    </span><span class="se">\l</span>ocal<span class="w"> </span>ask_conda<span class="p">;</span>
-<span class="w">    </span><span class="nv">ask_conda</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PS1</span><span class="k">:-</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>__conda_exe<span class="w"> </span>shell.posix<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\r</span>eturn<span class="p">;</span>
-<span class="w">    </span><span class="se">\e</span>val<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ask_conda</span><span class="s2">&quot;</span><span class="p">;</span>
-<span class="w">    </span>__conda_hashr<span class="o">}</span>
-set-function<span class="w">    </span>__conda_exe<span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="o">(</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$CONDA_EXE</span><span class="s2">&quot;</span><span class="w"> </span><span class="nv">$_CE_M</span><span class="w"> </span><span class="nv">$_CE_CONDA</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">)}</span>
-set-function<span class="w">    </span>__conda_hashr<span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ZSH_VERSION</span><span class="p">:+x</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">        </span><span class="se">\r</span>ehash<span class="p">;</span>
-<span class="w">    </span><span class="k">else</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">POSH_VERSION</span><span class="p">:+x</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">            </span>:<span class="p">;</span>
-<span class="w">        </span><span class="k">else</span>
-<span class="w">            </span><span class="se">\h</span>ash<span class="w"> </span>-r<span class="p">;</span>
-<span class="w">        </span><span class="k">fi</span><span class="p">;</span>
-<span class="w">    </span><span class="k">fi</span><span class="o">}</span>
-set-function<span class="w">    </span>__conda_reactivate<span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="se">\l</span>ocal<span class="w"> </span>ask_conda<span class="p">;</span>
-<span class="w">    </span><span class="nv">ask_conda</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PS1</span><span class="k">:-</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>__conda_exe<span class="w"> </span>shell.posix<span class="w"> </span>reactivate<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\r</span>eturn<span class="p">;</span>
-<span class="w">    </span><span class="se">\e</span>val<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ask_conda</span><span class="s2">&quot;</span><span class="p">;</span>
-<span class="w">    </span>__conda_hashr<span class="o">}</span>
-set-function<span class="w">    </span>__mamba_exe<span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="o">(</span><span class="w"> </span><span class="se">\l</span>ocal<span class="w"> </span><span class="nv">MAMBA_CONDA_EXE_BACKUP</span><span class="o">=</span><span class="nv">$CONDA_EXE</span><span class="p">;</span>
-<span class="w">    </span><span class="se">\l</span>ocal<span class="w"> </span><span class="nv">MAMBA_EXE</span><span class="o">=</span><span class="k">$(</span><span class="se">\d</span>irname<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">CONDA_EXE</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span>/mamba<span class="p">;</span>
-<span class="w">    </span><span class="s2">&quot;</span><span class="nv">$MAMBA_EXE</span><span class="s2">&quot;</span><span class="w"> </span><span class="nv">$_CE_M</span><span class="w"> </span><span class="nv">$_CE_CONDA</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">)}</span>
-set-function<span class="w">    </span>conda<span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="se">\l</span>ocal<span class="w"> </span><span class="nv">cmd</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">1</span><span class="p">-__missing__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$cmd</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
-<span class="w">        </span>activate<span class="w"> </span><span class="p">|</span><span class="w"> </span>deactivate<span class="o">)</span>
-<span class="w">            </span>__conda_activate<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
-<span class="w">        </span><span class="p">;;</span>
-<span class="w">        </span>install<span class="w"> </span><span class="p">|</span><span class="w"> </span>update<span class="w"> </span><span class="p">|</span><span class="w"> </span>upgrade<span class="w"> </span><span class="p">|</span><span class="w"> </span>remove<span class="w"> </span><span class="p">|</span><span class="w"> </span>uninstall<span class="o">)</span>
-<span class="w">            </span>__conda_exe<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\r</span>eturn<span class="p">;</span>
-<span class="w">            </span>__conda_reactivate
-<span class="w">        </span><span class="p">;;</span>
-<span class="w">        </span>*<span class="o">)</span>
-<span class="w">            </span>__conda_exe<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
-<span class="w">        </span><span class="p">;;</span>
-<span class="w">    </span><span class="k">esac</span><span class="o">}</span>
-set-function<span class="w">    </span>mamba<span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="se">\l</span>ocal<span class="w"> </span><span class="nv">cmd</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">1</span><span class="p">-__missing__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$cmd</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
-<span class="w">        </span>activate<span class="w"> </span><span class="p">|</span><span class="w"> </span>deactivate<span class="o">)</span>
-<span class="w">            </span>__conda_activate<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
-<span class="w">        </span><span class="p">;;</span>
-<span class="w">        </span>install<span class="w"> </span><span class="p">|</span><span class="w"> </span>update<span class="w"> </span><span class="p">|</span><span class="w"> </span>upgrade<span class="w"> </span><span class="p">|</span><span class="w"> </span>remove<span class="w"> </span><span class="p">|</span><span class="w"> </span>uninstall<span class="o">)</span>
-<span class="w">            </span>__mamba_exe<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\r</span>eturn<span class="p">;</span>
-<span class="w">            </span>__conda_reactivate
-<span class="w">        </span><span class="p">;;</span>
-<span class="w">        </span>*<span class="o">)</span>
-<span class="w">            </span>__mamba_exe<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
-<span class="w">        </span><span class="p">;;</span>
-<span class="w">    </span><span class="k">esac</span><span class="o">}</span>
-setenv<span class="w">          </span>_CE_CONDA<span class="w"> </span><span class="o">{}</span>
-setenv<span class="w">          </span>_CE_M<span class="w"> </span><span class="o">{}</span>
-setenv<span class="w">          </span>CONDA_EXE<span class="w"> </span>/gpfs/exfel/sw/software/mambaforge/22.11/bin/conda
-setenv<span class="w">          </span>CONDA_PYTHON_EXE<span class="w"> </span>/gpfs/exfel/sw/software/mambaforge/22.11/bin/python
-setenv<span class="w">          </span>CONDA_SHLVL<span class="w"> </span><span class="m">0</span>
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>module<span class="w"> </span>sh-to-mod<span class="w"> </span>bash<span class="w"> </span>/gpfs/exfel/sw/software/mambaforge/22.11/bin/mamba-init
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">#%Module</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>prepend-path<span class="w">    </span>PATH<span class="w"> </span>/gpfs/exfel/sw/software/mambaforge/22.11/condabin
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>set-function<span class="w">    </span>__conda_activate<span class="w"> </span><span class="o">{</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">CONDA_PS1_BACKUP</span><span class="p">:+x</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CONDA_PS1_BACKUP</span><span class="s2">&quot;</span><span class="p">;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="se">\u</span>nset<span class="w"> </span>CONDA_PS1_BACKUP<span class="p">;</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="k">fi</span><span class="p">;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="se">\l</span>ocal<span class="w"> </span>ask_conda<span class="p">;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="nv">ask_conda</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PS1</span><span class="k">:-</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>__conda_exe<span class="w"> </span>shell.posix<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\r</span>eturn<span class="p">;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="se">\e</span>val<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ask_conda</span><span class="s2">&quot;</span><span class="p">;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span>__conda_hashr<span class="o">}</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>set-function<span class="w">    </span>__conda_exe<span class="w"> </span><span class="o">{</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="o">(</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$CONDA_EXE</span><span class="s2">&quot;</span><span class="w"> </span><span class="nv">$_CE_M</span><span class="w"> </span><span class="nv">$_CE_CONDA</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">)}</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>set-function<span class="w">    </span>__conda_hashr<span class="w"> </span><span class="o">{</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ZSH_VERSION</span><span class="p">:+x</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">        </span><span class="se">\r</span>ehash<span class="p">;</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="k">else</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">POSH_VERSION</span><span class="p">:+x</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">            </span>:<span class="p">;</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">        </span><span class="k">else</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">            </span><span class="se">\h</span>ash<span class="w"> </span>-r<span class="p">;</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">        </span><span class="k">fi</span><span class="p">;</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">    </span><span class="k">fi</span><span class="o">}</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>set-function<span class="w">    </span>__conda_reactivate<span class="w"> </span><span class="o">{</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">    </span><span class="se">\l</span>ocal<span class="w"> </span>ask_conda<span class="p">;</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">    </span><span class="nv">ask_conda</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PS1</span><span class="k">:-</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>__conda_exe<span class="w"> </span>shell.posix<span class="w"> </span>reactivate<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\r</span>eturn<span class="p">;</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">    </span><span class="se">\e</span>val<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ask_conda</span><span class="s2">&quot;</span><span class="p">;</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">    </span>__conda_hashr<span class="o">}</span>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>set-function<span class="w">    </span>__mamba_exe<span class="w"> </span><span class="o">{</span>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">    </span><span class="o">(</span><span class="w"> </span><span class="se">\l</span>ocal<span class="w"> </span><span class="nv">MAMBA_CONDA_EXE_BACKUP</span><span class="o">=</span><span class="nv">$CONDA_EXE</span><span class="p">;</span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">    </span><span class="se">\l</span>ocal<span class="w"> </span><span class="nv">MAMBA_EXE</span><span class="o">=</span><span class="k">$(</span><span class="se">\d</span>irname<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">CONDA_EXE</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span>/mamba<span class="p">;</span>
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">    </span><span class="s2">&quot;</span><span class="nv">$MAMBA_EXE</span><span class="s2">&quot;</span><span class="w"> </span><span class="nv">$_CE_M</span><span class="w"> </span><span class="nv">$_CE_CONDA</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">)}</span>
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>set-function<span class="w">    </span>conda<span class="w"> </span><span class="o">{</span>
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">    </span><span class="se">\l</span>ocal<span class="w"> </span><span class="nv">cmd</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">1</span><span class="p">-__missing__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span>
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$cmd</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
+</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="w">        </span>activate<span class="w"> </span><span class="p">|</span><span class="w"> </span>deactivate<span class="o">)</span>
+</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="w">            </span>__conda_activate<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="w">        </span><span class="p">;;</span>
+</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="w">        </span>install<span class="w"> </span><span class="p">|</span><span class="w"> </span>update<span class="w"> </span><span class="p">|</span><span class="w"> </span>upgrade<span class="w"> </span><span class="p">|</span><span class="w"> </span>remove<span class="w"> </span><span class="p">|</span><span class="w"> </span>uninstall<span class="o">)</span>
+</span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a><span class="w">            </span>__conda_exe<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\r</span>eturn<span class="p">;</span>
+</span><span id="__span-2-43"><a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="w">            </span>__conda_reactivate
+</span><span id="__span-2-44"><a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a><span class="w">        </span><span class="p">;;</span>
+</span><span id="__span-2-45"><a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a><span class="w">        </span>*<span class="o">)</span>
+</span><span id="__span-2-46"><a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a><span class="w">            </span>__conda_exe<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+</span><span id="__span-2-47"><a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a><span class="w">        </span><span class="p">;;</span>
+</span><span id="__span-2-48"><a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a><span class="w">    </span><span class="k">esac</span><span class="o">}</span>
+</span><span id="__span-2-49"><a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>set-function<span class="w">    </span>mamba<span class="w"> </span><span class="o">{</span>
+</span><span id="__span-2-50"><a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a><span class="w">    </span><span class="se">\l</span>ocal<span class="w"> </span><span class="nv">cmd</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">1</span><span class="p">-__missing__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span>
+</span><span id="__span-2-51"><a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$cmd</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
+</span><span id="__span-2-52"><a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a><span class="w">        </span>activate<span class="w"> </span><span class="p">|</span><span class="w"> </span>deactivate<span class="o">)</span>
+</span><span id="__span-2-53"><a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a><span class="w">            </span>__conda_activate<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+</span><span id="__span-2-54"><a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a><span class="w">        </span><span class="p">;;</span>
+</span><span id="__span-2-55"><a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a><span class="w">        </span>install<span class="w"> </span><span class="p">|</span><span class="w"> </span>update<span class="w"> </span><span class="p">|</span><span class="w"> </span>upgrade<span class="w"> </span><span class="p">|</span><span class="w"> </span>remove<span class="w"> </span><span class="p">|</span><span class="w"> </span>uninstall<span class="o">)</span>
+</span><span id="__span-2-56"><a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a><span class="w">            </span>__mamba_exe<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\r</span>eturn<span class="p">;</span>
+</span><span id="__span-2-57"><a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a><span class="w">            </span>__conda_reactivate
+</span><span id="__span-2-58"><a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a><span class="w">        </span><span class="p">;;</span>
+</span><span id="__span-2-59"><a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a><span class="w">        </span>*<span class="o">)</span>
+</span><span id="__span-2-60"><a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a><span class="w">            </span>__mamba_exe<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+</span><span id="__span-2-61"><a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a><span class="w">        </span><span class="p">;;</span>
+</span><span id="__span-2-62"><a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a><span class="w">    </span><span class="k">esac</span><span class="o">}</span>
+</span><span id="__span-2-63"><a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a>setenv<span class="w">          </span>_CE_CONDA<span class="w"> </span><span class="o">{}</span>
+</span><span id="__span-2-64"><a id="__codelineno-2-64" name="__codelineno-2-64" href="#__codelineno-2-64"></a>setenv<span class="w">          </span>_CE_M<span class="w"> </span><span class="o">{}</span>
+</span><span id="__span-2-65"><a id="__codelineno-2-65" name="__codelineno-2-65" href="#__codelineno-2-65"></a>setenv<span class="w">          </span>CONDA_EXE<span class="w"> </span>/gpfs/exfel/sw/software/mambaforge/22.11/bin/conda
+</span><span id="__span-2-66"><a id="__codelineno-2-66" name="__codelineno-2-66" href="#__codelineno-2-66"></a>setenv<span class="w">          </span>CONDA_PYTHON_EXE<span class="w"> </span>/gpfs/exfel/sw/software/mambaforge/22.11/bin/python
+</span><span id="__span-2-67"><a id="__codelineno-2-67" name="__codelineno-2-67" href="#__codelineno-2-67"></a>setenv<span class="w">          </span>CONDA_SHLVL<span class="w"> </span><span class="m">0</span>
+</span></code></pre></div>
 <p>On its own this modulefile will enable the <code>mamba</code> installation, however there are a few changes that should be made:</p>
 <ol>
 <li>
 <p>Add <code>whatis</code> and <code>help</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="c">#%Module 1.0</span>
-<span class="nv">module-whatis</span><span class="w">  </span><span class="s2">&quot;Mambaforge 22.11&quot;</span>
-
-<span class="k">proc</span><span class="w"> </span>ModulesHelp<span class="w"> </span><span class="k">{}</span><span class="w"> </span><span class="k">{</span>
-<span class="w">    </span><span class="nb">puts</span><span class="w"> </span>stdout<span class="w">    </span><span class="s2">&quot;Activate mambaforge 22.11&quot;</span>
-<span class="k">}</span>
-</code></pre></div>
+<div class="language-tcl highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c">#%Module 1.0</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nv">module-whatis</span><span class="w">  </span><span class="s2">&quot;Mambaforge 22.11&quot;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">proc</span><span class="w"> </span>ModulesHelp<span class="w"> </span><span class="k">{}</span><span class="w"> </span><span class="k">{</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nb">puts</span><span class="w"> </span>stdout<span class="w">    </span><span class="s2">&quot;Activate mambaforge 22.11&quot;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">}</span>
+</span></code></pre></div>
 </li>
 <li>
 <p>Add special case for xsoft to place packages in user-readable directory:</p>
-<div class="highlight"><pre><span></span><code><span class="k">set</span><span class="w"> </span>specialuser<span class="w"> </span>xsoft
-
-<span class="k">eval</span><span class="w"> </span>set<span class="w"> </span><span class="k">[array</span><span class="w"> </span>get<span class="w"> </span>env<span class="w"> </span>USER<span class="k">]</span>
-
-<span class="k">if</span><span class="w"> </span><span class="k">{</span><span class="nv">$USER</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nv">$specialuser</span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
-<span class="w">    </span><span class="c"># Set for all users except xsoft</span>
-<span class="w">    </span><span class="nb">append</span><span class="o">-</span>path<span class="w">    </span>CONDA_PKGS_DIRS<span class="w"> </span><span class="s2">&quot;~/.conda/pkgs&quot;</span>
-<span class="w">    </span><span class="nb">append</span><span class="o">-</span>path<span class="w">    </span>CONDA_ENVS_DIRS<span class="w"> </span><span class="s2">&quot;~/.conda/envs&quot;</span>
-<span class="k">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">{</span>
-<span class="w">    </span><span class="nb">append</span><span class="o">-</span>path<span class="w">    </span>CONDA_PKGS_DIRS<span class="w"> </span><span class="s2">&quot;/gpfs/exfel/data/scratch/xsoft/.conda/pkgs&quot;</span>
-<span class="k">}</span>
-</code></pre></div>
+<div class="language-tcl highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">set</span><span class="w"> </span>specialuser<span class="w"> </span>xsoft
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">eval</span><span class="w"> </span>set<span class="w"> </span><span class="k">[array</span><span class="w"> </span>get<span class="w"> </span>env<span class="w"> </span>USER<span class="k">]</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">if</span><span class="w"> </span><span class="k">{</span><span class="nv">$USER</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nv">$specialuser</span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="c"># Set for all users except xsoft</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nb">append</span><span class="o">-</span>path<span class="w">    </span>CONDA_PKGS_DIRS<span class="w"> </span><span class="s2">&quot;~/.conda/pkgs&quot;</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="nb">append</span><span class="o">-</span>path<span class="w">    </span>CONDA_ENVS_DIRS<span class="w"> </span><span class="s2">&quot;~/.conda/envs&quot;</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="k">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">{</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="nb">append</span><span class="o">-</span>path<span class="w">    </span>CONDA_PKGS_DIRS<span class="w"> </span><span class="s2">&quot;/gpfs/exfel/data/scratch/xsoft/.conda/pkgs&quot;</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="k">}</span>
+</span></code></pre></div>
 </li>
 </ol>
 <div class="admonition important">
@@ -3298,26 +3318,26 @@ setenv<span class="w">          </span>CONDA_SHLVL<span class="w"> </span><span 
 </div>
 <p>You should <strong>not</strong> install any user packages into the <code>base</code> environment.</p>
 <p>So, with the Conda installation activated, run the following commands:</p>
-<div class="highlight"><pre><span></span><code>mamba<span class="w"> </span>env<span class="w"> </span>activate<span class="w"> </span>base
-mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>grayskull<span class="w"> </span>boa<span class="w"> </span>git
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mamba<span class="w"> </span>env<span class="w"> </span>activate<span class="w"> </span>base
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>grayskull<span class="w"> </span>boa<span class="w"> </span>git
+</span></code></pre></div>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <p>The steps, from start to finish, are:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Download the installation script</span>
-wget<span class="w"> </span>https://github.com/conda-forge/miniforge/releases/download/22.11.1-4/Mambaforge-22.11.1-4-Linux-x86_64.sh<span class="w"> </span>-o<span class="w"> </span>Miniforge-22.11.sh
-<span class="c1"># Run it to create a new installation</span>
-bash<span class="w"> </span>Miniforge3.sh<span class="w"> </span>-b<span class="w"> </span>-p<span class="w"> </span>/gpfs/exfel/sw/software/mambaforge/22.11
-<span class="c1"># Add mamba-init file to /gpfs/exfel/sw/software/mambaforge/22.11/bin/</span>
-<span class="c1"># Activate the installation</span>
-<span class="nb">source</span><span class="w"> </span>/gpfs/exfel/sw/software/mambaforge/22.11/bin/mamba-init
-mamba<span class="w"> </span>env<span class="w"> </span>activate<span class="w"> </span>base
-<span class="c1"># Add required base packages</span>
-mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>grayskull<span class="w"> </span>boa<span class="w"> </span>git
-<span class="c1"># Start up a **new shell** and then create the modulefile</span>
-module<span class="w"> </span>sh-to-mod<span class="w"> </span>bash<span class="w"> </span>/gpfs/exfel/sw/software/mambaforge/22.11/bin/mamba-init<span class="w"> </span>&gt;<span class="w"> </span><span class="m">22</span>.11
-<span class="c1"># Make the required changes to the modulefile</span>
-vim<span class="w"> </span><span class="m">22</span>.11
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Download the installation script</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>wget<span class="w"> </span>https://github.com/conda-forge/miniforge/releases/download/22.11.1-4/Mambaforge-22.11.1-4-Linux-x86_64.sh<span class="w"> </span>-o<span class="w"> </span>Miniforge-22.11.sh
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># Run it to create a new installation</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>bash<span class="w"> </span>Miniforge3.sh<span class="w"> </span>-b<span class="w"> </span>-p<span class="w"> </span>/gpfs/exfel/sw/software/mambaforge/22.11
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># Add mamba-init file to /gpfs/exfel/sw/software/mambaforge/22.11/bin/</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1"># Activate the installation</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="nb">source</span><span class="w"> </span>/gpfs/exfel/sw/software/mambaforge/22.11/bin/mamba-init
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>mamba<span class="w"> </span>env<span class="w"> </span>activate<span class="w"> </span>base
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1"># Add required base packages</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>grayskull<span class="w"> </span>boa<span class="w"> </span>git
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="c1"># Start up a **new shell** and then create the modulefile</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>module<span class="w"> </span>sh-to-mod<span class="w"> </span>bash<span class="w"> </span>/gpfs/exfel/sw/software/mambaforge/22.11/bin/mamba-init<span class="w"> </span>&gt;<span class="w"> </span><span class="m">22</span>.11
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="c1"># Make the required changes to the modulefile</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>vim<span class="w"> </span><span class="m">22</span>.11
+</span></code></pre></div>
 
 
 
