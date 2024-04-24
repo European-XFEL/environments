@@ -1,15 +1,14 @@
 context:
   name: damnit
-  version: '0.1'
-  branch: 'master'
+  version: '0.1.1'
 
 package:
   name: '{{ name|lower }}'
-  version: '{{ version }}+{{ branch }}'
+  version: '{{ version }}'
 
 source:
   git_url: https://github.com/European-XFEL/damnit
-  git_tag: '{{ branch }}'
+  git_tag: '{{ version }}'
 
 build:
   noarch: python
