@@ -87,6 +87,7 @@ dependencies:
   - cycler=0.12.1
   - cython=3.0.7
   - cytoolz=0.12.2
+  - damnit=0.1.1
   - dask=2024.1.0
   - dask-core=2024.1.0
   - dask-jobqueue=0.8.2
@@ -610,5 +611,5 @@ dependencies:
   - zstd=1.5.5
   - pip:
       - da-utils==0.1.0
-      - euxfel-extra==2024.1.1.24+aea800e
+      - euxfel-extra==2024.1.1.42+2a68f7e
 prefix: /gpfs/exfel/sw/software/mambaforge/22.11/envs/202401

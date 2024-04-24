@@ -6,6 +6,7 @@ dependencies:
   - calibration-client >=11.3.0
   - cfelpyutils
   - condat-gridconv
+  - damnit
   - envmodules
   - euxfel-bunch-pattern
   - extra-data >= 1.14
