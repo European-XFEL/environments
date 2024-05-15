@@ -162,12 +162,12 @@ This will create a kernel called `Python (some-env)` which can be selected in th
 
 If you have issues with interactive plotting in Jupyter notebooks it is likely that your environment has has some packages installed which are not compatible with the environment that is serving Jupyter.
 
-As of June 2023 it is recommended to pin the following packages to these versions:
+As of May 2024 it is recommended to pin the following packages to these versions:
 
 ```text
-- ipympl=0.7.0
-- ipywidgets=7.6.3
-- matplotlib=3.4.2
+- ipympl=0.9.3
+- ipywidgets=7.7.0
+- matplotlib=3.5.2
 ```
 
 ### Conda Packages and Environments Filling Home Directory
