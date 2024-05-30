@@ -108,7 +108,7 @@ dependencies:
   - exceptiongroup=1.2.0
   - expat=2.5.0
   - extra-data=1.17.0
-  - extra-geom=1.11.0
+  - extra-geom=1.12.0
   - extra-hed=0.1.0
   - fabio=2023.4.1
   - fast-histogram=0.11
@@ -611,5 +611,5 @@ dependencies:
   - zstd=1.5.5
   - pip:
       - da-utils==0.1.0
-      - euxfel-extra==2024.1.1.47+0570d89
+      - euxfel-extra==2024.1.1.102+4673431
 prefix: /gpfs/exfel/sw/software/mambaforge/22.11/envs/202401
