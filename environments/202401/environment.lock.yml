@@ -611,5 +611,5 @@ dependencies:
   - zstd=1.5.5
   - pip:
       - da-utils==0.1.0
-      - euxfel-extra==2024.1.1.102+4673431
+      - euxfel-extra==2024.1.1.136+bd26a76
 prefix: /gpfs/exfel/sw/software/mambaforge/22.11/envs/202401
