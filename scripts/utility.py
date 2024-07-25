@@ -114,7 +114,7 @@ For a new environment, create it via:
 
 For an existing environment, update it via:
 
-    mamba update --no-update-deps -n {name} -f ./environment.yml
+    mamba update --no-update-deps -n {name} -c ../../custom-recipes/conda-bld -f ./environment.yml
 
 After update/install is complete create a 'lock file' by running export:
 
