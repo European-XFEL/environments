@@ -1,0 +1,18 @@
+#%Module 1.0
+#
+#  BornAgain 1.19.0
+#
+proc ModulesHelp {} {
+    puts stdout     " "
+    puts stdout     " BornAgain: Open-source research software to simulate and fit neutron and x-ray reflectometry and grazing-incidence small-angle scattering. "
+    puts stdout     " https://jugit.fz-juelich.de/mlz/bornagain "
+    puts stdout     " "
+}
+
+module-whatis  "Open-source research software to simulate and fit neutron and x-ray reflectometry and grazing-incidence small-angle scattering."
+
+if { [ module-info mode load ] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'bornagain/1.19.0'"
+}
+
+prepend-path PATH /gpfs/exfel/sw/software/xfel_applications/bornagain/bornagain-1.19.0/bin

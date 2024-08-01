@@ -1,0 +1,13 @@
+#%Module 1.0
+#
+#  Modulefile providing imagej via fiji
+#
+proc ModulesHelp {} {
+	puts	stdout	"Modulefile providing imagej via fiji"
+}
+
+module-whatis  'Modulefile providing imagej via fiji'
+if { [ module-info mode load ] } {
+    prepend-path PATH /gpfs/exfel/sw/software/fiji/Fiji.app/bin;
+}
+

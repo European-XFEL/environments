@@ -1,0 +1,19 @@
+#%Module 1.0
+#
+#  Glassure 1.4.4
+#
+proc ModulesHelp {} {
+    puts stdout     " "
+    puts stdout     " Glassure: An API and GUI program for data analysis of total x-ray diffraction data. "
+    puts stdout     " https://github.com/CPrescher/Glassure "
+    puts stdout     " "
+}
+
+module-whatis  "An API and GUI program for data analysis of total x-ray diffraction data."
+
+if { [ module-info mode load ] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'glassure/1.4.4'"
+}
+
+prepend-path PATH /gpfs/exfel/sw/software/xfel_applications/glassure/glassure-v1.4.4/bin
+
