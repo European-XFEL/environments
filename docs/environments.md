@@ -22,7 +22,7 @@ There are a few must-know commands to use environment modules:
 
 DESY and EuXFEL maintain multiple software environments to facilitate user analysis. For DESY specific modules, check the [Maxwell Software List](https://confluence.desy.de/display/IS/Alphabetical+List+of+Packages) and DESY confluence wiki pages.
 
-EuXFEL maintained modules are in their own scope, which can be activated by running `module load exfel`. Once that command has been run, if you use `module list` you will see that many new modules are now available to load.
+EuXFEL maintained modules are in their own scope, which can be activated by running `module load exfel`. Once that command has been run, if you use `module avail` you will see that many new modules are now available to load.
 
 The main module of interest for Python users will be `exfel-python`, which will load a python environment with many commonly used packages that we expect will be required for data analysis, as well as our own packages. A full list of software available within an environment is available on the documentation pages for that environment (see a list in the [Environment List](#environment-list) section).
 
