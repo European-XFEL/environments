@@ -16,6 +16,8 @@ concurrency:
 
 jobs:
   remove-preview-files:
+    # PRs made from forks don't get a preview in the repo
+    if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     outputs:
       hash: ${{ steps.commit.outputs.hash }}
