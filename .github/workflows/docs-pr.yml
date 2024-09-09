@@ -30,6 +30,8 @@ jobs:
           path: ./site
 
   deploy:
+    # This can't work on PRs made from forks (no permission to push)
+    if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     needs: build-and-upload
     permissions:
