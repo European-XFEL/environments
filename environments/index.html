@@ -3293,7 +3293,7 @@
 </tbody>
 </table>
 <p>DESY and EuXFEL maintain multiple software environments to facilitate user analysis. For DESY specific modules, check the <a href="https://confluence.desy.de/display/IS/Alphabetical+List+of+Packages">Maxwell Software List</a> and DESY confluence wiki pages.</p>
-<p>EuXFEL maintained modules are in their own scope, which can be activated by running <code>module load exfel</code>. Once that command has been run, if you use <code>module list</code> you will see that many new modules are now available to load.</p>
+<p>EuXFEL maintained modules are in their own scope, which can be activated by running <code>module load exfel</code>. Once that command has been run, if you use <code>module avail</code> you will see that many new modules are now available to load.</p>
 <p>The main module of interest for Python users will be <code>exfel-python</code>, which will load a python environment with many commonly used packages that we expect will be required for data analysis, as well as our own packages. A full list of software available within an environment is available on the documentation pages for that environment (see a list in the <a href="#environment-list">Environment List</a> section).</p>
 <p>To facilitate reproducibility we create a new environment for every cycle. This way, if you want to use the same software as a previous cycle, or if the current cycle causes issues with your code, you can easily switch to a previous environment.</p>
 <p>The current cycle is always available as <code>exfel-python</code>, and previous cycles are available as <code>exfel-python/$CYCLE</code>, where <code>$CYCLE</code> is the cycle number. For example, to load the environment for cycle 202301, you can run:</p>
