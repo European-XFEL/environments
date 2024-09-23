@@ -1,19 +1,20 @@
 context:
   name: extra-data
-  version: 1.17.0
+  version: 1.18.0
 
 package:
   name: '{{ name|lower }}'
   version: '{{ version }}'
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/EXtra-data-{{ version }}.tar.gz
-  sha256: c90e96bc04ec11816fd36ca77010cc77f923b21f3c8131dcf8d35b7360e38e6e
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/extra_data-{{ version }}.tar.gz
+  sha256: 81f266f9d0d64719e7a4ca96492c5297fffa7d03ab170f1b68476688a3e3b67d
 
 build:
   entry_points:
     - lsxfel = extra_data.lsxfel:main
     - karabo-bridge-serve-files = extra_data.cli.serve_files:main
+    - karabo-bridge-serve-run = extra_data.cli.serve_run:main
     - extra-data-validate = extra_data.validation:main
     - extra-data-make-virtual-cxi = extra_data.cli.make_virtual_cxi:main
     - extra-data-locality = extra_data.locality:main
@@ -23,10 +24,10 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.9
     - pip
   run:
-    - python >=3.6
+    - python >=3.9
     - h5py >=2.10
     - numpy
     - pandas
@@ -41,6 +42,7 @@ test:
     - pip check
     - lsxfel --help
     - karabo-bridge-serve-files --help
+    - karabo-bridge-serve-run --help
     - extra-data-validate --help
     - extra-data-make-virtual-cxi --help
     - extra-data-locality --help

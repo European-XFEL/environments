@@ -62,12 +62,12 @@ dependencies:
   - bzip2=1.0.8
   - c-ares=1.32.3
   - c-blosc2=2.12.0
-  - ca-certificates=2024.7.4
+  - ca-certificates=2024.8.30
   - cached-property=1.5.2
   - cached_property=1.5.2
   - cairo=1.16.0
   - calibration-client=11.3.0
-  - certifi=2024.7.4
+  - certifi=2024.8.30
   - certipy=0.1.3
   - cfelpyutils=2.0.6
   - cffi=1.16.0
@@ -111,7 +111,7 @@ dependencies:
   - euxfel-bunch-pattern=0.6
   - exceptiongroup=1.2.2
   - expat=2.6.2
-  - extra-data=1.17.0
+  - extra-data=1.18.0
   - extra-geom=1.12.0
   - extra-hed=0.1.0
   - fabio=2024.4.0
@@ -260,6 +260,7 @@ dependencies:
   - libexpat=2.6.2
   - libffi=3.4.2
   - libflac=1.4.3
+  - libgcc=14.1.0
   - libgcc-ng=14.1.0
   - libgcrypt=1.11.0
   - libgettextpo=0.22.5
@@ -311,6 +312,7 @@ dependencies:
   - libspimage=1.0.0
   - libsqlite=3.46.0
   - libssh2=1.11.0
+  - libstdcxx=14.1.0
   - libstdcxx-ng=14.1.0
   - libsystemd0=255
   - libtasn1=4.19.0
@@ -397,7 +399,7 @@ dependencies:
   - opencv=4.8.0
   - openh264=2.3.1
   - openjpeg=2.5.0
-  - openssl=3.1.6
+  - openssl=3.1.7
   - orc=1.9.0
   - orjson=3.10.6
   - p11-kit=0.24.1
@@ -629,4 +631,7 @@ dependencies:
   - zlib-ng=2.0.7
   - zstandard=0.23.0
   - zstd=1.5.6
+  - pip:
+      - da-utils==0.1.0
+      - euxfel-extra==2024.1.2.46+ff9cde9
 prefix: /gpfs/exfel/sw/software/mambaforge/22.11/envs/202402
