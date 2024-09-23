@@ -60,7 +60,8 @@ Now, `cd` into the directory of the environment you are working on (e.g. `cd ./e
 
 This will merge all of the individual environment files into a single `environment.yml` file which can then be used to create/update an environment.
 
-The command will print off instructions on what to do next:
+The command will print off instructions on what to do next, which will look
+something like:
 
 > Next steps:
 >
@@ -70,7 +71,7 @@ The command will print off instructions on what to do next:
 >
 > For an existing environment, update it via:
 >
->     mamba update --no-update-deps -n 202302 -f ./environment.yml
+>     mamba update --no-update-deps -n 202302 -c ../../custom-recipes/conda-bld -f ./environment.yml
 >
 > After update/install is complete create a 'lock file' by running export:
 >

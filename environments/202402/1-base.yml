@@ -3,10 +3,18 @@ channels:
   - conda-forge
 dependencies:
   - python=3.10
-  - cpuonly::pytorch
-  - pytorch::pytorch
-  - torchaudio::pytorch
-  - torchvision::pytorch
+
+  # No clue why, but mamba errors when these pytorch dependencies are
+  # present. For now we create the environment.yml file without them and install
+  # them manually:
+  #   $ module load exfel mambaforge
+  #   $ mamba activate 202402
+  #   $ mamba install pytorch torchvision torchaudio cpuonly -c pytorch
+  # - cpuonly::pytorch
+  # - pytorch::pytorch
+  # - torchaudio::pytorch
+  # - torchvision::pytorch
+
   - astropy
   - bokeh
   - curl
@@ -30,7 +38,7 @@ dependencies:
   - jupyter
   - jupyterlab
   - jupyterlab-lsp
-  - kafka-python
+  - kafka-python-ng
   - lmfit
   - matplotlib
   - mpl-interactions
@@ -45,6 +53,7 @@ dependencies:
   - pint
   - plotly
   - polars
+  - pyabel
   - pybaselines
   - pyfai
   - pyopengl
@@ -52,6 +61,8 @@ dependencies:
   - pytest
   - python-kaleido
   - pywavelets
+  # We need to use an older pyzmq version until Maxwell updates
+  # to jupyter-client v8: https://github.com/spyder-ide/spyder/issues/20381
   - pyzmq<25
   - scikit-beam
   - scikit-image

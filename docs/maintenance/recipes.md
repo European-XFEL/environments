@@ -105,21 +105,7 @@ You should change the source to be the git repository URL, and add information f
 
 ## Building the Recipes
 
-Once a new recipe is created, it must be built to create an installable package. A Makefile is provided for ease of use, the Makefile will run the build commands in a container, and builds are done in a temporary shared memory directory to improve performance. Build outputs are stored in the `conda-bld` directory.
-
-You can use the Makefile to build all recipes, or a single recipe:
-
-```sh
-# Inside the `custom-recipes` directory
-make build  # Build all recipes
-make build PKG=extra-data  # Build a single recipe
-```
-
-!!! note
-
-    The Makefile has a bit of logic to figure out if it is running on a shared node on Maxwell. If it is then it will run the docker command via `srun` (as docker only works on dedicated nodes, not shared nodes). If it is not then it will just use `docker` directly.
-
-If there are issues during the build then you can troubleshoot the process by running the commands manually:
+Once a new recipe is created, it must be built to create an installable package.
 
 ```sh
 # Activate the correct environment when on xsoft@maxwell
@@ -130,6 +116,7 @@ mamba activate base
 boa build \
   --skip-existing \
   --target-platform linux-64 \
+  --output-folder ./conda-bld
   ./recipes/$PACKAGE  # Optional package name
 
 # Once the build is complete, index the build directory

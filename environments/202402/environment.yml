@@ -1,4 +1,4 @@
-name: "202401"
+name: "202402"
 channels:
   - nodefaults
   - /gpfs/exfel/sw/software/euxfel-environment-management/custom-recipes/conda-bld
@@ -13,8 +13,9 @@ dependencies:
   - ipython_genutils=0.2.0
   - ipywidgets=7.7.0
   - jupyter=1.0.0
+  - jupyter-resource-usage=0.7.1
   - jupyter-server-mathjax=0.2.6
-  - jupyter-server-proxy=4.0.0
+  - jupyter-server-proxy=4.1.0
   - jupyter_client=7.3.4
   - jupyter_console=6.4.3
   - jupyter_core=4.10.0
@@ -36,10 +37,6 @@ dependencies:
   - scipy=1.8.1
   - spyder=5.3.1
   - spyder-kernels=2.3.1
-  - cpuonly::pytorch
-  - pytorch::pytorch
-  - torchaudio::pytorch
-  - torchvision::pytorch
   - astropy
   - bokeh
   - curl
@@ -58,7 +55,7 @@ dependencies:
   - imageio
   - iminuit
   - jupyterlab-lsp
-  - kafka-python
+  - kafka-python-ng
   - lmfit
   - mpl-interactions
   - msgpack-numpy
@@ -72,6 +69,7 @@ dependencies:
   - pint
   - plotly
   - polars
+  - pyabel
   - pybaselines
   - pyfai
   - pyopengl

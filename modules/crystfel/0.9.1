@@ -16,6 +16,7 @@ proc ModulesHelp { } {
 if { [ module-info mode load ] } {
     system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'crystfel/0.9.1'"
     prepend-path    MODULEPATH    /gpfs/exfel/sw/software/spack/spack_all/share/spack/modules/linux-centos7-x86_64
-    module load ccp4/7.0
+    #module load ccp4/7.0
+    module load ccp4/8.0
     module load crystfel-0.9.1-gcc-8.3.0-ujgzxbx
 }

@@ -1,0 +1,7 @@
+name: pyimagej
+channels:
+  - nodefaults
+  - conda-forge
+dependencies:
+  - pyimagej
+  - openjdk=8

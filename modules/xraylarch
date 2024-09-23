@@ -1,6 +1,6 @@
 #%Module 1.0
 #
-#  xfel 1.1.1
+#  xraylarch
 #
 proc ModulesHelp {} {
     puts stdout     " "
@@ -8,17 +8,34 @@ proc ModulesHelp {} {
     puts stdout     " "
 }
 
-module-whatis  "Setup environemt for data analysis tools at EuXFEL "
+module-whatis  "Module loads the xraylarch application"
+
 if { [ module-info mode load ] } {
-    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'xraylarch'"
-    prepend-path PATH    /gpfs/exfel/sw/software/xraylarch/bin/
-    setenv _CONDA_EXE    /gpfs/exfel/sw/software/xraylarch/bin/conda
-    setenv _CONDA_ROOT   /gpfs/exfel/sw/software/xraylarch/bin/
-    setenv              OPENCL_VENDOR_PATH /etc/OpenCL/vendors
-} elseif { [module-info mode remove] && ![module-info mode switch3] } {
-    remove-path PATH /gpfs/exfel/sw/software/xraylarch/bin
-    unsetenv _CONDA_EXE
-    unsetenv _CONDA_ROOT
-    unsetenv OPENCL_VENDOR_PATH
+    system    "/gpfs/exfel/sw/software/local/etc/metrics.sh 'xraylarch'"
 }
+
+module load mambaforge
+
+prepend-path    PATH /gpfs/exfel/sw/software/mambaforge/22.11/envs/xraylarch/bin
+prepend-path    XML_CATALOG_FILES file {///gpfs/exfel/sw/software/mambaforge/22.11/envs/xraylarch/etc/xml/catalog file} ///etc/xml/catalog
+setenv          CONDA_DEFAULT_ENV xraylarch
+setenv          CONDA_PREFIX /gpfs/exfel/sw/software/mambaforge/22.11/envs/xraylarch
+setenv          CONDA_PROMPT_MODIFIER {(xraylarch) }
+setenv          CONDA_SHLVL 1
+setenv          GSETTINGS_SCHEMA_DIR /gpfs/exfel/sw/software/mambaforge/22.11/envs/xraylarch/share/glib-2.0/schemas
+setenv          GSETTINGS_SCHEMA_DIR_CONDA_BACKUP {}
+
+#module-whatis  "Setup environemt for data analysis tools at EuXFEL "
+#if { [ module-info mode load ] } {
+#    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'xraylarch'"
+#    prepend-path PATH    /gpfs/exfel/sw/software/xraylarch/bin/
+#    setenv _CONDA_EXE    /gpfs/exfel/sw/software/xraylarch/bin/conda
+#    setenv _CONDA_ROOT   /gpfs/exfel/sw/software/xraylarch/bin/
+#    setenv              OPENCL_VENDOR_PATH /etc/OpenCL/vendors
+#} elseif { [module-info mode remove] && ![module-info mode switch3] } {
+#    remove-path PATH /gpfs/exfel/sw/software/xraylarch/bin
+#    unsetenv _CONDA_EXE
+#    unsetenv _CONDA_ROOT
+#    unsetenv OPENCL_VENDOR_PATH
+#}
 
