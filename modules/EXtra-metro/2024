@@ -1,0 +1,26 @@
+#%Module 1.0
+#
+#  EXtra-metro
+#
+proc ModulesHelp {} {
+    puts stdout     " "
+    puts stdout     "This module enables to use the EXtra-metro GUI client to use with metropc pipelines""
+    puts stdout     " "
+}
+
+module-whatis  "Setup environment for EXtra-metro GUI client"
+
+if { [ module-info mode load ] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'EXtra-metro/2024'"
+}
+
+module load mambaforge
+
+prepend-path    PATH /gpfs/exfel/sw/software/mambaforge/22.11/envs/extra_metro_2024/bin
+prepend-path    XML_CATALOG_FILES file {///gpfs/exfel/sw/software/mambaforge/22.11/envs/extra_metro_2024/etc/xml/catalog file} ///etc/xml/catalog
+setenv          CONDA_DEFAULT_ENV extra_metro_2024
+setenv          CONDA_PREFIX /gpfs/exfel/sw/software/mambaforge/22.11/envs/extra_metro_2024
+setenv          CONDA_PROMPT_MODIFIER {(extra_metro_2024) }
+setenv          CONDA_SHLVL 1
+setenv          GSETTINGS_SCHEMA_DIR /gpfs/exfel/sw/software/mambaforge/22.11/envs/extra_metro_2024/share/glib-2.0/schemas
+setenv          GSETTINGS_SCHEMA_DIR_CONDA_BACKUP {}
