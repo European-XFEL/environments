@@ -1,0 +1,17 @@
+#%Module 1.0
+#
+#  geometry-powder-optimizer
+#
+
+proc ModulesHelp {} {
+    puts stdout "This module sets the environment for Geometry Powder Optimizer"
+}
+
+module-whatis  "Setup environment for Geometry Powder Optimizer"
+prepend-path PATH /gpfs/exfel/sw/software/geometry-powder-optimizer/bin
+setenv VIRTUAL_ENV /gpfs/exfel/sw/software/geometry-powder-optimizer
+
+if { [module-info mode load] || [module-info mode switch2] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'geometry-powder-optimizer/v2'"
+}
+
