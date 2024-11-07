@@ -1,0 +1,23 @@
+#%Module 1.0
+proc ModulesHelp {} {
+    puts stdout    "Mamba environment for hexrd"
+}
+
+module-whatis  "Module loads the mamba environment for cycle hexrd"
+
+if { [ module-info mode load ] } {
+    system    "/gpfs/exfel/sw/software/local/etc/metrics.sh 'mamba/hexrd'"
+}
+
+module load mambaforge
+
+prepend-path    PATH /gpfs/exfel/sw/software/mambaforge/22.11/envs/hexrd/bin
+prepend-path    PATH /gpfs/exfel/sw/software/xfel_applications/hexrd/bin
+prepend-path    XML_CATALOG_FILES file {///gpfs/exfel/sw/software/mambaforge/22.11/envs/hexrd/etc/xml/catalog file} ///etc/xml/catalog
+setenv          CONDA_DEFAULT_ENV hexrd
+setenv          CONDA_PREFIX /gpfs/exfel/sw/software/mambaforge/22.11/envs/hexrd
+setenv          CONDA_PROMPT_MODIFIER {(hexrd) }
+setenv          CONDA_SHLVL 1
+setenv          GSETTINGS_SCHEMA_DIR /gpfs/exfel/sw/software/mambaforge/22.11/envs/hexrd/share/glib-2.0/schemas
+setenv          GSETTINGS_SCHEMA_DIR_CONDA_BACKUP {}
+
