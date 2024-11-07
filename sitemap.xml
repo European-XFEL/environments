@@ -71,12 +71,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://european-xfel.github.io/environments/modules/hexrd/</loc>
+         <lastmod>2024-11-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://european-xfel.github.io/environments/modules/hipgisaxs/</loc>
          <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/moonshot/</loc>
+         <lastmod>2024-11-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://european-xfel.github.io/environments/modules/neutrino/</loc>
          <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -322,6 +332,11 @@
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/exfel_onda/test_mod/</loc>
+         <lastmod>2024-11-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://european-xfel.github.io/environments/modules/geometry-powder-optimizer/v2/</loc>
          <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
