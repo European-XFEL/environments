@@ -85,6 +85,7 @@ dependencies:
   - silx
   - xarray
   - xraylib
+  - zulip
   - calibration-client >=11.3.0
   - cfelpyutils
   - condat-gridconv
