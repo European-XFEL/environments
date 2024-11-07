@@ -29,7 +29,7 @@ def dump_desy_environment():
             "env",
             "export",
             "-p",
-            "/software/mamba/2022.06",
+            "/software/mamba/2024.01",
             "--json",
         ]
     ).decode("utf-8")
