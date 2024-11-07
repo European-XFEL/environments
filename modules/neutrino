@@ -1,0 +1,16 @@
+#%Module 1.0
+#
+proc ModulesHelp {} {
+    puts stdout     " "
+    puts stdout     "Neutrino image analysis application"
+    puts stdout     " "
+}
+
+module-whatis  "Neutrino image analysis application"
+
+if { [ module-info mode load ] } {
+    system    "/gpfs/exfel/sw/software/local/etc/metrics.sh 'neutrino'"
+}
+
+prepend-path    PATH /gpfs/exfel/sw/software/xfel_applications/neutrino
+
