@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+
+set -euo pipefail
+
+source /usr/share/Modules/init/bash
+module load exfel julia
+
+exec "$@"

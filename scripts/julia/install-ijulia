@@ -1,0 +1,19 @@
+#! /usr/bin/env bash
+
+set -euo pipefail
+
+export IJULIA_NODEFAULTKERNEL=1
+
+julia --project=@ijulia -e '
+import Pkg
+Pkg.add("IJulia")
+Pkg.update()
+
+import IJulia: installkernel
+
+run_script = `/gpfs/exfel/sw/software/euxfel-environment-management/scripts/julia/run-in-julia-module`
+julia = `$run_script $(joinpath(Sys.BINDIR, "julia"))`
+spec = installkernel("Julia", "--threads=auto", "--project=@ijulia"; julia)
+
+@info "Installed kernel in: $(spec)"
+'
