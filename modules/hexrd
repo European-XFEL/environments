@@ -3,7 +3,7 @@ proc ModulesHelp {} {
     puts stdout    "Mamba environment for hexrd"
 }
 
-module-whatis  "Module loads the mamba environment for cycle hexrd"
+module-whatis  "Module loads the mamba environment for hexrd"
 
 if { [ module-info mode load ] } {
     system    "/gpfs/exfel/sw/software/local/etc/metrics.sh 'mamba/hexrd'"
