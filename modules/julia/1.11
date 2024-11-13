@@ -16,7 +16,7 @@ if { [info exists env(SASE)] } {
 }
 
 # https://juliahpc.github.io/user_gettingstarted/#set_julia_cpu_target_appropriately
-setenv                  JULIA_CPU_TARGET       "generic;broadwell,clone_all;skylake-avx512,clone_all;cascadelake,clone_all;znver3,clone_all;znver2,clone_all"
+setenv                  JULIA_CPU_TARGET       "generic;broadwell,clone_all;skylake-avx512,clone_all;cascadelake,clone_all;sapphirerapids,clone_all;znver3,clone_all;znver2,clone_all"
 
 # https://juliapy.github.io/PythonCall.jl/stable/pythoncall/#If-you-already-have-Python-and-required-Python-packages-installed
 setenv                  JULIA_CONDAPKG_BACKEND Null
