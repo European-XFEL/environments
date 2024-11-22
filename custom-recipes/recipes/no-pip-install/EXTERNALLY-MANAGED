@@ -1,0 +1,9 @@
+[externally-managed]
+Error=This is a pure conda environment, packages should not be installed into it directly via pip.
+
+  If you are a user see this page for more information on using our environments: https://european-xfel.github.io/environments/environments/
+
+  For DA staff see the environment maintenance documentation:
+
+    - Environment maintenance: https://european-xfel.github.io/environments/maintenance/environments/
+    - Recipe creation: https://european-xfel.github.io/environments/maintenance/recipes/
