@@ -45,6 +45,7 @@ nav:
       - Recipe Creation: maintenance/recipes.md
       - Conda Installations: maintenance/instances.md
       - CI/CD: maintenance/ci-cd.md
+      - Julia: maintenance/julia.md
   - Citing: citing.md
 
 plugins:
