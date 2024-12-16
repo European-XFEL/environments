@@ -5,7 +5,7 @@
 module-whatis  "Load Julia (configured for XFEL)"
 
 prepend-path            PATH             /gpfs/exfel/sw/software/euxfel-environment-management/scripts/julia
-prepend-path            PATH             /gpfs/exfel/sw/software/juliaup/juliaup/julia-1.11.1+0.x64.linux.gnu/bin
+prepend-path            PATH             /gpfs/exfel/sw/software/juliaup/juliaup/julia-1.11.2+0.x64.linux.gnu/bin
 
 # https://docs.julialang.org/en/v1/manual/environment-variables/#JULIA_DEPOT_PATH
 if { [info exists env(SASE)] } {
