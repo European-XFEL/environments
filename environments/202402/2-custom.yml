@@ -6,6 +6,7 @@ dependencies:
   - calibration-client >=11.3.0
   - cfelpyutils
   - condat-gridconv
+  - condor
   - damnit
   - envmodules
   - euxfel-bunch-pattern
@@ -16,11 +17,11 @@ dependencies:
   - hdf5-vds-check
   - karabo-bridge
   - karabo_bridge_recorder
+  - line-profiler
   - matplotlib-scalebar
   - metadata-client
   - metropc
   - nbclick
-  - pasha
+  - pasha >= 0.1.2
   - princess
-  - condor
 category: custom

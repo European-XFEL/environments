@@ -1,0 +1,16 @@
+#%Module 1.0
+#
+# x_parallel 1.0
+#
+
+proc ModulesHelp {} {
+	puts stdout "This module sets up the x_parallel distribution"
+}
+
+module-whatis  "setup environment for x_parallel"
+prepend-path PATH /gps/exfel/sw/software/x_parallel/bin
+setenv VIRTUAL_ENV /gps/exfel/sw/software/x_parallel
+
+if { [module-info mode load] || [module-info mode switch2] } {
+	system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'x_parallel'"
+}

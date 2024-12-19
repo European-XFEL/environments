@@ -31,6 +31,8 @@ fi
 
 conda index ./conda-bld
 
+echo "Building $p"
+
 boa build \
   --skip-existing \
   --target-platform=linux-64 \

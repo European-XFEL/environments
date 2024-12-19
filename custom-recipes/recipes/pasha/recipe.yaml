@@ -1,6 +1,6 @@
 context:
   name: pasha
-  version: 0.1.1
+  version: 0.1.2
 
 package:
   name: '{{ name|lower }}'
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pasha-{{ version }}.tar.gz
-  sha256: a032687bb11a9609057602daa93ff59878153cc67473ed45923634cd35332592
+  sha256: 7133ae62639e3c88d18f9b16e61efda9200d1963dc49cf7019565cc5d61c6fe9
 
 build:
   noarch: python

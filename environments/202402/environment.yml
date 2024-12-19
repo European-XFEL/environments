@@ -67,6 +67,7 @@ dependencies:
   - pyabel
   - pybaselines
   - pyfai
+  - pyhdf
   - pyopengl
   - pyqtgraph
   - pytest
@@ -100,6 +101,6 @@ dependencies:
   - metadata-client
   - metropc
   - nbclick
-  - pasha
+  - pasha >= 0.1.2
   - princess
   - condor

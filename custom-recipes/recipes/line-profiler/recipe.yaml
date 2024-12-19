@@ -1,0 +1,54 @@
+context:
+  name: line_profiler
+  version: 4.2.0
+
+package:
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/line_profiler-{{ version }}.tar.gz
+  sha256: 09e10f25f876514380b3faee6de93fb0c228abba85820ba1a591ddb3eb451a96
+
+build:
+  entry_points:
+    - kernprof=kernprof:main
+  script: '{{ PYTHON }} -m pip install . -vv'
+  number: 0
+
+  skip:
+    - py<38
+requirements:
+  build:
+    - '{{ compiler("c") }}'
+    - '{{ compiler("cxx") }}'
+  host:
+    - python
+    - sel(py<40 and py>=38): setuptools >=68.2.2
+    - cython >=3.0.3
+    - cmake
+    - ninja
+    - pip
+  run:
+    - python
+
+test:
+  imports:
+    - line_profiler
+  commands:
+    - pip check
+    - kernprof --help
+  requires:
+    - pip
+
+about:
+  home: https://github.com/pyutils/line_profiler
+  summary: Line-by-line profiler
+  doc_url: https://pythonhosted.org/line-profiler/
+  license: BSD-3-Clause
+  license_file: LICENSE.txt
+
+extra:
+  recipe-maintainers:
+    - RobertRosca
+
