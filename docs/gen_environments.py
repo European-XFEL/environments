@@ -41,6 +41,9 @@ for environment in environments:
     files = {k: v for k, v in files.items() if v.exists()}
     page = f"environments/{name}.md"
     yamls = {k: yaml.safe_load(v.read_text()) for k, v in files.items()}
+    if "environment.lock.yml" not in yamls:
+        continue
+
     lock_dict = {
         dep.split("=")[0]: "=".join(dep.split("=")[1:])
         for dep in yamls["environment.lock.yml"]["dependencies"]
