@@ -73,7 +73,7 @@ dependencies:
   - pytest
   - python-kaleido
   - pywavelets
-  - pyzmq<25
+  - pyzmq
   - scikit-beam
   - scikit-image
   - scikit-learn

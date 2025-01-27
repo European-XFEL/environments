@@ -62,9 +62,7 @@ dependencies:
   - pytest
   - python-kaleido
   - pywavelets
-  # We need to use an older pyzmq version until Maxwell updates
-  # to jupyter-client v8: https://github.com/spyder-ide/spyder/issues/20381
-  - pyzmq<25
+  - pyzmq
   - scikit-beam
   - scikit-image
   - scikit-learn
