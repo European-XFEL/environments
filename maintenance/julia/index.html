@@ -3520,8 +3520,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-global-depot" class="md-nav__link">
-    The global depot
+  <a href="#the-global-depot-and-environments" class="md-nav__link">
+    The global depot and environments
   </a>
   
 </li>
@@ -3596,23 +3596,30 @@ account, and it's configured to store everything under
 <p>Currently we only maintain modules for minor versions, not patch versions. If it
 turns out a specific patch version is necessary then we will need to rethink
 this.</p>
-<h2 id="the-global-depot">The global depot<a class="headerlink" href="#the-global-depot" title="Permanent link">&para;</a></h2>
-<p>The global depot is stored here: <code>/gpfs/exfel/sw/software/julia-depot</code>. It's
-updated automatically by cron jobs that run the <code>update-julia-depot</code> script
-(under <code>scripts/julia</code> of this repo). The Julia modules will add the global
-depot to <code>JULIA_DEPOT_PATH</code> with the goal of reducing precompilation times for
-users using those packages.</p>
+<h2 id="the-global-depot-and-environments">The global depot and environments<a class="headerlink" href="#the-global-depot-and-environments" title="Permanent link">&para;</a></h2>
+<p>The global depot is stored here: <code>/gpfs/exfel/sw/software/julia-depot</code>. It and
+the global environments are updated automatically by cron jobs that run the
+<code>update-julia-env</code> script (under <code>scripts/julia</code> of this repo). The Julia
+modules will add the global depot to <code>JULIA_DEPOT_PATH</code> with the goal of
+reducing precompilation times for users using those packages. A default Julia
+environment is not activated by default but the latest one can be set with the
+<code>JULIA_EXFEL_ENV</code> environment variable: <code>julia --project=$JULIA_EXFEL_ENV</code>.</p>
+<p>The <code>Project.toml</code> and <code>Manifest-v*.toml</code> files of the environments are stored
+in the <code>environments/</code> subdirectories along with the Python environment
+lockfiles.</p>
 <p><a href="https://cuda.juliagpu.org/stable/">CUDA.jl</a> is one of the packages we keep in
-the depot and that must be precompiled on a GPU to work, so if you're running
-<code>update-julia-depot</code> manually make sure you do it with e.g. <code>srun -p allgpu
-update-julia-depot</code>. The cron jobs do that already.</p>
+the environment and that must be precompiled on a GPU to work, so if you're
+running <code>update-julia-depot</code> manually make sure you do it with e.g. <code>srun -p
+allgpu update-julia-depot</code>. The cron jobs do that already. From time to time the
+CUDA runtime should also be updated, to do that change the call to
+<code>CUDA.set_runtime_version!</code> in the <code>update-julia-env</code> script.</p>
 <ul>
 <li>Run <code>crontab -e</code> as <code>xsoft</code> on <code>max-exfl-display001</code> to see the cron jobs for
   it. The precompile files are per-Julia version (and also a lot of other
   things that we don't care about), so there should be one cron job per
   supported Julia module.</li>
-<li>To add a package to the depot just add it to the <code>packages</code> array in the
-  script and it will be installed the next time the script is run.</li>
+<li>To add a package to an environment, activate the environment and <code>] add</code> it as
+  usual. Remember to set a compat bound for it.</li>
 </ul>
 
 
