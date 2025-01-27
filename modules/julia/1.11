@@ -25,6 +25,8 @@ setenv                  JULIA_PYTHONCALL_EXE   /gpfs/exfel/sw/software/mambaforg
 # https://timholy.github.io/Revise.jl/stable/config/#Polling-and-NFS-mounted-code-directories:-JULIA_REVISE_POLL
 setenv                  JULIA_REVISE_POLL      1
 
+setenv                  JULIA_EXFEL_ENV        /gpfs/exfel/sw/software/euxfel-environment-management/environments/202501
+
 system /gpfs/exfel/sw/software/euxfel-environment-management/scripts/julia/create-julia-depot
 
 proc ModulesHelp {} {
