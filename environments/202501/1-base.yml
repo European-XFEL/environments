@@ -2,7 +2,7 @@ channels:
   - nodefaults
   - conda-forge
 dependencies:
-  - python=3.10
+  - python=3.11
 
   # No clue why, but mamba errors when these pytorch dependencies are
   # present. For now we create the environment.yml file without them and install
