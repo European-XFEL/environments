@@ -1,6 +1,6 @@
 context:
   name: extra-data
-  version: 1.18.0
+  version: 1.19.0
 
 package:
   name: '{{ name|lower }}'
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/extra_data-{{ version }}.tar.gz
-  sha256: 81f266f9d0d64719e7a4ca96492c5297fffa7d03ab170f1b68476688a3e3b67d
+  sha256: d22ee8c21dee36c49b6fce451667d2954bf6594aa21954ce19e37d15f31d37da
 
 build:
   entry_points:
@@ -33,6 +33,7 @@ requirements:
     - pandas
     - xarray
     - matplotlib
+    - pyyaml
     - sel(array): dask[array]
 
 test:
