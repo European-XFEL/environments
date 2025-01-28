@@ -1,6 +1,6 @@
 context:
   name: extra-geom
-  version: 1.12.0
+  version: 1.13.0
 
 package:
   name: '{{ name|lower }}'
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/extra_geom-{{ version }}.tar.gz
-  sha256: a88f3daa4643f4f3037384ba416a0482bee4142ba7a7e1917263a6d0937c5f1d
+  sha256: 848939154c38f07847243031a297adb681c40d15a4a1740b2fedc8db9e52a636
 
 build:
   noarch: python
@@ -17,10 +17,10 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.9
     - pip
   run:
-    - python >=3.6
+    - python >=3.9
     - cfelpyutils >=2.0,<3.0
     - h5py >=2.7.1
     - matplotlib-base
