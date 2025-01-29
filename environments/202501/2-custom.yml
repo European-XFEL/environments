@@ -17,7 +17,7 @@ dependencies:
   - hdf5-vds-check
   - karabo-bridge
   - karabo_bridge_recorder
-  - line-profiler
+  - line_profiler
   - matplotlib-scalebar
   - metadata-client
   - metropc
