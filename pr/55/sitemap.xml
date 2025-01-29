@@ -41,6 +41,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://european-xfel.github.io/environments/environments/202501/</loc>
+         <lastmod>2025-01-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://european-xfel.github.io/environments/environments/mambaforge/</loc>
          <lastmod>2025-01-29</lastmod>
          <changefreq>daily</changefreq>
