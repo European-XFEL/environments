@@ -59,6 +59,7 @@ dependencies:
   - pyhdf
   - pyopengl
   - pyqtgraph
+  - pytables
   - pytest
   - python-kaleido
   - pywavelets
@@ -70,6 +71,7 @@ dependencies:
   - seaborn
   - silx
   - spyder
+  - umap-learn
   - xarray
   - xraylib
   - zulip

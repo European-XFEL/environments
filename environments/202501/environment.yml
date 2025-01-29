@@ -105,5 +105,3 @@ dependencies:
   - nbclick
   - pasha >= 0.1.2
   - princess
-  - tables
-  - umap-learn
