@@ -1,0 +1,77 @@
+channels:
+  - nodefaults
+  - conda-forge
+dependencies:
+  - python=3.11
+
+  # No clue why, but mamba errors when these pytorch dependencies are
+  # present. For now we create the environment.yml file without them and install
+  # them manually:
+  #   $ module load exfel mambaforge
+  #   $ mamba activate 202402
+  #   $ mamba install pytorch torchvision torchaudio cpuonly -c pytorch
+  # - cpuonly::pytorch
+  # - pytorch::pytorch
+  # - torchaudio::pytorch
+  # - torchvision::pytorch
+
+  - astropy
+  - bokeh
+  - curl
+  - cython
+  - dask
+  - dask-jobqueue
+  - dask-labextension
+  - datashader
+  - fabio
+  - fast-histogram
+  - fftw
+  - h5glance>=0.8.1
+  - h5netcdf
+  - h5py
+  - hvplot
+  - imageio
+  - iminuit
+  - ipympl
+  - ipython
+  - ipywidgets
+  - jupyter
+  - jupyterlab
+  - jupyterlab-lsp
+  - kafka-python-ng
+  - lmfit
+  - matplotlib
+  - mpl-interactions
+  - msgpack-numpy
+  - msgpack-python
+  - natsort
+  - netcdf4
+  - numba
+  - numpy
+  - opencv
+  - papermill
+  - pint
+  - plotly
+  - polars
+  - pyabel
+  - pybaselines
+  - pyfai
+  - pyhdf
+  - pyopengl
+  - pyqtgraph
+  - pytables
+  - pytest
+  - python-kaleido
+  - pywavelets
+  - pyzmq
+  - scikit-beam
+  - scikit-image
+  - scikit-learn
+  - scipy
+  - seaborn
+  - silx
+  - spyder
+  - umap-learn
+  - xarray
+  - xraylib
+  - zulip
