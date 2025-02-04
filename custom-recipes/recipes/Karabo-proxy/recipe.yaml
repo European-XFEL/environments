@@ -1,0 +1,47 @@
+context:
+  name: Karabo-proxy
+  version: 1.0.4
+
+package:
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
+
+source:
+  url: 'https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/karabo_proxy-{{ version }}.tar.gz'
+  sha256: 0b70c4f63bdec604c3c516ff4a0b503037a24225b7f9cb19fa61b8d35e6145e5
+
+build:
+  noarch: python
+  script: '{{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation'
+  number: 0
+
+requirements:
+  host:
+    - python >=3.8
+    - setuptools >=64
+    - setuptools-scm >=6.4
+    - wheel
+    - pip
+  run:
+    - python >=3.8
+    - aiodns
+    - aiohttp >=3.9.0
+    - requests >=2.28.0
+
+test:
+  imports:
+    - karabo_proxy
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  summary: Client library for the Karabo WebProxy with sync and async support
+  license: BSD-3-Clause
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - RobertRosca
+
