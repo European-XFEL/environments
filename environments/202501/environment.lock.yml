@@ -8,6 +8,7 @@ dependencies:
   - _libgcc_mutex=0.1
   - _openmp_mutex=4.5
   - aiobotocore=2.16.1
+  - aiodns=3.0.0
   - aiofiles=23.2.1
   - aiohttp=3.9.5
   - aiohttp-socks=0.7.1
@@ -70,7 +71,7 @@ dependencies:
   - bzip2=1.0.8
   - c-ares=1.34.4
   - c-blosc2=2.12.0
-  - ca-certificates=2024.12.14
+  - ca-certificates=2025.1.31
   - cached-property=1.5.2
   - cached_property=1.5.2
   - cairo=1.16.0
@@ -248,6 +249,7 @@ dependencies:
   - kafka-python-ng=2.2.2
   - kaleido-core=0.2.1
   - karabo-bridge=0.7.0
+  - karabo-proxy=1.0.4
   - karabo_bridge_recorder=0.2
   - keyring=25.6.0
   - keyutils=1.6.1
@@ -482,6 +484,7 @@ dependencies:
   - pyarrow=12.0.1
   - pyarrow-hotfix=0.6
   - pybaselines=1.1.0
+  - pycares=4.5.0
   - pycodestyle=2.11.1
   - pycparser=2.22
   - pycryptodome=3.21.0
@@ -693,5 +696,5 @@ dependencies:
   - zstd=1.5.6
   - zulip=0.9.0
   - pip:
-      - euxfel-extra==2024.2.30+790ce4b
+      - euxfel-extra==2024.2.38+234f0a0
 prefix: /gpfs/exfel/sw/software/mambaforge/22.11/envs/202501

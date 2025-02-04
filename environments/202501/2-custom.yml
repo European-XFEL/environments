@@ -3,6 +3,7 @@ channels:
   - file://gpfs/exfel/sw/software/euxfel-environment-management/custom-recipes/conda-bld
   - conda-forge
 dependencies:
+  - Karabo-proxy
   - calibration-client >=11.3.0
   - cfelpyutils
   - condat-gridconv
