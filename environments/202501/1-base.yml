@@ -74,4 +74,5 @@ dependencies:
   - umap-learn
   - xarray
   - xraylib
+  - xrayutilities
   - zulip

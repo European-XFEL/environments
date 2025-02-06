@@ -86,6 +86,7 @@ dependencies:
   - umap-learn
   - xarray
   - xraylib
+  - xrayutilities
   - zulip
   - calibration-client >=11.3.0
   - cfelpyutils
