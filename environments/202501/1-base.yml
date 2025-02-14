@@ -64,11 +64,13 @@ dependencies:
   - python-kaleido
   - pywavelets
   - pyzmq
+  - rasterio
   - scikit-beam
   - scikit-image
   - scikit-learn
   - scipy
   - seaborn
+  - shapely
   - silx
   - spyder
   - umap-learn

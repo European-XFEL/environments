@@ -7,6 +7,7 @@ channels:
 dependencies:
   - _libgcc_mutex=0.1
   - _openmp_mutex=4.5
+  - affine=2.4.0
   - aiobotocore=2.16.1
   - aiodns=3.0.0
   - aiofiles=23.2.1
@@ -61,6 +62,7 @@ dependencies:
   - blinker=1.9.0
   - blosc=1.21.5
   - bokeh=3.6.2
+  - boost-cpp=1.78.0
   - botocore=1.35.88
   - bottleneck=1.4.2
   - bqplot=0.12.43
@@ -76,15 +78,18 @@ dependencies:
   - cached_property=1.5.2
   - cairo=1.16.0
   - calibration-client=11.3.0
-  - certifi=2024.12.14
+  - certifi=2025.1.31
   - certipy=0.1.3
   - cfelpyutils=2.0.6
   - cffi=1.17.1
+  - cfitsio=4.3.0
   - cftime=1.6.4
   - chardet=5.2.0
   - charls=2.4.2
   - charset-normalizer=3.4.1
   - click=8.1.8
+  - click-plugins=1.1.1
+  - cligj=0.7.2
   - cloudpickle=3.1.1
   - colorama=0.4.6
   - colorcet=3.1.0
@@ -150,19 +155,22 @@ dependencies:
   - fqdn=1.5.1
   - freeglut=3.2.2
   - freetype=2.12.1
+  - freexl=1.0.6
   - fribidi=1.0.10
   - frozenlist=1.5.0
   - fsspec=2024.12.0
   - future=1.0.0
   - gast=0.4.0
+  - geos=3.12.0
+  - geotiff=1.7.1
   - gettext=0.22.5
   - gettext-tools=0.22.5
   - gflags=2.2.2
   - giflib=5.2.2
   - gitdb=4.0.12
   - gitpython=3.1.44
-  - glib=2.82.2
-  - glib-tools=2.82.2
+  - glib=2.78.1
+  - glib-tools=2.78.1
   - glog=0.6.0
   - glymur=0.13.8
   - gmp=6.3.0
@@ -223,6 +231,7 @@ dependencies:
   - jmespath=1.0.1
   - joblib=1.4.2
   - jplephem=2.21
+  - json-c=0.17
   - json5=0.10.0
   - jsonpointer=3.0.0
   - jsonschema=4.23.0
@@ -254,6 +263,7 @@ dependencies:
   - karabo-bridge=0.7.0
   - karabo-proxy=1.0.4
   - karabo_bridge_recorder=0.2
+  - kealib=1.5.1
   - keyring=25.6.0
   - keyutils=1.6.1
   - kiwisolver=1.4.7
@@ -266,6 +276,7 @@ dependencies:
   - lerc=4.0.0
   - libabseil=20230125.3
   - libaec=1.1.3
+  - libarchive=3.6.2
   - libarrow=12.0.1
   - libasprintf=0.22.5
   - libasprintf-devel=0.22.5
@@ -293,12 +304,13 @@ dependencies:
   - libgcc=14.2.0
   - libgcc-ng=14.2.0
   - libgcrypt-lib=1.11.0
+  - libgdal=3.7.1
   - libgettextpo=0.22.5
   - libgettextpo-devel=0.22.5
   - libgfortran=14.2.0
   - libgfortran-ng=14.2.0
   - libgfortran5=14.2.0
-  - libglib=2.82.2
+  - libglib=2.78.1
   - libglu=9.0.0
   - libgomp=14.2.0
   - libgoogle-cloud=2.12.0
@@ -308,6 +320,7 @@ dependencies:
   - libiconv=1.17
   - libidn2=2.3.7
   - libjpeg-turbo=2.1.5.1
+  - libkml=1.3.0
   - liblapack=3.9.0
   - liblapacke=3.9.0
   - libllvm14=14.0.6
@@ -339,9 +352,11 @@ dependencies:
   - libpng=1.6.46
   - libpq=15.4
   - libprotobuf=3.21.12
+  - librttopo=1.1.0
   - libsndfile=1.2.2
   - libsodium=1.0.18
   - libspatialindex=2.1.0
+  - libspatialite=5.0.1
   - libspimage=1.0.0
   - libsqlite=3.48.0
   - libssh2=1.11.0
@@ -439,7 +454,7 @@ dependencies:
   - opencv=4.8.0
   - openh264=2.3.1
   - openjpeg=2.5.0
-  - openssl=3.1.7
+  - openssl=3.1.8
   - orc=1.9.0
   - orjson=3.10.15
   - overrides=7.7.0
@@ -457,7 +472,7 @@ dependencies:
   - pasha=0.1.2
   - pathspec=0.12.1
   - patsy=1.0.1
-  - pcre2=10.44
+  - pcre2=10.40
   - pexpect=4.9.0
   - pickleshare=0.7.5
   - pillow=10.0.0
@@ -470,7 +485,11 @@ dependencies:
   - pluggy=1.5.0
   - ply=3.11
   - polars=1.21.0
+  - poppler=23.08.0
+  - poppler-data=0.4.12
+  - postgresql=15.4
   - princess=0.6
+  - proj=9.2.1
   - prometheus_client=0.21.1
   - prompt-toolkit=3.0.50
   - prompt_toolkit=3.0.50
@@ -548,6 +567,7 @@ dependencies:
   - qtconsole=5.5.2
   - qtconsole-base=5.5.2
   - qtpy=2.4.2
+  - rasterio=1.3.8
   - rdma-core=28.9
   - re2=2023.03.02
   - readline=8.2
@@ -574,6 +594,7 @@ dependencies:
   - send2trash=1.8.3
   - setuptools=75.8.0
   - setuptools-scm=8.1.0
+  - shapely=2.0.2
   - silx=2.2.0
   - silx-base=2.2.0
   - simpervisor=1.0.0
@@ -585,6 +606,7 @@ dependencies:
   - snappy=1.1.10
   - sniffio=1.3.1
   - snowballstemmer=2.2.0
+  - snuggs=1.4.7
   - sortedcontainers=2.4.0
   - soupsieve=2.5
   - sphinx=8.1.3
@@ -613,6 +635,7 @@ dependencies:
   - threadpoolctl=3.5.0
   - three-merge=0.1.1
   - tifffile=2024.12.12
+  - tiledb=2.16.3
   - tinycss2=1.4.0
   - tk=8.6.13
   - toml=0.10.2
@@ -628,6 +651,7 @@ dependencies:
   - typing-extensions=4.12.2
   - typing_extensions=4.12.2
   - typing_utils=0.1.0
+  - tzcode=2025a
   - tzdata=2025a
   - uc-micro-py=1.0.3
   - ucx=1.14.1
@@ -637,6 +661,7 @@ dependencies:
   - unicodedata2=16.0.0
   - unpaddedbase64=2.1.0
   - uri-template=1.3.0
+  - uriparser=0.9.8
   - urllib3=2.3.0
   - watchdog=6.0.0
   - wcwidth=0.2.13
@@ -656,6 +681,7 @@ dependencies:
   - xcb-util-keysyms=0.4.0
   - xcb-util-renderutil=0.3.9
   - xcb-util-wm=0.4.1
+  - xerces-c=3.2.4
   - xkeyboard-config=2.42
   - xorg-compositeproto=0.4.2
   - xorg-damageproto=1.2.1
@@ -702,5 +728,5 @@ dependencies:
   - zstd=1.5.6
   - zulip=0.9.0
   - pip:
-      - euxfel-extra==2024.2.40+705c817
+      - euxfel-extra==2024.2.42+24f2bf9
 prefix: /gpfs/exfel/sw/software/mambaforge/22.11/envs/202501
