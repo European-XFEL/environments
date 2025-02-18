@@ -51,6 +51,7 @@ dependencies:
   - opencv
   - papermill
   - pint
+  - pint-xarray
   - plotly
   - polars
   - pyabel
