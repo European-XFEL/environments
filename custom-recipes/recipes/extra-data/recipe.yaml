@@ -1,6 +1,6 @@
 context:
   name: extra-data
-  version: 1.19.0
+  version: 1.20.0
 
 package:
   name: '{{ name|lower }}'
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/extra_data-{{ version }}.tar.gz
-  sha256: ee6aa3bae6b406d50765edb502bc37faf834b18a8145a6d4a10ee3dac25640dc
+  sha256: 943eabbe9ad4b266c2dfe24c10ac0760df8ebf1e8899c56a1fb3cc2a6121c207
 
 build:
   entry_points:
@@ -20,14 +20,15 @@ build:
     - extra-data-locality = extra_data.locality:main
   noarch: python
   script: '{{ PYTHON }} -m pip install --no-deps --ignore-installed -vv .'
-  number: 1
+  number: 0
 
 requirements:
   host:
-    - python >=3.9
+    - python >=3.10
     - pip
+    - setuptools
   run:
-    - python >=3.9
+    - python >=3.10
     - h5py >=2.10
     - numpy
     - pandas
