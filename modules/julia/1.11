@@ -20,7 +20,7 @@ setenv                  JULIA_CPU_TARGET       "generic;broadwell,clone_all;skyl
 
 # https://juliapy.github.io/PythonCall.jl/stable/pythoncall/#If-you-already-have-Python-and-required-Python-packages-installed
 setenv                  JULIA_CONDAPKG_BACKEND Null
-setenv                  JULIA_PYTHONCALL_EXE   /gpfs/exfel/sw/software/mambaforge/22.11/envs/202402/bin/python
+setenv                  JULIA_PYTHONCALL_EXE   /gpfs/exfel/sw/software/mambaforge/22.11/envs/202501/bin/python
 
 # https://timholy.github.io/Revise.jl/stable/config/#Polling-and-NFS-mounted-code-directories:-JULIA_REVISE_POLL
 setenv                  JULIA_REVISE_POLL      1

@@ -6,3 +6,5 @@ site/
 # Local Netlify folder
 .netlify
 *~
+
+environments/*/julia-exfel-sysimage.so

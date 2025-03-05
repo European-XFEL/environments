@@ -41,6 +41,13 @@ import CUDA
 CUDA.versioninfo()
 '
 
+# Create a sysimage
+julia --project -e '
+using PackageCompiler
+create_sysimage(["CairoMakie", "WGLMakie", "PythonCall", "DimensionalData"];
+                sysimage_path="julia-exfel-sysimage.so", cpu_target=ENV["JULIA_CPU_TARGET"])
+'
+
 manifest_path="${JULIA_EXFEL_ENV}/Manifest-v1.11.toml"
 project_path="${JULIA_EXFEL_ENV}/Project.toml"
 
