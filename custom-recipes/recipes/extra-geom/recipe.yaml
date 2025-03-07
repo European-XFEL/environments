@@ -1,6 +1,6 @@
 context:
   name: extra-geom
-  version: 1.13.0
+  version: 1.14.0
 
 package:
   name: '{{ name|lower }}'
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/extra_geom-{{ version }}.tar.gz
-  sha256: 848939154c38f07847243031a297adb681c40d15a4a1740b2fedc8db9e52a636
+  sha256: c3996adb856de26aab0e8c43fe13ac350de14ea7b5fced0b9f05d5f8fa550403
 
 build:
   noarch: python
