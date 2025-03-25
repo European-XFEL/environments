@@ -1,0 +1,42 @@
+context:
+  name: zlib-into
+  version: '0.2'
+
+package:
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/zlib_into-{{ version }}.tar.gz
+  sha256: 65fb4bd3f268caf0c97fd102b71cd6148436590c46fbf321323e818306248e59
+
+build:
+  script: '{{ PYTHON }} -m pip install . -vv --no-build-isolation'
+  number: 0
+
+requirements:
+  build:
+    - '{{ compiler("c") }}'
+  host:
+    - python
+    - setuptools
+    - pip
+    - zlib
+  run:
+    - python
+    - zlib
+
+test:
+  imports:
+    - zlib_into
+
+about:
+  home: https://git.xfel.eu/dataAnalysis/zlib_into
+  summary: Compress & decompress data into preallocated buffers
+  license: MPL-2.0
+  license_file: LICENSE.md
+
+extra:
+  recipe-maintainers:
+    - RobertRosca
+
