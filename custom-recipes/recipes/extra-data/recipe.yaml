@@ -1,6 +1,6 @@
 context:
   name: extra-data
-  version: 1.20.0
+  version: 1.21.0
 
 package:
   name: '{{ name|lower }}'
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/extra_data-{{ version }}.tar.gz
-  sha256: 943eabbe9ad4b266c2dfe24c10ac0760df8ebf1e8899c56a1fb3cc2a6121c207
+  sha256: 4e246cb0842ca11ac9ca066d2266e8a0f00714560e06797e58d020c6b0d50ef2
 
 build:
   entry_points:
@@ -35,6 +35,7 @@ requirements:
     - xarray
     - matplotlib
     - pyyaml
+    - zlib-into
     - sel(array): dask[array]
 
 test:
