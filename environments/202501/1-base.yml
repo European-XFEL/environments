@@ -66,6 +66,7 @@ dependencies:
   - pywavelets
   - pyzmq
   - rasterio
+  - scienceplots
   - scikit-beam
   - scikit-image
   - scikit-learn
