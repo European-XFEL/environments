@@ -1,0 +1,47 @@
+context:
+  name: itervmi
+  version: 0.0.1
+
+package:
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
+
+source:
+  path: ./src
+  # git_url: ssh://git@git.xfel.eu:10022/schmidtp/itervmi.git
+  git_depth: 1
+
+build:
+  noarch: python
+  script: '{{ PYTHON }} -m pip install --no-deps --ignore-installed -vv .'
+  number: 0
+
+requirements:
+  host:
+    - '{{ compiler("c") }}'
+    - python
+    - numpy
+    - cython
+    - pip
+  run:
+    - python
+    - numpy
+    - pyopencl
+
+test:
+  imports:
+    - itervmi
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  summary: Iterative Abel inversion
+  license: MPL-2.0
+  dev_url: https://git.xfel.eu/schmidtp/itervmi.git
+
+extra:
+  recipe-maintainers:
+    - PhilippSchmidt
+
