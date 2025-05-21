@@ -1,0 +1,17 @@
+#%Module 1.0
+#
+#  karabo-gui
+#
+proc ModulesHelp {} {
+    puts stdout     " "
+    puts stdout     "This module contains Karabo GUI 2.21"
+    puts stdout     " "
+}
+
+module-whatis  "Setup environent for running Karabo-GUI at European XFEL"
+if { [ module-info mode load ] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'karabo-gui/2.21'"
+    prepend-path PATH    /gpfs/exfel/sw/software/mambaforge/22.11/envs/karabogui-2.21/bin/
+    setenv _CONDA_EXE    /gpfs/exfel/sw/software/mambaforge/22.11/bin/conda
+    setenv _CONDA_ROOT   /gpfs/exfel/sw/software/mambaforge/22.11/
+}
