@@ -104,6 +104,7 @@ dependencies:
   - extra-hed
   - findxfel
   - hdf5-vds-check
+  - itervmi
   - karabo-bridge
   - karabo_bridge_recorder
   - line_profiler

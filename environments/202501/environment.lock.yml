@@ -221,6 +221,7 @@ dependencies:
   - ipywidgets=8.1.5
   - isoduration=20.11.0
   - isort=5.13.2
+  - itervmi=1.0.0
   - jaraco.classes=3.4.0
   - jaraco.context=6.0.1
   - jaraco.functools=4.1.0
@@ -732,5 +733,5 @@ dependencies:
   - zstd=1.5.6
   - zulip=0.9.0
   - pip:
-      - euxfel-extra==2024.2.152+f2ca821
+      - euxfel-extra==2024.2.159+068fd64
 prefix: /gpfs/exfel/sw/software/mambaforge/22.11/envs/202501
