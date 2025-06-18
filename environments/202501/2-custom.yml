@@ -26,4 +26,5 @@ dependencies:
   - nbclick
   - pasha >= 0.1.2
   - princess
+  - zlib-into
 category: custom
