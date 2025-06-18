@@ -1,6 +1,6 @@
 context:
   name: zlib-into
-  version: '0.2'
+  version: '0.4'
 
 package:
   name: '{{ name|lower }}'
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/zlib_into-{{ version }}.tar.gz
-  sha256: 65fb4bd3f268caf0c97fd102b71cd6148436590c46fbf321323e818306248e59
+  sha256: 767aef73038b11bccf148d618340b926d3f80b67b51e8cf484c5d563535e6889 
 
 build:
   script: '{{ PYTHON }} -m pip install . -vv --no-build-isolation'
