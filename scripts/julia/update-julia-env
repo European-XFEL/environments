@@ -7,30 +7,30 @@ set -euxo pipefail
 
 hostname
 
-# Check for a GPU. CUDA.jl needs to precompiled on a machine with a GPU for the
-# precompile files to be valid, so if we don't have one then error out.
-nvidia-smi
-
 export JULIA_MAX_NUM_PRECOMPILE_FILES=10
+export IJULIA_NODEFAULTKERNEL=1
 
-cd $JULIA_EXFEL_ENV
-
-julia --project -e '
+# Update and precompile everything
+julia --project=$JULIA_EXFEL_ENV -e '
 empty!(Base.DEPOT_PATH)
 push!(Base.DEPOT_PATH, "/gpfs/exfel/sw/software/julia-depot")
 
 import Pkg
 Pkg.update()
 
-# Set the CUDA runtime version. This is necessary for the generated package
-# images to be valid across different nodes.
 import CUDA
-CUDA.set_runtime_version!(v"12.6")
+CUDA.precompile_runtime()
 '
 
-# Import CUDA again in a fresh session to ensure it's precompiled with the
-# previously set runtime version.
-julia --project -e '
+# Create a sysimage
+julia --project=$JULIA_EXFEL_ENV -e '
+using PackageCompiler
+create_sysimage(["CairoMakie", "WGLMakie", "PythonCall", "DimensionalData", "NaNStatistics"];
+                sysimage_path=ENV["JULIA_EXFEL_SYSIMAGE"], cpu_target=ENV["JULIA_CPU_TARGET"])
+'
+
+# Precompile with the sysimage
+julia --project=$JULIA_EXFEL_ENV --sysimage=$JULIA_EXFEL_SYSIMAGE -e '
 empty!(Base.DEPOT_PATH)
 push!(Base.DEPOT_PATH, "/gpfs/exfel/sw/software/julia-depot")
 
@@ -38,28 +38,21 @@ import Pkg
 Pkg.precompile()
 
 import CUDA
-CUDA.versioninfo()
-'
-
-# Create a sysimage
-julia --project -e '
-using PackageCompiler
-create_sysimage(["CairoMakie", "WGLMakie", "PythonCall", "DimensionalData"];
-                sysimage_path="julia-exfel-sysimage.so", cpu_target=ENV["JULIA_CPU_TARGET"])
+CUDA.precompile_runtime()
 '
 
 manifest_path="${JULIA_EXFEL_ENV}/Manifest-v1.11.toml"
 project_path="${JULIA_EXFEL_ENV}/Project.toml"
 
-# Allow errors only when checking the diff
-set +e
-git diff --quiet ${manifest_path}
-diff_exit_code=$?
-set -e
+# # Allow errors only when checking the diff
+# set +e
+# git diff --quiet ${manifest_path}
+# diff_exit_code=$?
+# set -e
 
-if [[ ${diff_exit_code} -eq 1 ]]; then
-    git add ${manifest_path}
-    git add ${project_path}
-    git commit -m "Automatic Julia environment update"
-    git push
-fi
+# if [[ ${diff_exit_code} -eq 1 ]]; then
+#     git add ${manifest_path}
+#     git add ${project_path}
+#     git commit -m "Automatic Julia environment update"
+#     git push
+# fi

@@ -1,7 +1,5 @@
 #! /usr/bin/env bash
 
-set -euo pipefail
-
 if [[ ! -z "${SASE+x}" ]]; then
     # Do nothing on the online cluster since we don't have scratch
     exit 0
@@ -10,7 +8,19 @@ fi
 scratch_dir="/gpfs/exfel/data/scratch/${USER}"
 scratch_depot="${scratch_dir}/julia-depot"
 home_depot="${HOME}/.julia"
+
+# Some people don't have permissions to use scratch so this may fail, in which
+# case we fallback to ${home_depot}.
 mkdir -p ${scratch_depot}
+ret=$?
+
+if [[ ! ${ret} -eq 0 ]]; then
+    echo "Couldn't create depot in scratch, falling back to ${home_depot}"
+    mkdir -p ${home_depot}
+    exit 0
+fi
+
+set -euo pipefail
 
 if [[ ! -L ${home_depot} ]] && [[ -d ${home_depot} ]]; then
     echo "Error: there is already a Julia depot at ${home_depot}. If you want to use it, please copy it to your scratch directory with this command:"

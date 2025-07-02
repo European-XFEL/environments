@@ -1,0 +1,17 @@
+#%Module 1.0
+module-whatis  "Pixi"
+
+proc ModulesHelp {} {
+    puts stdout    "Activate Pixi"
+}
+
+set specialuser xsoft
+
+eval set [array get env USER]
+
+if {$USER == $specialuser} {
+    setenv          PIXI_HOME "/gpfs/exfel/sw/software/pixi"
+}
+
+prepend-path    PATH /gpfs/exfel/sw/software/pixi/bin
+
