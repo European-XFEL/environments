@@ -4,13 +4,17 @@
 # 
 module-whatis  "Load Julia (configured for XFEL)"
 
-prepend-path            PATH             /gpfs/exfel/sw/software/euxfel-environment-management/scripts/julia
-prepend-path            PATH             /gpfs/exfel/sw/software/juliaup/juliaup/julia-1.11.2+0.x64.linux.gnu/bin
 
 # https://docs.julialang.org/en/v1/manual/environment-variables/#JULIA_DEPOT_PATH
 if { [info exists env(SASE)] } {
     # On the online cluster we don't have scratch so we have to use the default depot
     setenv                  JULIA_DEPOT_PATH       $env(HOME)/.julia:/gpfs/exfel/sw/software/julia-depot:
+} elseif { ![file writable /gpfs/exfel/data/scratch] } {
+    # For users who don't have access to scratch we also have to use the default depot
+    setenv                  JULIA_DEPOT_PATH       $env(HOME)/.julia:/gpfs/exfel/sw/software/julia-depot:
+} elseif { [module-info username "xsoft"] } {
+    # For xsoft we only enable the global depot
+    setenv                  JULIA_DEPOT_PATH       /gpfs/exfel/sw/software/julia-depot:
 } else {
     setenv                  JULIA_DEPOT_PATH       /gpfs/exfel/data/scratch/$env(USER)/julia-depot:/gpfs/exfel/sw/software/julia-depot:
 }
@@ -19,13 +23,26 @@ if { [info exists env(SASE)] } {
 setenv                  JULIA_CPU_TARGET       "generic;broadwell,clone_all;skylake-avx512,clone_all;cascadelake,clone_all;sapphirerapids,clone_all;znver3,clone_all;znver2,clone_all"
 
 # https://juliapy.github.io/PythonCall.jl/stable/pythoncall/#If-you-already-have-Python-and-required-Python-packages-installed
-setenv                  JULIA_CONDAPKG_BACKEND Null
-setenv                  JULIA_PYTHONCALL_EXE   /gpfs/exfel/sw/software/mambaforge/22.11/envs/202501/bin/python
+setenv                  JULIA_CONDAPKG_BACKEND          Null
+setenv                  JULIA_PYTHONCALL_EXE            /gpfs/exfel/sw/software/mambaforge/22.11/envs/202501/bin/python
+setenv                  PYTHON_JULIACALL_BINDIR         /gpfs/exfel/sw/software/juliaup/juliaup/julia-1.11.5+0.x64.linux.gnu/bin
+setenv                  PYTHON_JULIACALL_HANDLE_SIGNALS yes
+setenv                  PYTHON_JULIAPKG_OFFLINE         yes
+setenv                  PYTHON_JULIAPKG_OVERRIDE_EXECUTABLE $env(PYTHON_JULIACALL_BINDIR)/julia
+
+# Needed for Bonito/WGLMakie to set the proxy URL automatically
+setenv                  BONITO_JUPYTER_REMOTE_HOST      "https://max-jhub.desy.de"
 
 # https://timholy.github.io/Revise.jl/stable/config/#Polling-and-NFS-mounted-code-directories:-JULIA_REVISE_POLL
 setenv                  JULIA_REVISE_POLL      1
 
+setenv                  JULIA_EXFEL_BINDIR     /gpfs/exfel/sw/software/julia-depot/bin
 setenv                  JULIA_EXFEL_ENV        /gpfs/exfel/sw/software/euxfel-environment-management/environments/202501
+setenv                  JULIA_EXFEL_SYSIMAGE   $env(JULIA_EXFEL_ENV)/julia-exfel-sysimage.so
+
+prepend-path            PATH             /gpfs/exfel/sw/software/euxfel-environment-management/scripts/julia
+prepend-path            PATH             $env(PYTHON_JULIACALL_BINDIR)
+prepend-path            PATH             $env(JULIA_EXFEL_BINDIR)
 
 system /gpfs/exfel/sw/software/euxfel-environment-management/scripts/julia/create-julia-depot
 

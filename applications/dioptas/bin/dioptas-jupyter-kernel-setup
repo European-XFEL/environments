@@ -1,0 +1,32 @@
+#!/bin/bash
+
+ENV_NAME="dioptas-0.7.1"
+# Set the kernel directory path
+KERNEL_DIR="$HOME/.local/share/jupyter/kernels/$ENV_NAME"
+
+# Check if the kernel already exists
+if [ -d "$KERNEL_DIR" ]; then
+    echo "Kernel for $ENV_NAME already exists. Removing it..."
+    rm -rf "$KERNEL_DIR"
+fi
+
+# Create the kernel directory
+mkdir -p "$KERNEL_DIR"
+
+# Create the kernel.json file
+cat > "$KERNEL_DIR/kernel.json" << EOL
+{
+  "argv": [
+    "/gpfs/exfel/sw/software/mambaforge/22.11/envs/dioptas/bin/python",
+    "-m",
+    "ipykernel_launcher",
+    "-f",
+    "{connection_file}"
+  ],
+  "name": "dioptas",
+  "display_name": "dioptas (0.7.1)",
+  "language": "python"
+}
+EOL
+
+echo "Jupyter kernel for $ENV_NAME has been created."

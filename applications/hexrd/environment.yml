@@ -2,8 +2,8 @@ name: "hexrd"
 channels:
   - nodefaults
   - /gpfs/exfel/sw/software/euxfel-environment-management/custom-recipes/conda-bld
-  - conda-forge
   - hexrd/label/prerelease
+  - conda-forge
 dependencies:
   - python=3.11
   - brotlipy=0.7.0
@@ -49,26 +49,30 @@ dependencies:
   - numba
   - numpy
   - opencv
+  - pandas
   - papermill
   - pint
   - plotly
   - polars
   - pyabel
   - pybaselines
+  - pybobyqa
   - pyfai
   - pyopengl
   - pyqtgraph
+  - pyside6
   - pytest
   - python-kaleido
   - pywavelets
   - pyzmq<25
+  - qtpy
   - scikit-beam
   - scikit-image
   - scikit-learn
   - seaborn
   - silx
-    #  - tensorflow-cpu
-  - tensorflow-gpu
+  - tensorflow-cpu
+    #  - tensorflow-gpu
   - xarray
   - xraylib
   - zulip

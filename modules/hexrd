@@ -12,7 +12,7 @@ if { [ module-info mode load ] } {
 module load mambaforge
 
 prepend-path    PATH /gpfs/exfel/sw/software/mambaforge/22.11/envs/hexrd/bin
-prepend-path    PATH /gpfs/exfel/sw/software/xfel_applications/hexrd/bin
+#prepend-path    PATH /gpfs/exfel/sw/software/xfel_applications/hexrd/bin
 prepend-path    XML_CATALOG_FILES file {///gpfs/exfel/sw/software/mambaforge/22.11/envs/hexrd/etc/xml/catalog file} ///etc/xml/catalog
 setenv          CONDA_DEFAULT_ENV hexrd
 setenv          CONDA_PREFIX /gpfs/exfel/sw/software/mambaforge/22.11/envs/hexrd

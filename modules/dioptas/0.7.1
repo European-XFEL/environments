@@ -1,0 +1,28 @@
+#%Module 1.0
+#
+#  Dioptas 0.7.1
+#
+proc ModulesHelp {} {
+    puts stdout     " "
+    puts stdout     " Dioptas: A GUI program for fast analysis of powder X-ray diffraction Images. "
+    puts stdout     " "
+}
+
+module-whatis  "Dioptas: A GUI program for fast analysis of powder X-ray diffraction Images."
+
+if { [ module-info mode load ] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'dioptas/0.7.1'"
+}
+
+module load mambaforge
+
+prepend-path    PATH /gpfs/exfel/sw/software/mambaforge/22.11/envs/dioptas/bin
+prepend-path    PATH /gpfs/exfel/sw/software/xfel_applications/dioptas/bin
+prepend-path    XML_CATALOG_FILES file {///gpfs/exfel/sw/software/mambaforge/22.11/envs/dioptas/etc/xml/catalog file} ///etc/xml/catalog
+prepend-path    PATH /gpfs/exfel/sw/software/euxfel-environment-management/applications/dioptas/bin
+setenv          CONDA_DEFAULT_ENV dioptas
+setenv          CONDA_PREFIX /gpfs/exfel/sw/software/mambaforge/22.11/envs/dioptas
+setenv          CONDA_PROMPT_MODIFIER {(dioptas) }
+setenv          CONDA_SHLVL 1
+setenv          GSETTINGS_SCHEMA_DIR /gpfs/exfel/sw/software/mambaforge/22.11/envs/dioptas/share/glib-2.0/schemas
+setenv          GSETTINGS_SCHEMA_DIR_CONDA_BACKUP {}
