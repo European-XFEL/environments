@@ -1,0 +1,81 @@
+#%Module
+proc ModulesHelp {} {
+    puts stdout    "Pixi environment for cycle 202502"
+}
+
+module-whatis  "Module loads the pixi environment for cycle 202502"
+
+if { [ module-info mode load ] } {
+    system    "/gpfs/exfel/sw/software/local/etc/metrics.sh 'pixi/202502'"
+}
+
+complete	bash gapplication {-F __app}
+prepend-path	XML_CATALOG_FILES file {///gpfs/exfel/sw/software/euxfel-environment-management/environments/202502/.pixi/envs/default/etc/xml/catalog file} ///etc/xml/catalog
+set-function	__app {
+    local gapplication_binary;
+    gapplication_binary="$1";
+    case "${COMP_CWORD}" in 
+        1)
+            COMPREPLY=($(compgen -W "help version list-apps launch action list-actions" -- "${COMP_WORDS[1]}"));
+            return 0
+        ;;
+        2)
+            case "${COMP_WORDS[1]}" in 
+                launch | action | list-actions)
+                    COMPREPLY=($(compgen -W "$("$gapplication_binary" list-apps)" -- "${COMP_WORDS[2]}"));
+                    return 0
+                ;;
+                *)
+                    COMPREPLY=();
+                    return 0
+                ;;
+            esac
+        ;;
+    esac;
+    case "${COMP_WORDS[1]}" in 
+        action)
+            if [ "${COMP_CWORD}" == 3 ]; then
+                COMPREPLY=($(compgen -W "$("$gapplication_binary" list-actions "${COMP_WORDS[2]}")" -- "${COMP_WORDS[3]}"));
+                return 0;
+            else
+                COMPREPLY=();
+                return 0;
+            fi
+        ;;
+        launch)
+            COMPREPLY=($(compgen -A file "${COMP_WORDS[COMP_CWORD]}"));
+            return 0
+        ;;
+        *)
+            COMPREPLY=();
+            return 0
+        ;;
+    esac}
+set-function	_la_log {
+    if [ "${CF_LIBARROW_ACTIVATE_LOGGING:-}" = "1" ]; then
+        printf '%s\n' "$*" | while IFS= read -r line; do
+            echo "$CONDA_PREFIX/etc/conda/activate.d/libarrow_activate.sh DEBUG: $line";
+        done;
+    fi}
+set-function	function_exists {
+    declare -f -F "$1" > /dev/null;
+    return $?}
+setenv		CONDA_DEFAULT_ENV 202502
+setenv		CONDA_PREFIX /gpfs/exfel/sw/software/euxfel-environment-management/environments/202502/.pixi/envs/default
+setenv		CPL_ZIP_ENCODING UTF-8
+setenv		GDAL_DATA /gpfs/exfel/sw/software/euxfel-environment-management/environments/202502/.pixi/envs/default/share/gdal
+setenv		GDAL_DRIVER_PATH /gpfs/exfel/sw/software/euxfel-environment-management/environments/202502/.pixi/envs/default/lib/gdalplugins
+setenv		GSETTINGS_SCHEMA_DIR /gpfs/exfel/sw/software/euxfel-environment-management/environments/202502/.pixi/envs/default/share/glib-2.0/schemas
+setenv		GSETTINGS_SCHEMA_DIR_CONDA_BACKUP {}
+prepend-path		PATH /gpfs/exfel/sw/software/euxfel-environment-management/environments/202502/.pixi/envs/default/bin
+setenv		PIXI_ENVIRONMENT_NAME default
+setenv		PIXI_ENVIRONMENT_PLATFORMS linux-64
+setenv		PIXI_EXE /gpfs/exfel/sw/software/pixi/bin/pixi
+setenv		PIXI_IN_SHELL 1
+setenv		PIXI_PROJECT_MANIFEST /gpfs/exfel/sw/software/euxfel-environment-management/environments/202502/pixi.toml
+setenv		PIXI_PROJECT_NAME 202502
+setenv		PIXI_PROJECT_ROOT /gpfs/exfel/sw/software/euxfel-environment-management/environments/202502
+setenv		PIXI_PROJECT_VERSION 0.1.0
+setenv		PIXI_PROMPT {(202502) }
+setenv		PROJ_DATA /gpfs/exfel/sw/software/euxfel-environment-management/environments/202502/.pixi/envs/default/share/proj
+setenv		PROJ_NETWORK ON

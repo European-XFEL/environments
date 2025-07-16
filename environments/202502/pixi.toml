@@ -1,0 +1,127 @@
+[workspace]
+authors = ["Robert Rosca <32569096+RobertRosca@users.noreply.github.com>"]
+channels = ["conda-forge"]
+name = "202502"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = "3.11.*"
+ipykernel = { version = "==6.29.0", build = "pyhd33586a_0" }
+ipympl = { version = "==0.9.4", build = "pyhd8ed1ab_0" }
+ipython = { version = "==8.21.0", build = "pyh707e725_0" }
+ipython_genutils = { version = "==0.2.0", build = "pyhd8ed1ab_1" }
+ipyvue = { version = "==1.11.2", build = "pyhd8ed1ab_0" }
+ipyvuetify = { version = "==1.10.0", build = "pyhd8ed1ab_0" }
+jupyter = { version = "==1.0.0", build = "py311h38be061_9" }
+jupyter-lsp = { version = "==2.2.5", build = "pyhe01879c_2" }
+jupyter-resource-usage = { version = "==1.1.0", build = "pyhd8ed1ab_1" }
+jupyter-server-mathjax = { version = "==0.2.6", build = "pyh5bfe37b_1" }
+jupyter_client = { version = "==8.6.0", build = "pyhd8ed1ab_0" }
+jupyter_console = { version = "==6.6.3", build = "pyhd8ed1ab_0" }
+jupyter_core = { version = "==5.7.1", build = "py311h38be061_0" }
+jupyter_events = { version = "==0.9.0", build = "pyhd8ed1ab_0" }
+jupyter_server = { version = "==2.12.5", build = "pyhd8ed1ab_0" }
+jupyter_server_terminals = { version = "==0.5.2", build = "pyhd8ed1ab_0" }
+jupyter_telemetry = { version = "==0.1.0", build = "pyhd8ed1ab_1" }
+jupyterhub = { version = "==4.0.2", build = "pyh31011fe_0" }
+jupyterhub-base = { version = "==4.0.2", build = "pyh31011fe_0" }
+# jupyterlab = { version = "==4.1.8", build = "pyhd8ed1ab_0" }
+jupyterlab-git = { version = "==0.50.2", build = "pyhd8ed1ab_0" }
+jupyterlab-h5web = { version = "==12.3.0", build = "pyhd8ed1ab_0" }
+jupyterlab-lsp = { version = "==5.1.1", build = "pyhe01879c_1" }
+jupyterlab_code_formatter = { version = "==3.0.2", build = "pyhd8ed1ab_0" }
+jupyterlab_pygments = { version = "==0.3.0", build = "pyhd8ed1ab_0" }
+# jupyterlab_server = { version = "==2.27.3", build = "pyhd8ed1ab_0" }
+jupyterlab_widgets = { version = "==3.0.13", build = "pyhd8ed1ab_0" }
+matplotlib = { version = "==3.8.2", build = "py311h38be061_0" }
+matplotlib-base = { version = "==3.8.2", build = "py311h54ef318_0" }
+matplotlib-inline = { version = "==0.1.6", build = "pyhd8ed1ab_0" }
+astropy = { version = "*" }
+bokeh = { version = "*" }
+curl = { version = "*" }
+cython = { version = "*" }
+dask = { version = "*" }
+dask-jobqueue = { version = "*" }
+dask-labextension = { version = "*" }
+datashader = { version = "*" }
+fabio = { version = "*" }
+fast-histogram = { version = "*" }
+fftw = { version = "*" }
+h5glance = { version = ">=0.8.1" }
+h5netcdf = { version = "*" }
+h5py = { version = "*" }
+hvplot = { version = "*" }
+imageio = { version = "*" }
+iminuit = { version = "*" }
+kafka-python-ng = { version = "*" }
+lmfit = { version = "*" }
+msgpack-numpy = { version = "*" }
+msgpack-python = { version = "*" }
+natsort = { version = "*" }
+netcdf4 = { version = "*" }
+numba = { version = "*" }
+numpy = { version = "*" }
+opencv = { version = "*" }
+papermill = { version = "*" }
+pint = { version = "*" }
+pint-xarray = { version = "*" }
+plotly = { version = "*" }
+polars = { version = "*" }
+pyabel = { version = "*" }
+pybaselines = { version = "*" }
+pyfai = { version = "*" }
+pyhdf = { version = "*" }
+pyopengl = { version = "*" }
+pyqtgraph = { version = "*" }
+pytables = { version = "*" }
+pytest = { version = "*" }
+python-kaleido = { version = "*" }
+pywavelets = { version = "*" }
+pyzmq = { version = "*" }
+rasterio = { version = "*" }
+scienceplots = { version = "*" }
+scikit-beam = { version = "*" }
+scikit-image = { version = "*" }
+scikit-learn = { version = "*" }
+scipy = { version = "*" }
+seaborn = { version = "*" }
+shapely = { version = "*" }
+silx = { version = "*" }
+spyder = { version = "*" }
+umap-learn = { version = "*" }
+xarray = { version = "*" }
+xraylib = { version = "*" }
+xrayutilities = { version = "*" }
+zarr = { version = "*" }
+zulip = { version = "*" }
+requests = { version = "<2.30" }
+
+[pypi-dependencies]
+extra-data = ">=1.21.0, <2"
+extra-geom = ">=1.15.0, <2"
+calibration-client = ">=11.4.0, <12"
+princess = ">=0.6, <0.7"
+pasha = ">=0.1.2, <0.2"
+zlib-into = ">=0.4, <0.5"
+line-profiler = ">=4.2.0, <5"
+hdf5-vds-check = ">=1.0, <2"
+cfelpyutils = ">=2.2.0, <3"
+damnit = ">=0.2.0, <0.3"
+extra-proposal = ">=0.1, <0.2"
+euxfel-extra = { git = "https://github.com/European-XFEL/extra" }
+findxfel = { git = "https://git.xfel.eu/dataAnalysis/findxfel.git" }
+karabo-proxy = ">=1.0.4, <2"
+condat-gridconv = ">=0.2.1, <0.3"
+envmodules = ">=0.1, <0.2"
+euxfel-bunch-pattern = ">=0.6, <0.7"
+extra-hed = { git = "ssh://git@git.xfel.eu:10022/tmichela/EXtra-HED.git" }
+karabo-bridge = ">=0.7.0, <0.8"
+karabo-bridge-recorder = { git = "ssh://git@git.xfel.eu:10022/dataAnalysis/karabo-bridge-recorder.git" }
+matplotlib-scalebar = ">=0.9.0, <0.10"
+metadata-client = ">=4.1.2, <5"
+metropc = { git = "ssh://git@git.xfel.eu:10022/karaboDevices/metropc.git" }
+nbclick = ">=0.4.1, <0.5"
+
