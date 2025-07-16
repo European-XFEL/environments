@@ -721,7 +721,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/71/ca/9aced390acd0e749ee32248e86dee6b46f97205ee0f1382ed6f6c4945805/euxfel_bunch_pattern-0.6-py3-none-any.whl
       - pypi: git+https://github.com/European-XFEL/extra#1a07a392da58720cfa63f6ad45c82094f2fe5684
       - pypi: git+ssh://git@git.xfel.eu:10022/tmichela/EXtra-HED.git#b546abd4cbbfb6fec093160da717d12206b6ab9d
-      - pypi: https://files.pythonhosted.org/packages/7f/d0/8e689cc3b90d96b37cbd198e468d078c67e4692b21fb3663d5d9931a719d/extra_data-1.21.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/b7/de/e0ae50f9e2e465d65c7a081b4015dd94921ae74c6ba796c7972bcc19ccc5/extra_data-1.22.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/f7/6b/a3f3253a7e3b8d999e6ef64b64121f7d9dd47fc31a897a305ae39f18bfa7/extra_geom-1.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/9d/b5/757ef353f437d789e055346b94cec2e853748edb8ac12f417d4c70e6eaf5/extra_proposal-0.1.1-py3-none-any.whl
       - pypi: git+https://git.xfel.eu/dataAnalysis/findxfel.git#5e528b917f037101e3bf407914a326f1e0763981
@@ -2601,10 +2601,10 @@ packages:
   purls: []
   size: 140050
   timestamp: 1743431809745
-- pypi: https://files.pythonhosted.org/packages/7f/d0/8e689cc3b90d96b37cbd198e468d078c67e4692b21fb3663d5d9931a719d/extra_data-1.21.0-py3-none-any.whl
+- pypi: https://files.pythonhosted.org/packages/b7/de/e0ae50f9e2e465d65c7a081b4015dd94921ae74c6ba796c7972bcc19ccc5/extra_data-1.22.0-py3-none-any.whl
   name: extra-data
-  version: 1.21.0
-  sha256: 960201a963234cb3039d829e9528c2ed266bd95a4feffb9cc494f53b5c78507f
+  version: 1.22.0
+  sha256: 4018c4c5baf5e87092e179d38e141ba92435fddd4a54201e090ef554befc82cf
   requires_dist:
   - h5py>=2.10
   - matplotlib
@@ -2613,12 +2613,12 @@ packages:
   - pandas
   - xarray
   - pyyaml
-  - zlib-into
   - karabo-bridge>=0.6 ; extra == 'bridge'
   - psutil ; extra == 'bridge'
   - dask[array] ; extra == 'complete'
   - extra-data[bridge] ; extra == 'complete'
   - tomli ; python_full_version < '3.11' and extra == 'complete'
+  - zlib-into>=0.4 ; extra == 'complete'
   - extra-data[bridge] ; extra == 'docs'
   - ipython ; extra == 'docs'
   - nbsphinx ; extra == 'docs'
