@@ -10,7 +10,9 @@ set specialuser xsoft
 eval set [array get env USER]
 
 if {$USER == $specialuser} {
-    setenv          PIXI_HOME "/gpfs/exfel/sw/software/pixi"
+    setenv	PIXI_HOME "/gpfs/exfel/sw/software/pixi"
+    setenv	PIXI_CACHE_DIR "/gpfs/exfel/data/scratch/xsoft/.cache/pixi"
+    setenv	RATTLER_CACHE_DIR "/gpfs/exfel/data/scratch/xsoft/.cache/rattler"
 }
 
 prepend-path    PATH /gpfs/exfel/sw/software/pixi/bin
