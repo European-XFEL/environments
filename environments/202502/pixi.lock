@@ -719,8 +719,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/2d/bb/7a9be15964f7648b5c2e366b2802bcf5a07d4b80883d9670fb5b54a5d973/damnit-0.2.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a2/c4/04630d9128dbf81a40aac136f8551d7b9a386a69062c0e381523e243a729/envmodules-0.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/71/ca/9aced390acd0e749ee32248e86dee6b46f97205ee0f1382ed6f6c4945805/euxfel_bunch_pattern-0.6-py3-none-any.whl
-      - pypi: git+https://github.com/European-XFEL/extra#1a07a392da58720cfa63f6ad45c82094f2fe5684
-      - pypi: git+ssh://git@git.xfel.eu:10022/tmichela/EXtra-HED.git#b546abd4cbbfb6fec093160da717d12206b6ab9d
+      - pypi: git+https://github.com/European-XFEL/extra#e9719835b73ed47f8f7a584872c55c7973db5eec
       - pypi: https://files.pythonhosted.org/packages/b7/de/e0ae50f9e2e465d65c7a081b4015dd94921ae74c6ba796c7972bcc19ccc5/extra_data-1.22.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/f7/6b/a3f3253a7e3b8d999e6ef64b64121f7d9dd47fc31a897a305ae39f18bfa7/extra_geom-1.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/9d/b5/757ef353f437d789e055346b94cec2e853748edb8ac12f417d4c70e6eaf5/extra_proposal-0.1.1-py3-none-any.whl
@@ -2538,9 +2537,9 @@ packages:
   sha256: aef668c6ffdde3fed00d8cd9e879d4921250c0812b5a0065a68fd150af07525c
   requires_dist:
   - numpy
-- pypi: git+https://github.com/European-XFEL/extra#1a07a392da58720cfa63f6ad45c82094f2fe5684
+- pypi: git+https://github.com/European-XFEL/extra#e9719835b73ed47f8f7a584872c55c7973db5eec
   name: euxfel-extra
-  version: 2025.1.28+1a07a39
+  version: 2025.1.30+e971983
   requires_dist:
   - damnit
   - euxfel-bunch-pattern
@@ -2658,18 +2657,6 @@ packages:
   - pyfai ; extra == 'test'
   - condat-gridconv ; extra == 'test'
   requires_python: '>=3.10'
-- pypi: git+ssh://git@git.xfel.eu:10022/tmichela/EXtra-HED.git#b546abd4cbbfb6fec093160da717d12206b6ab9d
-  name: extra-hed
-  version: 0.1.0
-  requires_dist:
-  - extra-data
-  - h5py
-  - numpy
-  - scipy
-  - coverage ; extra == 'test'
-  - pytest ; extra == 'test'
-  - pytest-cov ; extra == 'test'
-  - testpath ; extra == 'test'
 - pypi: https://files.pythonhosted.org/packages/9d/b5/757ef353f437d789e055346b94cec2e853748edb8ac12f417d4c70e6eaf5/extra_proposal-0.1.1-py3-none-any.whl
   name: extra-proposal
   version: 0.1.1

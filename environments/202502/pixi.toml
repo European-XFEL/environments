@@ -98,6 +98,7 @@ xrayutilities = { version = "*" }
 zarr = { version = "*" }
 zulip = { version = "*" }
 requests = { version = "<2.30" }
+ipywidgets = ">=8.1.5,<9"
 
 [pypi-dependencies]
 extra-data = ">=1.21.0, <2"
@@ -117,7 +118,6 @@ karabo-proxy = ">=1.0.4, <2"
 condat-gridconv = ">=0.2.1, <0.3"
 envmodules = ">=0.1, <0.2"
 euxfel-bunch-pattern = ">=0.6, <0.7"
-extra-hed = { git = "ssh://git@git.xfel.eu:10022/tmichela/EXtra-HED.git" }
 karabo-bridge = ">=0.7.0, <0.8"
 karabo-bridge-recorder = { git = "ssh://git@git.xfel.eu:10022/dataAnalysis/karabo-bridge-recorder.git" }
 matplotlib-scalebar = ">=0.9.0, <0.10"
