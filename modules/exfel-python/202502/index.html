@@ -10,14 +10,14 @@
       
       
       
-        <link rel="canonical" href="https://european-xfel.github.io/environments/modules/exfel-python/202401/">
+        <link rel="canonical" href="https://european-xfel.github.io/environments/modules/exfel-python/202502/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
     
     
       
-        <title>202401 - EuXFEL Software Environments</title>
+        <title>202502 - EuXFEL Software Environments</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exfel-python202401" class="md-skip">
+        <a href="#exfel-python202502" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              202401
+              202502
             
           </span>
         </div>
@@ -1677,6 +1677,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../202401/" class="md-nav__link">
+        202401
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -1689,23 +1703,9 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        202401
-      </a>
-      
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../202502/" class="md-nav__link">
         202502
       </a>
+      
     </li>
   
 
@@ -3686,28 +3686,88 @@
   </a>
 
 
-<h1 id="exfel-python202401"><code>exfel-python/202401</code><a class="headerlink" href="#exfel-python202401" title="Permanent link">&para;</a></h1>
-<div class="language-tcl highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c">#%Module 1.0</span>
+<h1 id="exfel-python202502"><code>exfel-python/202502</code><a class="headerlink" href="#exfel-python202502" title="Permanent link">&para;</a></h1>
+<div class="language-tcl highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c">#%Module</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">proc</span><span class="w"> </span>ModulesHelp<span class="w"> </span><span class="k">{}</span><span class="w"> </span><span class="k">{</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nb">puts</span><span class="w"> </span>stdout<span class="w">    </span><span class="s2">&quot;Mamba environment for cycle 202401&quot;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nb">puts</span><span class="w"> </span>stdout<span class="w">    </span><span class="s2">&quot;Pixi environment for cycle 202502&quot;</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">}</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nv">module-whatis</span><span class="w">  </span><span class="s2">&quot;Module loads the mamba environment for cycle 202401&quot;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nv">module-whatis</span><span class="w">  </span><span class="s2">&quot;Module loads the pixi environment for cycle 202502&quot;</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">if</span><span class="w"> </span><span class="k">{</span><span class="w"> </span><span class="k">[</span><span class="w"> </span><span class="nv">module-info</span><span class="w"> </span>mode<span class="w"> </span>load<span class="w"> </span><span class="k">]</span><span class="w"> </span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nv">system</span><span class="w">    </span><span class="s2">&quot;/gpfs/exfel/sw/software/local/etc/metrics.sh &#39;mamba/202401&#39;&quot;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nv">system</span><span class="w">    </span><span class="s2">&quot;/gpfs/exfel/sw/software/local/etc/metrics.sh &#39;pixi/202502&#39;&quot;</span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">}</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nv">module</span><span class="w"> </span>load<span class="w"> </span>mambaforge
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="nv">prepend-path</span><span class="w">    </span>PATH<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>mambaforge<span class="o">/</span><span class="mf">22.11</span><span class="o">/</span>envs<span class="o">/</span><span class="mi">202401</span><span class="o">/</span>bin
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="nv">prepend-path</span><span class="w">    </span>XML_CATALOG_FILES<span class="w"> </span>file<span class="w"> </span><span class="k">{</span><span class="o">///</span><span class="nv">gpfs</span><span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>mambaforge<span class="o">/</span><span class="mf">22.11</span><span class="o">/</span>envs<span class="o">/</span><span class="mi">202401</span><span class="o">/</span>etc<span class="o">/</span>xml<span class="o">/</span>catalog<span class="w"> </span>file<span class="k">}</span><span class="w"> </span><span class="o">///</span>etc<span class="o">/</span>xml<span class="o">/</span>catalog
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="nv">setenv</span><span class="w">          </span>CONDA_DEFAULT_ENV<span class="w"> </span><span class="mi">202401</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="nv">setenv</span><span class="w">          </span>CONDA_PREFIX<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>mambaforge<span class="o">/</span><span class="mf">22.11</span><span class="o">/</span>envs<span class="o">/</span><span class="mi">202401</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="nv">setenv</span><span class="w">          </span>CONDA_PROMPT_MODIFIER<span class="w"> </span><span class="k">{(</span><span class="nv">202401</span><span class="k">)</span><span class="w"> </span><span class="k">}</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="nv">setenv</span><span class="w">          </span>CONDA_SHLVL<span class="w"> </span><span class="mi">1</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="nv">setenv</span><span class="w">          </span>GSETTINGS_SCHEMA_DIR<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>mambaforge<span class="o">/</span><span class="mf">22.11</span><span class="o">/</span>envs<span class="o">/</span><span class="mi">202401</span><span class="o">/</span>share<span class="o">/</span>glib-2.0<span class="o">/</span>schemas
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="nv">setenv</span><span class="w">          </span>GSETTINGS_SCHEMA_DIR_CONDA_BACKUP<span class="w"> </span><span class="k">{}</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nv">complete</span><span class="w">    </span>bash<span class="w"> </span>gapplication<span class="w"> </span><span class="k">{</span><span class="nv">-F</span><span class="w"> </span>__app<span class="k">}</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="nv">prepend-path</span><span class="w">    </span>XML_CATALOG_FILES<span class="w"> </span>file<span class="w"> </span><span class="k">{</span><span class="o">///</span><span class="nv">gpfs</span><span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>euxfel-environment-management<span class="o">/</span>environments<span class="o">/</span><span class="mi">202502</span><span class="o">/</span>.pixi<span class="o">/</span>envs<span class="o">/</span>default<span class="o">/</span>etc<span class="o">/</span>xml<span class="o">/</span>catalog<span class="w"> </span>file<span class="k">}</span><span class="w"> </span><span class="o">///</span>etc<span class="o">/</span>xml<span class="o">/</span>catalog
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="k">set</span><span class="o">-</span>function<span class="w">    </span>__app<span class="w"> </span><span class="k">{</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nv">local</span><span class="w"> </span>gapplication_binary<span class="k">;</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nv">gapplication_binary</span><span class="err">=</span><span class="s2">&quot;$1&quot;</span><span class="k">;</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="nv">case</span><span class="w"> </span><span class="s2">&quot;${COMP_CWORD}&quot;</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="mi">1</span><span class="err">)</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">            </span><span class="nv">COMPREPLY</span><span class="err">=</span><span class="k">(</span><span class="err">$</span><span class="k">(</span><span class="nv">compgen</span><span class="w"> </span><span class="o">-</span>W<span class="w"> </span><span class="s2">&quot;help version list-apps launch action list-actions&quot;</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="s2">&quot;${COMP_WORDS[1]}&quot;</span><span class="k">));</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="err">;;</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">        </span><span class="nv">2</span><span class="err">)</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">            </span><span class="nv">case</span><span class="w"> </span><span class="s2">&quot;${COMP_WORDS[1]}&quot;</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">                </span>launch<span class="w"> </span><span class="o">|</span><span class="w"> </span>action<span class="w"> </span><span class="o">|</span><span class="w"> </span>list-actions<span class="err">)</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">                    </span><span class="nv">COMPREPLY</span><span class="err">=</span><span class="k">(</span><span class="err">$</span><span class="k">(</span><span class="nv">compgen</span><span class="w"> </span><span class="o">-</span>W<span class="w"> </span><span class="s2">&quot;$(&quot;</span><span class="nv">$gapplication_binary</span><span class="s2">&quot; list-apps)&quot;</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="s2">&quot;${COMP_WORDS[2]}&quot;</span><span class="k">));</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">                </span><span class="err">;;</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">                </span><span class="o">*</span><span class="err">)</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">                    </span><span class="nv">COMPREPLY</span><span class="err">=</span><span class="k">();</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">                </span><span class="err">;;</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">            </span><span class="nv">esac</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">        </span><span class="err">;;</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">    </span><span class="nv">esac</span><span class="k">;</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">    </span><span class="nv">case</span><span class="w"> </span><span class="s2">&quot;${COMP_WORDS[1]}&quot;</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">        </span>action<span class="err">)</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="k">[</span><span class="w"> </span><span class="s2">&quot;${COMP_CWORD}&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">3</span><span class="w"> </span><span class="k">];</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">                </span><span class="nv">COMPREPLY</span><span class="err">=</span><span class="k">(</span><span class="err">$</span><span class="k">(</span><span class="nv">compgen</span><span class="w"> </span><span class="o">-</span>W<span class="w"> </span><span class="s2">&quot;$(&quot;</span><span class="nv">$gapplication_binary</span><span class="s2">&quot; list-actions &quot;</span><span class="err">$</span><span class="k">{</span><span class="nv">COMP_WORDS</span><span class="k">[</span><span class="nv">2</span><span class="k">]}</span><span class="s2">&quot;)&quot;</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="s2">&quot;${COMP_WORDS[3]}&quot;</span><span class="k">));</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="k">;</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">            </span><span class="k">else</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">                </span><span class="nv">COMPREPLY</span><span class="err">=</span><span class="k">();</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="k">;</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">            </span><span class="nv">fi</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">        </span><span class="err">;;</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="w">        </span><span class="nv">launch</span><span class="err">)</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="w">            </span><span class="nv">COMPREPLY</span><span class="err">=</span><span class="k">(</span><span class="err">$</span><span class="k">(</span><span class="nv">compgen</span><span class="w"> </span><span class="o">-</span>A<span class="w"> </span>file<span class="w"> </span><span class="s2">&quot;${COMP_WORDS[COMP_CWORD]}&quot;</span><span class="k">));</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="w">        </span><span class="err">;;</span>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="w">        </span><span class="o">*</span><span class="err">)</span>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="w">            </span><span class="nv">COMPREPLY</span><span class="err">=</span><span class="k">();</span>
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span>
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a><span class="w">        </span><span class="err">;;</span>
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="w">    </span><span class="nv">esac</span><span class="k">}</span>
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a><span class="k">set</span><span class="o">-</span>function<span class="w">    </span>_la_log<span class="w"> </span><span class="k">{</span>
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="k">[</span><span class="w"> </span><span class="s2">&quot;${CF_LIBARROW_ACTIVATE_LOGGING:-}&quot;</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="k">];</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a><span class="w">        </span><span class="nv">printf</span><span class="w"> </span><span class="err">&#39;</span><span class="o">%</span>s<span class="err">\</span>n<span class="err">&#39;</span><span class="w"> </span><span class="s2">&quot;$*&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span>while<span class="w"> </span>IFS<span class="err">=</span><span class="w"> </span>read<span class="w"> </span><span class="o">-</span>r<span class="w"> </span>line<span class="k">;</span><span class="w"> </span><span class="nv">do</span>
+</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a><span class="w">            </span><span class="nv">echo</span><span class="w"> </span><span class="s2">&quot;$CONDA_PREFIX/etc/conda/activate.d/libarrow_activate.sh DEBUG: $line&quot;</span><span class="k">;</span>
+</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a><span class="w">        </span><span class="nv">done</span><span class="k">;</span>
+</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a><span class="w">    </span><span class="nv">fi</span><span class="k">}</span>
+</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a><span class="k">set</span><span class="o">-</span>function<span class="w">    </span>function_exists<span class="w"> </span><span class="k">{</span>
+</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a><span class="w">    </span><span class="nv">declare</span><span class="w"> </span><span class="o">-</span>f<span class="w"> </span><span class="o">-</span>F<span class="w"> </span><span class="s2">&quot;$1&quot;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">/</span>dev<span class="o">/</span>null<span class="k">;</span>
+</span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="err">$</span><span class="o">?</span><span class="k">}</span>
+</span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a><span class="nv">setenv</span><span class="w">      </span>CONDA_DEFAULT_ENV<span class="w"> </span><span class="mi">202502</span>
+</span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a><span class="nv">setenv</span><span class="w">      </span>CONDA_PREFIX<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>euxfel-environment-management<span class="o">/</span>environments<span class="o">/</span><span class="mi">202502</span><span class="o">/</span>.pixi<span class="o">/</span>envs<span class="o">/</span>default
+</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a><span class="nv">setenv</span><span class="w">      </span>CPL_ZIP_ENCODING<span class="w"> </span>UTF-8
+</span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a><span class="nv">setenv</span><span class="w">      </span>GDAL_DATA<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>euxfel-environment-management<span class="o">/</span>environments<span class="o">/</span><span class="mi">202502</span><span class="o">/</span>.pixi<span class="o">/</span>envs<span class="o">/</span>default<span class="o">/</span>share<span class="o">/</span>gdal
+</span><span id="__span-0-67"><a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a><span class="nv">setenv</span><span class="w">      </span>GDAL_DRIVER_PATH<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>euxfel-environment-management<span class="o">/</span>environments<span class="o">/</span><span class="mi">202502</span><span class="o">/</span>.pixi<span class="o">/</span>envs<span class="o">/</span>default<span class="o">/</span>lib<span class="o">/</span>gdalplugins
+</span><span id="__span-0-68"><a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a><span class="nv">setenv</span><span class="w">      </span>GSETTINGS_SCHEMA_DIR<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>euxfel-environment-management<span class="o">/</span>environments<span class="o">/</span><span class="mi">202502</span><span class="o">/</span>.pixi<span class="o">/</span>envs<span class="o">/</span>default<span class="o">/</span>share<span class="o">/</span>glib-2.0<span class="o">/</span>schemas
+</span><span id="__span-0-69"><a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a><span class="nv">setenv</span><span class="w">      </span>GSETTINGS_SCHEMA_DIR_CONDA_BACKUP<span class="w"> </span><span class="k">{}</span>
+</span><span id="__span-0-70"><a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a><span class="nv">prepend-path</span><span class="w">        </span>PATH<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>euxfel-environment-management<span class="o">/</span>environments<span class="o">/</span><span class="mi">202502</span><span class="o">/</span>.pixi<span class="o">/</span>envs<span class="o">/</span>default<span class="o">/</span>bin
+</span><span id="__span-0-71"><a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a><span class="nv">setenv</span><span class="w">      </span>PIXI_ENVIRONMENT_NAME<span class="w"> </span>default
+</span><span id="__span-0-72"><a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a><span class="nv">setenv</span><span class="w">      </span>PIXI_ENVIRONMENT_PLATFORMS<span class="w"> </span>linux-64
+</span><span id="__span-0-73"><a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a><span class="nv">setenv</span><span class="w">      </span>PIXI_EXE<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>pixi<span class="o">/</span>bin<span class="o">/</span>pixi
+</span><span id="__span-0-74"><a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a><span class="nv">setenv</span><span class="w">      </span>PIXI_IN_SHELL<span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-0-75"><a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a><span class="nv">setenv</span><span class="w">      </span>PIXI_PROJECT_MANIFEST<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>euxfel-environment-management<span class="o">/</span>environments<span class="o">/</span><span class="mi">202502</span><span class="o">/</span>pixi.toml
+</span><span id="__span-0-76"><a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a><span class="nv">setenv</span><span class="w">      </span>PIXI_PROJECT_NAME<span class="w"> </span><span class="mi">202502</span>
+</span><span id="__span-0-77"><a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a><span class="nv">setenv</span><span class="w">      </span>PIXI_PROJECT_ROOT<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>euxfel-environment-management<span class="o">/</span>environments<span class="o">/</span><span class="mi">202502</span>
+</span><span id="__span-0-78"><a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a><span class="nv">setenv</span><span class="w">      </span>PIXI_PROJECT_VERSION<span class="w"> </span><span class="mf">0.1</span>.0
+</span><span id="__span-0-79"><a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a><span class="nv">setenv</span><span class="w">      </span>PIXI_PROMPT<span class="w"> </span><span class="k">{(</span><span class="nv">202502</span><span class="k">)</span><span class="w"> </span><span class="k">}</span>
+</span><span id="__span-0-80"><a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a><span class="nv">setenv</span><span class="w">      </span>PROJ_DATA<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>euxfel-environment-management<span class="o">/</span>environments<span class="o">/</span><span class="mi">202502</span><span class="o">/</span>.pixi<span class="o">/</span>envs<span class="o">/</span>default<span class="o">/</span>share<span class="o">/</span>proj
+</span><span id="__span-0-81"><a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a><span class="nv">setenv</span><span class="w">      </span>PROJ_NETWORK<span class="w"> </span>ON
 </span></code></pre></div>
 
 
@@ -3734,7 +3794,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../202501/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 202501" rel="prev">
+        <a href="../202401/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 202401" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -3743,20 +3803,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              202501
+              202401
             </div>
           </div>
         </a>
       
       
         
-        <a href="../202502/" class="md-footer__link md-footer__link--next" aria-label="Next: 202502" rel="next">
+        <a href="../202301/" class="md-footer__link md-footer__link--next" aria-label="Next: 202301" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              202502
+              202301
             </div>
           </div>
           <div class="md-footer__button md-icon">
