@@ -2,627 +2,642 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://european-xfel.github.io/environments/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/citing/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/environments/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/quick-start/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/environments/202301/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/environments/202302/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/environments/202401/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/environments/202402/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/environments/202501/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/environments/mambaforge/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/maintenance/ci-cd/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/maintenance/environments/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/maintenance/instances/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/maintenance/julia/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/maintenance/recipes/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/fiji/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/hexrd/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/hipgisaxs/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/moonshot/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/neutrino/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/openmpi-no-python/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/openmpi-python/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/pixi/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/simex/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/smilei/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/xraylarch/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/EXtra-foam/alpha/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/EXtra-foam/beta/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/EXtra-foam/mid_moonshot/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/EXtra-foam/scs/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/EXtra-foam/scs_moonshot/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/EXtra-foam/scs_old/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/EXtra-foam/spb-moonshot/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/EXtra-foam/stable/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/EXtra-foam/xes/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/EXtra-metro/2024/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/EXtra-metro/beta/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/EXtra-metro/preview/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/EXtra-xwiz/alpha/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/EXtra-xwiz/beta/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/amore/beta/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/amore/hed/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/amore/mid/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/bornagain/1.19/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/calibration-services/stable/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/cmake/3.13/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/cmdxfel/0/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/crystfel/0.11/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/crystfel/0.6/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/crystfel/0.9/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://european-xfel.github.io/environments/modules/damnit/beta/</loc>
+         <lastmod>2025-08-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://european-xfel.github.io/environments/modules/damnit/hed/</loc>
+         <lastmod>2025-08-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://european-xfel.github.io/environments/modules/damnit/main/</loc>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/dials/v2-2-4/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/dioptas/0.5/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/dioptas/0.7/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/dirax/1/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/epoch/4.17/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/epoch/4.19/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/exdf-tools/main/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/exfel-python/202301/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/exfel-python/202302/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/exfel-python/202401/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/exfel-python/202402/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/exfel-python/202501/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/exfel-python/202502/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/exfel_anaconda3/1.1/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/exfel_anaconda3/1/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/exfel_anaconda3/202301/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/exfel_anaconda3/beta/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/exfel_crystfel/0.7/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/exfel_crystfel/0.8/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/exfel_onda/19.09.0/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/exfel_onda/19.13/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/exfel_onda/22.10/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/exfel_onda/22.11/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/exfel_onda/test_mod/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/geometry-powder-optimizer/v2/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/glassure/1.4/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/glups/0/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/hdf5/1.10/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/hdfview/3.1/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/julia/1/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/karabo-bridge-cpp/stable/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/karabo-gui/2.14/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/karabo-gui/2/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/mamba/202301/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/mambaforge/22/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/pycalibration/3.7/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/pycalibration/3/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/simex-lite/1.0/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/spack/22/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/spack/all/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/spack/compilers/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/vagabond/develop/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/x_parallel/v1/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/modules/xds/20180126/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/Karabo-proxy/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/calibration-client/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/cfelpyutils/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/condat-gridconv/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/condor/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/damnit/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/dioptas/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/envmodules/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/euxfel-bunch-pattern/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/extra-data/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/extra-geom/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/extra-hed/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/findxfel/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/hdf5-vds-check/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/htmlgen/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/itervmi/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/karabo-bridge-recorder/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/karabo-bridge/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/libnfft/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/libspimage/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/line-profiler/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/matplotlib-scalebar/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/metadata-client/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/metropc/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/nbclick/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/oauth2-xfel-client/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/pasha/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/princess/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/sharedmem/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/spsim/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://european-xfel.github.io/environments/recipes/zlib-into/</loc>
-         <lastmod>2025-07-31</lastmod>
+         <lastmod>2025-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
