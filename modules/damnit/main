@@ -1,0 +1,19 @@
+#%Module 1.0
+#
+#  DAMNIT
+#
+proc ModulesHelp {} {
+    puts stdout     " "
+    puts stdout     "This module enables a stable version of DAMNIT"
+ssssssss stdout     " "
+}
+
+module-whatis  "Setup environment for DAMNIT application"
+if { [ module-info mode load ] } {
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'damnit/main'"
+}
+prepend-path PATH            /gpfs/exfel/sw/software/xfel_anaconda3/amore-mid/conda_env/bin/
+prepend-path LD_LIBRARY_PATH /gpfs/exfel/sw/software/xfel_anaconda3/amore-mid/conda_env/lib
+setenv _CONDA_ROOT           /gpfs/exfel/sw/software/xfel_anaconda3/amore-mid/conda_env/bin/
+
+    # puts stdout "/gpfs/exfel/sw/software/xfel_anaconda3/amore-mid/env/bin/activate;"
