@@ -3,4 +3,4 @@
 ##  The desired version of AMORE
 ##
 
-set ModulesVersion "main"
+set ModulesVersion "stable"

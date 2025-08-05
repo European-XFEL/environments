@@ -10,7 +10,7 @@ ssssssss stdout     " "
 
 module-whatis  "Setup environment for DAMNIT application"
 if { [ module-info mode load ] } {
-    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'damnit/main'"
+    system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'damnit/stable'"
 }
 prepend-path PATH            /gpfs/exfel/sw/software/xfel_anaconda3/amore-mid/conda_env/bin/
 prepend-path LD_LIBRARY_PATH /gpfs/exfel/sw/software/xfel_anaconda3/amore-mid/conda_env/lib
