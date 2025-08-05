@@ -10,14 +10,14 @@
       
       
       
-        <link rel="canonical" href="https://european-xfel.github.io/environments/modules/damnit/main/">
+        <link rel="canonical" href="https://european-xfel.github.io/environments/modules/damnit/stable/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
     
     
       
-        <title>main - EuXFEL Software Environments</title>
+        <title>stable - EuXFEL Software Environments</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#damnitmain" class="md-skip">
+        <a href="#damnitstable" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              main
+              stable
             
           </span>
         </div>
@@ -2498,6 +2498,30 @@
               
   
   
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        stable
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
   
     <li class="md-nav__item">
       <a href="../hed/" class="md-nav__link">
@@ -2517,30 +2541,6 @@
       <a href="../beta/" class="md-nav__link">
         beta
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        main
-      </a>
-      
     </li>
   
 
@@ -3771,7 +3771,7 @@
   </a>
 
 
-<h1 id="damnitmain"><code>damnit/main</code><a class="headerlink" href="#damnitmain" title="Permanent link">&para;</a></h1>
+<h1 id="damnitstable"><code>damnit/stable</code><a class="headerlink" href="#damnitstable" title="Permanent link">&para;</a></h1>
 <div class="language-tcl highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c">#%Module 1.0</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c">#</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c">#  DAMNIT</span>
@@ -3784,7 +3784,7 @@
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="nv">module-whatis</span><span class="w">  </span><span class="s2">&quot;Setup environment for DAMNIT application&quot;</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="k">if</span><span class="w"> </span><span class="k">{</span><span class="w"> </span><span class="k">[</span><span class="w"> </span><span class="nv">module-info</span><span class="w"> </span>mode<span class="w"> </span>load<span class="w"> </span><span class="k">]</span><span class="w"> </span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nv">system</span><span class="w"> </span><span class="s2">&quot;/gpfs/exfel/sw/software/local/etc/metrics.sh &#39;damnit/main&#39;&quot;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nv">system</span><span class="w"> </span><span class="s2">&quot;/gpfs/exfel/sw/software/local/etc/metrics.sh &#39;damnit/stable&#39;&quot;</span>
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="k">}</span>
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="nv">prepend-path</span><span class="w"> </span>PATH<span class="w">            </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>xfel_anaconda3<span class="o">/</span>amore-mid<span class="o">/</span>conda_env<span class="o">/</span>bin<span class="o">/</span>
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="nv">prepend-path</span><span class="w"> </span>LD_LIBRARY_PATH<span class="w"> </span><span class="o">/</span>gpfs<span class="o">/</span>exfel<span class="o">/</span>sw<span class="o">/</span>software<span class="o">/</span>xfel_anaconda3<span class="o">/</span>amore-mid<span class="o">/</span>conda_env<span class="o">/</span>lib
@@ -3817,7 +3817,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../beta/" class="md-footer__link md-footer__link--prev" aria-label="Previous: beta" rel="prev">
+        <a href="../../hdf5/1.10/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1.10" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -3826,20 +3826,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              beta
+              1.10
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../dioptas/0.5/" class="md-footer__link md-footer__link--next" aria-label="Next: 0.5" rel="next">
+        <a href="../hed/" class="md-footer__link md-footer__link--next" aria-label="Next: hed" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              0.5
+              hed
             </div>
           </div>
           <div class="md-footer__button md-icon">
