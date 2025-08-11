@@ -12,8 +12,8 @@ module-whatis  "Setup environment for DAMNIT application"
 if { [ module-info mode load ] } {
     system "/gpfs/exfel/sw/software/local/etc/metrics.sh 'damnit/stable'"
 }
-prepend-path PATH            /gpfs/exfel/sw/software/xfel_anaconda3/amore-mid/conda_env/bin/
-prepend-path LD_LIBRARY_PATH /gpfs/exfel/sw/software/xfel_anaconda3/amore-mid/conda_env/lib
-setenv _CONDA_ROOT           /gpfs/exfel/sw/software/xfel_anaconda3/amore-mid/conda_env/bin/
+prepend-path PATH            /gpfs/exfel/sw/software/xfel_anaconda3/amore-mid/.pixi/envs/default/bin
+prepend-path LD_LIBRARY_PATH /gpfs/exfel/sw/software/xfel_anaconda3/amore-mid/.pixi/envs/default/lib
+#setenv _CONDA_ROOT           /gpfs/exfel/sw/software/xfel_anaconda3/amore-mid/conda_env/bin/
 
     # puts stdout "/gpfs/exfel/sw/software/xfel_anaconda3/amore-mid/env/bin/activate;"
