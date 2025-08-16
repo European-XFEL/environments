@@ -1,0 +1,32 @@
+context:
+  name: no-pip-install
+  version: 0.1.0
+
+package:
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
+
+source:
+  path: .
+
+build:
+  script: "cp ./EXTERNALLY-MANAGED ${SP_DIR}/../."
+
+requirements:
+  host:
+    - python >=3
+  run:
+    - python >=3
+    - pip >=23.0
+
+test:
+  commands:
+    - cat $STDLIB_DIR/EXTERNALLY-MANAGED
+
+about:
+  license: GPL-3.0
+
+extra:
+  recipe-maintainers:
+    - RobertRosca
+
