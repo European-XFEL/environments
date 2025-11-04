@@ -8,3 +8,4 @@ site/
 *~
 
 environments/*/julia-exfel-sysimage.so
+applications/hhg-studio/hhg-studio.sif
