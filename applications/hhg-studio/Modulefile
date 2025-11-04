@@ -1,0 +1,13 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+    puts stderr "Loads environment to run hhg-studio (via Singularity)."
+}
+
+module-whatis "Provides the 'hhg-studio' command which runs a Singularity image"
+
+# See https://wiki.tcl-lang.org/page/file+normalize
+set moddir [file dirname [file dirname [file normalize $ModulesCurrentModulefile/___]]]
+set sif_path [file normalize [file join $moddir "hhg-studio.sif"]]
+
+set-alias hhg-studio "singularity run $sif_path"
