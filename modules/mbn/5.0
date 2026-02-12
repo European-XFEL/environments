@@ -1,0 +1,21 @@
+#%Module 1.0
+proc ModulesHelp {} {
+    puts stdout    "MesoBioNano Explorer software package for simulations of complex molecular structure and dynamics"
+}
+
+module-whatis  "MesoBioNano Explorer software package for simulations of complex molecular structure and dynamics"
+
+prereq mpi/openmpi-x86_64
+
+if { [ module-info mode load ] } {
+    system    "/gpfs/exfel/sw/software/local/etc/metrics.sh 'mbn/5.0'"
+}
+
+prepend-path    PATH /gpfs/exfel/sw/software/simulations/mbn/bin
+prepend-path    LD_LIBRARY_PATH /gpfs/exfel/sw/software/simulations/mbn/lib
+
+set DOT_DIRECTORY [file join $::env(HOME) ".mbnexplorer"]
+set LICENSE_SERVER_FILE [file join $DOT_DIRECTORY "license-server.conf"]
+
+system "mkdir -p $DOT_DIRECTORY"
+system "ln -f -s /gpfs/exfel/sw/software/simulations/mbn/etc/license-server.conf $LICENSE_SERVER_FILE"
