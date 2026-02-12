@@ -1,58 +1,20 @@
 #! /usr/bin/env bash
 
 source /usr/share/Modules/init/bash
-module load exfel julia
+module load exfel julia/202502
 
 set -euxo pipefail
 
 hostname
 
-export JULIA_MAX_NUM_PRECOMPILE_FILES=10
+export JULIA_MAX_NUM_PRECOMPILE_FILES=2
 export IJULIA_NODEFAULTKERNEL=1
 
 # Update and precompile everything
 julia --project=$JULIA_EXFEL_ENV -e '
-empty!(Base.DEPOT_PATH)
-push!(Base.DEPOT_PATH, "/gpfs/exfel/sw/software/julia-depot")
-
-import Pkg
-Pkg.update()
-
-import CUDA
-CUDA.precompile_runtime()
-'
-
-# Create a sysimage
-julia --project=$JULIA_EXFEL_ENV -e '
-using PackageCompiler
-create_sysimage(["CairoMakie", "WGLMakie", "PythonCall", "DimensionalData", "NaNStatistics"];
-                sysimage_path=ENV["JULIA_EXFEL_SYSIMAGE"], cpu_target=ENV["JULIA_CPU_TARGET"])
-'
-
-# Precompile with the sysimage
-julia --project=$JULIA_EXFEL_ENV --sysimage=$JULIA_EXFEL_SYSIMAGE -e '
-empty!(Base.DEPOT_PATH)
-push!(Base.DEPOT_PATH, "/gpfs/exfel/sw/software/julia-depot")
-
 import Pkg
 Pkg.precompile()
 
 import CUDA
 CUDA.precompile_runtime()
 '
-
-manifest_path="${JULIA_EXFEL_ENV}/Manifest-v1.11.toml"
-project_path="${JULIA_EXFEL_ENV}/Project.toml"
-
-# # Allow errors only when checking the diff
-# set +e
-# git diff --quiet ${manifest_path}
-# diff_exit_code=$?
-# set -e
-
-# if [[ ${diff_exit_code} -eq 1 ]]; then
-#     git add ${manifest_path}
-#     git add ${project_path}
-#     git commit -m "Automatic Julia environment update"
-#     git push
-# fi

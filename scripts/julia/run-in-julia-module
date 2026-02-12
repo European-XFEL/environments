@@ -3,6 +3,6 @@
 set -euo pipefail
 
 source /usr/share/Modules/init/bash
-module load exfel julia
+module load exfel julia/"${1}"
 
-exec "$@"
+exec "${@:2}"

@@ -19,26 +19,38 @@ if { [info exists env(SASE)] } {
     setenv                  JULIA_DEPOT_PATH       /gpfs/exfel/data/scratch/$env(USER)/julia-depot:/gpfs/exfel/sw/software/julia-depot:
 }
 
+setenv                  JULIA_EXFEL_BINDIR     /gpfs/exfel/sw/software/julia-depot/bin
+setenv                  JULIA_EXFEL_ENV        /gpfs/exfel/sw/software/euxfel-environment-management/environments/202502
+setenv                  JULIA_EXFEL_SYSIMAGE   $env(JULIA_EXFEL_ENV)/julia-exfel-sysimage.so
+
 # https://juliahpc.github.io/user_gettingstarted/#set_julia_cpu_target_appropriately
 setenv                  JULIA_CPU_TARGET       "generic;broadwell,clone_all;skylake-avx512,clone_all;cascadelake,clone_all;sapphirerapids,clone_all;znver3,clone_all;znver2,clone_all"
+setenv                  JULIA_NUM_THREADS      auto
+setenv                  JULIA_PROJECT          $env(JULIA_EXFEL_ENV)
+
+# https://docs.julialang.org/en/v1/manual/performance-tips/#man-multithreading-linear-algebra
+setenv                  OPENBLAS_NUM_THREADS   1
+# https://carstenbauer.github.io/ThreadPinning.jl/stable/examples/ex_blas/#Intel-MKL
+setenv                  MKL_NUM_THREADS        1
+
+# Need this for P100's to work: https://github.com/JuliaGPU/CUDA.jl/issues/3023
+setenv                  JULIA_CUDA_USE_COMPAT  false
 
 # https://juliapy.github.io/PythonCall.jl/stable/pythoncall/#If-you-already-have-Python-and-required-Python-packages-installed
 setenv                  JULIA_CONDAPKG_BACKEND          Null
-setenv                  JULIA_PYTHONCALL_EXE            /gpfs/exfel/sw/software/mambaforge/22.11/envs/202501/bin/python
-setenv                  PYTHON_JULIACALL_BINDIR         /gpfs/exfel/sw/software/juliaup/juliaup/julia-1.11.5+0.x64.linux.gnu/bin
+setenv                  JULIA_PYTHONCALL_EXE            /gpfs/exfel/sw/software/euxfel-environment-management/environments/202502/.pixi/envs/default/bin/python
+# setenv                  JULIA_PYTHONCALL_LIB            /gpfs/exfel/sw/software/euxfel-environment-management/environments/202502/.pixi/envs/default/lib/libpython3.so
+setenv                  PYTHON_JULIACALL_BINDIR         /gpfs/exfel/sw/software/juliaup/juliaup/julia-1.12-nightly/bin
 setenv                  PYTHON_JULIACALL_HANDLE_SIGNALS yes
+setenv                  PYTHON_JULIACALL_EXE            $env(PYTHON_JULIACALL_BINDIR)/julia
+setenv                  PYTHON_JULIACALL_PROJECT        $env(JULIA_EXFEL_ENV)
 setenv                  PYTHON_JULIAPKG_OFFLINE         yes
-setenv                  PYTHON_JULIAPKG_OVERRIDE_EXECUTABLE $env(PYTHON_JULIACALL_BINDIR)/julia
 
 # Needed for Bonito/WGLMakie to set the proxy URL automatically
-setenv                  BONITO_JUPYTER_REMOTE_HOST      "https://max-jhub.desy.de"
+# setenv                  BONITO_JUPYTER_REMOTE_HOST      "https://max-jhub.desy.de"
 
 # https://timholy.github.io/Revise.jl/stable/config/#Polling-and-NFS-mounted-code-directories:-JULIA_REVISE_POLL
 setenv                  JULIA_REVISE_POLL      1
-
-setenv                  JULIA_EXFEL_BINDIR     /gpfs/exfel/sw/software/julia-depot/bin
-setenv                  JULIA_EXFEL_ENV        /gpfs/exfel/sw/software/euxfel-environment-management/environments/202501
-setenv                  JULIA_EXFEL_SYSIMAGE   $env(JULIA_EXFEL_ENV)/julia-exfel-sysimage.so
 
 prepend-path            PATH             /gpfs/exfel/sw/software/euxfel-environment-management/scripts/julia
 prepend-path            PATH             $env(PYTHON_JULIACALL_BINDIR)
@@ -48,6 +60,6 @@ system /gpfs/exfel/sw/software/euxfel-environment-management/scripts/julia/creat
 
 proc ModulesHelp {} {
     puts stdout     " "
-    puts stdout     "This sets the path and environment variables for Julia 1.11"
+    puts stdout     "This sets the path and environment variables for Julia 1.12"
     puts stdout     " "
 }
