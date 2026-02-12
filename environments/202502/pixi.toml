@@ -78,7 +78,7 @@ pyopengl = { version = "*" }
 pyqtgraph = { version = "*" }
 pytables = { version = "*" }
 pytest = { version = "*" }
-python-kaleido = { version = "*" }
+python-kaleido = ">=1.0.0,<2"
 pywavelets = { version = "*" }
 pyzmq = { version = "*" }
 rasterio = { version = "*" }
@@ -99,9 +99,12 @@ zarr = { version = "*" }
 zulip = { version = "*" }
 requests = { version = "<2.30" }
 ipywidgets = ">=8.1.5,<9"
+kaleido-core = ">=0.2.1,<0.3"
+uv = ">=0.9.10,<0.10"
+supervisor = ">=4.2.5,<5"
 
 [pypi-dependencies]
-extra-data = ">=1.21.0, <2"
+extra-data = { version = ">=1.23.2, <2", extras = ["complete"] }
 extra-geom = ">=1.15.0, <2"
 calibration-client = ">=11.4.0, <12"
 princess = ">=0.6, <0.7"
@@ -124,4 +127,7 @@ matplotlib-scalebar = ">=0.9.0, <0.10"
 metadata-client = ">=4.1.2, <5"
 metropc = { git = "ssh://git@git.xfel.eu:10022/karaboDevices/metropc.git" }
 nbclick = ">=0.4.1, <0.5"
+juliacall = ">=0.9.28, <0.10"
+extra-speckle = { git = "https://git.xfel.eu/dataAnalysis/extra-speckle.git", rev = "dev" }
+pixel-masker = { git = "https://git.xfel.eu/leonaual/pixel-masker.git" }
 
