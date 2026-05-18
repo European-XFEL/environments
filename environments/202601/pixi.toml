@@ -1,48 +1,48 @@
 [workspace]
 authors = ["Robert Rosca <32569096+RobertRosca@users.noreply.github.com>"]
 channels = ["conda-forge"]
-name = "202502"
+name = "202601"
 platforms = ["linux-64"]
 version = "0.1.0"
 
 [tasks]
 
 [dependencies]
-python = "3.11.*"
+python = "3.13.*"
 ipykernel = { version = "==6.29.0", build = "pyhd33586a_0" }
 ipympl = { version = "==0.9.4", build = "pyhd8ed1ab_0" }
-ipython = { version = "==8.21.0", build = "pyh707e725_0" }
-ipython_genutils = { version = "==0.2.0", build = "pyhd8ed1ab_1" }
-ipyvue = { version = "==1.11.2", build = "pyhd8ed1ab_0" }
-ipyvuetify = { version = "==1.10.0", build = "pyhd8ed1ab_0" }
-jupyter = { version = "==1.0.0", build = "py311h38be061_9" }
-jupyter-lsp = { version = "==2.2.5", build = "pyhe01879c_2" }
-jupyter-resource-usage = { version = "==1.1.0", build = "pyhd8ed1ab_1" }
-jupyter-server-mathjax = { version = "==0.2.6", build = "pyh5bfe37b_1" }
-jupyter_client = { version = "==8.6.0", build = "pyhd8ed1ab_0" }
-jupyter_console = { version = "==6.6.3", build = "pyhd8ed1ab_0" }
-jupyter_core = { version = "==5.7.1", build = "py311h38be061_0" }
-jupyter_events = { version = "==0.9.0", build = "pyhd8ed1ab_0" }
-jupyter_server = { version = "==2.12.5", build = "pyhd8ed1ab_0" }
-jupyter_server_terminals = { version = "==0.5.2", build = "pyhd8ed1ab_0" }
-jupyter_telemetry = { version = "==0.1.0", build = "pyhd8ed1ab_1" }
-jupyterhub = { version = "==4.0.2", build = "pyh31011fe_0" }
-jupyterhub-base = { version = "==4.0.2", build = "pyh31011fe_0" }
-# jupyterlab = { version = "==4.1.8", build = "pyhd8ed1ab_0" }
+ipyvuetify = { version = "==1.11.3", build = "pyhd8ed1ab_0" }
+ipywidgets = { version = "==8.1.5", build = "pyhd8ed1ab_1" }
 jupyterlab-git = { version = "==0.50.2", build = "pyhd8ed1ab_0" }
 jupyterlab-h5web = { version = "==12.3.0", build = "pyhd8ed1ab_0" }
 jupyterlab-lsp = { version = "==5.1.1", build = "pyhe01879c_1" }
 jupyterlab_code_formatter = { version = "==3.0.2", build = "pyhd8ed1ab_0" }
 jupyterlab_pygments = { version = "==0.3.0", build = "pyhd8ed1ab_0" }
-# jupyterlab_server = { version = "==2.27.3", build = "pyhd8ed1ab_0" }
 jupyterlab_widgets = { version = "==3.0.13", build = "pyhd8ed1ab_0" }
-matplotlib = { version = "==3.8.2", build = "py311h38be061_0" }
-matplotlib-base = { version = "==3.8.2", build = "py311h54ef318_0" }
-matplotlib-inline = { version = "==0.1.6", build = "pyhd8ed1ab_0" }
+#ipython = { version = "==8.21.0", build = "pyh707e725_0" }
+#ipython_genutils = { version = "==0.2.0", build = "pyhd8ed1ab_1" }
+#jupyter = { version = "==1.0.0", build = "py311h38be061_9" }
+#jupyter-lsp = { version = "==2.2.5", build = "pyhe01879c_2" }
+#jupyter-resource-usage = { version = "==1.1.0", build = "pyhd8ed1ab_1" }
+#jupyter-server-mathjax = { version = "==0.2.6", build = "pyh5bfe37b_1" }
+#jupyter_client = { version = "==8.6.0", build = "pyhd8ed1ab_0" }
+#jupyter_console = { version = "==6.6.3", build = "pyhd8ed1ab_0" }
+#jupyter_core = { version = "==5.7.1", build = "py311h38be061_0" }
+#jupyter_events = { version = "==0.9.0", build = "pyhd8ed1ab_0" }
+#jupyter_server = { version = "==2.12.5", build = "pyhd8ed1ab_0" }
+#jupyter_server_terminals = { version = "==0.5.2", build = "pyhd8ed1ab_0" }
+#jupyter_telemetry = { version = "==0.1.0", build = "pyhd8ed1ab_1" }
+#jupyterhub = { version = "==4.0.2", build = "pyh31011fe_0" }
+#jupyterhub-base = { version = "==4.0.2", build = "pyh31011fe_0" }
+#jupyterlab = { version = "==4.1.8", build = "pyhd8ed1ab_0" }
+#jupyterlab_server = { version = "==2.27.3", build = "pyhd8ed1ab_0" }
+#matplotlib = { version = "==3.8.2", build = "py311h38be061_0" }
+#matplotlib-base = { version = "==3.8.2", build = "py311h54ef318_0" }
+#matplotlib-inline = { version = "==0.1.6", build = "pyhd8ed1ab_0" }
+
 astropy = { version = "*" }
 bokeh = { version = "*" }
 curl = { version = "*" }
-cvxpy = { version = "*" }
 cython = { version = "*" }
 dask = { version = "*" }
 dask-jobqueue = { version = "*" }
@@ -91,20 +91,16 @@ scipy = { version = "*" }
 seaborn = { version = "*" }
 shapely = { version = "*" }
 silx = { version = "*" }
-spyder = { version = "*" }
 umap-learn = { version = "*" }
 xarray = { version = "*" }
-xraydb = { version = "*" }
 xraylib = { version = "*" }
 xrayutilities = { version = "*" }
 zarr = { version = "*" }
 zulip = { version = "*" }
 requests = { version = "<2.30" }
-ipywidgets = ">=8.1.5,<9"
 kaleido-core = ">=0.2.1,<0.3"
-uv = ">=0.9.10,<0.10"
-supervisor = ">=4.2.5,<5"
-pip = ">=26.0.1,<27"
+uv = ">=0.9.10"
+supervisor = ">=4.2.5"
 
 [pypi-dependencies]
 extra-data = { version = ">=1.23.2, <2", extras = ["complete"] }
@@ -115,7 +111,7 @@ pasha = ">=0.1.2, <0.2"
 zlib-into = ">=0.4, <0.5"
 line-profiler = ">=4.2.0, <5"
 hdf5-vds-check = ">=1.0, <2"
-cfelpyutils = ">=2.2.0, <3"
+#cfelpyutils = ">=2.2.0, <3"
 damnit = ">=0.2.0, <0.3"
 extra-proposal = ">=0.1, <0.2"
 euxfel-extra = { git = "https://github.com/European-XFEL/extra" }
@@ -133,5 +129,4 @@ nbclick = ">=0.4.1, <0.5"
 juliacall = ">=0.9.28, <0.10"
 extra-speckle = { git = "https://git.xfel.eu/dataAnalysis/extra-speckle.git", rev = "dev" }
 pixel-masker = { git = "https://git.xfel.eu/leonaual/pixel-masker.git" }
-fpcs = ">=1.0.0"
-geometry-powder-optimizer = { git = "ssh://git@git.xfel.eu:10022/machineLearning/geometry-powder-optimizer.git" }
+
