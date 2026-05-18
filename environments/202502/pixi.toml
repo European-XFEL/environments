@@ -105,6 +105,7 @@ kaleido-core = ">=0.2.1,<0.3"
 uv = ">=0.9.10,<0.10"
 supervisor = ">=4.2.5,<5"
 pip = ">=26.0.1,<27"
+altair = ">=6.1.0,<7"
 
 [pypi-dependencies]
 extra-data = { version = ">=1.23.2, <2", extras = ["complete"] }

@@ -23,6 +23,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/alabaster-0.7.16-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/alembic-1.16.2-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/alsa-lib-1.2.14-hb9d3cd8_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/altair-6.1.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/ansicolors-1.1.8-pyhd8ed1ab_0.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/noarch/anyio-4.9.0-pyh29332c3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/aom-3.9.1-hac33072_0.conda
@@ -431,7 +432,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/multipledispatch-0.6.0-pyhd8ed1ab_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/munkres-1.1.4-pyhd8ed1ab_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/mypy_extensions-1.1.0-pyha770c72_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/narwhals-1.45.0-pyhe01879c_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/narwhals-2.21.2-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/natsort-8.4.0-pyh29332c3_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/nbclient-0.10.2-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/nbconvert-7.16.6-hb482800_0.conda
@@ -986,6 +987,23 @@ packages:
   purls: []
   size: 566531
   timestamp: 1744668655747
+- conda: https://conda.anaconda.org/conda-forge/noarch/altair-6.1.0-pyhd8ed1ab_0.conda
+  sha256: fdb791d8310f9969d8d0254bce45620f0d1c3d7a3101c1ef5efb2ffdb1471f8c
+  md5: 4657762ceeaeadad947f0e6e3e0e0993
+  depends:
+  - importlib-metadata
+  - jinja2
+  - jsonschema >=3.0
+  - narwhals >=2.4.0
+  - packaging
+  - python >=3.10
+  - typing-extensions >=4.12.0
+  license: BSD-3-Clause
+  license_family: BSD
+  purls:
+  - pkg:pypi/altair?source=hash-mapping
+  size: 568788
+  timestamp: 1776784805576
 - conda: https://conda.anaconda.org/conda-forge/noarch/ansicolors-1.1.8-pyhd8ed1ab_0.tar.bz2
   sha256: e78147c36ed63f758cc8d39436bc1af89bb07441934cccbb9711d8b3cccc48c0
   md5: e4929dd673bcb012fab516878e72f6f6
@@ -7532,18 +7550,17 @@ packages:
   - pkg:pypi/mypy-extensions?source=hash-mapping
   size: 11766
   timestamp: 1745776666688
-- conda: https://conda.anaconda.org/conda-forge/noarch/narwhals-1.45.0-pyhe01879c_0.conda
-  sha256: 8f0fe3d641a48b2da4573eba41f4acd2e5631714a56b574a3c44e6024636fe17
-  md5: 482ef8fa195fd3119846e080e6233b1a
+- conda: https://conda.anaconda.org/conda-forge/noarch/narwhals-2.21.2-pyhcf101f3_0.conda
+  sha256: 70f43d62450927d51673eecd8823e14f5b3cfebdb43cda1d502eba97162bab42
+  md5: 6687827c332121727ce383919e1ec8c2
   depends:
-  - python >=3.9
+  - python >=3.10
   - python
   license: MIT
-  license_family: MIT
   purls:
   - pkg:pypi/narwhals?source=compressed-mapping
-  size: 234102
-  timestamp: 1751393316636
+  size: 284323
+  timestamp: 1778929680962
 - conda: https://conda.anaconda.org/conda-forge/noarch/natsort-8.4.0-pyh29332c3_1.conda
   sha256: 594ae12c32f163f6d312e38de41311a89e476544613df0c1d048f699721621d7
   md5: 0aa03903d33997f3886be58abc890aef
