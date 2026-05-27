@@ -91,6 +91,9 @@ meson = ">=1.10.2,<2"
 meson-python = ">=0.19.0,<0.20"
 openmp = ">=8.0.1,<9"
 jupyter-collaboration = ">=3.1.2,<4"
+black = ">=26.5.1,<27"
+isort = ">=8.0.1,<9"
+ruff = ">=0.15.14,<0.16"
 
 [pypi-dependencies]
 extra-data = { version = ">=1.24.0, <2", extras = ["complete"] }
