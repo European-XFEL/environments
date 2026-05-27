@@ -189,7 +189,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/intel-gmmlib-22.9.0-hb700be7_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/intel-media-driver-25.3.4-hecca717_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/ipydatagrid-1.4.0-pyhcf101f3_2.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/ipykernel-7.2.0-pyha191276_1.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/ipykernel-6.31.0-pyha191276_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/ipympl-0.10.0-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/ipython-9.10.0-pyh53cf698_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/ipython_pygments_lexers-1.1.1-pyhd8ed1ab_0.conda
@@ -658,7 +658,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/26/39/9945e9df98aa5ded1bc5587ef48f45c54390fa086655799d8734b69e6b07/damnit-0.2.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a2/c4/04630d9128dbf81a40aac136f8551d7b9a386a69062c0e381523e243a729/envmodules-0.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/71/ca/9aced390acd0e749ee32248e86dee6b46f97205ee0f1382ed6f6c4945805/euxfel_bunch_pattern-0.6-py3-none-any.whl
-      - pypi: git+https://github.com/European-XFEL/extra#8dda1cef068322106eb0f6ec4ae2fd7c59562beb
+      - pypi: git+https://github.com/European-XFEL/extra#905a36e73753d9b3b1685481fe4368dccf97fb8a
       - pypi: git+https://git.xfel.eu/dataAnalysis/extra-speckle.git?rev=dev#6dc8d85d608a3a81b3bb624854bf02ce82e36f34
       - pypi: https://files.pythonhosted.org/packages/5e/e9/63b56eee35179987723adca82a022b08b79c4faea24467e9d36eb8115f08/extra_data-1.24.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/08/1f/89f196f1b5c3640ddd9f9432f7a2f700f46905ed07ac711fa741459b2559/extra_geom-1.16.0-py3-none-any.whl
@@ -2285,9 +2285,9 @@ packages:
   sha256: aef668c6ffdde3fed00d8cd9e879d4921250c0812b5a0065a68fd150af07525c
   requires_dist:
   - numpy
-- pypi: git+https://github.com/European-XFEL/extra#8dda1cef068322106eb0f6ec4ae2fd7c59562beb
+- pypi: git+https://github.com/European-XFEL/extra#905a36e73753d9b3b1685481fe4368dccf97fb8a
   name: euxfel-extra
-  version: 2025.1.314+8dda1ce
+  version: 2025.1.322+905a36e
   requires_dist:
   - damnit
   - euxfel-bunch-pattern
@@ -3594,23 +3594,24 @@ packages:
   - pkg:pypi/ipydatagrid?source=hash-mapping
   size: 681089
   timestamp: 1755954998991
-- conda: https://conda.anaconda.org/conda-forge/noarch/ipykernel-7.2.0-pyha191276_1.conda
-  sha256: b77ed58eb235e5ad80e742b03caeed4bbc2a2ef064cb9a2deee3b75dfae91b2a
-  md5: 8b267f517b81c13594ed68d646fd5dcb
+- conda: https://conda.anaconda.org/conda-forge/noarch/ipykernel-6.31.0-pyha191276_0.conda
+  sha256: 35477c6ca12f48c3af0cbca01f65065dcc37c4a306886d6237e309e041b8434b
+  md5: d29c9fbbd0c41a7d4fbc5629314f3b00
   depends:
+  - python
   - __linux
   - comm >=0.1.1
   - debugpy >=1.6.5
   - ipython >=7.23.1
-  - jupyter_client >=8.8.0
-  - jupyter_core >=5.1,!=6.0.*
+  - jupyter_client >=8.0.0
+  - jupyter_core >=4.12,!=5.0.*
   - matplotlib-inline >=0.1
   - nest-asyncio >=1.4
   - packaging >=22
   - psutil >=5.7
   - python >=3.10
   - pyzmq >=25
-  - tornado >=6.4.1
+  - tornado >=6.2
   - traitlets >=5.4.0
   - python
   constrains:
@@ -3618,9 +3619,9 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/ipykernel?source=compressed-mapping
-  size: 133644
-  timestamp: 1770566133040
+  - pkg:pypi/ipykernel?source=hash-mapping
+  size: 129645
+  timestamp: 1760967030510
 - conda: https://conda.anaconda.org/conda-forge/noarch/ipympl-0.10.0-pyhcf101f3_0.conda
   sha256: 5cb435e0fe1238b0ec4baa13d52faf4490b76bb62202e5fd5bf004e95f2cf425
   md5: abb099ef4a8ab45d4b713f2d4277f727

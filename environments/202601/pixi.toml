@@ -9,7 +9,7 @@ version = "0.1.0"
 
 [dependencies]
 python = "3.13.*"
-ipykernel = { version = "==7.2.0" }
+ipykernel = { version = ">6,<7" }
 ipympl = { version = "==0.10.0" }
 matplotlib = "==3.10.8"
 ipyvuetify = { version = "==1.11.3", build = "pyhd8ed1ab_0" }
