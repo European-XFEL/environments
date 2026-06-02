@@ -186,6 +186,8 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/importlib-metadata-8.7.0-pyhe01879c_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/importlib_metadata-8.7.0-h40b2b14_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/importlib_resources-6.5.2-pyhd8ed1ab_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/influxdb-5.3.1-pyhd3deb0d_0.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/influxdb-client-1.49.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/iniconfig-2.3.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/intel-gmmlib-22.9.0-hb700be7_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/intel-media-driver-25.3.4-hecca717_0.conda
@@ -418,6 +420,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/ninja-1.13.2-h171cf75_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/nlohmann_json-3.12.0-h54a6638_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/nomkl-1.0-h5ca1d4c_0.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/notebook-7.1.3-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/notebook-shim-0.2.4-pyhd8ed1ab_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/nspr-4.38-h29cc59b_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/nss-3.118-h445c969_0.conda
@@ -505,6 +508,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/pytest-timeout-2.4.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/python-3.13.12-hc97d973_100_cp313.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-dateutil-2.9.0.post0-pyhe01879c_2.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/python-dotenv-1.2.2-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-fastjsonschema-2.21.2-pyhe01879c_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-gil-3.13.12-h4df99d1_100.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-json-logger-2.0.7-pyhd8ed1ab_0.conda
@@ -528,6 +532,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/rasterio-1.5.0-py313h2005660_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/rav1e-0.7.1-h8fae777_3.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/re2-2025.11.05-h5301d42_1.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/reactivex-4.1.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/readline-8.3-h853b02a_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/referencing-0.37.0-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/requests-2.29.0-pyhd8ed1ab_0.conda
@@ -664,7 +669,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/26/39/9945e9df98aa5ded1bc5587ef48f45c54390fa086655799d8734b69e6b07/damnit-0.2.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a2/c4/04630d9128dbf81a40aac136f8551d7b9a386a69062c0e381523e243a729/envmodules-0.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/71/ca/9aced390acd0e749ee32248e86dee6b46f97205ee0f1382ed6f6c4945805/euxfel_bunch_pattern-0.6-py3-none-any.whl
-      - pypi: git+https://github.com/European-XFEL/extra#905a36e73753d9b3b1685481fe4368dccf97fb8a
+      - pypi: git+https://github.com/European-XFEL/extra#66b899fd061371dd379fb921405af712a78669d4
       - pypi: git+https://git.xfel.eu/dataAnalysis/extra-speckle.git?rev=dev#6dc8d85d608a3a81b3bb624854bf02ce82e36f34
       - pypi: https://files.pythonhosted.org/packages/5e/e9/63b56eee35179987723adca82a022b08b79c4faea24467e9d36eb8115f08/extra_data-1.24.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/08/1f/89f196f1b5c3640ddd9f9432f7a2f700f46905ed07ac711fa741459b2559/extra_geom-1.16.0-py3-none-any.whl
@@ -2307,9 +2312,9 @@ packages:
   sha256: aef668c6ffdde3fed00d8cd9e879d4921250c0812b5a0065a68fd150af07525c
   requires_dist:
   - numpy
-- pypi: git+https://github.com/European-XFEL/extra#905a36e73753d9b3b1685481fe4368dccf97fb8a
+- pypi: git+https://github.com/European-XFEL/extra#66b899fd061371dd379fb921405af712a78669d4
   name: euxfel-extra
-  version: 2025.1.322+905a36e
+  version: 2025.1.327+66b899f
   requires_dist:
   - damnit
   - euxfel-bunch-pattern
@@ -3563,6 +3568,38 @@ packages:
   - pkg:pypi/importlib-resources?source=hash-mapping
   size: 33781
   timestamp: 1736252433366
+- conda: https://conda.anaconda.org/conda-forge/noarch/influxdb-5.3.1-pyhd3deb0d_0.tar.bz2
+  sha256: 1e0cffb6b3dc7d9f3a7eabfa2ade09132dc9da2a8121d09d4c0d40661c56781f
+  md5: f8786014772d5f96b20b42cea10c7509
+  depends:
+  - msgpack-python
+  - python
+  - python-dateutil >=2.6.0
+  - pytz
+  - requests >=2.17.0
+  - six >=1.10.0
+  license: MIT
+  license_family: MIT
+  purls:
+  - pkg:pypi/influxdb?source=hash-mapping
+  size: 54827
+  timestamp: 1605148121210
+- conda: https://conda.anaconda.org/conda-forge/noarch/influxdb-client-1.49.0-pyhd8ed1ab_0.conda
+  sha256: 935695e02a06ca60728e360daa6134a2581400eb52dca627e4ada7f8e3b8ac06
+  md5: fb802711e6b0be990012449fc29c3a6a
+  depends:
+  - certifi >=14.05.14
+  - python >=3.9
+  - python-dateutil >=2.5.3
+  - reactivex >=4.0.4
+  - setuptools >=21.0.0
+  - urllib3 >=1.26.0
+  license: MIT
+  license_family: MIT
+  purls:
+  - pkg:pypi/influxdb-client?source=hash-mapping
+  size: 248420
+  timestamp: 1753299801424
 - conda: https://conda.anaconda.org/conda-forge/noarch/iniconfig-2.3.0-pyhd8ed1ab_0.conda
   sha256: e1a9e3b1c8fe62dc3932a616c284b5d8cbe3124bbfbedcf4ce5c828cb166ee19
   md5: 9614359868482abba1bd15ce465e3c42
@@ -7208,6 +7245,22 @@ packages:
   purls: []
   size: 3843
   timestamp: 1582593857545
+- conda: https://conda.anaconda.org/conda-forge/noarch/notebook-7.1.3-pyhd8ed1ab_0.conda
+  sha256: 8ae08577df126ee1d583dcde59708928cca04ae405b1f38610a4bd44287f0e8e
+  md5: a4b1e12d54210fa80f3eb3fc270f2480
+  depends:
+  - jupyter_server >=2.4.0,<3
+  - jupyterlab >=4.1.1,<4.2
+  - jupyterlab_server >=2.22.1,<3
+  - notebook-shim >=0.2,<0.3
+  - python >=3.8
+  - tornado >=6.2.0
+  license: BSD-3-Clause
+  license_family: BSD
+  purls:
+  - pkg:pypi/notebook?source=hash-mapping
+  size: 3968200
+  timestamp: 1713397869803
 - conda: https://conda.anaconda.org/conda-forge/noarch/notebook-shim-0.2.4-pyhd8ed1ab_1.conda
   sha256: 7b920e46b9f7a2d2aa6434222e5c8d739021dbc5cc75f32d124a8191d86f9056
   md5: e7f89ea5f7ea9401642758ff50a2d9c1
@@ -8674,6 +8727,17 @@ packages:
   - pkg:pypi/python-dateutil?source=hash-mapping
   size: 233310
   timestamp: 1751104122689
+- conda: https://conda.anaconda.org/conda-forge/noarch/python-dotenv-1.2.2-pyhcf101f3_0.conda
+  sha256: 74e417a768f59f02a242c25e7db0aa796627b5bc8c818863b57786072aeb85e5
+  md5: 130584ad9f3a513cdd71b1fdc1244e9c
+  depends:
+  - python >=3.10
+  license: BSD-3-Clause
+  license_family: BSD
+  purls:
+  - pkg:pypi/python-dotenv?source=hash-mapping
+  size: 27848
+  timestamp: 1772388605021
 - conda: https://conda.anaconda.org/conda-forge/noarch/python-fastjsonschema-2.21.2-pyhe01879c_0.conda
   sha256: df9aa74e9e28e8d1309274648aac08ec447a92512c33f61a8de0afa9ce32ebe8
   md5: 23029aae904a2ba587daba708208012f
@@ -9088,6 +9152,18 @@ packages:
   purls: []
   size: 27469
   timestamp: 1768190052132
+- conda: https://conda.anaconda.org/conda-forge/noarch/reactivex-4.1.0-pyhd8ed1ab_0.conda
+  sha256: 81cba49ee56d1ff8d439504b8f7882f564c4d161245f6fbb547de697251f62e4
+  md5: 2d83c24d6420c487351d8bd28add4af3
+  depends:
+  - python >=3.10,<4.0a0
+  - typing-extensions >=4.1.1,<5.0.0a0
+  license: MIT
+  license_family: MIT
+  purls:
+  - pkg:pypi/reactivex?source=hash-mapping
+  size: 112784
+  timestamp: 1762433736211
 - conda: https://conda.anaconda.org/conda-forge/linux-64/readline-8.3-h853b02a_0.conda
   sha256: 12ffde5a6f958e285aa22c191ca01bbd3d6e710aa852e00618fa6ddc59149002
   md5: d7d95fc8287ea7bf33e0e7116d2b95ec
