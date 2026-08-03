@@ -137,6 +137,7 @@ extra-speckle = { git = "https://git.xfel.eu/dataAnalysis/extra-speckle.git", re
 pixel-masker = { git = "https://git.xfel.eu/leonaual/pixel-masker.git" }
 fpcs = ">=1.0.0"
 geometry-powder-optimizer = { git = "ssh://git@git.xfel.eu:10022/machineLearning/geometry-powder-optimizer.git" }
+toolbox-sxp = { git = "ssh://git@git.xfel.eu:10022/sxp/toolbox.git", branch = "main" }
 
 [pypi-exclude-newer]
 extra-data = "0d"

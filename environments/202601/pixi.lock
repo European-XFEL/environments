@@ -750,6 +750,7 @@ environments:
       - pypi: git+ssh://git@git.xfel.eu:10022/dataAnalysis/karabo-bridge-recorder.git#28dd6d0db680aeeca64108e0406430b231a7c2c6
       - pypi: git+ssh://git@git.xfel.eu:10022/karaboDevices/metropc.git#196c097658417f77382ec33b658ef624ba1025ca
       - pypi: git+ssh://git@git.xfel.eu:10022/machineLearning/geometry-powder-optimizer.git#42f7d66c27c875db5a885945396f56081fcbf45f
+      - pypi: git+ssh://git@git.xfel.eu:10022/sxp/toolbox.git?branch=main#d4e3f6e5d44635de656b236fb96fb97db1505723
       - pypi: https://files.pythonhosted.org/packages/07/44/2c3ca416851a546be3a2645f21f23a8457d927c7c72b469cdb49db0ebf36/cfelpyutils-2.2.0-cp311-cp311-manylinux_2_24_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/0a/38/9d45b7fdfd325f9fa1d548863307a9d441ef1cef6d7b6277101ca59aa907/nbparameterise-0.6.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/0a/5b/285aebd28402ce25bde61aa5dde33f1c9945353490e44b307e7f72ea452f/juliapkg-0.1.19-py3-none-any.whl
@@ -785,6 +786,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/8f/e6/2b0d97991d0decdc2d22489adc85ba42d6bf4ed67bb4676488ab03609ad8/fpcs-1.0.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/94/79/b32cdfaf9c707abda9ae07a608b566ee50b675b6d90e46ccfd471dfba25a/princess-0.6-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/94/f0/1364306f2f51c3dcf6896221558b8c4f73ff724c6f48f87be9e6963e4f3f/calibration_client-11.4.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/99/43/30f2d8db076f216b15c10db663b46e22d1750b1ebacd7af6e62b83d6ab98/fastdtw-0.3.4.tar.gz
       - pypi: https://files.pythonhosted.org/packages/99/55/db07de81b5c630da5cbf5c7df646580ca26dfaefa593667fc6f2fe016d2e/tabulate-0.10.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/9a/bb/d43e5c75054e53efce310e79d63df0ac3f25e34c926be5dffb7d283fb2a8/typeguard-2.13.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/9f/fd/713452cd72343f682b1c7b9321e23829f00b842ceaedcda96e742ea0b0b3/nvidia_cudnn_cu12-9.1.0.70-py3-none-manylinux2014_x86_64.whl
@@ -6389,7 +6391,7 @@ packages:
   license: BSD-2-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/wrapt?source=compressed-mapping
+  - pkg:pypi/wrapt?source=hash-mapping
   size: 117311
   timestamp: 1779477448367
 - conda: https://conda.anaconda.org/conda-forge/linux-64/x264-1!164.3095-h166bdaf_2.tar.bz2
@@ -6921,7 +6923,7 @@ packages:
   license: PSF-2.0
   license_family: PSF
   purls:
-  - pkg:pypi/aiohappyeyeballs?source=compressed-mapping
+  - pkg:pypi/aiohappyeyeballs?source=hash-mapping
   size: 20727
   timestamp: 1779297825279
 - conda: https://conda.anaconda.org/conda-forge/noarch/aiohttp-socks-0.7.1-pyhd8ed1ab_0.conda
@@ -7126,7 +7128,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/astropy-iers-data?source=compressed-mapping
+  - pkg:pypi/astropy-iers-data?source=hash-mapping
   size: 1233982
   timestamp: 1779676762952
 - conda: https://conda.anaconda.org/conda-forge/noarch/asttokens-3.0.1-pyhd8ed1ab_0.conda
@@ -7432,7 +7434,7 @@ packages:
   - python >=3.10
   license: ISC
   purls:
-  - pkg:pypi/certifi?source=compressed-mapping
+  - pkg:pypi/certifi?source=hash-mapping
   size: 134201
   timestamp: 1779285131141
 - conda: https://conda.anaconda.org/conda-forge/noarch/certipy-0.2.3-pyhcf101f3_0.conda
@@ -7495,7 +7497,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/click?source=compressed-mapping
+  - pkg:pypi/click?source=hash-mapping
   size: 104631
   timestamp: 1779108494556
 - conda: https://conda.anaconda.org/conda-forge/noarch/click-plugins-1.1.1.2-pyhd8ed1ab_0.conda
@@ -7712,7 +7714,7 @@ packages:
   license: BSD-2-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/decorator?source=compressed-mapping
+  - pkg:pypi/decorator?source=hash-mapping
   size: 16102
   timestamp: 1779115228886
 - conda: https://conda.anaconda.org/conda-forge/noarch/defusedxml-0.7.1-pyhd8ed1ab_0.tar.bz2
@@ -8249,7 +8251,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/idna?source=compressed-mapping
+  - pkg:pypi/idna?source=hash-mapping
   size: 62642
   timestamp: 1779294335905
 - conda: https://conda.anaconda.org/conda-forge/noarch/imageio-2.37.0-pyhfb79c49_0.conda
@@ -8286,7 +8288,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/importlib-metadata?source=compressed-mapping
+  - pkg:pypi/importlib-metadata?source=hash-mapping
   size: 34766
   timestamp: 1779714582554
 - conda: https://conda.anaconda.org/conda-forge/noarch/importlib_metadata-9.0.0-h71f4f89_0.conda
@@ -8296,8 +8298,7 @@ packages:
   - importlib-metadata ==9.0.0 pyhcf101f3_0
   license: Apache-2.0
   license_family: APACHE
-  purls:
-  - pkg:pypi/importlib-metadata?source=compressed-mapping
+  purls: []
   size: 21465
   timestamp: 1779714582554
 - conda: https://conda.anaconda.org/conda-forge/noarch/importlib_resources-7.1.0-pyhd8ed1ab_0.conda
@@ -9229,7 +9230,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/mdit-py-plugins?source=compressed-mapping
+  - pkg:pypi/mdit-py-plugins?source=hash-mapping
   size: 50460
   timestamp: 1778692223625
 - conda: https://conda.anaconda.org/conda-forge/noarch/mdurl-0.1.2-pyhd8ed1ab_1.conda
@@ -9336,7 +9337,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/narwhals?source=compressed-mapping
+  - pkg:pypi/narwhals?source=hash-mapping
   size: 284323
   timestamp: 1778929680962
 - conda: https://conda.anaconda.org/conda-forge/noarch/natsort-8.4.0-pyhcf101f3_2.conda
@@ -9665,7 +9666,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/param?source=compressed-mapping
+  - pkg:pypi/param?source=hash-mapping
   size: 192480
   timestamp: 1779371605272
 - conda: https://conda.anaconda.org/conda-forge/noarch/parso-0.8.7-pyhcf101f3_0.conda
@@ -9989,7 +9990,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/pycparser?source=compressed-mapping
+  - pkg:pypi/pycparser?source=hash-mapping
   size: 55886
   timestamp: 1779293633166
 - conda: https://conda.anaconda.org/conda-forge/noarch/pyct-0.6.0-pyhd8ed1ab_0.conda
@@ -10755,7 +10756,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/setuptools-scm?source=compressed-mapping
+  - pkg:pypi/setuptools-scm?source=hash-mapping
   size: 24728
   timestamp: 1779446434662
 - conda: https://conda.anaconda.org/conda-forge/noarch/silx-3.0.1-pyh453e35e_0.conda
@@ -10871,7 +10872,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/soupsieve?source=compressed-mapping
+  - pkg:pypi/soupsieve?source=hash-mapping
   size: 38802
   timestamp: 1779635534390
 - conda: https://conda.anaconda.org/conda-forge/noarch/sphinx-7.3.7-pyhd8ed1ab_0.conda
@@ -11701,6 +11702,25 @@ packages:
   - flask ; extra == 'web'
   - requests ; extra == 'web'
   requires_python: '>=3.7'
+- pypi: git+ssh://git@git.xfel.eu:10022/sxp/toolbox.git?branch=main#d4e3f6e5d44635de656b236fb96fb97db1505723
+  name: toolbox-sxp
+  version: 0.1.0
+  requires_dist:
+  - euxfel-extra>=2024.1.2
+  - extra-data>=1.18.0,<2.0.0
+  - fastdtw>=0.3.4,<0.4.0
+  - ipympl>=0.9.4
+  - ipywidgets>=8.1.5
+  - lmfit>=1.3.2,<2.0.0
+  - matplotlib>=3.8.2
+  - nbparameterise>=0.6,<0.7
+  - numba>=0.60.0
+  - numpy>=1.21,<2
+  - polars>=1.9.0,<2.0.0
+  - pyarrow>=17.0.0
+  - scipy>=1.13.0,<2.0.0
+  - xarray>=2024.7.0
+  requires_python: '>=3.10,<3.14'
 - pypi: https://files.pythonhosted.org/packages/07/44/2c3ca416851a546be3a2645f21f23a8457d927c7c72b469cdb49db0ebf36/cfelpyutils-2.2.0-cp311-cp311-manylinux_2_24_x86_64.whl
   name: cfelpyutils
   version: 2.2.0
@@ -12272,6 +12292,12 @@ packages:
   - python-dateutil ; extra == 'test'
   - pytz ; extra == 'test'
   requires_python: '>=3.7'
+- pypi: https://files.pythonhosted.org/packages/99/43/30f2d8db076f216b15c10db663b46e22d1750b1ebacd7af6e62b83d6ab98/fastdtw-0.3.4.tar.gz
+  name: fastdtw
+  version: 0.3.4
+  sha256: 2350fa6ec36bcad186eaf81f46eff35181baf04e324f522de8aeb43d0243f64f
+  requires_dist:
+  - numpy
 - pypi: https://files.pythonhosted.org/packages/99/55/db07de81b5c630da5cbf5c7df646580ca26dfaefa593667fc6f2fe016d2e/tabulate-0.10.0-py3-none-any.whl
   name: tabulate
   version: 0.10.0
