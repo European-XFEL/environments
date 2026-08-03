@@ -547,6 +547,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/jupyterlab_widgets-3.0.13-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/kafka-python-ng-2.2.2-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/keyring-25.6.0-pyha804496_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/laserbeamsize-2.4.1-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/lazy-loader-0.4-pyhd8ed1ab_2.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/linkify-it-py-2.0.3-pyhd8ed1ab_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/lmfit-1.3.3-pyhd8ed1ab_0.conda
@@ -729,13 +730,15 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/zict-3.0.0-pyhd8ed1ab_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/zipp-3.23.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/zulip-0.9.0-pyhd8ed1ab_0.conda
+      - pypi: git+https://git.xfel.eu/dataAnalysis/exdf-tools.git#6119fdaffba40f9f633ac2518a02a149acffb74b
       - pypi: git+https://git.xfel.eu/dataAnalysis/extra-speckle.git?branch=dev#e0914a07a4b8f8033e5a0e9d8525aad246d0dd4e
       - pypi: git+https://git.xfel.eu/dataAnalysis/findxfel.git#5e528b917f037101e3bf407914a326f1e0763981
       - pypi: git+https://git.xfel.eu/leonaual/pixel-masker.git#8863125fa7dd6d5a2b990f31705f591a6557e657
-      - pypi: git+https://github.com/European-XFEL/extra#04f52d2217bad5392a9dd68ff1f01d51588d5047
+      - pypi: git+https://github.com/European-XFEL/extra#e84e4c18607e44ac4e218b151854ef088a04d3a4
       - pypi: git+ssh://git@git.xfel.eu:10022/dataAnalysis/karabo-bridge-recorder.git#28dd6d0db680aeeca64108e0406430b231a7c2c6
       - pypi: git+ssh://git@git.xfel.eu:10022/karaboDevices/metropc.git#196c097658417f77382ec33b658ef624ba1025ca
       - pypi: git+ssh://git@git.xfel.eu:10022/machineLearning/geometry-powder-optimizer.git#42f7d66c27c875db5a885945396f56081fcbf45f
+      - pypi: git+ssh://git@git.xfel.eu:10022/sxp/toolbox.git?branch=main#d4e3f6e5d44635de656b236fb96fb97db1505723
       - pypi: https://files.pythonhosted.org/packages/07/44/2c3ca416851a546be3a2645f21f23a8457d927c7c72b469cdb49db0ebf36/cfelpyutils-2.2.0-cp311-cp311-manylinux_2_24_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/0a/38/9d45b7fdfd325f9fa1d548863307a9d441ef1cef6d7b6277101ca59aa907/nbparameterise-0.6.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/0d/95/a1bfcba09892f85c556a8c2b74bb224f4fecedf1489ece6b5eac03bb531b/zlib_into-0.4-cp311-cp311-manylinux1_x86_64.manylinux_2_34_x86_64.manylinux_2_5_x86_64.whl
@@ -768,6 +771,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/8f/e6/2b0d97991d0decdc2d22489adc85ba42d6bf4ed67bb4676488ab03609ad8/fpcs-1.0.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/94/79/b32cdfaf9c707abda9ae07a608b566ee50b675b6d90e46ccfd471dfba25a/princess-0.6-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/94/f0/1364306f2f51c3dcf6896221558b8c4f73ff724c6f48f87be9e6963e4f3f/calibration_client-11.4.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/99/43/30f2d8db076f216b15c10db663b46e22d1750b1ebacd7af6e62b83d6ab98/fastdtw-0.3.4.tar.gz
       - pypi: https://files.pythonhosted.org/packages/a2/09/77d55d46fd61b4a135c444fc97158ef34a095e5681d0a6c10b75bf356191/sympy-1.14.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a2/c4/04630d9128dbf81a40aac136f8551d7b9a386a69062c0e381523e243a729/envmodules-0.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a3/22/0b4b932655d17a6da1b92fa92ab12844b053bb2ac2475e179ba6f043da1e/nvidia_cudnn_cu13-9.19.0.56-py3-none-manylinux_2_27_x86_64.whl
@@ -1260,7 +1264,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/brotli?source=compressed-mapping
+  - pkg:pypi/brotli?source=hash-mapping
   size: 350166
   timestamp: 1749230304421
 - conda: https://conda.anaconda.org/conda-forge/linux-64/brunsli-0.1-h9c3ff4c_0.tar.bz2
@@ -4658,7 +4662,7 @@ packages:
   - __glibc >=2.17
   license: Apache-2.0
   purls:
-  - pkg:pypi/orjson?source=compressed-mapping
+  - pkg:pypi/orjson?source=hash-mapping
   size: 331416
   timestamp: 1752631197367
 - conda: https://conda.anaconda.org/conda-forge/linux-64/osqp-1.1.1-np2py311h912ec1f_0.conda
@@ -6800,7 +6804,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/argon2-cffi?source=compressed-mapping
+  - pkg:pypi/argon2-cffi?source=hash-mapping
   size: 18715
   timestamp: 1749017288144
 - conda: https://conda.anaconda.org/conda-forge/noarch/arrow-1.3.0-pyhd8ed1ab_1.conda
@@ -6969,7 +6973,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/babel?source=compressed-mapping
+  - pkg:pypi/babel?source=hash-mapping
   size: 6938256
   timestamp: 1738490268466
 - conda: https://conda.anaconda.org/conda-forge/noarch/backports-1.0-pyhd8ed1ab_5.conda
@@ -7004,7 +7008,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/beautifulsoup4?source=compressed-mapping
+  - pkg:pypi/beautifulsoup4?source=hash-mapping
   size: 146613
   timestamp: 1744783307123
 - conda: https://conda.anaconda.org/conda-forge/noarch/binaryornot-0.4.4-pyhd8ed1ab_2.conda
@@ -7232,7 +7236,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/click-plugins?source=compressed-mapping
+  - pkg:pypi/click-plugins?source=hash-mapping
   size: 12683
   timestamp: 1750848314962
 - conda: https://conda.anaconda.org/conda-forge/noarch/cligj-0.7.2-pyhd8ed1ab_2.conda
@@ -7432,7 +7436,7 @@ packages:
   license: BSD-2-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/decorator?source=compressed-mapping
+  - pkg:pypi/decorator?source=hash-mapping
   size: 14129
   timestamp: 1740385067843
 - conda: https://conda.anaconda.org/conda-forge/noarch/defusedxml-0.7.1-pyhd8ed1ab_0.tar.bz2
@@ -7574,7 +7578,7 @@ packages:
   - typing_extensions >=4.6.0
   license: MIT and PSF-2.0
   purls:
-  - pkg:pypi/exceptiongroup?source=compressed-mapping
+  - pkg:pypi/exceptiongroup?source=hash-mapping
   size: 21284
   timestamp: 1746947398083
 - conda: https://conda.anaconda.org/conda-forge/noarch/executing-2.2.0-pyhd8ed1ab_0.conda
@@ -7853,7 +7857,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/holoviews?source=compressed-mapping
+  - pkg:pypi/holoviews?source=hash-mapping
   size: 4855480
   timestamp: 1750846712775
 - conda: https://conda.anaconda.org/conda-forge/noarch/hpack-4.1.0-pyhd8ed1ab_0.conda
@@ -8281,7 +8285,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/jinja2?source=compressed-mapping
+  - pkg:pypi/jinja2?source=hash-mapping
   size: 112714
   timestamp: 1741263433881
 - conda: https://conda.anaconda.org/conda-forge/noarch/jmespath-1.0.1-pyhd8ed1ab_1.conda
@@ -8750,6 +8754,21 @@ packages:
   - pkg:pypi/keyring?source=hash-mapping
   size: 36985
   timestamp: 1735210286595
+- conda: https://conda.anaconda.org/conda-forge/noarch/laserbeamsize-2.4.1-pyhd8ed1ab_0.conda
+  sha256: 0d6810948a21f5bed15ec0fa9f8754e47ef9b52dfc53cedeb237fb545052a2c6
+  md5: 33c3c040572388efd209a4390082b177
+  depends:
+  - matplotlib-base
+  - numpy
+  - python >=3.10
+  - scipy
+  license: MIT
+  license_family: MIT
+  purls:
+  - pkg:pypi/laserbeamsize?source=hash-mapping
+  run_exports: {}
+  size: 40753
+  timestamp: 1773758779361
 - conda: https://conda.anaconda.org/conda-forge/noarch/lazy-loader-0.4-pyhd8ed1ab_2.conda
   sha256: d7ea986507090fff801604867ef8e79c8fda8ec21314ba27c032ab18df9c3411
   md5: d10d9393680734a8febc4b362a4c94f2
@@ -8991,7 +9010,7 @@ packages:
   license: Apache-2.0
   license_family: Apache
   purls:
-  - pkg:pypi/munkres?source=compressed-mapping
+  - pkg:pypi/munkres?source=hash-mapping
   size: 15851
   timestamp: 1749895533014
 - conda: https://conda.anaconda.org/conda-forge/noarch/mypy_extensions-1.1.0-pyha770c72_0.conda
@@ -9013,7 +9032,7 @@ packages:
   - python
   license: MIT
   purls:
-  - pkg:pypi/narwhals?source=compressed-mapping
+  - pkg:pypi/narwhals?source=hash-mapping
   size: 284323
   timestamp: 1778929680962
 - conda: https://conda.anaconda.org/conda-forge/noarch/natsort-8.4.0-pyh29332c3_1.conda
@@ -9245,7 +9264,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/packaging?source=compressed-mapping
+  - pkg:pypi/packaging?source=hash-mapping
   size: 62477
   timestamp: 1745345660407
 - conda: https://conda.anaconda.org/conda-forge/noarch/pamela-1.2.0-pyhd8ed1ab_1.conda
@@ -9383,7 +9402,7 @@ packages:
   - python >=3.9
   license: ISC
   purls:
-  - pkg:pypi/pexpect?source=compressed-mapping
+  - pkg:pypi/pexpect?source=hash-mapping
   size: 53561
   timestamp: 1733302019362
 - conda: https://conda.anaconda.org/conda-forge/noarch/pickleshare-0.7.5-pyhd8ed1ab_1004.conda
@@ -9438,7 +9457,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/pip?source=compressed-mapping
+  - pkg:pypi/pip?source=hash-mapping
   size: 1181790
   timestamp: 1770270305795
 - conda: https://conda.anaconda.org/conda-forge/noarch/pkgutil-resolve-name-1.3.10-pyhd8ed1ab_2.conda
@@ -9486,7 +9505,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/pluggy?source=compressed-mapping
+  - pkg:pypi/pluggy?source=hash-mapping
   size: 24246
   timestamp: 1747339794916
 - conda: https://conda.anaconda.org/conda-forge/noarch/ply-3.11-pyhd8ed1ab_3.conda
@@ -9532,8 +9551,7 @@ packages:
   - prompt-toolkit >=3.0.51,<3.0.52.0a0
   license: BSD-3-Clause
   license_family: BSD
-  purls:
-  - pkg:pypi/prompt-toolkit?source=compressed-mapping
+  purls: []
   size: 7182
   timestamp: 1744724189376
 - conda: https://conda.anaconda.org/conda-forge/noarch/ptyprocess-0.7.0-pyhd8ed1ab_1.conda
@@ -9681,7 +9699,7 @@ packages:
   license: BSD-2-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/pygments?source=compressed-mapping
+  - pkg:pypi/pygments?source=hash-mapping
   size: 889287
   timestamp: 1750615908735
 - conda: https://conda.anaconda.org/conda-forge/noarch/pyjwt-2.10.1-pyhd8ed1ab_0.conda
@@ -9999,7 +10017,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/tzdata?source=compressed-mapping
+  - pkg:pypi/tzdata?source=hash-mapping
   size: 144160
   timestamp: 1742745254292
 - conda: https://conda.anaconda.org/conda-forge/noarch/python_abi-3.11-7_cp311.conda
@@ -10595,7 +10613,7 @@ packages:
   license: BSD-2-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/tblib?source=compressed-mapping
+  - pkg:pypi/tblib?source=hash-mapping
   size: 17914
   timestamp: 1743515657639
 - conda: https://conda.anaconda.org/conda-forge/noarch/tenacity-9.1.2-pyhd8ed1ab_0.conda
@@ -10725,7 +10743,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/tomlkit?source=compressed-mapping
+  - pkg:pypi/tomlkit?source=hash-mapping
   size: 38777
   timestamp: 1749127286558
 - conda: https://conda.anaconda.org/conda-forge/noarch/toolz-1.0.0-pyhd8ed1ab_1.conda
@@ -11123,6 +11141,19 @@ packages:
   - pkg:pypi/zulip?source=hash-mapping
   size: 125956
   timestamp: 1702057783975
+- pypi: git+https://git.xfel.eu/dataAnalysis/exdf-tools.git#6119fdaffba40f9f633ac2518a02a149acffb74b
+  name: exdf-tools
+  version: 1.0.0
+  requires_dist:
+  - extra-data>=1.13
+  - pasha
+  - tqdm
+  - zlib-into>=0.4
+  - packaging
+  - h5py
+  - uniplot ; extra == 'glance'
+  - pytest ; extra == 'test'
+  requires_python: '>=3.9'
 - pypi: git+https://git.xfel.eu/dataAnalysis/extra-speckle.git?branch=dev#e0914a07a4b8f8033e5a0e9d8525aad246d0dd4e
   name: extra-speckle
   version: '0.2'
@@ -11157,9 +11188,9 @@ packages:
   - numpy
   - packaging
   - extra-geom
-- pypi: git+https://github.com/European-XFEL/extra#04f52d2217bad5392a9dd68ff1f01d51588d5047
+- pypi: git+https://github.com/European-XFEL/extra#e84e4c18607e44ac4e218b151854ef088a04d3a4
   name: euxfel-extra
-  version: 2025.1.375+04f52d2
+  version: 2025.1.393+e84e4c1
   requires_dist:
   - damnit
   - euxfel-bunch-pattern
@@ -11244,6 +11275,25 @@ packages:
   - flask ; extra == 'web'
   - requests ; extra == 'web'
   requires_python: '>=3.7'
+- pypi: git+ssh://git@git.xfel.eu:10022/sxp/toolbox.git?branch=main#d4e3f6e5d44635de656b236fb96fb97db1505723
+  name: toolbox-sxp
+  version: 0.1.0
+  requires_dist:
+  - euxfel-extra>=2024.1.2
+  - extra-data>=1.18.0,<2.0.0
+  - fastdtw>=0.3.4,<0.4.0
+  - ipympl>=0.9.4
+  - ipywidgets>=8.1.5
+  - lmfit>=1.3.2,<2.0.0
+  - matplotlib>=3.8.2
+  - nbparameterise>=0.6,<0.7
+  - numba>=0.60.0
+  - numpy>=1.21,<2
+  - polars>=1.9.0,<2.0.0
+  - pyarrow>=17.0.0
+  - scipy>=1.13.0,<2.0.0
+  - xarray>=2024.7.0
+  requires_python: '>=3.10,<3.14'
 - pypi: https://files.pythonhosted.org/packages/07/44/2c3ca416851a546be3a2645f21f23a8457d927c7c72b469cdb49db0ebf36/cfelpyutils-2.2.0-cp311-cp311-manylinux_2_24_x86_64.whl
   name: cfelpyutils
   version: 2.2.0
@@ -11842,6 +11892,12 @@ packages:
   - python-dateutil ; extra == 'test'
   - pytz ; extra == 'test'
   requires_python: '>=3.7'
+- pypi: https://files.pythonhosted.org/packages/99/43/30f2d8db076f216b15c10db663b46e22d1750b1ebacd7af6e62b83d6ab98/fastdtw-0.3.4.tar.gz
+  name: fastdtw
+  version: 0.3.4
+  sha256: 2350fa6ec36bcad186eaf81f46eff35181baf04e324f522de8aeb43d0243f64f
+  requires_dist:
+  - numpy
 - pypi: https://files.pythonhosted.org/packages/a2/09/77d55d46fd61b4a135c444fc97158ef34a095e5681d0a6c10b75bf356191/sympy-1.14.0-py3-none-any.whl
   name: sympy
   version: 1.14.0

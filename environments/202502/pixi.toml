@@ -107,6 +107,7 @@ uv = ">=0.9.10,<0.10"
 supervisor = ">=4.2.5,<5"
 pip = ">=26.0.1,<27"
 altair = ">=6.1.0,<7"
+laserbeamsize = ">=2.4.1,<3"
 
 [pypi-dependencies]
 extra-data = { version = ">=1.24.0, <2", extras = ["complete"] }
@@ -137,6 +138,8 @@ pixel-masker = { git = "https://git.xfel.eu/leonaual/pixel-masker.git" }
 fpcs = ">=1.0.0"
 geometry-powder-optimizer = { git = "ssh://git@git.xfel.eu:10022/machineLearning/geometry-powder-optimizer.git" }
 extra-speckle = { git = "https://git.xfel.eu/dataAnalysis/extra-speckle.git", branch = "dev" }
+toolbox-sxp = { git = "ssh://git@git.xfel.eu:10022/sxp/toolbox.git", branch = "main" }
+exdf-tools = { git = "https://git.xfel.eu/dataAnalysis/exdf-tools.git" }
 
 [pypi-exclude-newer]
 extra-data = "0d"
