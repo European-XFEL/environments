@@ -1,0 +1,144 @@
+[workspace]
+authors = ["Robert Rosca <32569096+RobertRosca@users.noreply.github.com>"]
+channels = ["conda-forge"]
+name = "202602"
+platforms = ["linux-64"]
+version = "0.1.0"
+exclude-newer = "7d"
+
+[tasks]
+
+[dependencies]
+python = "3.13.*"
+
+# These packages are pinned to match the version in DESY's Python 3.13 environment,
+# the default used to run Jupyter servers in max-jhub as of August 2026.
+ipykernel = { version="==6.31.0", build="pyha191276_0" }
+ipympl = { version="==0.10.0", build="pyhcf101f3_0" }
+ipython = { version="==9.13.0", build="pyh53cf698_0" }
+ipyvue = { version="==1.12.0", build="pyhd8ed1ab_0" }
+ipyvuetify = { version="==1.11.3", build="pyhd8ed1ab_0" }
+ipywidgets = {  version="==8.1.8", build="pyhd8ed1ab_0" }
+jupyter-lsp = { version="==2.3.1", build="pyhcf101f3_0" }
+jupyter-resource-usage = { version="==1.2.1", build="pyhd8ed1ab_0" }
+jupyter-server-mathjax = { version="==0.2.6", build="pyhbbac1ac_2" }
+jupyter-server-proxy = { version="==4.5.0", build="pyhcf101f3_1" }
+jupyter_client = { version="==8.8.0", build="pyhcf101f3_0" }
+jupyter_console = { version="==6.6.3", build="pyhd8ed1ab_1" }
+jupyter_core = { version="==5.9.1", build="pyhc90fa1f_0" }
+jupyter_events = { version="==0.12.1", build="pyhcf101f3_0" }
+jupyter_server = { version="==2.18.2", build="pyhcf101f3_0" }
+jupyter_server_terminals = { version="==0.5.4", build="pyhcf101f3_0" }
+jupyterhub = { version="==5.4.6", build="hf97e4f3_0" }
+jupyterhub-base = { version="==5.4.6", build="pyhc90fa1f_0" }
+jupyterlab-git = { version="==0.53.0", build="pyh118db6a_0" }
+jupyterlab-git-core = { version="==0.53.0", build="pyhcf101f3_0" }
+jupyterlab-h5web = { version="==12.8.0", build="pyhd8ed1ab_0" }
+jupyterlab-lsp = { version="==5.3.0", build="pyhcf101f3_0" }
+jupyterlab_code_formatter = { version="==3.0.3", build="pyhd8ed1ab_0" }
+jupyterlab_pygments = { version="==0.3.0", build="pyhd8ed1ab_2" }
+jupyterlab_widgets = { version="==3.0.16", build="pyhcf101f3_1" }
+matplotlib = { version="==3.10.9", build="py313h78bf25f_0" }
+matplotlib-base = { version="==3.10.9", build="py313h683a580_0" }
+matplotlib-inline = { version="==0.2.2", build="pyhd8ed1ab_0" }
+
+altair = { version = "*" }
+astropy = { version = "*" }
+bokeh = { version = "*" }
+curl = { version = "*" }
+cvxpy = { version = "*" }
+cython = { version = "*" }
+dask = { version = "*" }
+dask-jobqueue = { version = "*" }
+dask-labextension = { version = "*" }
+datashader = { version = "*" }
+fabio = { version = "*" }
+fast-histogram = { version = "*" }
+fftw = { version = "*" }
+h5glance = { version = ">=0.8.1" }
+h5netcdf = { version = "*" }
+h5py = { version = "*" }
+hvplot = { version = "*" }
+imageio = { version = "*" }
+iminuit = { version = "*" }
+kafka-python-ng = { version = "*" }
+lmfit = { version = "*" }
+msgpack-numpy = { version = "*" }
+msgpack-python = { version = "*" }
+natsort = { version = "*" }
+netcdf4 = { version = "*" }
+numba = { version = "*" }
+numpy = { version = "*" }
+opencv = { version = "*" }
+papermill = { version = "*" }
+pint = { version = "*" }
+pint-xarray = { version = "*" }
+plotly = { version = "*" }
+polars = { version = "*" }
+pyabel = { version = "*" }
+pybaselines = { version = "*" }
+pyfai = { version = "*" }
+pyhdf = { version = "*" }
+pyopengl = { version = "*" }
+pyqtgraph = { version = "*" }
+pytables = { version = "*" }
+pytest = { version = "*" }
+python-kaleido = { version = "==1.3.0" } #">=1.0.0,<2"
+pywavelets = { version = "*" }
+pyzmq = { version = "*" }
+rasterio = { version = "*" }
+scienceplots = { version = "*" }
+scikit-beam = { version = "*" }
+scikit-image = { version = "*" }
+scikit-learn = { version = "*" }
+scipy = { version = "*" }
+seaborn = { version = "*" }
+shapely = { version = "*" }
+silx = { version = "*" }
+spyder = { version = "*" }
+sympy = { version = "*" }
+umap-learn = { version = "*" }
+xarray = { version = "*" }
+xraydb = { version = "*" }
+xraylib = { version = "*" }
+xrayutilities = { version = "*" }
+zarr = { version = "*" }
+zulip = { version = "*" }
+requests = { version = "<2.30" }
+uv = "*"
+pip = "*"
+
+[pypi-dependencies]
+extra-data = { version = ">=1.24.0, <2", extras = ["complete"] }
+extra-geom = ">=1.17.0, <2"
+calibration-client = ">=11.4.0, <12"
+princess = ">=0.6, <0.7"
+pasha = ">=0.1.2, <0.2"
+zlib-into = ">=0.4, <0.5"
+line-profiler = "*"
+hdf5-vds-check = "*"
+damnit = "*"
+extra-proposal = ">=0.1, <0.2"
+euxfel-extra = { git = "https://github.com/European-XFEL/extra" }
+findxfel = { git = "https://git.xfel.eu/dataAnalysis/findxfel.git" }
+karabo-proxy = ">=1.0.4, <2"
+condat-gridconv = ">=0.2.1, <0.3"
+envmodules = "*"
+euxfel-bunch-pattern = ">=0.6, <0.7"
+karabo-bridge = ">=0.7.0, <0.8"
+karabo-bridge-recorder = { git = "ssh://git@git.xfel.eu:10022/dataAnalysis/karabo-bridge-recorder.git" }
+matplotlib-scalebar = ">=0.9.0, <0.10"
+metadata-client = ">=4.1.2, <5"
+metropc = { git = "ssh://git@git.xfel.eu:10022/karaboDevices/metropc.git" }
+nbclick = ">=0.4.1, <0.5"
+juliacall = ">=0.9.28, <0.10"
+extra-speckle = { git = "https://git.xfel.eu/dataAnalysis/extra-speckle.git", rev = "dev" }
+pixel-masker = { git = "https://git.xfel.eu/leonaual/pixel-masker.git" }
+fpcs = ">=1.0.0"
+geometry-powder-optimizer = { git = "ssh://git@git.xfel.eu:10022/machineLearning/geometry-powder-optimizer.git" }
+# Using a branch to get around numpy <2 restriction, switch back to main once ready
+toolbox-sxp = { git = "ssh://git@git.xfel.eu:10022/kluyvert/toolbox-sxp.git", branch = "kluyvert-main-patch-48513" }
+
+[pypi-exclude-newer]
+extra-data = "0d"
+extra-geom = "0d"
