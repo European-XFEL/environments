@@ -760,13 +760,14 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/zict-3.0.0-pyhd8ed1ab_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/zipp-4.1.0-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/zulip-0.9.0-pyhd8ed1ab_0.conda
+      - pypi: git+https://git.xfel.eu/dataAnalysis/exdf-tools.git#1ab4cba2be31b47074a2ae74d70bcaf53f364798
       - pypi: git+https://git.xfel.eu/dataAnalysis/extra-speckle.git?rev=dev#e43302d8c9f46710fbe7f7661f2435d417fb476b
       - pypi: git+https://git.xfel.eu/dataAnalysis/findxfel.git#54c1b31f58a66f8448ec69932cc1c424859ef51a
       - pypi: git+https://git.xfel.eu/leonaual/pixel-masker.git#8863125fa7dd6d5a2b990f31705f591a6557e657
       - pypi: git+https://github.com/European-XFEL/extra#685066d2b05937cbc3af7644206b3cb006f21188
+      - pypi: git+ssh://git@git.xfel.eu:10022/SXP/toolbox.git#72c1802a09f7d61a88def40b4b21dcc4e33d1972
       - pypi: git+ssh://git@git.xfel.eu:10022/dataAnalysis/karabo-bridge-recorder.git#28dd6d0db680aeeca64108e0406430b231a7c2c6
       - pypi: git+ssh://git@git.xfel.eu:10022/karaboDevices/metropc.git#6e2be363d836d01b83885a0fd64ab878f53d975e
-      - pypi: git+ssh://git@git.xfel.eu:10022/kluyvert/toolbox-sxp.git?branch=kluyvert-main-patch-48513#175be106602cb87744158b8b1fe2b9fae4fc1fbd
       - pypi: git+ssh://git@git.xfel.eu:10022/machineLearning/geometry-powder-optimizer.git#42f7d66c27c875db5a885945396f56081fcbf45f
       - pypi: https://files.pythonhosted.org/packages/07/42/2c3ac59253ae8892b6f307875263dd23dc875cdf732d3aea40d6d41fb7cb/triton-3.7.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/0a/38/9d45b7fdfd325f9fa1d548863307a9d441ef1cef6d7b6277101ca59aa907/nbparameterise-0.6.1-py3-none-any.whl
@@ -13198,6 +13199,19 @@ packages:
   run_exports: {}
   size: 125956
   timestamp: 1702057783975
+- pypi: git+https://git.xfel.eu/dataAnalysis/exdf-tools.git#1ab4cba2be31b47074a2ae74d70bcaf53f364798
+  name: exdf-tools
+  version: 1.0.0
+  requires_dist:
+  - extra-data>=1.13
+  - pasha
+  - tqdm
+  - zlib-into>=0.4
+  - packaging
+  - h5py
+  - uniplot ; extra == 'glance'
+  - pytest ; extra == 'test'
+  requires_python: '>=3.9'
 - pypi: git+https://git.xfel.eu/dataAnalysis/extra-speckle.git?rev=dev#e43302d8c9f46710fbe7f7661f2435d417fb476b
   name: extra-speckle
   version: '0.2'
@@ -13265,6 +13279,25 @@ packages:
   - pygments ; extra == 'docs'
   - pymdown-extensions ; extra == 'docs'
   requires_python: '>=3.11'
+- pypi: git+ssh://git@git.xfel.eu:10022/SXP/toolbox.git#72c1802a09f7d61a88def40b4b21dcc4e33d1972
+  name: toolbox-sxp
+  version: 0.1.0
+  requires_dist:
+  - euxfel-extra>=2024.1.2
+  - extra-data>=1.18.0,<2.0.0
+  - fastdtw>=0.3.4,<0.4.0
+  - ipympl>=0.9.4
+  - ipywidgets>=8.1.5
+  - lmfit>=1.3.2,<2.0.0
+  - matplotlib>=3.8.2
+  - nbparameterise>=0.6,<0.7
+  - numba>=0.60.0
+  - numpy>=1.21
+  - polars>=1.9.0,<2.0.0
+  - pyarrow>=17.0.0
+  - scipy>=1.13.0,<2.0.0
+  - xarray>=2024.7.0
+  requires_python: '>=3.10,<3.14'
 - pypi: git+ssh://git@git.xfel.eu:10022/dataAnalysis/karabo-bridge-recorder.git#28dd6d0db680aeeca64108e0406430b231a7c2c6
   name: karabo-bridge-recorder
   version: '0.4'
@@ -13288,25 +13321,6 @@ packages:
   - pyyaml ; extra == 'euxfel-cli'
   - psutil ; extra == 'euxfel-cli'
   requires_python: '>=3.6'
-- pypi: git+ssh://git@git.xfel.eu:10022/kluyvert/toolbox-sxp.git?branch=kluyvert-main-patch-48513#175be106602cb87744158b8b1fe2b9fae4fc1fbd
-  name: toolbox-sxp
-  version: 0.1.0
-  requires_dist:
-  - euxfel-extra>=2024.1.2
-  - extra-data>=1.18.0,<2.0.0
-  - fastdtw>=0.3.4,<0.4.0
-  - ipympl>=0.9.4
-  - ipywidgets>=8.1.5
-  - lmfit>=1.3.2,<2.0.0
-  - matplotlib>=3.8.2
-  - nbparameterise>=0.6,<0.7
-  - numba>=0.60.0
-  - numpy>=1.21
-  - polars>=1.9.0,<2.0.0
-  - pyarrow>=17.0.0
-  - scipy>=1.13.0,<2.0.0
-  - xarray>=2024.7.0
-  requires_python: '>=3.10,<3.14'
 - pypi: git+ssh://git@git.xfel.eu:10022/machineLearning/geometry-powder-optimizer.git#42f7d66c27c875db5a885945396f56081fcbf45f
   name: geometry-powder-optimizer
   version: 1.0.1.dev58+g42f7d66c2

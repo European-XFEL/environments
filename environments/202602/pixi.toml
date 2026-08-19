@@ -136,8 +136,8 @@ extra-speckle = { git = "https://git.xfel.eu/dataAnalysis/extra-speckle.git", re
 pixel-masker = { git = "https://git.xfel.eu/leonaual/pixel-masker.git" }
 fpcs = ">=1.0.0"
 geometry-powder-optimizer = { git = "ssh://git@git.xfel.eu:10022/machineLearning/geometry-powder-optimizer.git" }
-# Using a branch to get around numpy <2 restriction, switch back to main once ready
-toolbox-sxp = { git = "ssh://git@git.xfel.eu:10022/kluyvert/toolbox-sxp.git", branch = "kluyvert-main-patch-48513" }
+toolbox-sxp = { git = "ssh://git@git.xfel.eu:10022/SXP/toolbox.git" }
+exdf-tools = { git = "https://git.xfel.eu/dataAnalysis/exdf-tools.git" }
 
 [pypi-exclude-newer]
 extra-data = "0d"
