@@ -760,12 +760,11 @@ environments:
       - pypi: git+https://git.xfel.eu/dataAnalysis/findxfel.git#54c1b31f58a66f8448ec69932cc1c424859ef51a
       - pypi: git+https://git.xfel.eu/leonaual/pixel-masker.git#8863125fa7dd6d5a2b990f31705f591a6557e657
       - pypi: git+https://github.com/European-XFEL/extra#469529fed5b80a28d5af31a31b17c2151c90b5c6
-      - pypi: git+ssh://git@git.xfel.eu:10022/SXP/toolbox.git#72c1802a09f7d61a88def40b4b21dcc4e33d1972
+      - pypi: git+ssh://git@git.xfel.eu:10022/SXP/toolbox.git#c3abe08e6f08b798f2627b0800f082dd374a1d64
       - pypi: git+ssh://git@git.xfel.eu:10022/dataAnalysis/karabo-bridge-recorder.git#28dd6d0db680aeeca64108e0406430b231a7c2c6
       - pypi: git+ssh://git@git.xfel.eu:10022/karaboDevices/metropc.git#6e2be363d836d01b83885a0fd64ab878f53d975e
       - pypi: git+ssh://git@git.xfel.eu:10022/machineLearning/geometry-powder-optimizer.git#42f7d66c27c875db5a885945396f56081fcbf45f
       - pypi: https://files.pythonhosted.org/packages/07/42/2c3ac59253ae8892b6f307875263dd23dc875cdf732d3aea40d6d41fb7cb/triton-3.7.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
-      - pypi: https://files.pythonhosted.org/packages/0a/38/9d45b7fdfd325f9fa1d548863307a9d441ef1cef6d7b6277101ca59aa907/nbparameterise-0.6.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/10/3b/ce7b39f8572f78f8946380e7cf53477f8cffbb8085e49fc54ad34124cc62/juliacall-0.9.35-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/12/24/805d9a4fcb5d105b95b2dac56d0764cfcceba31319437ca94a6592552f84/gpytorch-1.11-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/15/46/d8a076d2c8cb2442ee819d9a4cf907c37609b7582199e7288103cde164f4/oauth2_xfel_client-6.1.1-py3-none-any.whl
@@ -795,6 +794,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/71/ca/9aced390acd0e749ee32248e86dee6b46f97205ee0f1382ed6f6c4945805/euxfel_bunch_pattern-0.6-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/7f/70/72e4ab117425ccdc4d10bd523a94c1baa051a15586057d64a4c6888f9e3f/aiodns-4.0.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/8a/0c/b3357f3f7fe40009f24c2aac4ad6ae902071c5eff340c162f4c895751a20/clusterfutures-0.5-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/8a/59/faa4f98dc763ac7fa35f94f44964d197b74fdebb7ce58931efc78b5f562b/nbparameterise-1.0.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/8b/38/c66bbdc5047f4776c2bd3e47e5295a350e3fa44d5b8942105e71c2a876a0/jaxtyping-0.3.11-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/8d/96/04e7b441807b26b794da5b11e59ed7f83b2cf8af202bd7eba8ad2fa6046e/wadler_lindig-0.1.7-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/94/79/b32cdfaf9c707abda9ae07a608b566ee50b675b6d90e46ccfd471dfba25a/princess-0.6-py3-none-any.whl
@@ -13190,7 +13190,7 @@ packages:
   - pygments ; extra == 'docs'
   - pymdown-extensions ; extra == 'docs'
   requires_python: '>=3.11'
-- pypi: git+ssh://git@git.xfel.eu:10022/SXP/toolbox.git#72c1802a09f7d61a88def40b4b21dcc4e33d1972
+- pypi: git+ssh://git@git.xfel.eu:10022/SXP/toolbox.git#c3abe08e6f08b798f2627b0800f082dd374a1d64
   name: toolbox-sxp
   version: 0.1.0
   requires_dist:
@@ -13201,7 +13201,7 @@ packages:
   - ipywidgets>=8.1.5
   - lmfit>=1.3.2,<2.0.0
   - matplotlib>=3.8.2
-  - nbparameterise>=0.6,<0.7
+  - nbparameterise>=1.0,<2.0
   - numba>=0.60.0
   - numpy>=1.21
   - polars>=1.9.0,<2.0.0
@@ -13283,14 +13283,6 @@ packages:
   - pandas ; extra == 'tutorials'
   - tabulate ; extra == 'tutorials'
   requires_python: '>=3.10,<3.15'
-- pypi: https://files.pythonhosted.org/packages/0a/38/9d45b7fdfd325f9fa1d548863307a9d441ef1cef6d7b6277101ca59aa907/nbparameterise-0.6.1-py3-none-any.whl
-  name: nbparameterise
-  version: 0.6.1
-  sha256: 2ed563fdd3fc97adff0239381e19af9d37871d0da11383ae7c405c48e575a2b8
-  requires_dist:
-  - nbformat
-  - astcheck>=0.3
-  requires_python: '>=3.8'
 - pypi: https://files.pythonhosted.org/packages/10/3b/ce7b39f8572f78f8946380e7cf53477f8cffbb8085e49fc54ad34124cc62/juliacall-0.9.35-py3-none-any.whl
   name: juliacall
   version: 0.9.35
@@ -13725,6 +13717,14 @@ packages:
   - pytest ; extra == 'test'
   - testpath>=0.5 ; extra == 'test'
   requires_python: '>=3.7'
+- pypi: https://files.pythonhosted.org/packages/8a/59/faa4f98dc763ac7fa35f94f44964d197b74fdebb7ce58931efc78b5f562b/nbparameterise-1.0.0-py3-none-any.whl
+  name: nbparameterise
+  version: 1.0.0
+  sha256: 679f7692adc2cc7da7d29c83eb107a8bbc98457ea54ad1ea940b2ec201041ac4
+  requires_dist:
+  - nbformat
+  - astcheck>=0.3
+  requires_python: '>=3.8'
 - pypi: https://files.pythonhosted.org/packages/8b/38/c66bbdc5047f4776c2bd3e47e5295a350e3fa44d5b8942105e71c2a876a0/jaxtyping-0.3.11-py3-none-any.whl
   name: jaxtyping
   version: 0.3.11
