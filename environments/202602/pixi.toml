@@ -117,7 +117,7 @@ pasha = ">=0.1.2, <0.2"
 zlib-into = ">=0.4, <0.5"
 line-profiler = "*"
 hdf5-vds-check = "*"
-damnit = "*"
+damnit = ">=0.4"
 extra-proposal = ">=0.1, <0.2"
 euxfel-extra = { git = "https://github.com/European-XFEL/extra" }
 findxfel = { git = "https://git.xfel.eu/dataAnalysis/findxfel.git" }
