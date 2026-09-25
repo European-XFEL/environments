@@ -757,15 +757,15 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/zulip-0.9.0-pyhd8ed1ab_0.conda
       - pypi: git+https://git.xfel.eu/dataAnalysis/exdf-tools.git#1ab4cba2be31b47074a2ae74d70bcaf53f364798
       - pypi: git+https://git.xfel.eu/dataAnalysis/extra-speckle.git?rev=dev#ecf4189e70e9821253e72ee08adcd2607f64435c
-      - pypi: git+https://git.xfel.eu/dataAnalysis/findxfel.git#54c1b31f58a66f8448ec69932cc1c424859ef51a
+      - pypi: git+https://git.xfel.eu/dataAnalysis/findxfel.git#c93e248d73440bcc3ecb3dd00ff60122f687c81f
       - pypi: git+https://git.xfel.eu/leonaual/pixel-masker.git#8863125fa7dd6d5a2b990f31705f591a6557e657
-      - pypi: git+https://github.com/European-XFEL/extra#469529fed5b80a28d5af31a31b17c2151c90b5c6
-      - pypi: git+ssh://git@git.xfel.eu:10022/SXP/toolbox.git#c3abe08e6f08b798f2627b0800f082dd374a1d64
+      - pypi: git+https://github.com/European-XFEL/extra#bac7987b94a89c44a67e2e031d3b1e6ee9e0c2c9
+      - pypi: git+https://github.com/JamesWrigley/PythonCall.jl.git?branch=v1-env#c3927b7b8820ac947c13a9c90c56f3794fc0e5d4
+      - pypi: git+ssh://git@git.xfel.eu:10022/SXP/toolbox.git#4983de8a678b3dc7a25418d8aca8194b515b9487
       - pypi: git+ssh://git@git.xfel.eu:10022/dataAnalysis/karabo-bridge-recorder.git#28dd6d0db680aeeca64108e0406430b231a7c2c6
       - pypi: git+ssh://git@git.xfel.eu:10022/karaboDevices/metropc.git#6e2be363d836d01b83885a0fd64ab878f53d975e
       - pypi: git+ssh://git@git.xfel.eu:10022/machineLearning/geometry-powder-optimizer.git#42f7d66c27c875db5a885945396f56081fcbf45f
       - pypi: https://files.pythonhosted.org/packages/07/42/2c3ac59253ae8892b6f307875263dd23dc875cdf732d3aea40d6d41fb7cb/triton-3.7.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
-      - pypi: https://files.pythonhosted.org/packages/10/3b/ce7b39f8572f78f8946380e7cf53477f8cffbb8085e49fc54ad34124cc62/juliacall-0.9.35-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/12/24/805d9a4fcb5d105b95b2dac56d0764cfcceba31319437ca94a6592552f84/gpytorch-1.11-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/15/46/d8a076d2c8cb2442ee819d9a4cf907c37609b7582199e7288103cde164f4/oauth2_xfel_client-6.1.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/1c/c9/72f4f3883bb1b278393311ecc9f601146e89b957bb09da279a433ebc182f/condat_gridconv-0.2.1.tar.gz
@@ -13146,9 +13146,9 @@ packages:
   - pymdown-extensions ; extra == 'docs'
   - cupy ; extra == 'gpu'
   - pyopencl ; extra == 'gpu'
-- pypi: git+https://git.xfel.eu/dataAnalysis/findxfel.git#54c1b31f58a66f8448ec69932cc1c424859ef51a
+- pypi: git+https://git.xfel.eu/dataAnalysis/findxfel.git#c93e248d73440bcc3ecb3dd00ff60122f687c81f
   name: findxfel
-  version: 0.2.0
+  version: 0.3.0
 - pypi: git+https://git.xfel.eu/leonaual/pixel-masker.git#8863125fa7dd6d5a2b990f31705f591a6557e657
   name: pixel-masker
   version: '1.0'
@@ -13157,9 +13157,9 @@ packages:
   - numpy
   - packaging
   - extra-geom
-- pypi: git+https://github.com/European-XFEL/extra#469529fed5b80a28d5af31a31b17c2151c90b5c6
+- pypi: git+https://github.com/European-XFEL/extra#bac7987b94a89c44a67e2e031d3b1e6ee9e0c2c9
   name: euxfel-extra
-  version: 2026.1.1.37+469529f
+  version: 2026.1.1.76+bac7987
   requires_dist:
   - damnit
   - euxfel-bunch-pattern
@@ -13190,7 +13190,13 @@ packages:
   - pygments ; extra == 'docs'
   - pymdown-extensions ; extra == 'docs'
   requires_python: '>=3.11'
-- pypi: git+ssh://git@git.xfel.eu:10022/SXP/toolbox.git#c3abe08e6f08b798f2627b0800f082dd374a1d64
+- pypi: git+https://github.com/JamesWrigley/PythonCall.jl.git?branch=v1-env#c3927b7b8820ac947c13a9c90c56f3794fc0e5d4
+  name: juliacall
+  version: 0.9.35
+  requires_dist:
+  - juliapkg>=0.1.26,<0.2
+  requires_python: '>=3.10,<4'
+- pypi: git+ssh://git@git.xfel.eu:10022/SXP/toolbox.git#4983de8a678b3dc7a25418d8aca8194b515b9487
   name: toolbox-sxp
   version: 0.1.0
   requires_dist:
@@ -13283,13 +13289,6 @@ packages:
   - pandas ; extra == 'tutorials'
   - tabulate ; extra == 'tutorials'
   requires_python: '>=3.10,<3.15'
-- pypi: https://files.pythonhosted.org/packages/10/3b/ce7b39f8572f78f8946380e7cf53477f8cffbb8085e49fc54ad34124cc62/juliacall-0.9.35-py3-none-any.whl
-  name: juliacall
-  version: 0.9.35
-  sha256: fd58e7858b12a8e1aa44f9f9eeaea05ff8029dd9a19d98521a5451ca94f2f81a
-  requires_dist:
-  - juliapkg>=0.1.24,<0.2
-  requires_python: '>=3.10,<4'
 - pypi: https://files.pythonhosted.org/packages/12/24/805d9a4fcb5d105b95b2dac56d0764cfcceba31319437ca94a6592552f84/gpytorch-1.11-py3-none-any.whl
   name: gpytorch
   version: '1.11'
