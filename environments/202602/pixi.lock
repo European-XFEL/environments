@@ -755,13 +755,13 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/zict-3.0.0-pyhd8ed1ab_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/zipp-4.1.0-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/zulip-0.9.0-pyhd8ed1ab_0.conda
-      - pypi: git+https://git.xfel.eu/dataAnalysis/exdf-tools.git#1ab4cba2be31b47074a2ae74d70bcaf53f364798
+      - pypi: git+https://git.xfel.eu/dataAnalysis/exdf-tools.git#2220f9c5b5bd252f2736c21117a091df071d5cd6
       - pypi: git+https://git.xfel.eu/dataAnalysis/extra-speckle.git?rev=dev#ecf4189e70e9821253e72ee08adcd2607f64435c
       - pypi: git+https://git.xfel.eu/dataAnalysis/findxfel.git#c93e248d73440bcc3ecb3dd00ff60122f687c81f
       - pypi: git+https://git.xfel.eu/leonaual/pixel-masker.git#8863125fa7dd6d5a2b990f31705f591a6557e657
-      - pypi: git+https://github.com/European-XFEL/extra#bac7987b94a89c44a67e2e031d3b1e6ee9e0c2c9
+      - pypi: git+https://github.com/European-XFEL/extra#90a79cf56cab344c2c55a1ed2e326da5b058f03c
       - pypi: git+https://github.com/JamesWrigley/PythonCall.jl.git?branch=v1-env#c3927b7b8820ac947c13a9c90c56f3794fc0e5d4
-      - pypi: git+ssh://git@git.xfel.eu:10022/SXP/toolbox.git#4983de8a678b3dc7a25418d8aca8194b515b9487
+      - pypi: git+ssh://git@git.xfel.eu:10022/SXP/toolbox.git#6d78aee72606fd7252e70a8d4bb357ce9375f77f
       - pypi: git+ssh://git@git.xfel.eu:10022/dataAnalysis/karabo-bridge-recorder.git#28dd6d0db680aeeca64108e0406430b231a7c2c6
       - pypi: git+ssh://git@git.xfel.eu:10022/karaboDevices/metropc.git#6e2be363d836d01b83885a0fd64ab878f53d975e
       - pypi: git+ssh://git@git.xfel.eu:10022/machineLearning/geometry-powder-optimizer.git#42f7d66c27c875db5a885945396f56081fcbf45f
@@ -13110,7 +13110,7 @@ packages:
   run_exports: {}
   size: 125956
   timestamp: 1702057783975
-- pypi: git+https://git.xfel.eu/dataAnalysis/exdf-tools.git#1ab4cba2be31b47074a2ae74d70bcaf53f364798
+- pypi: git+https://git.xfel.eu/dataAnalysis/exdf-tools.git#2220f9c5b5bd252f2736c21117a091df071d5cd6
   name: exdf-tools
   version: 1.0.0
   requires_dist:
@@ -13157,9 +13157,9 @@ packages:
   - numpy
   - packaging
   - extra-geom
-- pypi: git+https://github.com/European-XFEL/extra#bac7987b94a89c44a67e2e031d3b1e6ee9e0c2c9
+- pypi: git+https://github.com/European-XFEL/extra#90a79cf56cab344c2c55a1ed2e326da5b058f03c
   name: euxfel-extra
-  version: 2026.1.1.76+bac7987
+  version: 2026.1.1.86+90a79cf
   requires_dist:
   - damnit
   - euxfel-bunch-pattern
@@ -13196,7 +13196,7 @@ packages:
   requires_dist:
   - juliapkg>=0.1.26,<0.2
   requires_python: '>=3.10,<4'
-- pypi: git+ssh://git@git.xfel.eu:10022/SXP/toolbox.git#4983de8a678b3dc7a25418d8aca8194b515b9487
+- pypi: git+ssh://git@git.xfel.eu:10022/SXP/toolbox.git#6d78aee72606fd7252e70a8d4bb357ce9375f77f
   name: toolbox-sxp
   version: 0.1.0
   requires_dist:
