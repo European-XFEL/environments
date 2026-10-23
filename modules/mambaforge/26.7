@@ -1,0 +1,182 @@
+#%Module 1.0
+module-whatis  "Mambaforge 26.7"
+
+proc ModulesHelp {} {
+    puts stdout    "Activate mambaforge 26.7"
+}
+
+set specialuser xsoft
+
+eval set [array get env USER]
+
+if {$USER != $specialuser} {
+    # for all users except xsoft
+    append-path    CONDA_PKGS_DIRS "~/.conda/pkgs"
+    append-path    CONDA_ENVS_DIRS "~/.conda/envs"
+} else {
+    append-path    CONDA_PKGS_DIRS "/gpfs/exfel/sw/software/mambaforge/26.7/pkgs"
+}
+
+prepend-path    PATH /gpfs/exfel/sw/software/mambaforge/26.7/condabin
+setenv          _CE_CONDA {}
+setenv          _CE_M {}
+setenv          CONDA_EXE /gpfs/exfel/sw/software/mambaforge/26.7/bin/conda
+setenv          CONDA_PYTHON_EXE /gpfs/exfel/sw/software/mambaforge/26.7/bin/python
+setenv          CONDA_SHLVL 0
+
+if {$USER == $specialuser} {
+    # activate base by default for xsoft
+    prepend-path    PATH /gpfs/exfel/sw/software/mambaforge/26.7/bin
+    setenv          CONDA_DEFAULT_ENV base
+    setenv          CONDA_PREFIX /gpfs/exfel/sw/software/mambaforge/26.7
+    setenv          CONDA_PROMPT_MODIFIER "(base) "
+    setenv          CONDA_SHLVL 1
+}
+
+if {[info commands set-function] eq {set-function}} {
+    switch -- [module-info shelltype] {
+        sh {
+            set-function    __conda_activate {
+                if [ -n "${CONDA_PS1_BACKUP:+x}" ]; then
+                    PS1="$CONDA_PS1_BACKUP";
+                    \unset CONDA_PS1_BACKUP;
+                fi;
+                \local ask_conda;
+                ask_conda="$(PS1="${PS1:-}" __conda_exe shell.posix "$@")" || \return;
+                \eval "$ask_conda";
+                __conda_hashr}
+            set-function    __conda_exe {
+                ( "$CONDA_EXE" $_CE_M $_CE_CONDA "$@" )}
+            set-function    __conda_hashr {
+                if [ -n "${ZSH_VERSION:+x}" ]; then
+                    \rehash;
+                else
+                    if [ -n "${POSH_VERSION:+x}" ]; then
+                        :;
+                    else
+                        \hash -r;
+                    fi;
+                fi}
+            set-function    __conda_reactivate {
+                \local ask_conda;
+                ask_conda="$(PS1="${PS1:-}" __conda_exe shell.posix reactivate)" || \return;
+                \eval "$ask_conda";
+                __conda_hashr}
+            set-function    __mamba_exe {
+                ( \local MAMBA_CONDA_EXE_BACKUP=$CONDA_EXE;
+                \local MAMBA_EXE=$(\dirname "${CONDA_EXE}")/mamba;
+                "$MAMBA_EXE" $_CE_M $_CE_CONDA "$@" )}
+            set-function    conda {
+                \local cmd="${1-__missing__}";
+                case "$cmd" in 
+                    activate | deactivate)
+                        __conda_activate "$@"
+                    ;;
+                    install | update | upgrade | remove | uninstall)
+                        __conda_exe "$@" || \return;
+                        __conda_reactivate
+                    ;;
+                    *)
+                        __conda_exe "$@"
+                    ;;
+                esac}
+            set-function    mamba {
+                \local cmd="${1-__missing__}";
+                case "$cmd" in 
+                    activate | deactivate)
+                        __conda_activate "$@"
+                    ;;
+                    install | update | upgrade | remove | uninstall)
+                        __mamba_exe "$@" || \return;
+                        __conda_reactivate
+                    ;;
+                    *)
+                        __mamba_exe "$@"
+                    ;;
+                esac}
+        }
+        fish {
+            complete    fish conda {--no-files -a '(__fish_conda_commands)' -n __fish_conda_needs_command}
+            complete    fish conda {--no-files -a '(__fish_conda_env_commands)' -n '__fish_conda_using_command env'}
+            complete    fish conda {--no-files -a '(__fish_conda_envs)' -n '__fish_conda_using_command activate'}
+            complete    fish conda {--no-files -a '(__fish_conda_packages)' -n '__fish_conda_using_command remove'}
+            complete    fish conda {--no-files -a '(__fish_conda_packages)' -n '__fish_conda_using_command uninstall'}
+            complete    fish conda {--no-files -a '(__fish_conda_packages)' -n '__fish_conda_using_command update'}
+            complete    fish conda {--no-files -a '(__fish_conda_packages)' -n '__fish_conda_using_command upgrade'}
+            set-function    __conda_add_prompt {
+                if set -q CONDA_PROMPT_MODIFIER
+                    set_color -o green
+                    echo -n $CONDA_PROMPT_MODIFIER
+                    set_color normal
+                end}
+            set-function    __fish_conda_commands {
+                string replace -r '.*_([a-z]+)\.py$' '$1' $_CONDA_ROOT/lib/python*/site-packages/conda/cli/main_*.py
+                for f in $_CONDA_ROOT/bin/conda-*
+                    if test -x "$f" -a ! -d "$f"
+                        string replace -r '^.*/conda-' '' "$f"
+                    end
+                end
+                echo activate
+                echo deactivate}
+            set-function    __fish_conda_env_commands {
+                string replace -r '.*_([a-z]+)\.py$' '$1' $_CONDA_ROOT/lib/python*/site-packages/conda_env/cli/main_*.py}
+            set-function    __fish_conda_envs {
+                conda config --json --show envs_dirs | python -c "import json, os, sys; from os.path import isdir, join; print('\n'.join(d for ed in json.load(sys.stdin)['envs_dirs'] if isdir(ed) for d in os.listdir(ed) if isdir(join(ed, d))))"}
+            set-function    __fish_conda_needs_command {
+                set cmd (commandline -opc)
+                if [ (count $cmd) -eq 1 -a $cmd[1] = conda ]
+                    return 0
+                end
+                return 1}
+            set-function    __fish_conda_packages {
+                conda list | awk 'NR > 3 {print $1}'}
+            set-function    __fish_conda_using_command {
+                set cmd (commandline -opc)
+                if [ (count $cmd) -gt 1 ]
+                    if [ $argv[1] = $cmd[2] ]
+                        return 0
+                    end
+                end
+                return 1}
+            set-function    __fish_prompt_orig {
+            }
+            set-function    __fish_right_prompt_orig {
+                }
+            set-function    conda {
+                if [ (count $argv) -lt 1 ]
+                    $CONDA_EXE
+                else
+                    set -l cmd $argv[1]
+                    set -e argv[1]
+                    switch $cmd
+                        case activate deactivate
+                            eval ($CONDA_EXE shell.fish $cmd $argv)
+                        case install update upgrade remove uninstall
+                            $CONDA_EXE $cmd $argv
+                            and eval ($CONDA_EXE shell.fish reactivate)
+                        case '*'
+                            $CONDA_EXE $cmd $argv
+                    end
+                end}
+            set-function    return_last_status {
+                return $argv}
+            set-function mamba {
+              if [ (count $argv) -lt 1 ]
+                $CONDA_EXE
+              else
+                set -l mamba_exe (dirname $CONDA_EXE)/mamba
+                set -l cmd $argv[1]
+                set -e argv[1]
+                switch $cmd
+                  case activate deactivate
+                    eval ($CONDA_EXE shell.fish $cmd $argv)
+                  case install update upgrade remove uninstall
+                    $mamba_exe $cmd $argv
+                    and eval ($CONDA_EXE shell.fish reactivate)
+                  case '*'
+                    $mamba_exe $cmd $argv
+                end
+              end}
+        }
+    }
+}
