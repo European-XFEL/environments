@@ -1,9 +1,8 @@
-name: '202501'
+name: 
 channels:
-  - pytorch
-  - file:///gpfs/exfel/sw/software/euxfel-environment-management/custom-recipes/conda-bld
-  - nodefaults
   - conda-forge
+  - file:///gpfs/exfel/sw/software/euxfel-environment-management/custom-recipes/conda-bld
+  - pytorch
 dependencies:
   - _libgcc_mutex=0.1
   - _openmp_mutex=4.5
@@ -73,12 +72,12 @@ dependencies:
   - bzip2=1.0.8
   - c-ares=1.34.4
   - c-blosc2=2.12.0
-  - ca-certificates=2025.4.26
+  - ca-certificates=2026.10.19
   - cached-property=1.5.2
   - cached_property=1.5.2
   - cairo=1.16.0
   - calibration-client=11.3.0
-  - certifi=2025.1.31
+  - certifi=2026.10.19
   - certipy=0.1.3
   - cfel-fmt=2.2.0
   - cfelpyutils=2.0.6
@@ -480,7 +479,7 @@ dependencies:
   - pillow=10.0.0
   - pint=0.24.4
   - pint-xarray=0.4
-  - pip=25.0
+  - pip=26.2.2
   - pixman=0.44.2
   - pkgutil-resolve-name=1.3.10
   - platformdirs=4.3.6
@@ -733,5 +732,7 @@ dependencies:
   - zstd=1.5.6
   - zulip=0.9.0
   - pip:
-      - euxfel-extra==2024.2.194+848667d
-prefix: /gpfs/exfel/sw/software/mambaforge/22.11/envs/202501
+    - EXtra-proposal==0.1.3
+    - euxfel-EXtra==2025.1
+
+prefix: "/gpfs/exfel/sw/software/mambaforge/22.11/envs/202501"
