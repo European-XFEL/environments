@@ -106,10 +106,10 @@ zarr = { version = "*" }
 zulip = { version = "*" }
 requests = { version = "<2.30" }
 uv = "*"
-pip = "*"
+pip = ">=26.2.1,<27"
 
 [pypi-dependencies]
-extra-data = { version = ">=1.24.0, <2", extras = ["complete"] }
+extra-data = { version = ">=1.25.0, <2", extras = ["complete"] }
 extra-geom = ">=1.17.0, <2"
 calibration-client = ">=11.4.0, <12"
 princess = ">=0.6, <0.7"
@@ -138,6 +138,11 @@ fpcs = ">=1.0.0"
 geometry-powder-optimizer = { git = "ssh://git@git.xfel.eu:10022/machineLearning/geometry-powder-optimizer.git" }
 toolbox-sxp = { git = "ssh://git@git.xfel.eu:10022/SXP/toolbox.git" }
 exdf-tools = { git = "https://git.xfel.eu/dataAnalysis/exdf-tools.git" }
+
+[exclude-newer]
+pip = "0d"
+ca-certificates = "0d"
+certifi = "0d"
 
 [pypi-exclude-newer]
 extra-data = "0d"

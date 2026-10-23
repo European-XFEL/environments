@@ -442,11 +442,11 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/botocore-1.43.56-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/bqplot-0.13.1-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/bqscales-0.3.7-pyhd8ed1ab_1.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/ca-certificates-2026.7.22-hbd8a1cb_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/ca-certificates-2026.10.19-hbd8a1cb_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/cached-property-1.5.2-hd8ed1ab_2.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/cached_property-1.5.2-pyha770c72_2.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/cattrs-26.1.0-pyhcf101f3_1.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/certifi-2026.7.22-pyhd8ed1ab_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/certifi-2026.10.19-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/certipy-0.2.3-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/chardet-5.2.0-pyhd8ed1ab_3.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/charset-normalizer-3.5.1-pyhd8ed1ab_0.conda
@@ -613,7 +613,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/pickleshare-0.7.5-pyhd8ed1ab_1004.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/pint-0.25.3-pyhc364b38_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/pint-xarray-0.6.1-pyhd8ed1ab_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/pip-26.2.1-pyh145f28c_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/pip-26.2.2-pyh145f28c_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/platformdirs-4.11.3-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/plotly-6.9.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/pluggy-1.6.0-pyhf9edf01_1.conda
@@ -759,7 +759,7 @@ environments:
       - pypi: git+https://git.xfel.eu/dataAnalysis/extra-speckle.git?rev=dev#ecf4189e70e9821253e72ee08adcd2607f64435c
       - pypi: git+https://git.xfel.eu/dataAnalysis/findxfel.git#c93e248d73440bcc3ecb3dd00ff60122f687c81f
       - pypi: git+https://git.xfel.eu/leonaual/pixel-masker.git#8863125fa7dd6d5a2b990f31705f591a6557e657
-      - pypi: git+https://github.com/European-XFEL/extra#90a79cf56cab344c2c55a1ed2e326da5b058f03c
+      - pypi: git+https://github.com/European-XFEL/extra#25535f684de5dd472a482680da9deadbb7d1b7b5
       - pypi: git+https://github.com/JamesWrigley/PythonCall.jl.git?branch=v1-env#c3927b7b8820ac947c13a9c90c56f3794fc0e5d4
       - pypi: git+ssh://git@git.xfel.eu:10022/SXP/toolbox.git#6d78aee72606fd7252e70a8d4bb357ce9375f77f
       - pypi: git+ssh://git@git.xfel.eu:10022/dataAnalysis/karabo-bridge-recorder.git#28dd6d0db680aeeca64108e0406430b231a7c2c6
@@ -777,6 +777,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/33/6d/737d164b4837a9bbd202f5ae3078975f0525a55730fe871d8ed4e3b952b0/nvidia_cuda_cupti-13.0.85-py3-none-manylinux_2_25_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/34/7d/2661f2fb3ac4302f3a246f5fc030213ac60c1fe0bce84f9783dbd831dbb7/nvidia_cusparselt_cu13-0.8.1-py3-none-manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/34/c2/ef9b6a63f7dc432712a462c816662e662e00d38caa9b861c8c2588195d03/cuda_bindings-13.3.1-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl
+      - pypi: https://files.pythonhosted.org/packages/35/1e/28e8b35172cb04ea336c8bd61dc1f50a17afa1b35a745b1e20e81b920c59/extra_data-1.25.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/36/56/947abc9885841744c708d57871c05d381ecb1bb8f12e5d6ec138e4cf99e6/mpl_interactions-0.24.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/39/c4/f5eb4756212d7df85b091324c73b9e15736c957ea91513bc1a23ed7e7d93/fpcs-1.0.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/3b/5d/63d4ae3b9daea098d5d6f5da83984853c1bbacd5dc826764b249fe119d24/requests_oauthlib-2.0.0-py2.py3-none-any.whl
@@ -786,7 +787,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/49/ee/13677884ca55c6339fa024d8078f7e5f41da74cfda4a315429d4cee605c5/karabo_bridge-0.7.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/53/49/62bcd4792b202d1b720e6675cda8fd50dab6f9d8a083c51a31a674a62eda/pasha-0.1.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/5a/41/57d263c26bc7ec8e8fade3275dd1e0e8969f31ca4ec9bec6e6677571d7a7/extra_proposal-0.1.4-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/5e/e9/63b56eee35179987723adca82a022b08b79c4faea24467e9d36eb8115f08/extra_data-1.24.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/5f/67/cba3777620cdacb99102da4042883709c41c709f4b6323c10781a9c3aa34/nvidia_cusolver-12.0.4.66-py3-none-manylinux_2_27_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/61/1b/a056393fda383b2eda5dab20bd0dd034fd631bf5ae754aabb20da815bdfe/pycares-5.0.1-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/67/f4/58e4e91b6919367c7aafb8e36fce9aad1a3047e536bf7e2fd560927d3a4c/nvidia_nccl_cu13-2.29.7-py3-none-manylinux_2_18_x86_64.whl
@@ -1368,7 +1368,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/brotli?source=compressed-mapping
+  - pkg:pypi/brotli?source=hash-mapping
   run_exports: {}
   size: 367312
   timestamp: 1786622911623
@@ -2130,7 +2130,7 @@ packages:
   license: LGPL-3.0-or-later
   license_family: LGPL
   purls:
-  - pkg:pypi/gmpy2?source=compressed-mapping
+  - pkg:pypi/gmpy2?source=hash-mapping
   run_exports: {}
   size: 327580
   timestamp: 1787066358811
@@ -2177,7 +2177,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/greenlet?source=compressed-mapping
+  - pkg:pypi/greenlet?source=hash-mapping
   run_exports: {}
   size: 276682
   timestamp: 1786384052888
@@ -5003,7 +5003,7 @@ packages:
   - python_abi 3.13.* *_cp313
   license: BSD-3-Clause and MIT-CMU
   purls:
-  - pkg:pypi/lxml?source=compressed-mapping
+  - pkg:pypi/lxml?source=hash-mapping
   run_exports: {}
   size: 1593788
   timestamp: 1787133202169
@@ -7121,7 +7121,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/sqlalchemy?source=compressed-mapping
+  - pkg:pypi/sqlalchemy?source=hash-mapping
   run_exports: {}
   size: 3863012
   timestamp: 1786535232010
@@ -7929,7 +7929,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/affine?source=compressed-mapping
+  - pkg:pypi/affine?source=hash-mapping
   run_exports: {}
   size: 16762
   timestamp: 1786226684740
@@ -7950,7 +7950,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/aiobotocore?source=compressed-mapping
+  - pkg:pypi/aiobotocore?source=hash-mapping
   run_exports: {}
   size: 93162
   timestamp: 1787053079193
@@ -8046,7 +8046,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/alembic?source=compressed-mapping
+  - pkg:pypi/alembic?source=hash-mapping
   run_exports: {}
   size: 186094
   timestamp: 1786265219360
@@ -8192,7 +8192,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/astropy-iers-data?source=compressed-mapping
+  - pkg:pypi/astropy-iers-data?source=hash-mapping
   run_exports: {}
   size: 1238168
   timestamp: 1787081563660
@@ -8248,7 +8248,7 @@ packages:
   - typing_extensions >=4.0.0
   license: EPL-1.0
   purls:
-  - pkg:pypi/asyncssh?source=compressed-mapping
+  - pkg:pypi/asyncssh?source=hash-mapping
   run_exports: {}
   size: 254210
   timestamp: 1787084185107
@@ -8422,7 +8422,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/bokeh?source=compressed-mapping
+  - pkg:pypi/bokeh?source=hash-mapping
   run_exports: {}
   size: 4454345
   timestamp: 1787144786949
@@ -8474,16 +8474,16 @@ packages:
   run_exports: {}
   size: 215636
   timestamp: 1765533387529
-- conda: https://conda.anaconda.org/conda-forge/noarch/ca-certificates-2026.7.22-hbd8a1cb_0.conda
-  sha256: 0a0544cf95f64394fe4959286f5c71f5444ad58feb0602e53becb27448d24da6
-  md5: 0f51e2391ade309db462a55611263e9c
+- conda: https://conda.anaconda.org/conda-forge/noarch/ca-certificates-2026.10.19-hbd8a1cb_0.conda
+  sha256: 9404ee878c6bd5b260655ab651366db43fac6be8d465fcc0acd0f7a50be91acb
+  md5: a1d1bf676059d2863f000d5e2777743f
   depends:
   - __unix
   license: ISC
   purls: []
   run_exports: {}
-  size: 131780
-  timestamp: 1784754889428
+  size: 131396
+  timestamp: 1792483552251
 - conda: https://conda.anaconda.org/conda-forge/noarch/cached-property-1.5.2-hd8ed1ab_2.conda
   noarch: python
   sha256: 0d00dd61cb91b1bd1536600c64c9db4f94f3c699fec42864d0a2f4bc2ad8c3e8
@@ -8524,17 +8524,17 @@ packages:
   run_exports: {}
   size: 59678
   timestamp: 1771485958517
-- conda: https://conda.anaconda.org/conda-forge/noarch/certifi-2026.7.22-pyhd8ed1ab_0.conda
-  sha256: fb167de4388e64e52aa3907ed099afab944c1fa6e5f74b281a312dae1bcf7f3b
-  md5: 37e13edbe3b48f1095a9d085ef9cd83b
+- conda: https://conda.anaconda.org/conda-forge/noarch/certifi-2026.10.19-pyhd8ed1ab_0.conda
+  sha256: ee3bca803cac13760131b6147e2fe60c97e769978e7542d678842b65e285d239
+  md5: 94480ec10238da5dd5659ae0b933634b
   depends:
   - python >=3.10
   license: ISC
   purls:
-  - pkg:pypi/certifi?source=hash-mapping
+  - pkg:pypi/certifi?source=compressed-mapping
   run_exports: {}
-  size: 137015
-  timestamp: 1784717699092
+  size: 136752
+  timestamp: 1792488039424
 - conda: https://conda.anaconda.org/conda-forge/noarch/certipy-0.2.3-pyhcf101f3_0.conda
   sha256: 0e895b9bf38a795a05feef6f6954d1de15f833e652ec0d59fecdc4960ed2be58
   md5: 9d7f656740a8c0200e614b69ad8fccf9
@@ -9008,7 +9008,7 @@ packages:
   - python >=3.10
   license: Unlicense
   purls:
-  - pkg:pypi/filelock?source=compressed-mapping
+  - pkg:pypi/filelock?source=hash-mapping
   run_exports: {}
   size: 78106
   timestamp: 1786669915951
@@ -9190,7 +9190,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/gitpython?source=compressed-mapping
+  - pkg:pypi/gitpython?source=hash-mapping
   run_exports: {}
   size: 177303
   timestamp: 1786443183227
@@ -11012,18 +11012,18 @@ packages:
   run_exports: {}
   size: 43278
   timestamp: 1774347521180
-- conda: https://conda.anaconda.org/conda-forge/noarch/pip-26.2.1-pyh145f28c_0.conda
-  sha256: 0f7021cfb3ff454c91a5e28e1f5060906a52c6d1cde3f879a7d03ac33c28b1c3
-  md5: 573cb3ed111004230ed3de650653cd4d
+- conda: https://conda.anaconda.org/conda-forge/noarch/pip-26.2.2-pyh145f28c_0.conda
+  sha256: 5edc68a9d14102ba90d5d41e871163a90c6fa0a60b10fc8b66e44c99b92ae9ae
+  md5: 39d4f1dfe506a870f6be9047f0b31246
   depends:
   - python >=3.13.0a0
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/pip?source=hash-mapping
+  - pkg:pypi/pip?source=compressed-mapping
   run_exports: {}
-  size: 1198163
-  timestamp: 1785914482439
+  size: 1199840
+  timestamp: 1792524294936
 - conda: https://conda.anaconda.org/conda-forge/noarch/platformdirs-4.11.3-pyhcf101f3_0.conda
   sha256: 810511c90649ca59fa0174958a210fd5051c0a7848cfbd42c87054a6836726b5
   md5: 31474b00d0ca5accac14eda09ba11216
@@ -11033,7 +11033,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/platformdirs?source=compressed-mapping
+  - pkg:pypi/platformdirs?source=hash-mapping
   run_exports: {}
   size: 26956
   timestamp: 1786708411066
@@ -13157,9 +13157,9 @@ packages:
   - numpy
   - packaging
   - extra-geom
-- pypi: git+https://github.com/European-XFEL/extra#90a79cf56cab344c2c55a1ed2e326da5b058f03c
+- pypi: git+https://github.com/European-XFEL/extra#25535f684de5dd472a482680da9deadbb7d1b7b5
   name: euxfel-extra
-  version: 2026.1.1.86+90a79cf
+  version: 2026.1.1.125+25535f6
   requires_dist:
   - damnit
   - euxfel-bunch-pattern
@@ -13486,6 +13486,41 @@ packages:
   - cuda-toolkit==13.* ; extra == 'all'
   - nvidia-cudla==13.* ; platform_machine == 'aarch64' and sys_platform == 'linux' and extra == 'all'
   requires_python: '>=3.10'
+- pypi: https://files.pythonhosted.org/packages/35/1e/28e8b35172cb04ea336c8bd61dc1f50a17afa1b35a745b1e20e81b920c59/extra_data-1.25.0-py3-none-any.whl
+  name: extra-data
+  version: 1.25.0
+  sha256: 8de1210185d78fee7879aad50a29457d981a19fbf9c49cf0d5fb76922f8aded5
+  requires_dist:
+  - h5py>=2.10
+  - loky
+  - matplotlib
+  - numpy>=2.1
+  - packaging
+  - pandas
+  - pyyaml
+  - xarray
+  - karabo-bridge>=0.6 ; extra == 'bridge'
+  - psutil ; extra == 'bridge'
+  - dask[array] ; extra == 'complete'
+  - extra-data[bridge] ; extra == 'complete'
+  - tomli ; python_full_version < '3.11' and extra == 'complete'
+  - zlib-into>=0.4 ; extra == 'complete'
+  - extra-data[bridge] ; extra == 'docs'
+  - ipython ; extra == 'docs'
+  - nbsphinx ; extra == 'docs'
+  - sphinx ; extra == 'docs'
+  - sphinx-rtd-theme ; extra == 'docs'
+  - sphinxcontrib-jquery ; extra == 'docs'
+  - sphinxcontrib-github-alt ; extra == 'docs'
+  - readthedocs-sphinx-search ; extra == 'docs'
+  - cloudpickle ; extra == 'test'
+  - coverage ; extra == 'test'
+  - extra-data[complete] ; extra == 'test'
+  - nbval ; extra == 'test'
+  - pytest ; extra == 'test'
+  - pytest-cov ; extra == 'test'
+  - testpath ; extra == 'test'
+  requires_python: '>=3.10'
 - pypi: https://files.pythonhosted.org/packages/36/56/947abc9885841744c708d57871c05d381ecb1bb8f12e5d6ec138e4cf99e6/mpl_interactions-0.24.2-py3-none-any.whl
   name: mpl-interactions
   version: 0.24.2
@@ -13629,41 +13664,6 @@ packages:
   - pytest ; extra == 'test'
   - pytest-cov ; extra == 'test'
   requires_python: '>=3.9'
-- pypi: https://files.pythonhosted.org/packages/5e/e9/63b56eee35179987723adca82a022b08b79c4faea24467e9d36eb8115f08/extra_data-1.24.0-py3-none-any.whl
-  name: extra-data
-  version: 1.24.0
-  sha256: 86407297f683ff980902ab722cbafbea1bb7ed7cf05fda0aedcf767c96af36ac
-  requires_dist:
-  - h5py>=2.10
-  - loky
-  - matplotlib
-  - numpy
-  - packaging
-  - pandas
-  - pyyaml
-  - xarray
-  - karabo-bridge>=0.6 ; extra == 'bridge'
-  - psutil ; extra == 'bridge'
-  - dask[array] ; extra == 'complete'
-  - extra-data[bridge] ; extra == 'complete'
-  - tomli ; python_full_version < '3.11' and extra == 'complete'
-  - zlib-into>=0.4 ; extra == 'complete'
-  - extra-data[bridge] ; extra == 'docs'
-  - ipython ; extra == 'docs'
-  - nbsphinx ; extra == 'docs'
-  - sphinx ; extra == 'docs'
-  - sphinx-rtd-theme ; extra == 'docs'
-  - sphinxcontrib-jquery ; extra == 'docs'
-  - sphinxcontrib-github-alt ; extra == 'docs'
-  - readthedocs-sphinx-search ; extra == 'docs'
-  - cloudpickle ; extra == 'test'
-  - coverage ; extra == 'test'
-  - extra-data[complete] ; extra == 'test'
-  - nbval ; extra == 'test'
-  - pytest ; extra == 'test'
-  - pytest-cov ; extra == 'test'
-  - testpath ; extra == 'test'
-  requires_python: '>=3.10'
 - pypi: https://files.pythonhosted.org/packages/5f/67/cba3777620cdacb99102da4042883709c41c709f4b6323c10781a9c3aa34/nvidia_cusolver-12.0.4.66-py3-none-manylinux_2_27_x86_64.whl
   name: nvidia-cusolver
   version: 12.0.4.66

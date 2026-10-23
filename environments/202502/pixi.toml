@@ -141,6 +141,11 @@ extra-speckle = { git = "https://git.xfel.eu/dataAnalysis/extra-speckle.git", br
 toolbox-sxp = { git = "ssh://git@git.xfel.eu:10022/sxp/toolbox.git", branch = "main" }
 exdf-tools = { git = "https://git.xfel.eu/dataAnalysis/exdf-tools.git" }
 
+[exclude-newer]
+pip = "0d"
+ca-certificates = "0d"
+certifi = "0d"
+
 [pypi-exclude-newer]
 extra-data = "0d"
 extra-geom = "0d"
