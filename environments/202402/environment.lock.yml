@@ -66,7 +66,7 @@ dependencies:
   - bzip2=1.0.8
   - c-ares=1.32.3
   - c-blosc2=2.12.0
-  - ca-certificates=2026.10.19
+  - ca-certificates=2026.10.23
   - cached-property=1.5.2
   - cached_property=1.5.2
   - cairo=1.16.0
